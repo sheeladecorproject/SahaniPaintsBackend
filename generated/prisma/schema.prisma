@@ -1,0 +1,230 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model users {
+  id                   String           @id @default(uuid()) @db.Uuid
+  username             String           @unique
+  email                String           @unique
+  password             String
+  role                 Role
+  phonenumber          String?
+  address              String?
+  alternatePhonenumber String?          @map("alternate_phonenumber")
+  createdAt            DateTime         @default(now()) @map("created_at") @db.Timestamptz(6)
+  auth                 authorizations[]
+  projects             projects[]
+  refreshTokens        refreshTokens[]
+
+  @@index([id, createdAt])
+}
+
+model refreshTokens {
+  id       String  @id @default(uuid()) @db.Uuid
+  familyId String  @map("family_id") @db.Uuid
+  userId   String  @map("user_id") @db.Uuid
+  role     Role    @default(INTERIOR)
+  isUsed   Boolean @map("is_used")
+  user     users   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([familyId])
+  @@map("refresh_tokens")
+}
+
+model authorizations {
+  id     String @id @default(uuid()) @db.Uuid
+  userId String @map("user_id") @db.Uuid
+  access String
+  user   users  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, access])
+}
+
+model customers {
+  id                   String     @id @default(uuid()) @db.Uuid
+  name                 String     @unique
+  email                String?
+  phonenumber          String?
+  alternatePhonenumber String?    @map("alternate_phonenumber")
+  address              String?
+  createdAt            DateTime   @default(now()) @map("created_at") @db.Timestamptz(6)
+  projects             projects[]
+
+  @@index([id, createdAt])
+}
+
+model brands {
+  id          String     @id @default(uuid()) @db.Uuid
+  name        String     @unique
+  description String?
+  createdAt   DateTime   @default(now()) @map("created_at") @db.Timestamptz(6)
+  products    products[]
+
+  @@index([id, createdAt])
+}
+
+model products {
+  id        String   @id @default(uuid()) @db.Uuid
+  name      String   @unique
+  brandId   String   @map("brand_id") @db.Uuid
+  category  String
+  price     Decimal
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  brand     brands   @relation(fields: [brandId], references: [id])
+
+  @@index([id, createdAt])
+}
+
+model projects {
+  id           String              @id @default(uuid()) @db.Uuid
+  name         String              @unique
+  customerId   String?             @map("customer_id") @db.Uuid
+  creatorId    String              @map("creator_id") @db.Uuid
+  status       ProjectStatus
+  totalAmount  Decimal?            @map("total_amount")
+  paid         Decimal?
+  discount     Decimal?
+  discountType String?             @map("discount_type")
+  projectDate  DateTime            @map("project_date") @db.Timestamptz(6)
+  createdAt    DateTime            @default(now()) @map("created_at") @db.Timestamptz(6)
+  creator      users               @relation(fields: [creatorId], references: [id])
+  customer     customers?          @relation(fields: [customerId], references: [id])
+  tasks        tasks[]
+  areas        areas[]
+  attendance   labour_attendance[]
+
+  @@index([id, createdAt])
+}
+
+model colors {
+  id                String                @id @default(uuid()) @db.Uuid
+  name              String
+  shade             String
+  createdAt         DateTime              @default(now()) @map("created_at") @db.Timestamptz(6)
+  projectAreaColors project_area_colors[]
+
+  @@unique([name, shade])
+  @@index([id, createdAt])
+}
+
+model areas {
+  id                String                @id @default(uuid()) @db.Uuid
+  name              String
+  projectId         String                @map("project_id") @db.Uuid
+  project           projects              @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  createdAt         DateTime              @default(now()) @map("created_at") @db.Timestamptz(6)
+  projectAreaColors project_area_colors[]
+
+  @@unique([name, projectId])
+  @@index([id, createdAt])
+}
+
+model project_area_colors {
+  id        String   @id @default(uuid()) @db.Uuid
+  areaId    String   @map("area_id") @db.Uuid
+  colorId   String   @map("color_id") @db.Uuid
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  area  areas  @relation(fields: [areaId], references: [id], onDelete: Cascade)
+  color colors @relation(fields: [colorId], references: [id], onDelete: Cascade)
+
+  @@unique([areaId, colorId])
+}
+
+model tasks {
+  id          String   @id @default(uuid()) @db.Uuid
+  title       String
+  description String?
+  taskDate    DateTime @map("task_date") @db.Timestamptz(6)
+  projectId   String   @map("project_id") @db.Uuid
+  priority    Priority
+  status      Status
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  project     projects @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@unique([title, projectId])
+  @@index([id, createdAt])
+}
+
+model inquiries {
+  id           String   @id @default(uuid()) @db.Uuid
+  projectName  String   @map("project_name")
+  customerName String   @map("customer_name")
+  phonenumber  String
+  comments     String?
+  createdAt    DateTime @default(now()) @map("inquiry_date") @db.Timestamptz(6)
+  followUpDate DateTime @map("follow_up_date") @db.Timestamptz(6)
+
+  @@unique([customerName, projectName])
+}
+
+model stores {
+  id          String   @id @default(uuid()) @db.Uuid
+  name        String
+  address     String?
+  phonenumber Int
+  email       String
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@index([id, createdAt])
+}
+
+enum Role {
+  USER
+  ADMIN
+  INTERIOR
+  SALES_ASSOCIATE
+}
+
+enum Status {
+  TODO
+  INPROGRESS
+  COMPLETED
+}
+
+enum ProjectStatus {
+  PENDING
+  ACTIVE
+  GOODS_PENDING
+  GOODS_COMPLETE
+  TAILOR_PENDING
+  TAILOR_COMPLETE
+  COMPLETED
+  DEFAULTER
+}
+
+enum Priority {
+  HIGH
+  MODERATE
+  LOW
+}
+
+model labours {
+  id            String              @id @default(uuid()) @db.Uuid
+  name          String              @unique
+  paymentPerDay Decimal             @map("payment_per_day")
+  phonenumber   String?             @map("phone_number")
+  createdAt     DateTime            @default(now()) @map("created_at") @db.Timestamptz(6)
+  attendance    labour_attendance[]
+
+  @@index([id, createdAt])
+}
+
+model labour_attendance {
+  id        String   @id @default(uuid()) @db.Uuid
+  date      DateTime @db.Timestamptz(6)
+  projectId String   @map("project_id") @db.Uuid
+  labourId  String   @map("labour_id") @db.Uuid
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  project projects @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  labour  labours  @relation(fields: [labourId], references: [id], onDelete: Cascade)
+
+  @@unique([date, projectId, labourId])
+  @@index([date, projectId])
+}
