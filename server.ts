@@ -17,7 +17,7 @@ import { ColorRouter } from "./router/color.router.js";
 import { AreaRouter } from "./router/area.router.js";
 import { ProjectAreaColorsRouter } from "./router/projectAreaColors.router.js";
 import { LabourRouter } from "./router/labour.router.js";
-import { LabourAttendanceRouter } from "./router/labourAttendance.router.js";
+import { LabourAttendanceRouter } from "./router/labourAttendance.router.js"; 
 import cors from "cors";
 import { AuthorizationRouter } from "./router/authorization.router.js";
 import { authenticate, authorizePage } from "./middleware/authenticate.middleware.js";
@@ -48,6 +48,7 @@ app.get("/", (req: Request, res: Response) => {
         message: "Sahani Paints backend is awake."
     });
 });
+
 
 app.use("/v1/users", UserRouter);
 app.use("/v1/auth", AuthRouter);
