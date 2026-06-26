@@ -22,7 +22,8 @@ class LabourAttendanceController extends BaseController<LabourAttendanceService>
             this.getPagination(req),
             {
                 projectId: req.query.projectId?.toString(),
-                date: req.query.date?.toString()
+                date: req.query.date?.toString(),
+                labourId: req.query.labourId?.toString()
             },
             []
         );

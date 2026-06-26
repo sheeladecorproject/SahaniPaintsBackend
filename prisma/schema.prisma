@@ -74,8 +74,12 @@ model products {
   brandId         String            @map("brand_id") @db.Uuid
   category        String
   price           Decimal
+  coverageSqFt    Decimal?          @map("coverage_sqft")
+  coverageRnFt    Decimal?          @map("coverage_rnft")
+  hasToken        Boolean           @default(false) @map("has_token")
   createdAt       DateTime          @default(now()) @map("created_at") @db.Timestamptz(6)
   brand           brands            @relation(fields: [brandId], references: [id])
+  projectProducts project_products[]
 
   @@index([id, createdAt])
 }
@@ -90,6 +94,8 @@ model projects {
   paid               Decimal?
   discount           Decimal?
   discountType       String?           @map("discount_type")
+  tax                Decimal?          @map("tax")
+  agreedPrice        Decimal?          @map("agreed_price")
   projectDate        DateTime          @map("project_date") @db.Timestamptz(6)
   createdAt          DateTime          @default(now()) @map("created_at") @db.Timestamptz(6)
   creator            users             @relation(fields: [creatorId], references: [id])
@@ -97,6 +103,8 @@ model projects {
   tasks              tasks[]
   areas              areas[]
   attendance         labour_attendance[]
+  labourPayments     labour_payments[]
+  projectProducts    project_products[]
 
   @@index([id, createdAt])
 }
@@ -211,6 +219,7 @@ model labours {
   phonenumber   String?             @map("phone_number")
   createdAt     DateTime            @default(now()) @map("created_at") @db.Timestamptz(6)
   attendance    labour_attendance[]
+  payments      labour_payments[]
 
   @@index([id, createdAt])
 }
@@ -227,4 +236,36 @@ model labour_attendance {
 
   @@unique([date, projectId, labourId])
   @@index([date, projectId])
+}
+
+model labour_payments {
+  id          String   @id @default(uuid()) @db.Uuid
+  labourId    String   @map("labour_id") @db.Uuid
+  projectId   String?  @map("project_id") @db.Uuid
+  amount      Decimal
+  paymentDate DateTime @default(now()) @map("payment_date") @db.Timestamptz(6)
+  remarks     String?
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  labour      labours  @relation(fields: [labourId], references: [id], onDelete: Cascade)
+  project     projects? @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([id, createdAt])
+  @@map("labour_payments")
+}
+
+model project_products {
+  id          String   @id @default(uuid()) @db.Uuid
+  projectId   String   @map("project_id") @db.Uuid
+  productId   String   @map("product_id") @db.Uuid
+  area        Decimal
+  unit        String   // "sq.ft" or "rn.ft"
+  rate        Decimal
+  litresUsed  Decimal? @map("litres_used")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  project     projects @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  product     products @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([id, createdAt])
 }

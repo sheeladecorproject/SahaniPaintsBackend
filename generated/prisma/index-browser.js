@@ -169,6 +169,9 @@ exports.Prisma.ProductsScalarFieldEnum = {
   brandId: 'brandId',
   category: 'category',
   price: 'price',
+  coverageSqFt: 'coverageSqFt',
+  coverageRnFt: 'coverageRnFt',
+  hasToken: 'hasToken',
   createdAt: 'createdAt'
 };
 
@@ -182,6 +185,8 @@ exports.Prisma.ProjectsScalarFieldEnum = {
   paid: 'paid',
   discount: 'discount',
   discountType: 'discountType',
+  tax: 'tax',
+  agreedPrice: 'agreedPrice',
   projectDate: 'projectDate',
   createdAt: 'createdAt'
 };
@@ -253,6 +258,27 @@ exports.Prisma.Labour_attendanceScalarFieldEnum = {
   createdAt: 'createdAt'
 };
 
+exports.Prisma.Labour_paymentsScalarFieldEnum = {
+  id: 'id',
+  labourId: 'labourId',
+  projectId: 'projectId',
+  amount: 'amount',
+  paymentDate: 'paymentDate',
+  remarks: 'remarks',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.Project_productsScalarFieldEnum = {
+  id: 'id',
+  projectId: 'projectId',
+  productId: 'productId',
+  area: 'area',
+  unit: 'unit',
+  rate: 'rate',
+  litresUsed: 'litresUsed',
+  createdAt: 'createdAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -312,7 +338,9 @@ exports.Prisma.ModelName = {
   inquiries: 'inquiries',
   stores: 'stores',
   labours: 'labours',
-  labour_attendance: 'labour_attendance'
+  labour_attendance: 'labour_attendance',
+  labour_payments: 'labour_payments',
+  project_products: 'project_products'
 };
 
 /**

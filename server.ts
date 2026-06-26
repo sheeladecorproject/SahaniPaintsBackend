@@ -18,6 +18,7 @@ import { AreaRouter } from "./router/area.router.js";
 import { ProjectAreaColorsRouter } from "./router/projectAreaColors.router.js";
 import { LabourRouter } from "./router/labour.router.js";
 import { LabourAttendanceRouter } from "./router/labourAttendance.router.js"; 
+import { LabourPaymentRouter } from "./router/labourPayment.router.js";
 import cors from "cors";
 import { AuthorizationRouter } from "./router/authorization.router.js";
 import { authenticate, authorizePage } from "./middleware/authenticate.middleware.js";
@@ -67,6 +68,7 @@ app.use("/v1/areas", authorizePage("site-colors"), AreaRouter);
 app.use("/v1/project-area-colors", authorizePage("site-colors"), ProjectAreaColorsRouter);
 app.use("/v1/labours", authorizePage("labours"), LabourRouter);
 app.use("/v1/labour-attendance", authorizePage("labour-attendance"), LabourAttendanceRouter);
+app.use("/v1/labour-payments", authorizePage("labours"), LabourPaymentRouter);
 
 app.use(globalErrorHandler.handleError);
 

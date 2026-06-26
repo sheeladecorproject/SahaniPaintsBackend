@@ -28,6 +28,10 @@ class LabourAttendanceRepository extends BaseRepository<LabourAttendance, Labour
             where.projectId = filters.projectId;
         }
 
+        if (filters.labourId) {
+            where.labourId = filters.labourId;
+        }
+
         if (filters.date) {
             const start = new Date(filters.date);
             start.setHours(0, 0, 0, 0);

@@ -8,6 +8,8 @@ interface Project {
     paid: number | null;
     discount: number | null;
     discountType: string | null;
+    tax: number | null;
+    agreedPrice: number | null;
     projectDate: Date;
     status: ProjectStatus;
     createdAt: Date;
@@ -18,6 +20,7 @@ interface Project {
     creator: {
         username: string;
     };
+    projectProducts?: any[];
 }
 
 interface ProjectData {
@@ -27,9 +30,12 @@ interface ProjectData {
     paid?: number | null;
     discount?: number | null;
     discountType?: string | null;
+    tax?: number | null;
+    agreedPrice?: number | null;
     projectDate: Date;
     status: ProjectStatus;
     creatorId: string;
+    projectProducts?: any[];
 }
 
 export type { Project, ProjectData, ProjectStatus };
