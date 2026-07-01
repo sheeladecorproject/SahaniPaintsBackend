@@ -2528,7 +2528,7 @@ export namespace Prisma {
 
   export type ProjectsCountOutputType = {
     tasks: number
-    areas: number
+    projectAreaColors: number
     attendance: number
     labourPayments: number
     projectProducts: number
@@ -2536,7 +2536,7 @@ export namespace Prisma {
 
   export type ProjectsCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     tasks?: boolean | ProjectsCountOutputTypeCountTasksArgs
-    areas?: boolean | ProjectsCountOutputTypeCountAreasArgs
+    projectAreaColors?: boolean | ProjectsCountOutputTypeCountProjectAreaColorsArgs
     attendance?: boolean | ProjectsCountOutputTypeCountAttendanceArgs
     labourPayments?: boolean | ProjectsCountOutputTypeCountLabourPaymentsArgs
     projectProducts?: boolean | ProjectsCountOutputTypeCountProjectProductsArgs
@@ -2563,8 +2563,8 @@ export namespace Prisma {
   /**
    * ProjectsCountOutputType without action
    */
-  export type ProjectsCountOutputTypeCountAreasArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: areasWhereInput
+  export type ProjectsCountOutputTypeCountProjectAreaColorsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: project_area_colorsWhereInput
   }
 
   /**
@@ -9622,7 +9622,7 @@ export namespace Prisma {
     creator?: boolean | usersDefaultArgs<ExtArgs>
     customer?: boolean | projects$customerArgs<ExtArgs>
     tasks?: boolean | projects$tasksArgs<ExtArgs>
-    areas?: boolean | projects$areasArgs<ExtArgs>
+    projectAreaColors?: boolean | projects$projectAreaColorsArgs<ExtArgs>
     attendance?: boolean | projects$attendanceArgs<ExtArgs>
     labourPayments?: boolean | projects$labourPaymentsArgs<ExtArgs>
     projectProducts?: boolean | projects$projectProductsArgs<ExtArgs>
@@ -9686,7 +9686,7 @@ export namespace Prisma {
     creator?: boolean | usersDefaultArgs<ExtArgs>
     customer?: boolean | projects$customerArgs<ExtArgs>
     tasks?: boolean | projects$tasksArgs<ExtArgs>
-    areas?: boolean | projects$areasArgs<ExtArgs>
+    projectAreaColors?: boolean | projects$projectAreaColorsArgs<ExtArgs>
     attendance?: boolean | projects$attendanceArgs<ExtArgs>
     labourPayments?: boolean | projects$labourPaymentsArgs<ExtArgs>
     projectProducts?: boolean | projects$projectProductsArgs<ExtArgs>
@@ -9707,7 +9707,7 @@ export namespace Prisma {
       creator: Prisma.$usersPayload<ExtArgs>
       customer: Prisma.$customersPayload<ExtArgs> | null
       tasks: Prisma.$tasksPayload<ExtArgs>[]
-      areas: Prisma.$areasPayload<ExtArgs>[]
+      projectAreaColors: Prisma.$project_area_colorsPayload<ExtArgs>[]
       attendance: Prisma.$labour_attendancePayload<ExtArgs>[]
       labourPayments: Prisma.$labour_paymentsPayload<ExtArgs>[]
       projectProducts: Prisma.$project_productsPayload<ExtArgs>[]
@@ -10123,7 +10123,7 @@ export namespace Prisma {
     creator<T extends usersDefaultArgs<ExtArgs> = {}>(args?: Subset<T, usersDefaultArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     customer<T extends projects$customerArgs<ExtArgs> = {}>(args?: Subset<T, projects$customerArgs<ExtArgs>>): Prisma__customersClient<$Result.GetResult<Prisma.$customersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     tasks<T extends projects$tasksArgs<ExtArgs> = {}>(args?: Subset<T, projects$tasksArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tasksPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    areas<T extends projects$areasArgs<ExtArgs> = {}>(args?: Subset<T, projects$areasArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$areasPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    projectAreaColors<T extends projects$projectAreaColorsArgs<ExtArgs> = {}>(args?: Subset<T, projects$projectAreaColorsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$project_area_colorsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     attendance<T extends projects$attendanceArgs<ExtArgs> = {}>(args?: Subset<T, projects$attendanceArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$labour_attendancePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     labourPayments<T extends projects$labourPaymentsArgs<ExtArgs> = {}>(args?: Subset<T, projects$labourPaymentsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$labour_paymentsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     projectProducts<T extends projects$projectProductsArgs<ExtArgs> = {}>(args?: Subset<T, projects$projectProductsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$project_productsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -10613,27 +10613,27 @@ export namespace Prisma {
   }
 
   /**
-   * projects.areas
+   * projects.projectAreaColors
    */
-  export type projects$areasArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type projects$projectAreaColorsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the areas
+     * Select specific fields to fetch from the project_area_colors
      */
-    select?: areasSelect<ExtArgs> | null
+    select?: project_area_colorsSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the areas
+     * Omit specific fields from the project_area_colors
      */
-    omit?: areasOmit<ExtArgs> | null
+    omit?: project_area_colorsOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: areasInclude<ExtArgs> | null
-    where?: areasWhereInput
-    orderBy?: areasOrderByWithRelationInput | areasOrderByWithRelationInput[]
-    cursor?: areasWhereUniqueInput
+    include?: project_area_colorsInclude<ExtArgs> | null
+    where?: project_area_colorsWhereInput
+    orderBy?: project_area_colorsOrderByWithRelationInput | project_area_colorsOrderByWithRelationInput[]
+    cursor?: project_area_colorsWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: AreasScalarFieldEnum | AreasScalarFieldEnum[]
+    distinct?: Project_area_colorsScalarFieldEnum | Project_area_colorsScalarFieldEnum[]
   }
 
   /**
@@ -11802,21 +11802,18 @@ export namespace Prisma {
   export type AreasMinAggregateOutputType = {
     id: string | null
     name: string | null
-    projectId: string | null
     createdAt: Date | null
   }
 
   export type AreasMaxAggregateOutputType = {
     id: string | null
     name: string | null
-    projectId: string | null
     createdAt: Date | null
   }
 
   export type AreasCountAggregateOutputType = {
     id: number
     name: number
-    projectId: number
     createdAt: number
     _all: number
   }
@@ -11825,21 +11822,18 @@ export namespace Prisma {
   export type AreasMinAggregateInputType = {
     id?: true
     name?: true
-    projectId?: true
     createdAt?: true
   }
 
   export type AreasMaxAggregateInputType = {
     id?: true
     name?: true
-    projectId?: true
     createdAt?: true
   }
 
   export type AreasCountAggregateInputType = {
     id?: true
     name?: true
-    projectId?: true
     createdAt?: true
     _all?: true
   }
@@ -11919,7 +11913,6 @@ export namespace Prisma {
   export type AreasGroupByOutputType = {
     id: string
     name: string
-    projectId: string
     createdAt: Date
     _count: AreasCountAggregateOutputType | null
     _min: AreasMinAggregateOutputType | null
@@ -11943,9 +11936,7 @@ export namespace Prisma {
   export type areasSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    projectId?: boolean
     createdAt?: boolean
-    project?: boolean | projectsDefaultArgs<ExtArgs>
     projectAreaColors?: boolean | areas$projectAreaColorsArgs<ExtArgs>
     _count?: boolean | AreasCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["areas"]>
@@ -11953,49 +11944,37 @@ export namespace Prisma {
   export type areasSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    projectId?: boolean
     createdAt?: boolean
-    project?: boolean | projectsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["areas"]>
 
   export type areasSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    projectId?: boolean
     createdAt?: boolean
-    project?: boolean | projectsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["areas"]>
 
   export type areasSelectScalar = {
     id?: boolean
     name?: boolean
-    projectId?: boolean
     createdAt?: boolean
   }
 
-  export type areasOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "projectId" | "createdAt", ExtArgs["result"]["areas"]>
+  export type areasOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "createdAt", ExtArgs["result"]["areas"]>
   export type areasInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    project?: boolean | projectsDefaultArgs<ExtArgs>
     projectAreaColors?: boolean | areas$projectAreaColorsArgs<ExtArgs>
     _count?: boolean | AreasCountOutputTypeDefaultArgs<ExtArgs>
   }
-  export type areasIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    project?: boolean | projectsDefaultArgs<ExtArgs>
-  }
-  export type areasIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    project?: boolean | projectsDefaultArgs<ExtArgs>
-  }
+  export type areasIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type areasIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
   export type $areasPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "areas"
     objects: {
-      project: Prisma.$projectsPayload<ExtArgs>
       projectAreaColors: Prisma.$project_area_colorsPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
       name: string
-      projectId: string
       createdAt: Date
     }, ExtArgs["result"]["areas"]>
     composites: {}
@@ -12391,7 +12370,6 @@ export namespace Prisma {
    */
   export interface Prisma__areasClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    project<T extends projectsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, projectsDefaultArgs<ExtArgs>>): Prisma__projectsClient<$Result.GetResult<Prisma.$projectsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     projectAreaColors<T extends areas$projectAreaColorsArgs<ExtArgs> = {}>(args?: Subset<T, areas$projectAreaColorsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$project_area_colorsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -12424,7 +12402,6 @@ export namespace Prisma {
   interface areasFieldRefs {
     readonly id: FieldRef<"areas", 'String'>
     readonly name: FieldRef<"areas", 'String'>
-    readonly projectId: FieldRef<"areas", 'String'>
     readonly createdAt: FieldRef<"areas", 'DateTime'>
   }
     
@@ -12680,10 +12657,6 @@ export namespace Prisma {
      */
     data: areasCreateManyInput | areasCreateManyInput[]
     skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: areasIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -12754,10 +12727,6 @@ export namespace Prisma {
      * Limit how many areas to update.
      */
     limit?: number
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: areasIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -12881,6 +12850,7 @@ export namespace Prisma {
 
   export type Project_area_colorsMinAggregateOutputType = {
     id: string | null
+    projectId: string | null
     areaId: string | null
     colorId: string | null
     createdAt: Date | null
@@ -12888,6 +12858,7 @@ export namespace Prisma {
 
   export type Project_area_colorsMaxAggregateOutputType = {
     id: string | null
+    projectId: string | null
     areaId: string | null
     colorId: string | null
     createdAt: Date | null
@@ -12895,6 +12866,7 @@ export namespace Prisma {
 
   export type Project_area_colorsCountAggregateOutputType = {
     id: number
+    projectId: number
     areaId: number
     colorId: number
     createdAt: number
@@ -12904,6 +12876,7 @@ export namespace Prisma {
 
   export type Project_area_colorsMinAggregateInputType = {
     id?: true
+    projectId?: true
     areaId?: true
     colorId?: true
     createdAt?: true
@@ -12911,6 +12884,7 @@ export namespace Prisma {
 
   export type Project_area_colorsMaxAggregateInputType = {
     id?: true
+    projectId?: true
     areaId?: true
     colorId?: true
     createdAt?: true
@@ -12918,6 +12892,7 @@ export namespace Prisma {
 
   export type Project_area_colorsCountAggregateInputType = {
     id?: true
+    projectId?: true
     areaId?: true
     colorId?: true
     createdAt?: true
@@ -12998,6 +12973,7 @@ export namespace Prisma {
 
   export type Project_area_colorsGroupByOutputType = {
     id: string
+    projectId: string
     areaId: string
     colorId: string
     createdAt: Date
@@ -13022,48 +12998,58 @@ export namespace Prisma {
 
   export type project_area_colorsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    projectId?: boolean
     areaId?: boolean
     colorId?: boolean
     createdAt?: boolean
+    project?: boolean | projectsDefaultArgs<ExtArgs>
     area?: boolean | areasDefaultArgs<ExtArgs>
     color?: boolean | colorsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["project_area_colors"]>
 
   export type project_area_colorsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    projectId?: boolean
     areaId?: boolean
     colorId?: boolean
     createdAt?: boolean
+    project?: boolean | projectsDefaultArgs<ExtArgs>
     area?: boolean | areasDefaultArgs<ExtArgs>
     color?: boolean | colorsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["project_area_colors"]>
 
   export type project_area_colorsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    projectId?: boolean
     areaId?: boolean
     colorId?: boolean
     createdAt?: boolean
+    project?: boolean | projectsDefaultArgs<ExtArgs>
     area?: boolean | areasDefaultArgs<ExtArgs>
     color?: boolean | colorsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["project_area_colors"]>
 
   export type project_area_colorsSelectScalar = {
     id?: boolean
+    projectId?: boolean
     areaId?: boolean
     colorId?: boolean
     createdAt?: boolean
   }
 
-  export type project_area_colorsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "areaId" | "colorId" | "createdAt", ExtArgs["result"]["project_area_colors"]>
+  export type project_area_colorsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "projectId" | "areaId" | "colorId" | "createdAt", ExtArgs["result"]["project_area_colors"]>
   export type project_area_colorsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    project?: boolean | projectsDefaultArgs<ExtArgs>
     area?: boolean | areasDefaultArgs<ExtArgs>
     color?: boolean | colorsDefaultArgs<ExtArgs>
   }
   export type project_area_colorsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    project?: boolean | projectsDefaultArgs<ExtArgs>
     area?: boolean | areasDefaultArgs<ExtArgs>
     color?: boolean | colorsDefaultArgs<ExtArgs>
   }
   export type project_area_colorsIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    project?: boolean | projectsDefaultArgs<ExtArgs>
     area?: boolean | areasDefaultArgs<ExtArgs>
     color?: boolean | colorsDefaultArgs<ExtArgs>
   }
@@ -13071,11 +13057,13 @@ export namespace Prisma {
   export type $project_area_colorsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "project_area_colors"
     objects: {
+      project: Prisma.$projectsPayload<ExtArgs>
       area: Prisma.$areasPayload<ExtArgs>
       color: Prisma.$colorsPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
+      projectId: string
       areaId: string
       colorId: string
       createdAt: Date
@@ -13473,6 +13461,7 @@ export namespace Prisma {
    */
   export interface Prisma__project_area_colorsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    project<T extends projectsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, projectsDefaultArgs<ExtArgs>>): Prisma__projectsClient<$Result.GetResult<Prisma.$projectsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     area<T extends areasDefaultArgs<ExtArgs> = {}>(args?: Subset<T, areasDefaultArgs<ExtArgs>>): Prisma__areasClient<$Result.GetResult<Prisma.$areasPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     color<T extends colorsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, colorsDefaultArgs<ExtArgs>>): Prisma__colorsClient<$Result.GetResult<Prisma.$colorsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
@@ -13505,6 +13494,7 @@ export namespace Prisma {
    */
   interface project_area_colorsFieldRefs {
     readonly id: FieldRef<"project_area_colors", 'String'>
+    readonly projectId: FieldRef<"project_area_colors", 'String'>
     readonly areaId: FieldRef<"project_area_colors", 'String'>
     readonly colorId: FieldRef<"project_area_colors", 'String'>
     readonly createdAt: FieldRef<"project_area_colors", 'DateTime'>
@@ -21732,7 +21722,6 @@ export namespace Prisma {
   export const AreasScalarFieldEnum: {
     id: 'id',
     name: 'name',
-    projectId: 'projectId',
     createdAt: 'createdAt'
   };
 
@@ -21741,6 +21730,7 @@ export namespace Prisma {
 
   export const Project_area_colorsScalarFieldEnum: {
     id: 'id',
+    projectId: 'projectId',
     areaId: 'areaId',
     colorId: 'colorId',
     createdAt: 'createdAt'
@@ -22404,7 +22394,7 @@ export namespace Prisma {
     creator?: XOR<UsersScalarRelationFilter, usersWhereInput>
     customer?: XOR<CustomersNullableScalarRelationFilter, customersWhereInput> | null
     tasks?: TasksListRelationFilter
-    areas?: AreasListRelationFilter
+    projectAreaColors?: Project_area_colorsListRelationFilter
     attendance?: Labour_attendanceListRelationFilter
     labourPayments?: Labour_paymentsListRelationFilter
     projectProducts?: Project_productsListRelationFilter
@@ -22427,7 +22417,7 @@ export namespace Prisma {
     creator?: usersOrderByWithRelationInput
     customer?: customersOrderByWithRelationInput
     tasks?: tasksOrderByRelationAggregateInput
-    areas?: areasOrderByRelationAggregateInput
+    projectAreaColors?: project_area_colorsOrderByRelationAggregateInput
     attendance?: labour_attendanceOrderByRelationAggregateInput
     labourPayments?: labour_paymentsOrderByRelationAggregateInput
     projectProducts?: project_productsOrderByRelationAggregateInput
@@ -22453,7 +22443,7 @@ export namespace Prisma {
     creator?: XOR<UsersScalarRelationFilter, usersWhereInput>
     customer?: XOR<CustomersNullableScalarRelationFilter, customersWhereInput> | null
     tasks?: TasksListRelationFilter
-    areas?: AreasListRelationFilter
+    projectAreaColors?: Project_area_colorsListRelationFilter
     attendance?: Labour_attendanceListRelationFilter
     labourPayments?: Labour_paymentsListRelationFilter
     projectProducts?: Project_productsListRelationFilter
@@ -22556,38 +22546,30 @@ export namespace Prisma {
     NOT?: areasWhereInput | areasWhereInput[]
     id?: UuidFilter<"areas"> | string
     name?: StringFilter<"areas"> | string
-    projectId?: UuidFilter<"areas"> | string
     createdAt?: DateTimeFilter<"areas"> | Date | string
-    project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
     projectAreaColors?: Project_area_colorsListRelationFilter
   }
 
   export type areasOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
-    projectId?: SortOrder
     createdAt?: SortOrder
-    project?: projectsOrderByWithRelationInput
     projectAreaColors?: project_area_colorsOrderByRelationAggregateInput
   }
 
   export type areasWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    name_projectId?: areasNameProjectIdCompoundUniqueInput
+    name?: string
     AND?: areasWhereInput | areasWhereInput[]
     OR?: areasWhereInput[]
     NOT?: areasWhereInput | areasWhereInput[]
-    name?: StringFilter<"areas"> | string
-    projectId?: UuidFilter<"areas"> | string
     createdAt?: DateTimeFilter<"areas"> | Date | string
-    project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
     projectAreaColors?: Project_area_colorsListRelationFilter
-  }, "id" | "name_projectId">
+  }, "id" | "name">
 
   export type areasOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
-    projectId?: SortOrder
     createdAt?: SortOrder
     _count?: areasCountOrderByAggregateInput
     _max?: areasMaxOrderByAggregateInput
@@ -22600,7 +22582,6 @@ export namespace Prisma {
     NOT?: areasScalarWhereWithAggregatesInput | areasScalarWhereWithAggregatesInput[]
     id?: UuidWithAggregatesFilter<"areas"> | string
     name?: StringWithAggregatesFilter<"areas"> | string
-    projectId?: UuidWithAggregatesFilter<"areas"> | string
     createdAt?: DateTimeWithAggregatesFilter<"areas"> | Date | string
   }
 
@@ -22609,37 +22590,44 @@ export namespace Prisma {
     OR?: project_area_colorsWhereInput[]
     NOT?: project_area_colorsWhereInput | project_area_colorsWhereInput[]
     id?: UuidFilter<"project_area_colors"> | string
+    projectId?: UuidFilter<"project_area_colors"> | string
     areaId?: UuidFilter<"project_area_colors"> | string
     colorId?: UuidFilter<"project_area_colors"> | string
     createdAt?: DateTimeFilter<"project_area_colors"> | Date | string
+    project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
     area?: XOR<AreasScalarRelationFilter, areasWhereInput>
     color?: XOR<ColorsScalarRelationFilter, colorsWhereInput>
   }
 
   export type project_area_colorsOrderByWithRelationInput = {
     id?: SortOrder
+    projectId?: SortOrder
     areaId?: SortOrder
     colorId?: SortOrder
     createdAt?: SortOrder
+    project?: projectsOrderByWithRelationInput
     area?: areasOrderByWithRelationInput
     color?: colorsOrderByWithRelationInput
   }
 
   export type project_area_colorsWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    areaId_colorId?: project_area_colorsAreaIdColorIdCompoundUniqueInput
+    projectId_areaId_colorId?: project_area_colorsProjectIdAreaIdColorIdCompoundUniqueInput
     AND?: project_area_colorsWhereInput | project_area_colorsWhereInput[]
     OR?: project_area_colorsWhereInput[]
     NOT?: project_area_colorsWhereInput | project_area_colorsWhereInput[]
+    projectId?: UuidFilter<"project_area_colors"> | string
     areaId?: UuidFilter<"project_area_colors"> | string
     colorId?: UuidFilter<"project_area_colors"> | string
     createdAt?: DateTimeFilter<"project_area_colors"> | Date | string
+    project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
     area?: XOR<AreasScalarRelationFilter, areasWhereInput>
     color?: XOR<ColorsScalarRelationFilter, colorsWhereInput>
-  }, "id" | "areaId_colorId">
+  }, "id" | "projectId_areaId_colorId">
 
   export type project_area_colorsOrderByWithAggregationInput = {
     id?: SortOrder
+    projectId?: SortOrder
     areaId?: SortOrder
     colorId?: SortOrder
     createdAt?: SortOrder
@@ -22653,6 +22641,7 @@ export namespace Prisma {
     OR?: project_area_colorsScalarWhereWithAggregatesInput[]
     NOT?: project_area_colorsScalarWhereWithAggregatesInput | project_area_colorsScalarWhereWithAggregatesInput[]
     id?: UuidWithAggregatesFilter<"project_area_colors"> | string
+    projectId?: UuidWithAggregatesFilter<"project_area_colors"> | string
     areaId?: UuidWithAggregatesFilter<"project_area_colors"> | string
     colorId?: UuidWithAggregatesFilter<"project_area_colors"> | string
     createdAt?: DateTimeWithAggregatesFilter<"project_area_colors"> | Date | string
@@ -23543,7 +23532,7 @@ export namespace Prisma {
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
-    areas?: areasCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsCreateNestedManyWithoutProjectInput
     projectProducts?: project_productsCreateNestedManyWithoutProjectInput
@@ -23564,7 +23553,7 @@ export namespace Prisma {
     projectDate: Date | string
     createdAt?: Date | string
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
-    areas?: areasUncheckedCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsUncheckedCreateNestedManyWithoutProjectInput
     projectProducts?: project_productsUncheckedCreateNestedManyWithoutProjectInput
@@ -23585,7 +23574,7 @@ export namespace Prisma {
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
-    areas?: areasUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUpdateManyWithoutProjectNestedInput
     projectProducts?: project_productsUpdateManyWithoutProjectNestedInput
@@ -23606,7 +23595,7 @@ export namespace Prisma {
     projectDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
-    areas?: areasUncheckedUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     projectProducts?: project_productsUncheckedUpdateManyWithoutProjectNestedInput
@@ -23715,14 +23704,12 @@ export namespace Prisma {
     id?: string
     name: string
     createdAt?: Date | string
-    project: projectsCreateNestedOneWithoutAreasInput
     projectAreaColors?: project_area_colorsCreateNestedManyWithoutAreaInput
   }
 
   export type areasUncheckedCreateInput = {
     id?: string
     name: string
-    projectId: string
     createdAt?: Date | string
     projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutAreaInput
   }
@@ -23731,14 +23718,12 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    project?: projectsUpdateOneRequiredWithoutAreasNestedInput
     projectAreaColors?: project_area_colorsUpdateManyWithoutAreaNestedInput
   }
 
   export type areasUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    projectId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutAreaNestedInput
   }
@@ -23746,7 +23731,6 @@ export namespace Prisma {
   export type areasCreateManyInput = {
     id?: string
     name: string
-    projectId: string
     createdAt?: Date | string
   }
 
@@ -23759,19 +23743,20 @@ export namespace Prisma {
   export type areasUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    projectId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type project_area_colorsCreateInput = {
     id?: string
     createdAt?: Date | string
+    project: projectsCreateNestedOneWithoutProjectAreaColorsInput
     area: areasCreateNestedOneWithoutProjectAreaColorsInput
     color: colorsCreateNestedOneWithoutProjectAreaColorsInput
   }
 
   export type project_area_colorsUncheckedCreateInput = {
     id?: string
+    projectId: string
     areaId: string
     colorId: string
     createdAt?: Date | string
@@ -23780,12 +23765,14 @@ export namespace Prisma {
   export type project_area_colorsUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    project?: projectsUpdateOneRequiredWithoutProjectAreaColorsNestedInput
     area?: areasUpdateOneRequiredWithoutProjectAreaColorsNestedInput
     color?: colorsUpdateOneRequiredWithoutProjectAreaColorsNestedInput
   }
 
   export type project_area_colorsUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    projectId?: StringFieldUpdateOperationsInput | string
     areaId?: StringFieldUpdateOperationsInput | string
     colorId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -23793,6 +23780,7 @@ export namespace Prisma {
 
   export type project_area_colorsCreateManyInput = {
     id?: string
+    projectId: string
     areaId: string
     colorId: string
     createdAt?: Date | string
@@ -23805,6 +23793,7 @@ export namespace Prisma {
 
   export type project_area_colorsUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
+    projectId?: StringFieldUpdateOperationsInput | string
     areaId?: StringFieldUpdateOperationsInput | string
     colorId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -24762,10 +24751,10 @@ export namespace Prisma {
     none?: tasksWhereInput
   }
 
-  export type AreasListRelationFilter = {
-    every?: areasWhereInput
-    some?: areasWhereInput
-    none?: areasWhereInput
+  export type Project_area_colorsListRelationFilter = {
+    every?: project_area_colorsWhereInput
+    some?: project_area_colorsWhereInput
+    none?: project_area_colorsWhereInput
   }
 
   export type Labour_attendanceListRelationFilter = {
@@ -24784,7 +24773,7 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type areasOrderByRelationAggregateInput = {
+  export type project_area_colorsOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -24885,16 +24874,6 @@ export namespace Prisma {
     _max?: NestedEnumProjectStatusFilter<$PrismaModel>
   }
 
-  export type Project_area_colorsListRelationFilter = {
-    every?: project_area_colorsWhereInput
-    some?: project_area_colorsWhereInput
-    none?: project_area_colorsWhereInput
-  }
-
-  export type project_area_colorsOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
   export type colorsNameShadeCompoundUniqueInput = {
     name: string
     shade: string
@@ -24921,35 +24900,27 @@ export namespace Prisma {
     createdAt?: SortOrder
   }
 
-  export type ProjectsScalarRelationFilter = {
-    is?: projectsWhereInput
-    isNot?: projectsWhereInput
-  }
-
-  export type areasNameProjectIdCompoundUniqueInput = {
-    name: string
-    projectId: string
-  }
-
   export type areasCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    projectId?: SortOrder
     createdAt?: SortOrder
   }
 
   export type areasMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    projectId?: SortOrder
     createdAt?: SortOrder
   }
 
   export type areasMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    projectId?: SortOrder
     createdAt?: SortOrder
+  }
+
+  export type ProjectsScalarRelationFilter = {
+    is?: projectsWhereInput
+    isNot?: projectsWhereInput
   }
 
   export type AreasScalarRelationFilter = {
@@ -24962,13 +24933,15 @@ export namespace Prisma {
     isNot?: colorsWhereInput
   }
 
-  export type project_area_colorsAreaIdColorIdCompoundUniqueInput = {
+  export type project_area_colorsProjectIdAreaIdColorIdCompoundUniqueInput = {
+    projectId: string
     areaId: string
     colorId: string
   }
 
   export type project_area_colorsCountOrderByAggregateInput = {
     id?: SortOrder
+    projectId?: SortOrder
     areaId?: SortOrder
     colorId?: SortOrder
     createdAt?: SortOrder
@@ -24976,6 +24949,7 @@ export namespace Prisma {
 
   export type project_area_colorsMaxOrderByAggregateInput = {
     id?: SortOrder
+    projectId?: SortOrder
     areaId?: SortOrder
     colorId?: SortOrder
     createdAt?: SortOrder
@@ -24983,6 +24957,7 @@ export namespace Prisma {
 
   export type project_area_colorsMinOrderByAggregateInput = {
     id?: SortOrder
+    projectId?: SortOrder
     areaId?: SortOrder
     colorId?: SortOrder
     createdAt?: SortOrder
@@ -25666,11 +25641,11 @@ export namespace Prisma {
     connect?: tasksWhereUniqueInput | tasksWhereUniqueInput[]
   }
 
-  export type areasCreateNestedManyWithoutProjectInput = {
-    create?: XOR<areasCreateWithoutProjectInput, areasUncheckedCreateWithoutProjectInput> | areasCreateWithoutProjectInput[] | areasUncheckedCreateWithoutProjectInput[]
-    connectOrCreate?: areasCreateOrConnectWithoutProjectInput | areasCreateOrConnectWithoutProjectInput[]
-    createMany?: areasCreateManyProjectInputEnvelope
-    connect?: areasWhereUniqueInput | areasWhereUniqueInput[]
+  export type project_area_colorsCreateNestedManyWithoutProjectInput = {
+    create?: XOR<project_area_colorsCreateWithoutProjectInput, project_area_colorsUncheckedCreateWithoutProjectInput> | project_area_colorsCreateWithoutProjectInput[] | project_area_colorsUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: project_area_colorsCreateOrConnectWithoutProjectInput | project_area_colorsCreateOrConnectWithoutProjectInput[]
+    createMany?: project_area_colorsCreateManyProjectInputEnvelope
+    connect?: project_area_colorsWhereUniqueInput | project_area_colorsWhereUniqueInput[]
   }
 
   export type labour_attendanceCreateNestedManyWithoutProjectInput = {
@@ -25701,11 +25676,11 @@ export namespace Prisma {
     connect?: tasksWhereUniqueInput | tasksWhereUniqueInput[]
   }
 
-  export type areasUncheckedCreateNestedManyWithoutProjectInput = {
-    create?: XOR<areasCreateWithoutProjectInput, areasUncheckedCreateWithoutProjectInput> | areasCreateWithoutProjectInput[] | areasUncheckedCreateWithoutProjectInput[]
-    connectOrCreate?: areasCreateOrConnectWithoutProjectInput | areasCreateOrConnectWithoutProjectInput[]
-    createMany?: areasCreateManyProjectInputEnvelope
-    connect?: areasWhereUniqueInput | areasWhereUniqueInput[]
+  export type project_area_colorsUncheckedCreateNestedManyWithoutProjectInput = {
+    create?: XOR<project_area_colorsCreateWithoutProjectInput, project_area_colorsUncheckedCreateWithoutProjectInput> | project_area_colorsCreateWithoutProjectInput[] | project_area_colorsUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: project_area_colorsCreateOrConnectWithoutProjectInput | project_area_colorsCreateOrConnectWithoutProjectInput[]
+    createMany?: project_area_colorsCreateManyProjectInputEnvelope
+    connect?: project_area_colorsWhereUniqueInput | project_area_colorsWhereUniqueInput[]
   }
 
   export type labour_attendanceUncheckedCreateNestedManyWithoutProjectInput = {
@@ -25765,18 +25740,18 @@ export namespace Prisma {
     deleteMany?: tasksScalarWhereInput | tasksScalarWhereInput[]
   }
 
-  export type areasUpdateManyWithoutProjectNestedInput = {
-    create?: XOR<areasCreateWithoutProjectInput, areasUncheckedCreateWithoutProjectInput> | areasCreateWithoutProjectInput[] | areasUncheckedCreateWithoutProjectInput[]
-    connectOrCreate?: areasCreateOrConnectWithoutProjectInput | areasCreateOrConnectWithoutProjectInput[]
-    upsert?: areasUpsertWithWhereUniqueWithoutProjectInput | areasUpsertWithWhereUniqueWithoutProjectInput[]
-    createMany?: areasCreateManyProjectInputEnvelope
-    set?: areasWhereUniqueInput | areasWhereUniqueInput[]
-    disconnect?: areasWhereUniqueInput | areasWhereUniqueInput[]
-    delete?: areasWhereUniqueInput | areasWhereUniqueInput[]
-    connect?: areasWhereUniqueInput | areasWhereUniqueInput[]
-    update?: areasUpdateWithWhereUniqueWithoutProjectInput | areasUpdateWithWhereUniqueWithoutProjectInput[]
-    updateMany?: areasUpdateManyWithWhereWithoutProjectInput | areasUpdateManyWithWhereWithoutProjectInput[]
-    deleteMany?: areasScalarWhereInput | areasScalarWhereInput[]
+  export type project_area_colorsUpdateManyWithoutProjectNestedInput = {
+    create?: XOR<project_area_colorsCreateWithoutProjectInput, project_area_colorsUncheckedCreateWithoutProjectInput> | project_area_colorsCreateWithoutProjectInput[] | project_area_colorsUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: project_area_colorsCreateOrConnectWithoutProjectInput | project_area_colorsCreateOrConnectWithoutProjectInput[]
+    upsert?: project_area_colorsUpsertWithWhereUniqueWithoutProjectInput | project_area_colorsUpsertWithWhereUniqueWithoutProjectInput[]
+    createMany?: project_area_colorsCreateManyProjectInputEnvelope
+    set?: project_area_colorsWhereUniqueInput | project_area_colorsWhereUniqueInput[]
+    disconnect?: project_area_colorsWhereUniqueInput | project_area_colorsWhereUniqueInput[]
+    delete?: project_area_colorsWhereUniqueInput | project_area_colorsWhereUniqueInput[]
+    connect?: project_area_colorsWhereUniqueInput | project_area_colorsWhereUniqueInput[]
+    update?: project_area_colorsUpdateWithWhereUniqueWithoutProjectInput | project_area_colorsUpdateWithWhereUniqueWithoutProjectInput[]
+    updateMany?: project_area_colorsUpdateManyWithWhereWithoutProjectInput | project_area_colorsUpdateManyWithWhereWithoutProjectInput[]
+    deleteMany?: project_area_colorsScalarWhereInput | project_area_colorsScalarWhereInput[]
   }
 
   export type labour_attendanceUpdateManyWithoutProjectNestedInput = {
@@ -25835,18 +25810,18 @@ export namespace Prisma {
     deleteMany?: tasksScalarWhereInput | tasksScalarWhereInput[]
   }
 
-  export type areasUncheckedUpdateManyWithoutProjectNestedInput = {
-    create?: XOR<areasCreateWithoutProjectInput, areasUncheckedCreateWithoutProjectInput> | areasCreateWithoutProjectInput[] | areasUncheckedCreateWithoutProjectInput[]
-    connectOrCreate?: areasCreateOrConnectWithoutProjectInput | areasCreateOrConnectWithoutProjectInput[]
-    upsert?: areasUpsertWithWhereUniqueWithoutProjectInput | areasUpsertWithWhereUniqueWithoutProjectInput[]
-    createMany?: areasCreateManyProjectInputEnvelope
-    set?: areasWhereUniqueInput | areasWhereUniqueInput[]
-    disconnect?: areasWhereUniqueInput | areasWhereUniqueInput[]
-    delete?: areasWhereUniqueInput | areasWhereUniqueInput[]
-    connect?: areasWhereUniqueInput | areasWhereUniqueInput[]
-    update?: areasUpdateWithWhereUniqueWithoutProjectInput | areasUpdateWithWhereUniqueWithoutProjectInput[]
-    updateMany?: areasUpdateManyWithWhereWithoutProjectInput | areasUpdateManyWithWhereWithoutProjectInput[]
-    deleteMany?: areasScalarWhereInput | areasScalarWhereInput[]
+  export type project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput = {
+    create?: XOR<project_area_colorsCreateWithoutProjectInput, project_area_colorsUncheckedCreateWithoutProjectInput> | project_area_colorsCreateWithoutProjectInput[] | project_area_colorsUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: project_area_colorsCreateOrConnectWithoutProjectInput | project_area_colorsCreateOrConnectWithoutProjectInput[]
+    upsert?: project_area_colorsUpsertWithWhereUniqueWithoutProjectInput | project_area_colorsUpsertWithWhereUniqueWithoutProjectInput[]
+    createMany?: project_area_colorsCreateManyProjectInputEnvelope
+    set?: project_area_colorsWhereUniqueInput | project_area_colorsWhereUniqueInput[]
+    disconnect?: project_area_colorsWhereUniqueInput | project_area_colorsWhereUniqueInput[]
+    delete?: project_area_colorsWhereUniqueInput | project_area_colorsWhereUniqueInput[]
+    connect?: project_area_colorsWhereUniqueInput | project_area_colorsWhereUniqueInput[]
+    update?: project_area_colorsUpdateWithWhereUniqueWithoutProjectInput | project_area_colorsUpdateWithWhereUniqueWithoutProjectInput[]
+    updateMany?: project_area_colorsUpdateManyWithWhereWithoutProjectInput | project_area_colorsUpdateManyWithWhereWithoutProjectInput[]
+    deleteMany?: project_area_colorsScalarWhereInput | project_area_colorsScalarWhereInput[]
   }
 
   export type labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput = {
@@ -25933,12 +25908,6 @@ export namespace Prisma {
     deleteMany?: project_area_colorsScalarWhereInput | project_area_colorsScalarWhereInput[]
   }
 
-  export type projectsCreateNestedOneWithoutAreasInput = {
-    create?: XOR<projectsCreateWithoutAreasInput, projectsUncheckedCreateWithoutAreasInput>
-    connectOrCreate?: projectsCreateOrConnectWithoutAreasInput
-    connect?: projectsWhereUniqueInput
-  }
-
   export type project_area_colorsCreateNestedManyWithoutAreaInput = {
     create?: XOR<project_area_colorsCreateWithoutAreaInput, project_area_colorsUncheckedCreateWithoutAreaInput> | project_area_colorsCreateWithoutAreaInput[] | project_area_colorsUncheckedCreateWithoutAreaInput[]
     connectOrCreate?: project_area_colorsCreateOrConnectWithoutAreaInput | project_area_colorsCreateOrConnectWithoutAreaInput[]
@@ -25951,14 +25920,6 @@ export namespace Prisma {
     connectOrCreate?: project_area_colorsCreateOrConnectWithoutAreaInput | project_area_colorsCreateOrConnectWithoutAreaInput[]
     createMany?: project_area_colorsCreateManyAreaInputEnvelope
     connect?: project_area_colorsWhereUniqueInput | project_area_colorsWhereUniqueInput[]
-  }
-
-  export type projectsUpdateOneRequiredWithoutAreasNestedInput = {
-    create?: XOR<projectsCreateWithoutAreasInput, projectsUncheckedCreateWithoutAreasInput>
-    connectOrCreate?: projectsCreateOrConnectWithoutAreasInput
-    upsert?: projectsUpsertWithoutAreasInput
-    connect?: projectsWhereUniqueInput
-    update?: XOR<XOR<projectsUpdateToOneWithWhereWithoutAreasInput, projectsUpdateWithoutAreasInput>, projectsUncheckedUpdateWithoutAreasInput>
   }
 
   export type project_area_colorsUpdateManyWithoutAreaNestedInput = {
@@ -25989,6 +25950,12 @@ export namespace Prisma {
     deleteMany?: project_area_colorsScalarWhereInput | project_area_colorsScalarWhereInput[]
   }
 
+  export type projectsCreateNestedOneWithoutProjectAreaColorsInput = {
+    create?: XOR<projectsCreateWithoutProjectAreaColorsInput, projectsUncheckedCreateWithoutProjectAreaColorsInput>
+    connectOrCreate?: projectsCreateOrConnectWithoutProjectAreaColorsInput
+    connect?: projectsWhereUniqueInput
+  }
+
   export type areasCreateNestedOneWithoutProjectAreaColorsInput = {
     create?: XOR<areasCreateWithoutProjectAreaColorsInput, areasUncheckedCreateWithoutProjectAreaColorsInput>
     connectOrCreate?: areasCreateOrConnectWithoutProjectAreaColorsInput
@@ -25999,6 +25966,14 @@ export namespace Prisma {
     create?: XOR<colorsCreateWithoutProjectAreaColorsInput, colorsUncheckedCreateWithoutProjectAreaColorsInput>
     connectOrCreate?: colorsCreateOrConnectWithoutProjectAreaColorsInput
     connect?: colorsWhereUniqueInput
+  }
+
+  export type projectsUpdateOneRequiredWithoutProjectAreaColorsNestedInput = {
+    create?: XOR<projectsCreateWithoutProjectAreaColorsInput, projectsUncheckedCreateWithoutProjectAreaColorsInput>
+    connectOrCreate?: projectsCreateOrConnectWithoutProjectAreaColorsInput
+    upsert?: projectsUpsertWithoutProjectAreaColorsInput
+    connect?: projectsWhereUniqueInput
+    update?: XOR<XOR<projectsUpdateToOneWithWhereWithoutProjectAreaColorsInput, projectsUpdateWithoutProjectAreaColorsInput>, projectsUncheckedUpdateWithoutProjectAreaColorsInput>
   }
 
   export type areasUpdateOneRequiredWithoutProjectAreaColorsNestedInput = {
@@ -26572,7 +26547,7 @@ export namespace Prisma {
     createdAt?: Date | string
     customer?: customersCreateNestedOneWithoutProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
-    areas?: areasCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsCreateNestedManyWithoutProjectInput
     projectProducts?: project_productsCreateNestedManyWithoutProjectInput
@@ -26592,7 +26567,7 @@ export namespace Prisma {
     projectDate: Date | string
     createdAt?: Date | string
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
-    areas?: areasUncheckedCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsUncheckedCreateNestedManyWithoutProjectInput
     projectProducts?: project_productsUncheckedCreateNestedManyWithoutProjectInput
@@ -26880,7 +26855,7 @@ export namespace Prisma {
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
-    areas?: areasCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsCreateNestedManyWithoutProjectInput
     projectProducts?: project_productsCreateNestedManyWithoutProjectInput
@@ -26900,7 +26875,7 @@ export namespace Prisma {
     projectDate: Date | string
     createdAt?: Date | string
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
-    areas?: areasUncheckedCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsUncheckedCreateNestedManyWithoutProjectInput
     projectProducts?: project_productsUncheckedCreateNestedManyWithoutProjectInput
@@ -27189,27 +27164,27 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type areasCreateWithoutProjectInput = {
+  export type project_area_colorsCreateWithoutProjectInput = {
     id?: string
-    name: string
     createdAt?: Date | string
-    projectAreaColors?: project_area_colorsCreateNestedManyWithoutAreaInput
+    area: areasCreateNestedOneWithoutProjectAreaColorsInput
+    color: colorsCreateNestedOneWithoutProjectAreaColorsInput
   }
 
-  export type areasUncheckedCreateWithoutProjectInput = {
+  export type project_area_colorsUncheckedCreateWithoutProjectInput = {
     id?: string
-    name: string
+    areaId: string
+    colorId: string
     createdAt?: Date | string
-    projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutAreaInput
   }
 
-  export type areasCreateOrConnectWithoutProjectInput = {
-    where: areasWhereUniqueInput
-    create: XOR<areasCreateWithoutProjectInput, areasUncheckedCreateWithoutProjectInput>
+  export type project_area_colorsCreateOrConnectWithoutProjectInput = {
+    where: project_area_colorsWhereUniqueInput
+    create: XOR<project_area_colorsCreateWithoutProjectInput, project_area_colorsUncheckedCreateWithoutProjectInput>
   }
 
-  export type areasCreateManyProjectInputEnvelope = {
-    data: areasCreateManyProjectInput | areasCreateManyProjectInput[]
+  export type project_area_colorsCreateManyProjectInputEnvelope = {
+    data: project_area_colorsCreateManyProjectInput | project_area_colorsCreateManyProjectInput[]
     skipDuplicates?: boolean
   }
 
@@ -27395,30 +27370,31 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"tasks"> | Date | string
   }
 
-  export type areasUpsertWithWhereUniqueWithoutProjectInput = {
-    where: areasWhereUniqueInput
-    update: XOR<areasUpdateWithoutProjectInput, areasUncheckedUpdateWithoutProjectInput>
-    create: XOR<areasCreateWithoutProjectInput, areasUncheckedCreateWithoutProjectInput>
+  export type project_area_colorsUpsertWithWhereUniqueWithoutProjectInput = {
+    where: project_area_colorsWhereUniqueInput
+    update: XOR<project_area_colorsUpdateWithoutProjectInput, project_area_colorsUncheckedUpdateWithoutProjectInput>
+    create: XOR<project_area_colorsCreateWithoutProjectInput, project_area_colorsUncheckedCreateWithoutProjectInput>
   }
 
-  export type areasUpdateWithWhereUniqueWithoutProjectInput = {
-    where: areasWhereUniqueInput
-    data: XOR<areasUpdateWithoutProjectInput, areasUncheckedUpdateWithoutProjectInput>
+  export type project_area_colorsUpdateWithWhereUniqueWithoutProjectInput = {
+    where: project_area_colorsWhereUniqueInput
+    data: XOR<project_area_colorsUpdateWithoutProjectInput, project_area_colorsUncheckedUpdateWithoutProjectInput>
   }
 
-  export type areasUpdateManyWithWhereWithoutProjectInput = {
-    where: areasScalarWhereInput
-    data: XOR<areasUpdateManyMutationInput, areasUncheckedUpdateManyWithoutProjectInput>
+  export type project_area_colorsUpdateManyWithWhereWithoutProjectInput = {
+    where: project_area_colorsScalarWhereInput
+    data: XOR<project_area_colorsUpdateManyMutationInput, project_area_colorsUncheckedUpdateManyWithoutProjectInput>
   }
 
-  export type areasScalarWhereInput = {
-    AND?: areasScalarWhereInput | areasScalarWhereInput[]
-    OR?: areasScalarWhereInput[]
-    NOT?: areasScalarWhereInput | areasScalarWhereInput[]
-    id?: UuidFilter<"areas"> | string
-    name?: StringFilter<"areas"> | string
-    projectId?: UuidFilter<"areas"> | string
-    createdAt?: DateTimeFilter<"areas"> | Date | string
+  export type project_area_colorsScalarWhereInput = {
+    AND?: project_area_colorsScalarWhereInput | project_area_colorsScalarWhereInput[]
+    OR?: project_area_colorsScalarWhereInput[]
+    NOT?: project_area_colorsScalarWhereInput | project_area_colorsScalarWhereInput[]
+    id?: UuidFilter<"project_area_colors"> | string
+    projectId?: UuidFilter<"project_area_colors"> | string
+    areaId?: UuidFilter<"project_area_colors"> | string
+    colorId?: UuidFilter<"project_area_colors"> | string
+    createdAt?: DateTimeFilter<"project_area_colors"> | Date | string
   }
 
   export type labour_attendanceUpsertWithWhereUniqueWithoutProjectInput = {
@@ -27496,11 +27472,13 @@ export namespace Prisma {
   export type project_area_colorsCreateWithoutColorInput = {
     id?: string
     createdAt?: Date | string
+    project: projectsCreateNestedOneWithoutProjectAreaColorsInput
     area: areasCreateNestedOneWithoutProjectAreaColorsInput
   }
 
   export type project_area_colorsUncheckedCreateWithoutColorInput = {
     id?: string
+    projectId: string
     areaId: string
     createdAt?: Date | string
   }
@@ -27531,17 +27509,47 @@ export namespace Prisma {
     data: XOR<project_area_colorsUpdateManyMutationInput, project_area_colorsUncheckedUpdateManyWithoutColorInput>
   }
 
-  export type project_area_colorsScalarWhereInput = {
-    AND?: project_area_colorsScalarWhereInput | project_area_colorsScalarWhereInput[]
-    OR?: project_area_colorsScalarWhereInput[]
-    NOT?: project_area_colorsScalarWhereInput | project_area_colorsScalarWhereInput[]
-    id?: UuidFilter<"project_area_colors"> | string
-    areaId?: UuidFilter<"project_area_colors"> | string
-    colorId?: UuidFilter<"project_area_colors"> | string
-    createdAt?: DateTimeFilter<"project_area_colors"> | Date | string
+  export type project_area_colorsCreateWithoutAreaInput = {
+    id?: string
+    createdAt?: Date | string
+    project: projectsCreateNestedOneWithoutProjectAreaColorsInput
+    color: colorsCreateNestedOneWithoutProjectAreaColorsInput
   }
 
-  export type projectsCreateWithoutAreasInput = {
+  export type project_area_colorsUncheckedCreateWithoutAreaInput = {
+    id?: string
+    projectId: string
+    colorId: string
+    createdAt?: Date | string
+  }
+
+  export type project_area_colorsCreateOrConnectWithoutAreaInput = {
+    where: project_area_colorsWhereUniqueInput
+    create: XOR<project_area_colorsCreateWithoutAreaInput, project_area_colorsUncheckedCreateWithoutAreaInput>
+  }
+
+  export type project_area_colorsCreateManyAreaInputEnvelope = {
+    data: project_area_colorsCreateManyAreaInput | project_area_colorsCreateManyAreaInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type project_area_colorsUpsertWithWhereUniqueWithoutAreaInput = {
+    where: project_area_colorsWhereUniqueInput
+    update: XOR<project_area_colorsUpdateWithoutAreaInput, project_area_colorsUncheckedUpdateWithoutAreaInput>
+    create: XOR<project_area_colorsCreateWithoutAreaInput, project_area_colorsUncheckedCreateWithoutAreaInput>
+  }
+
+  export type project_area_colorsUpdateWithWhereUniqueWithoutAreaInput = {
+    where: project_area_colorsWhereUniqueInput
+    data: XOR<project_area_colorsUpdateWithoutAreaInput, project_area_colorsUncheckedUpdateWithoutAreaInput>
+  }
+
+  export type project_area_colorsUpdateManyWithWhereWithoutAreaInput = {
+    where: project_area_colorsScalarWhereInput
+    data: XOR<project_area_colorsUpdateManyMutationInput, project_area_colorsUncheckedUpdateManyWithoutAreaInput>
+  }
+
+  export type projectsCreateWithoutProjectAreaColorsInput = {
     id?: string
     name: string
     status: $Enums.ProjectStatus
@@ -27561,7 +27569,7 @@ export namespace Prisma {
     projectProducts?: project_productsCreateNestedManyWithoutProjectInput
   }
 
-  export type projectsUncheckedCreateWithoutAreasInput = {
+  export type projectsUncheckedCreateWithoutProjectAreaColorsInput = {
     id?: string
     name: string
     customerId?: string | null
@@ -27581,111 +27589,20 @@ export namespace Prisma {
     projectProducts?: project_productsUncheckedCreateNestedManyWithoutProjectInput
   }
 
-  export type projectsCreateOrConnectWithoutAreasInput = {
+  export type projectsCreateOrConnectWithoutProjectAreaColorsInput = {
     where: projectsWhereUniqueInput
-    create: XOR<projectsCreateWithoutAreasInput, projectsUncheckedCreateWithoutAreasInput>
-  }
-
-  export type project_area_colorsCreateWithoutAreaInput = {
-    id?: string
-    createdAt?: Date | string
-    color: colorsCreateNestedOneWithoutProjectAreaColorsInput
-  }
-
-  export type project_area_colorsUncheckedCreateWithoutAreaInput = {
-    id?: string
-    colorId: string
-    createdAt?: Date | string
-  }
-
-  export type project_area_colorsCreateOrConnectWithoutAreaInput = {
-    where: project_area_colorsWhereUniqueInput
-    create: XOR<project_area_colorsCreateWithoutAreaInput, project_area_colorsUncheckedCreateWithoutAreaInput>
-  }
-
-  export type project_area_colorsCreateManyAreaInputEnvelope = {
-    data: project_area_colorsCreateManyAreaInput | project_area_colorsCreateManyAreaInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type projectsUpsertWithoutAreasInput = {
-    update: XOR<projectsUpdateWithoutAreasInput, projectsUncheckedUpdateWithoutAreasInput>
-    create: XOR<projectsCreateWithoutAreasInput, projectsUncheckedCreateWithoutAreasInput>
-    where?: projectsWhereInput
-  }
-
-  export type projectsUpdateToOneWithWhereWithoutAreasInput = {
-    where?: projectsWhereInput
-    data: XOR<projectsUpdateWithoutAreasInput, projectsUncheckedUpdateWithoutAreasInput>
-  }
-
-  export type projectsUpdateWithoutAreasInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    status?: EnumProjectStatusFieldUpdateOperationsInput | $Enums.ProjectStatus
-    totalAmount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    paid?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    discount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    discountType?: NullableStringFieldUpdateOperationsInput | string | null
-    tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    projectDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
-    customer?: customersUpdateOneWithoutProjectsNestedInput
-    tasks?: tasksUpdateManyWithoutProjectNestedInput
-    attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
-    labourPayments?: labour_paymentsUpdateManyWithoutProjectNestedInput
-    projectProducts?: project_productsUpdateManyWithoutProjectNestedInput
-  }
-
-  export type projectsUncheckedUpdateWithoutAreasInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    customerId?: NullableStringFieldUpdateOperationsInput | string | null
-    creatorId?: StringFieldUpdateOperationsInput | string
-    status?: EnumProjectStatusFieldUpdateOperationsInput | $Enums.ProjectStatus
-    totalAmount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    paid?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    discount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    discountType?: NullableStringFieldUpdateOperationsInput | string | null
-    tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
-    projectDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
-    attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
-    labourPayments?: labour_paymentsUncheckedUpdateManyWithoutProjectNestedInput
-    projectProducts?: project_productsUncheckedUpdateManyWithoutProjectNestedInput
-  }
-
-  export type project_area_colorsUpsertWithWhereUniqueWithoutAreaInput = {
-    where: project_area_colorsWhereUniqueInput
-    update: XOR<project_area_colorsUpdateWithoutAreaInput, project_area_colorsUncheckedUpdateWithoutAreaInput>
-    create: XOR<project_area_colorsCreateWithoutAreaInput, project_area_colorsUncheckedCreateWithoutAreaInput>
-  }
-
-  export type project_area_colorsUpdateWithWhereUniqueWithoutAreaInput = {
-    where: project_area_colorsWhereUniqueInput
-    data: XOR<project_area_colorsUpdateWithoutAreaInput, project_area_colorsUncheckedUpdateWithoutAreaInput>
-  }
-
-  export type project_area_colorsUpdateManyWithWhereWithoutAreaInput = {
-    where: project_area_colorsScalarWhereInput
-    data: XOR<project_area_colorsUpdateManyMutationInput, project_area_colorsUncheckedUpdateManyWithoutAreaInput>
+    create: XOR<projectsCreateWithoutProjectAreaColorsInput, projectsUncheckedCreateWithoutProjectAreaColorsInput>
   }
 
   export type areasCreateWithoutProjectAreaColorsInput = {
     id?: string
     name: string
     createdAt?: Date | string
-    project: projectsCreateNestedOneWithoutAreasInput
   }
 
   export type areasUncheckedCreateWithoutProjectAreaColorsInput = {
     id?: string
     name: string
-    projectId: string
     createdAt?: Date | string
   }
 
@@ -27713,6 +27630,57 @@ export namespace Prisma {
     create: XOR<colorsCreateWithoutProjectAreaColorsInput, colorsUncheckedCreateWithoutProjectAreaColorsInput>
   }
 
+  export type projectsUpsertWithoutProjectAreaColorsInput = {
+    update: XOR<projectsUpdateWithoutProjectAreaColorsInput, projectsUncheckedUpdateWithoutProjectAreaColorsInput>
+    create: XOR<projectsCreateWithoutProjectAreaColorsInput, projectsUncheckedCreateWithoutProjectAreaColorsInput>
+    where?: projectsWhereInput
+  }
+
+  export type projectsUpdateToOneWithWhereWithoutProjectAreaColorsInput = {
+    where?: projectsWhereInput
+    data: XOR<projectsUpdateWithoutProjectAreaColorsInput, projectsUncheckedUpdateWithoutProjectAreaColorsInput>
+  }
+
+  export type projectsUpdateWithoutProjectAreaColorsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    status?: EnumProjectStatusFieldUpdateOperationsInput | $Enums.ProjectStatus
+    totalAmount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    paid?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    discount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    discountType?: NullableStringFieldUpdateOperationsInput | string | null
+    tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    projectDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
+    customer?: customersUpdateOneWithoutProjectsNestedInput
+    tasks?: tasksUpdateManyWithoutProjectNestedInput
+    attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
+    labourPayments?: labour_paymentsUpdateManyWithoutProjectNestedInput
+    projectProducts?: project_productsUpdateManyWithoutProjectNestedInput
+  }
+
+  export type projectsUncheckedUpdateWithoutProjectAreaColorsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    customerId?: NullableStringFieldUpdateOperationsInput | string | null
+    creatorId?: StringFieldUpdateOperationsInput | string
+    status?: EnumProjectStatusFieldUpdateOperationsInput | $Enums.ProjectStatus
+    totalAmount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    paid?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    discount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    discountType?: NullableStringFieldUpdateOperationsInput | string | null
+    tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    projectDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
+    attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
+    labourPayments?: labour_paymentsUncheckedUpdateManyWithoutProjectNestedInput
+    projectProducts?: project_productsUncheckedUpdateManyWithoutProjectNestedInput
+  }
+
   export type areasUpsertWithoutProjectAreaColorsInput = {
     update: XOR<areasUpdateWithoutProjectAreaColorsInput, areasUncheckedUpdateWithoutProjectAreaColorsInput>
     create: XOR<areasCreateWithoutProjectAreaColorsInput, areasUncheckedCreateWithoutProjectAreaColorsInput>
@@ -27728,13 +27696,11 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    project?: projectsUpdateOneRequiredWithoutAreasNestedInput
   }
 
   export type areasUncheckedUpdateWithoutProjectAreaColorsInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    projectId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -27777,7 +27743,7 @@ export namespace Prisma {
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
-    areas?: areasCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsCreateNestedManyWithoutProjectInput
     projectProducts?: project_productsCreateNestedManyWithoutProjectInput
@@ -27797,7 +27763,7 @@ export namespace Prisma {
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate: Date | string
     createdAt?: Date | string
-    areas?: areasUncheckedCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsUncheckedCreateNestedManyWithoutProjectInput
     projectProducts?: project_productsUncheckedCreateNestedManyWithoutProjectInput
@@ -27833,7 +27799,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
-    areas?: areasUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUpdateManyWithoutProjectNestedInput
     projectProducts?: project_productsUpdateManyWithoutProjectNestedInput
@@ -27853,7 +27819,7 @@ export namespace Prisma {
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    areas?: areasUncheckedUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     projectProducts?: project_productsUncheckedUpdateManyWithoutProjectNestedInput
@@ -27958,7 +27924,7 @@ export namespace Prisma {
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
-    areas?: areasCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsCreateNestedManyWithoutProjectInput
     projectProducts?: project_productsCreateNestedManyWithoutProjectInput
   }
@@ -27978,7 +27944,7 @@ export namespace Prisma {
     projectDate: Date | string
     createdAt?: Date | string
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
-    areas?: areasUncheckedCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsUncheckedCreateNestedManyWithoutProjectInput
     projectProducts?: project_productsUncheckedCreateNestedManyWithoutProjectInput
   }
@@ -28037,7 +28003,7 @@ export namespace Prisma {
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
-    areas?: areasUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUpdateManyWithoutProjectNestedInput
     projectProducts?: project_productsUpdateManyWithoutProjectNestedInput
   }
@@ -28057,7 +28023,7 @@ export namespace Prisma {
     projectDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
-    areas?: areasUncheckedUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     projectProducts?: project_productsUncheckedUpdateManyWithoutProjectNestedInput
   }
@@ -28129,7 +28095,7 @@ export namespace Prisma {
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
-    areas?: areasCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
     projectProducts?: project_productsCreateNestedManyWithoutProjectInput
   }
@@ -28149,7 +28115,7 @@ export namespace Prisma {
     projectDate: Date | string
     createdAt?: Date | string
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
-    areas?: areasUncheckedCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
     projectProducts?: project_productsUncheckedCreateNestedManyWithoutProjectInput
   }
@@ -28214,7 +28180,7 @@ export namespace Prisma {
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
-    areas?: areasUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
     projectProducts?: project_productsUpdateManyWithoutProjectNestedInput
   }
@@ -28234,7 +28200,7 @@ export namespace Prisma {
     projectDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
-    areas?: areasUncheckedUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
     projectProducts?: project_productsUncheckedUpdateManyWithoutProjectNestedInput
   }
@@ -28254,7 +28220,7 @@ export namespace Prisma {
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
-    areas?: areasCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsCreateNestedManyWithoutProjectInput
   }
@@ -28274,7 +28240,7 @@ export namespace Prisma {
     projectDate: Date | string
     createdAt?: Date | string
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
-    areas?: areasUncheckedCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsUncheckedCreateNestedManyWithoutProjectInput
   }
@@ -28339,7 +28305,7 @@ export namespace Prisma {
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
-    areas?: areasUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUpdateManyWithoutProjectNestedInput
   }
@@ -28359,7 +28325,7 @@ export namespace Prisma {
     projectDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
-    areas?: areasUncheckedUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUncheckedUpdateManyWithoutProjectNestedInput
   }
@@ -28456,7 +28422,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     customer?: customersUpdateOneWithoutProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
-    areas?: areasUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUpdateManyWithoutProjectNestedInput
     projectProducts?: project_productsUpdateManyWithoutProjectNestedInput
@@ -28476,7 +28442,7 @@ export namespace Prisma {
     projectDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
-    areas?: areasUncheckedUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     projectProducts?: project_productsUncheckedUpdateManyWithoutProjectNestedInput
@@ -28550,7 +28516,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
-    areas?: areasUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUpdateManyWithoutProjectNestedInput
     projectProducts?: project_productsUpdateManyWithoutProjectNestedInput
@@ -28570,7 +28536,7 @@ export namespace Prisma {
     projectDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
-    areas?: areasUncheckedUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     projectProducts?: project_productsUncheckedUpdateManyWithoutProjectNestedInput
@@ -28687,9 +28653,10 @@ export namespace Prisma {
     createdAt?: Date | string
   }
 
-  export type areasCreateManyProjectInput = {
+  export type project_area_colorsCreateManyProjectInput = {
     id?: string
-    name: string
+    areaId: string
+    colorId: string
     createdAt?: Date | string
   }
 
@@ -28749,23 +28716,24 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type areasUpdateWithoutProjectInput = {
+  export type project_area_colorsUpdateWithoutProjectInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    projectAreaColors?: project_area_colorsUpdateManyWithoutAreaNestedInput
+    area?: areasUpdateOneRequiredWithoutProjectAreaColorsNestedInput
+    color?: colorsUpdateOneRequiredWithoutProjectAreaColorsNestedInput
   }
 
-  export type areasUncheckedUpdateWithoutProjectInput = {
+  export type project_area_colorsUncheckedUpdateWithoutProjectInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    areaId?: StringFieldUpdateOperationsInput | string
+    colorId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutAreaNestedInput
   }
 
-  export type areasUncheckedUpdateManyWithoutProjectInput = {
+  export type project_area_colorsUncheckedUpdateManyWithoutProjectInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    areaId?: StringFieldUpdateOperationsInput | string
+    colorId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -28849,6 +28817,7 @@ export namespace Prisma {
 
   export type project_area_colorsCreateManyColorInput = {
     id?: string
+    projectId: string
     areaId: string
     createdAt?: Date | string
   }
@@ -28856,23 +28825,27 @@ export namespace Prisma {
   export type project_area_colorsUpdateWithoutColorInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    project?: projectsUpdateOneRequiredWithoutProjectAreaColorsNestedInput
     area?: areasUpdateOneRequiredWithoutProjectAreaColorsNestedInput
   }
 
   export type project_area_colorsUncheckedUpdateWithoutColorInput = {
     id?: StringFieldUpdateOperationsInput | string
+    projectId?: StringFieldUpdateOperationsInput | string
     areaId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type project_area_colorsUncheckedUpdateManyWithoutColorInput = {
     id?: StringFieldUpdateOperationsInput | string
+    projectId?: StringFieldUpdateOperationsInput | string
     areaId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type project_area_colorsCreateManyAreaInput = {
     id?: string
+    projectId: string
     colorId: string
     createdAt?: Date | string
   }
@@ -28880,17 +28853,20 @@ export namespace Prisma {
   export type project_area_colorsUpdateWithoutAreaInput = {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    project?: projectsUpdateOneRequiredWithoutProjectAreaColorsNestedInput
     color?: colorsUpdateOneRequiredWithoutProjectAreaColorsNestedInput
   }
 
   export type project_area_colorsUncheckedUpdateWithoutAreaInput = {
     id?: StringFieldUpdateOperationsInput | string
+    projectId?: StringFieldUpdateOperationsInput | string
     colorId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type project_area_colorsUncheckedUpdateManyWithoutAreaInput = {
     id?: StringFieldUpdateOperationsInput | string
+    projectId?: StringFieldUpdateOperationsInput | string
     colorId?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

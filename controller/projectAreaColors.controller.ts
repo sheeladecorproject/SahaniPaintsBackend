@@ -21,6 +21,7 @@ class ProjectAreaColorsController extends BaseController<ProjectAreaColorsServic
         const mappings = await this.service.fetchAll(
             this.getPagination(req),
             {
+                projectId: req.query.projectId?.toString(),
                 areaId: req.query.areaId?.toString(),
                 colorId: req.query.colorId?.toString()
             },

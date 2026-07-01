@@ -103,3 +103,13 @@
 {"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-06-27 13:57:56"}
 {"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-06-30 11:33:15"}
 {"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-06-30 11:33:16"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-01 10:31:43"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-01 10:31:43"}
+{"ip":"127.0.0.1","level":"error","message":"The provided data is already taken","status":409,"timestamp":"2026-07-01 10:32:03"}
+{"ip":"127.0.0.1","level":"error","message":"The provided data is already taken","status":409,"timestamp":"2026-07-01 10:32:10"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-01 10:38:32"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-01 10:38:47"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-01 10:39:31"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-01 10:43:52"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-01 10:44:19"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-01 10:46:01"}

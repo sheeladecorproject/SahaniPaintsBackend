@@ -692,3 +692,261 @@
 {"level":"info","message":"GET /v1/customers 177.562 ms","timestamp":"2026-06-30 11:33:17"}
 {"level":"info","message":"PRODUCT records fetched","timestamp":"2026-06-30 11:33:17"}
 {"level":"info","message":"GET /v1/products 348.837 ms","timestamp":"2026-06-30 11:33:17"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-01 10:31:41"}
+{"level":"info","message":"GET /v1/auth/ 1284.975 ms","timestamp":"2026-07-01 10:31:42"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-01 10:31:42"}
+{"level":"info","message":"GET /v1/reports 3.529 ms","timestamp":"2026-07-01 10:31:43"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-07-01 10:31:43","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"GET /v1/auth/ 262.765 ms","timestamp":"2026-07-01 10:31:43"}
+{"ip":"127.0.0.1","level":"http","message":"TASK fetch all request received","timestamp":"2026-07-01 10:31:43","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"GET /v1/reports 2.128 ms","timestamp":"2026-07-01 10:31:43"}
+{"ip":"127.0.0.1","level":"http","message":"INQUIRY fetch all request received","timestamp":"2026-07-01 10:31:43","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"warn","message":"No INQUIRY records found","timestamp":"2026-07-01 10:31:43"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-01 10:31:43"}
+{"level":"info","message":"GET /v1/inquiries 133.086 ms","timestamp":"2026-07-01 10:31:43"}
+{"level":"warn","message":"No TASK records found","timestamp":"2026-07-01 10:31:43"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-01 10:31:43"}
+{"level":"info","message":"GET /v1/tasks 267.505 ms","timestamp":"2026-07-01 10:31:43"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-07-01 10:31:43"}
+{"level":"info","message":"GET /v1/projects 840.112 ms","timestamp":"2026-07-01 10:31:43"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR fetch all request received","timestamp":"2026-07-01 10:31:47","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE fetch all request received","timestamp":"2026-07-01 10:31:47","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"LABOUR records fetched","timestamp":"2026-07-01 10:31:48"}
+{"level":"info","message":"GET /v1/labours 144.804 ms","timestamp":"2026-07-01 10:31:48"}
+{"level":"info","message":"LABOUR_ATTENDANCE records fetched","timestamp":"2026-07-01 10:31:48"}
+{"level":"info","message":"GET /v1/labour-attendance 289.979 ms","timestamp":"2026-07-01 10:31:48"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE fetch all request received","timestamp":"2026-07-01 10:31:48","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"LABOUR_ATTENDANCE records fetched","timestamp":"2026-07-01 10:31:48"}
+{"level":"info","message":"GET /v1/labour-attendance 282.626 ms","timestamp":"2026-07-01 10:31:48"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE create request received","timestamp":"2026-07-01 10:32:02","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"id":"2e0f46e5-dad6-4263-b4dd-293aab5ac48f","level":"info","message":"LABOUR_ATTENDANCE created","timestamp":"2026-07-01 10:32:03"}
+{"level":"info","message":"POST /v1/labour-attendance 692.649 ms","timestamp":"2026-07-01 10:32:03"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE create request received","timestamp":"2026-07-01 10:32:03","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"error","message":"The provided data is already taken","status":409,"timestamp":"2026-07-01 10:32:03"}
+{"level":"info","message":"POST /v1/labour-attendance 155.036 ms","timestamp":"2026-07-01 10:32:03"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE create request received","timestamp":"2026-07-01 10:32:10","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"error","message":"The provided data is already taken","status":409,"timestamp":"2026-07-01 10:32:10"}
+{"level":"info","message":"POST /v1/labour-attendance 630.290 ms","timestamp":"2026-07-01 10:32:10"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-01 10:32:16"}
+{"level":"info","message":"GET /v1/auth/ 988.085 ms","timestamp":"2026-07-01 10:32:17"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-01 10:32:17"}
+{"level":"info","message":"GET /v1/auth/ 304.694 ms","timestamp":"2026-07-01 10:32:18"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-07-01 10:32:18","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR fetch all request received","timestamp":"2026-07-01 10:32:18","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE fetch all request received","timestamp":"2026-07-01 10:32:18","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"LABOUR records fetched","timestamp":"2026-07-01 10:32:18"}
+{"level":"info","message":"GET /v1/labours 151.862 ms","timestamp":"2026-07-01 10:32:18"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-07-01 10:32:18"}
+{"level":"info","message":"GET /v1/projects 800.931 ms","timestamp":"2026-07-01 10:32:18"}
+{"level":"info","message":"LABOUR_ATTENDANCE records fetched","timestamp":"2026-07-01 10:32:19"}
+{"level":"info","message":"GET /v1/labour-attendance 868.089 ms","timestamp":"2026-07-01 10:32:19"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE fetch all request received","timestamp":"2026-07-01 10:32:19","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"LABOUR_ATTENDANCE records fetched","timestamp":"2026-07-01 10:32:19"}
+{"level":"info","message":"GET /v1/labour-attendance 278.619 ms","timestamp":"2026-07-01 10:32:19"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-01 10:33:48"}
+{"level":"info","message":"GET /v1/auth/ 783.920 ms","timestamp":"2026-07-01 10:33:49"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-01 10:33:49"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-07-01 10:33:49","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"GET /v1/auth/ 247.563 ms","timestamp":"2026-07-01 10:33:49"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR fetch all request received","timestamp":"2026-07-01 10:33:49","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"LABOUR records fetched","timestamp":"2026-07-01 10:33:49"}
+{"level":"info","message":"GET /v1/labours 131.137 ms","timestamp":"2026-07-01 10:33:49"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE fetch all request received","timestamp":"2026-07-01 10:33:49","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"LABOUR_ATTENDANCE records fetched","timestamp":"2026-07-01 10:33:49"}
+{"level":"info","message":"GET /v1/labour-attendance 256.325 ms","timestamp":"2026-07-01 10:33:49"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE fetch all request received","timestamp":"2026-07-01 10:33:49","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-07-01 10:33:49"}
+{"level":"info","message":"GET /v1/projects 756.562 ms","timestamp":"2026-07-01 10:33:49"}
+{"level":"info","message":"LABOUR_ATTENDANCE records fetched","timestamp":"2026-07-01 10:33:50"}
+{"level":"info","message":"GET /v1/labour-attendance 822.554 ms","timestamp":"2026-07-01 10:33:50"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE delete request received","timestamp":"2026-07-01 10:33:59","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"id":"2e0f46e5-dad6-4263-b4dd-293aab5ac48f","level":"info","message":"LABOUR_ATTENDANCE record hard deleted","timestamp":"2026-07-01 10:33:59"}
+{"level":"info","message":"DELETE /v1/labour-attendance/2e0f46e5-dad6-4263-b4dd-293aab5ac48f 150.847 ms","timestamp":"2026-07-01 10:33:59"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE delete request received","timestamp":"2026-07-01 10:34:03","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"id":"2edafbce-266d-4626-a899-70afac7696fa","level":"info","message":"LABOUR_ATTENDANCE record hard deleted","timestamp":"2026-07-01 10:34:03"}
+{"level":"info","message":"DELETE /v1/labour-attendance/2edafbce-266d-4626-a899-70afac7696fa 137.124 ms","timestamp":"2026-07-01 10:34:03"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE create request received","timestamp":"2026-07-01 10:34:07","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"id":"4e427c11-5228-43bc-8b38-58744e2dcba2","level":"info","message":"LABOUR_ATTENDANCE created","timestamp":"2026-07-01 10:34:07"}
+{"level":"info","message":"POST /v1/labour-attendance 136.024 ms","timestamp":"2026-07-01 10:34:07"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE create request received","timestamp":"2026-07-01 10:34:18","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"id":"97fe53e1-3765-4142-a270-a016b573dd09","level":"info","message":"LABOUR_ATTENDANCE created","timestamp":"2026-07-01 10:34:19"}
+{"level":"info","message":"POST /v1/labour-attendance 697.373 ms","timestamp":"2026-07-01 10:34:19"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE fetch all request received","timestamp":"2026-07-01 10:35:30","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"LABOUR_ATTENDANCE records fetched","timestamp":"2026-07-01 10:35:32"}
+{"level":"info","message":"GET /v1/labour-attendance 1398.134 ms","timestamp":"2026-07-01 10:35:32"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE fetch all request received","timestamp":"2026-07-01 10:35:32","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"LABOUR_ATTENDANCE records fetched","timestamp":"2026-07-01 10:35:32"}
+{"level":"info","message":"GET /v1/labour-attendance 268.807 ms","timestamp":"2026-07-01 10:35:32"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE delete request received","timestamp":"2026-07-01 10:36:00","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"id":"97fe53e1-3765-4142-a270-a016b573dd09","level":"info","message":"LABOUR_ATTENDANCE record hard deleted","timestamp":"2026-07-01 10:36:01"}
+{"level":"info","message":"DELETE /v1/labour-attendance/97fe53e1-3765-4142-a270-a016b573dd09 694.453 ms","timestamp":"2026-07-01 10:36:01"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE delete request received","timestamp":"2026-07-01 10:36:04","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"id":"4e427c11-5228-43bc-8b38-58744e2dcba2","level":"info","message":"LABOUR_ATTENDANCE record hard deleted","timestamp":"2026-07-01 10:36:05"}
+{"level":"info","message":"DELETE /v1/labour-attendance/4e427c11-5228-43bc-8b38-58744e2dcba2 150.465 ms","timestamp":"2026-07-01 10:36:05"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE create request received","timestamp":"2026-07-01 10:36:14","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"id":"874c3878-420b-447b-8eac-f2f23bacec96","level":"info","message":"LABOUR_ATTENDANCE created","timestamp":"2026-07-01 10:36:14"}
+{"level":"info","message":"POST /v1/labour-attendance 137.289 ms","timestamp":"2026-07-01 10:36:14"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE create request received","timestamp":"2026-07-01 10:36:14","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"id":"7670e02b-9e74-4e60-a281-7f423736b3bd","level":"info","message":"LABOUR_ATTENDANCE created","timestamp":"2026-07-01 10:36:14"}
+{"level":"info","message":"POST /v1/labour-attendance 131.416 ms","timestamp":"2026-07-01 10:36:14"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE fetch all request received","timestamp":"2026-07-01 10:37:41","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"LABOUR_ATTENDANCE records fetched","timestamp":"2026-07-01 10:37:43"}
+{"level":"info","message":"GET /v1/labour-attendance 1313.398 ms","timestamp":"2026-07-01 10:37:43"}
+{"ip":"127.0.0.1","level":"http","message":"CUSTOMER fetch all request received","timestamp":"2026-07-01 10:38:28","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"http","message":"PRODUCT fetch all request received","timestamp":"2026-07-01 10:38:28","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"CUSTOMER records fetched","timestamp":"2026-07-01 10:38:28"}
+{"level":"info","message":"GET /v1/customers 640.735 ms","timestamp":"2026-07-01 10:38:28"}
+{"level":"info","message":"PRODUCT records fetched","timestamp":"2026-07-01 10:38:29"}
+{"level":"info","message":"GET /v1/products 785.134 ms","timestamp":"2026-07-01 10:38:29"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch request received","timestamp":"2026-07-01 10:38:31","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"id":"7169e1a1-a859-4ea3-9a4d-bf6b88fc61f8","level":"info","message":"PROJECT fetched","timestamp":"2026-07-01 10:38:32"}
+{"level":"info","message":"GET /v1/projects/7169e1a1-a859-4ea3-9a4d-bf6b88fc61f8 1071.255 ms","timestamp":"2026-07-01 10:38:32"}
+{"ip":"127.0.0.1","level":"http","message":"TASK fetch all request received","timestamp":"2026-07-01 10:38:32","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"warn","message":"No TASK records found","timestamp":"2026-07-01 10:38:32"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-01 10:38:32"}
+{"level":"info","message":"GET /v1/tasks?projectId=7169e1a1-a859-4ea3-9a4d-bf6b88fc61f8 270.358 ms","timestamp":"2026-07-01 10:38:32"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE fetch all request received","timestamp":"2026-07-01 10:38:47","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_PAYMENTS fetch all request received","timestamp":"2026-07-01 10:38:47","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"warn","message":"No LABOUR_PAYMENTS records found","timestamp":"2026-07-01 10:38:47"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-01 10:38:47"}
+{"level":"info","message":"GET /v1/labour-payments?labourId=774d956d-90fe-4e72-872b-d93455ea865b 746.132 ms","timestamp":"2026-07-01 10:38:47"}
+{"level":"info","message":"LABOUR_ATTENDANCE records fetched","timestamp":"2026-07-01 10:38:48"}
+{"level":"info","message":"GET /v1/labour-attendance?labourId=774d956d-90fe-4e72-872b-d93455ea865b 1264.672 ms","timestamp":"2026-07-01 10:38:48"}
+{"ip":"127.0.0.1","level":"http","message":"COLOR fetch all request received","timestamp":"2026-07-01 10:39:30","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"http","message":"AREA fetch all request received","timestamp":"2026-07-01 10:39:30","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"COLOR records fetched","timestamp":"2026-07-01 10:39:31"}
+{"level":"info","message":"GET /v1/colors 624.996 ms","timestamp":"2026-07-01 10:39:31"}
+{"level":"warn","message":"No AREA records found","timestamp":"2026-07-01 10:39:31"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-01 10:39:31"}
+{"level":"info","message":"GET /v1/areas 919.097 ms","timestamp":"2026-07-01 10:39:31"}
+{"ip":"127.0.0.1","level":"http","message":"USER fetch all request received","timestamp":"2026-07-01 10:39:32","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-07-01 10:39:32","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"USER records fetched","timestamp":"2026-07-01 10:39:33"}
+{"level":"info","message":"GET /v1/users 131.889 ms","timestamp":"2026-07-01 10:39:33"}
+{"ip":"127.0.0.1","level":"http","message":"USER fetch all request received","timestamp":"2026-07-01 10:39:33","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"USER records fetched","timestamp":"2026-07-01 10:39:33"}
+{"level":"info","message":"GET /v1/users 128.324 ms","timestamp":"2026-07-01 10:39:33"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-07-01 10:39:33"}
+{"level":"info","message":"GET /v1/projects 763.069 ms","timestamp":"2026-07-01 10:39:33"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-07-01 10:39:33","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-07-01 10:39:33"}
+{"level":"info","message":"GET /v1/projects 260.805 ms","timestamp":"2026-07-01 10:39:33"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-01 10:43:43"}
+{"level":"info","message":"GET /v1/auth/ 1990.252 ms","timestamp":"2026-07-01 10:43:45"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-01 10:43:45"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-07-01 10:43:45","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"http","message":"COLOR fetch all request received","timestamp":"2026-07-01 10:43:45","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"GET /v1/auth/ 491.727 ms","timestamp":"2026-07-01 10:43:45"}
+{"level":"info","message":"COLOR records fetched","timestamp":"2026-07-01 10:43:45"}
+{"level":"info","message":"GET /v1/colors 231.558 ms","timestamp":"2026-07-01 10:43:45"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-07-01 10:43:46"}
+{"level":"info","message":"GET /v1/projects 1384.290 ms","timestamp":"2026-07-01 10:43:46"}
+{"ip":"127.0.0.1","level":"http","message":"AREA fetch all request received","timestamp":"2026-07-01 10:43:51","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"warn","message":"No AREA records found","timestamp":"2026-07-01 10:43:52"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-01 10:43:52"}
+{"level":"info","message":"GET /v1/areas 638.113 ms","timestamp":"2026-07-01 10:43:52"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-01 10:44:17"}
+{"level":"info","message":"GET /v1/auth/ 796.749 ms","timestamp":"2026-07-01 10:44:18"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-01 10:44:18"}
+{"ip":"127.0.0.1","level":"http","message":"AREA fetch all request received","timestamp":"2026-07-01 10:44:18","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"GET /v1/auth/ 297.862 ms","timestamp":"2026-07-01 10:44:18"}
+{"level":"warn","message":"No AREA records found","timestamp":"2026-07-01 10:44:19"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-01 10:44:19"}
+{"level":"info","message":"GET /v1/areas 998.203 ms","timestamp":"2026-07-01 10:44:19"}
+{"ip":"127.0.0.1","level":"http","message":"AREA create request received","timestamp":"2026-07-01 10:45:57","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"id":"2e78dc89-91cf-4bdb-9c8e-e4df7711bdde","level":"info","message":"AREA created","timestamp":"2026-07-01 10:45:57"}
+{"level":"info","message":"POST /v1/areas 666.606 ms","timestamp":"2026-07-01 10:45:57"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-07-01 10:45:59","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"http","message":"COLOR fetch all request received","timestamp":"2026-07-01 10:45:59","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"COLOR records fetched","timestamp":"2026-07-01 10:46:00"}
+{"level":"info","message":"GET /v1/colors 701.140 ms","timestamp":"2026-07-01 10:46:00"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-07-01 10:46:00"}
+{"level":"info","message":"GET /v1/projects 840.736 ms","timestamp":"2026-07-01 10:46:00"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT_AREA_COLOR fetch all request received","timestamp":"2026-07-01 10:46:01","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"warn","message":"No PROJECT_AREA_COLOR records found","timestamp":"2026-07-01 10:46:01"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-01 10:46:01"}
+{"level":"info","message":"GET /v1/project-area-colors?projectId=7169e1a1-a859-4ea3-9a4d-bf6b88fc61f8 302.631 ms","timestamp":"2026-07-01 10:46:01"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT_AREA_COLOR create request received","timestamp":"2026-07-01 10:46:21","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"id":"c20c1c46-8662-4dc5-8d05-4cc137676e60","level":"info","message":"PROJECT_AREA_COLOR created","timestamp":"2026-07-01 10:46:21"}
+{"level":"info","message":"POST /v1/project-area-colors 662.415 ms","timestamp":"2026-07-01 10:46:21"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-01 10:46:34"}
+{"level":"info","message":"GET /v1/auth/ 834.367 ms","timestamp":"2026-07-01 10:46:35"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-01 10:46:35"}
+{"level":"info","message":"GET /v1/auth/ 266.281 ms","timestamp":"2026-07-01 10:46:35"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-07-01 10:46:35","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"http","message":"COLOR fetch all request received","timestamp":"2026-07-01 10:46:35","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"http","message":"AREA fetch all request received","timestamp":"2026-07-01 10:46:35","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"COLOR records fetched","timestamp":"2026-07-01 10:46:35"}
+{"level":"info","message":"GET /v1/colors 131.863 ms","timestamp":"2026-07-01 10:46:35"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-07-01 10:46:36"}
+{"level":"info","message":"GET /v1/projects 818.258 ms","timestamp":"2026-07-01 10:46:36"}
+{"level":"info","message":"AREA records fetched","timestamp":"2026-07-01 10:46:36"}
+{"level":"info","message":"GET /v1/areas 908.958 ms","timestamp":"2026-07-01 10:46:36"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT_AREA_COLOR fetch all request received","timestamp":"2026-07-01 10:46:37","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"PROJECT_AREA_COLOR records fetched","timestamp":"2026-07-01 10:46:37"}
+{"level":"info","message":"GET /v1/project-area-colors?projectId=7169e1a1-a859-4ea3-9a4d-bf6b88fc61f8 326.929 ms","timestamp":"2026-07-01 10:46:37"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-01 10:49:15"}
+{"level":"info","message":"GET /v1/auth/ 873.752 ms","timestamp":"2026-07-01 10:49:15"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-01 10:49:15"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-07-01 10:49:15","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"GET /v1/auth/ 311.710 ms","timestamp":"2026-07-01 10:49:16"}
+{"ip":"127.0.0.1","level":"http","message":"COLOR fetch all request received","timestamp":"2026-07-01 10:49:16","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"http","message":"AREA fetch all request received","timestamp":"2026-07-01 10:49:16","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"COLOR records fetched","timestamp":"2026-07-01 10:49:16"}
+{"level":"info","message":"GET /v1/colors 137.497 ms","timestamp":"2026-07-01 10:49:16"}
+{"level":"info","message":"AREA records fetched","timestamp":"2026-07-01 10:49:16"}
+{"level":"info","message":"GET /v1/areas 602.005 ms","timestamp":"2026-07-01 10:49:16"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-07-01 10:49:16"}
+{"level":"info","message":"GET /v1/projects 1030.567 ms","timestamp":"2026-07-01 10:49:16"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT_AREA_COLOR fetch all request received","timestamp":"2026-07-01 10:49:22","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"PROJECT_AREA_COLOR records fetched","timestamp":"2026-07-01 10:49:22"}
+{"level":"info","message":"GET /v1/project-area-colors?projectId=7169e1a1-a859-4ea3-9a4d-bf6b88fc61f8 256.425 ms","timestamp":"2026-07-01 10:49:22"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT_AREA_COLOR fetch all request received","timestamp":"2026-07-01 10:54:44","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"PROJECT_AREA_COLOR records fetched","timestamp":"2026-07-01 10:54:46"}
+{"level":"info","message":"GET /v1/project-area-colors?projectId=7169e1a1-a859-4ea3-9a4d-bf6b88fc61f8 1776.767 ms","timestamp":"2026-07-01 10:54:46"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT_AREA_COLOR fetch all request received","timestamp":"2026-07-01 10:55:43","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"PROJECT_AREA_COLOR records fetched","timestamp":"2026-07-01 10:55:44"}
+{"level":"info","message":"GET /v1/project-area-colors?projectId=7169e1a1-a859-4ea3-9a4d-bf6b88fc61f8 1603.824 ms","timestamp":"2026-07-01 10:55:44"}
+{"ip":"127.0.0.1","level":"http","message":"CUSTOMER fetch all request received","timestamp":"2026-07-01 10:57:54","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"CUSTOMER records fetched","timestamp":"2026-07-01 10:57:55"}
+{"level":"info","message":"GET /v1/customers 776.050 ms","timestamp":"2026-07-01 10:57:55"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT_AREA_COLOR fetch all request received","timestamp":"2026-07-01 10:58:10","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"PROJECT_AREA_COLOR records fetched","timestamp":"2026-07-01 10:58:11"}
+{"level":"info","message":"GET /v1/project-area-colors?projectId=7169e1a1-a859-4ea3-9a4d-bf6b88fc61f8 1613.504 ms","timestamp":"2026-07-01 10:58:11"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT_AREA_COLOR fetch all request received","timestamp":"2026-07-01 11:00:38","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"PROJECT_AREA_COLOR records fetched","timestamp":"2026-07-01 11:00:40"}
+{"level":"info","message":"GET /v1/project-area-colors?projectId=7169e1a1-a859-4ea3-9a4d-bf6b88fc61f8 1713.143 ms","timestamp":"2026-07-01 11:00:40"}
+{"ip":"127.0.0.1","level":"http","message":"COLOR create request received","timestamp":"2026-07-01 11:00:54","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"id":"97e1f419-76f0-446d-98af-54e154742376","level":"info","message":"COLOR created","timestamp":"2026-07-01 11:00:55"}
+{"level":"info","message":"POST /v1/colors 838.460 ms","timestamp":"2026-07-01 11:00:55"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT_AREA_COLOR fetch all request received","timestamp":"2026-07-01 11:01:01","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"PROJECT_AREA_COLOR records fetched","timestamp":"2026-07-01 11:01:02"}
+{"level":"info","message":"GET /v1/project-area-colors?projectId=7169e1a1-a859-4ea3-9a4d-bf6b88fc61f8 884.253 ms","timestamp":"2026-07-01 11:01:02"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT_AREA_COLOR create request received","timestamp":"2026-07-01 11:01:08","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"id":"d6d6cff7-6cec-47f4-8a59-4fbb50811d47","level":"info","message":"PROJECT_AREA_COLOR created","timestamp":"2026-07-01 11:01:08"}
+{"level":"info","message":"POST /v1/project-area-colors 152.691 ms","timestamp":"2026-07-01 11:01:08"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-01 11:01:13"}
+{"level":"info","message":"GET /v1/auth/ 961.864 ms","timestamp":"2026-07-01 11:01:14"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-01 11:01:14"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-07-01 11:01:14","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"GET /v1/auth/ 286.186 ms","timestamp":"2026-07-01 11:01:15"}
+{"ip":"127.0.0.1","level":"http","message":"COLOR fetch all request received","timestamp":"2026-07-01 11:01:15","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"http","message":"AREA fetch all request received","timestamp":"2026-07-01 11:01:15","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"COLOR records fetched","timestamp":"2026-07-01 11:01:15"}
+{"level":"info","message":"GET /v1/colors 154.782 ms","timestamp":"2026-07-01 11:01:15"}
+{"level":"info","message":"AREA records fetched","timestamp":"2026-07-01 11:01:15"}
+{"level":"info","message":"GET /v1/areas 441.374 ms","timestamp":"2026-07-01 11:01:15"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-07-01 11:01:15"}
+{"level":"info","message":"GET /v1/projects 943.837 ms","timestamp":"2026-07-01 11:01:15"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT_AREA_COLOR fetch all request received","timestamp":"2026-07-01 11:01:17","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"PROJECT_AREA_COLOR records fetched","timestamp":"2026-07-01 11:01:17"}
+{"level":"info","message":"GET /v1/project-area-colors?projectId=7169e1a1-a859-4ea3-9a4d-bf6b88fc61f8 292.030 ms","timestamp":"2026-07-01 11:01:17"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR fetch all request received","timestamp":"2026-07-01 11:01:22","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE fetch all request received","timestamp":"2026-07-01 11:01:22","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"LABOUR records fetched","timestamp":"2026-07-01 11:01:22"}
+{"level":"info","message":"GET /v1/labours 167.328 ms","timestamp":"2026-07-01 11:01:22"}
+{"level":"info","message":"LABOUR_ATTENDANCE records fetched","timestamp":"2026-07-01 11:01:22"}
+{"level":"info","message":"GET /v1/labour-attendance 330.544 ms","timestamp":"2026-07-01 11:01:22"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_ATTENDANCE fetch all request received","timestamp":"2026-07-01 11:01:22","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"LABOUR_ATTENDANCE records fetched","timestamp":"2026-07-01 11:01:23"}
+{"level":"info","message":"GET /v1/labour-attendance 301.926 ms","timestamp":"2026-07-01 11:01:23"}

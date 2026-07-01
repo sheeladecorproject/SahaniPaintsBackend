@@ -86,26 +86,26 @@ model products {
 }
 
 model projects {
-  id              String              @id @default(uuid()) @db.Uuid
-  name            String              @unique
-  customerId      String?             @map("customer_id") @db.Uuid
-  creatorId       String              @map("creator_id") @db.Uuid
-  status          ProjectStatus
-  totalAmount     Decimal?            @map("total_amount")
-  paid            Decimal?
-  discount        Decimal?
-  discountType    String?             @map("discount_type")
-  tax             Decimal?            @map("tax")
-  agreedPrice     Decimal?            @map("agreed_price")
-  projectDate     DateTime            @map("project_date") @db.Timestamptz(6)
-  createdAt       DateTime            @default(now()) @map("created_at") @db.Timestamptz(6)
-  creator         users               @relation(fields: [creatorId], references: [id])
-  customer        customers?          @relation(fields: [customerId], references: [id])
-  tasks           tasks[]
-  areas           areas[]
-  attendance      labour_attendance[]
-  labourPayments  labour_payments[]
-  projectProducts project_products[]
+  id                String                @id @default(uuid()) @db.Uuid
+  name              String                @unique
+  customerId        String?               @map("customer_id") @db.Uuid
+  creatorId         String                @map("creator_id") @db.Uuid
+  status            ProjectStatus
+  totalAmount       Decimal?              @map("total_amount")
+  paid              Decimal?
+  discount          Decimal?
+  discountType      String?               @map("discount_type")
+  tax               Decimal?              @map("tax")
+  agreedPrice       Decimal?              @map("agreed_price")
+  projectDate       DateTime              @map("project_date") @db.Timestamptz(6)
+  createdAt         DateTime              @default(now()) @map("created_at") @db.Timestamptz(6)
+  creator           users                 @relation(fields: [creatorId], references: [id])
+  customer          customers?            @relation(fields: [customerId], references: [id])
+  tasks             tasks[]
+  projectAreaColors project_area_colors[]
+  attendance        labour_attendance[]
+  labourPayments    labour_payments[]
+  projectProducts   project_products[]
 
   @@index([id, createdAt])
 }
@@ -123,26 +123,25 @@ model colors {
 
 model areas {
   id                String                @id @default(uuid()) @db.Uuid
-  name              String
-  projectId         String                @map("project_id") @db.Uuid
-  project           projects              @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  name              String                @unique
   createdAt         DateTime              @default(now()) @map("created_at") @db.Timestamptz(6)
   projectAreaColors project_area_colors[]
 
-  @@unique([name, projectId])
   @@index([id, createdAt])
 }
 
 model project_area_colors {
   id        String   @id @default(uuid()) @db.Uuid
+  projectId String   @map("project_id") @db.Uuid
   areaId    String   @map("area_id") @db.Uuid
   colorId   String   @map("color_id") @db.Uuid
   createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
 
-  area  areas  @relation(fields: [areaId], references: [id], onDelete: Cascade)
-  color colors @relation(fields: [colorId], references: [id], onDelete: Cascade)
+  project projects @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  area    areas    @relation(fields: [areaId], references: [id], onDelete: Cascade)
+  color   colors   @relation(fields: [colorId], references: [id], onDelete: Cascade)
 
-  @@unique([areaId, colorId])
+  @@unique([projectId, areaId, colorId])
 }
 
 model tasks {

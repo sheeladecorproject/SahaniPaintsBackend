@@ -202,12 +202,12 @@ exports.Prisma.ColorsScalarFieldEnum = {
 exports.Prisma.AreasScalarFieldEnum = {
   id: 'id',
   name: 'name',
-  projectId: 'projectId',
   createdAt: 'createdAt'
 };
 
 exports.Prisma.Project_area_colorsScalarFieldEnum = {
   id: 'id',
+  projectId: 'projectId',
   areaId: 'areaId',
   colorId: 'colorId',
   createdAt: 'createdAt'
