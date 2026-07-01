@@ -3894,6 +3894,7 @@ export namespace Prisma {
     userId: string | null
     role: $Enums.Role | null
     isUsed: boolean | null
+    createdAt: Date | null
   }
 
   export type RefreshTokensMaxAggregateOutputType = {
@@ -3902,6 +3903,7 @@ export namespace Prisma {
     userId: string | null
     role: $Enums.Role | null
     isUsed: boolean | null
+    createdAt: Date | null
   }
 
   export type RefreshTokensCountAggregateOutputType = {
@@ -3910,6 +3912,7 @@ export namespace Prisma {
     userId: number
     role: number
     isUsed: number
+    createdAt: number
     _all: number
   }
 
@@ -3920,6 +3923,7 @@ export namespace Prisma {
     userId?: true
     role?: true
     isUsed?: true
+    createdAt?: true
   }
 
   export type RefreshTokensMaxAggregateInputType = {
@@ -3928,6 +3932,7 @@ export namespace Prisma {
     userId?: true
     role?: true
     isUsed?: true
+    createdAt?: true
   }
 
   export type RefreshTokensCountAggregateInputType = {
@@ -3936,6 +3941,7 @@ export namespace Prisma {
     userId?: true
     role?: true
     isUsed?: true
+    createdAt?: true
     _all?: true
   }
 
@@ -4017,6 +4023,7 @@ export namespace Prisma {
     userId: string
     role: $Enums.Role
     isUsed: boolean
+    createdAt: Date
     _count: RefreshTokensCountAggregateOutputType | null
     _min: RefreshTokensMinAggregateOutputType | null
     _max: RefreshTokensMaxAggregateOutputType | null
@@ -4042,6 +4049,7 @@ export namespace Prisma {
     userId?: boolean
     role?: boolean
     isUsed?: boolean
+    createdAt?: boolean
     user?: boolean | usersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["refreshTokens"]>
 
@@ -4051,6 +4059,7 @@ export namespace Prisma {
     userId?: boolean
     role?: boolean
     isUsed?: boolean
+    createdAt?: boolean
     user?: boolean | usersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["refreshTokens"]>
 
@@ -4060,6 +4069,7 @@ export namespace Prisma {
     userId?: boolean
     role?: boolean
     isUsed?: boolean
+    createdAt?: boolean
     user?: boolean | usersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["refreshTokens"]>
 
@@ -4069,9 +4079,10 @@ export namespace Prisma {
     userId?: boolean
     role?: boolean
     isUsed?: boolean
+    createdAt?: boolean
   }
 
-  export type refreshTokensOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "familyId" | "userId" | "role" | "isUsed", ExtArgs["result"]["refreshTokens"]>
+  export type refreshTokensOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "familyId" | "userId" | "role" | "isUsed" | "createdAt", ExtArgs["result"]["refreshTokens"]>
   export type refreshTokensInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | usersDefaultArgs<ExtArgs>
   }
@@ -4093,6 +4104,7 @@ export namespace Prisma {
       userId: string
       role: $Enums.Role
       isUsed: boolean
+      createdAt: Date
     }, ExtArgs["result"]["refreshTokens"]>
     composites: {}
   }
@@ -4522,6 +4534,7 @@ export namespace Prisma {
     readonly userId: FieldRef<"refreshTokens", 'String'>
     readonly role: FieldRef<"refreshTokens", 'Role'>
     readonly isUsed: FieldRef<"refreshTokens", 'Boolean'>
+    readonly createdAt: FieldRef<"refreshTokens", 'DateTime'>
   }
     
 
@@ -21633,7 +21646,8 @@ export namespace Prisma {
     familyId: 'familyId',
     userId: 'userId',
     role: 'role',
-    isUsed: 'isUsed'
+    isUsed: 'isUsed',
+    createdAt: 'createdAt'
   };
 
   export type RefreshTokensScalarFieldEnum = (typeof RefreshTokensScalarFieldEnum)[keyof typeof RefreshTokensScalarFieldEnum]
@@ -22078,6 +22092,7 @@ export namespace Prisma {
     userId?: UuidFilter<"refreshTokens"> | string
     role?: EnumRoleFilter<"refreshTokens"> | $Enums.Role
     isUsed?: BoolFilter<"refreshTokens"> | boolean
+    createdAt?: DateTimeFilter<"refreshTokens"> | Date | string
     user?: XOR<UsersScalarRelationFilter, usersWhereInput>
   }
 
@@ -22087,6 +22102,7 @@ export namespace Prisma {
     userId?: SortOrder
     role?: SortOrder
     isUsed?: SortOrder
+    createdAt?: SortOrder
     user?: usersOrderByWithRelationInput
   }
 
@@ -22099,6 +22115,7 @@ export namespace Prisma {
     userId?: UuidFilter<"refreshTokens"> | string
     role?: EnumRoleFilter<"refreshTokens"> | $Enums.Role
     isUsed?: BoolFilter<"refreshTokens"> | boolean
+    createdAt?: DateTimeFilter<"refreshTokens"> | Date | string
     user?: XOR<UsersScalarRelationFilter, usersWhereInput>
   }, "id">
 
@@ -22108,6 +22125,7 @@ export namespace Prisma {
     userId?: SortOrder
     role?: SortOrder
     isUsed?: SortOrder
+    createdAt?: SortOrder
     _count?: refreshTokensCountOrderByAggregateInput
     _max?: refreshTokensMaxOrderByAggregateInput
     _min?: refreshTokensMinOrderByAggregateInput
@@ -22122,6 +22140,7 @@ export namespace Prisma {
     userId?: UuidWithAggregatesFilter<"refreshTokens"> | string
     role?: EnumRoleWithAggregatesFilter<"refreshTokens"> | $Enums.Role
     isUsed?: BoolWithAggregatesFilter<"refreshTokens"> | boolean
+    createdAt?: DateTimeWithAggregatesFilter<"refreshTokens"> | Date | string
   }
 
   export type authorizationsWhereInput = {
@@ -23197,6 +23216,7 @@ export namespace Prisma {
     familyId: string
     role?: $Enums.Role
     isUsed: boolean
+    createdAt?: Date | string
     user: usersCreateNestedOneWithoutRefreshTokensInput
   }
 
@@ -23206,6 +23226,7 @@ export namespace Prisma {
     userId: string
     role?: $Enums.Role
     isUsed: boolean
+    createdAt?: Date | string
   }
 
   export type refreshTokensUpdateInput = {
@@ -23213,6 +23234,7 @@ export namespace Prisma {
     familyId?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     isUsed?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: usersUpdateOneRequiredWithoutRefreshTokensNestedInput
   }
 
@@ -23222,6 +23244,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     isUsed?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type refreshTokensCreateManyInput = {
@@ -23230,6 +23253,7 @@ export namespace Prisma {
     userId: string
     role?: $Enums.Role
     isUsed: boolean
+    createdAt?: Date | string
   }
 
   export type refreshTokensUpdateManyMutationInput = {
@@ -23237,6 +23261,7 @@ export namespace Prisma {
     familyId?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     isUsed?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type refreshTokensUncheckedUpdateManyInput = {
@@ -23245,6 +23270,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     isUsed?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type authorizationsCreateInput = {
@@ -24476,6 +24502,7 @@ export namespace Prisma {
     userId?: SortOrder
     role?: SortOrder
     isUsed?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type refreshTokensMaxOrderByAggregateInput = {
@@ -24484,6 +24511,7 @@ export namespace Prisma {
     userId?: SortOrder
     role?: SortOrder
     isUsed?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type refreshTokensMinOrderByAggregateInput = {
@@ -24492,6 +24520,7 @@ export namespace Prisma {
     userId?: SortOrder
     role?: SortOrder
     isUsed?: SortOrder
+    createdAt?: SortOrder
   }
 
   export type BoolWithAggregatesFilter<$PrismaModel = never> = {
@@ -26584,6 +26613,7 @@ export namespace Prisma {
     familyId: string
     role?: $Enums.Role
     isUsed: boolean
+    createdAt?: Date | string
   }
 
   export type refreshTokensUncheckedCreateWithoutUserInput = {
@@ -26591,6 +26621,7 @@ export namespace Prisma {
     familyId: string
     role?: $Enums.Role
     isUsed: boolean
+    createdAt?: Date | string
   }
 
   export type refreshTokensCreateOrConnectWithoutUserInput = {
@@ -26688,6 +26719,7 @@ export namespace Prisma {
     userId?: UuidFilter<"refreshTokens"> | string
     role?: EnumRoleFilter<"refreshTokens"> | $Enums.Role
     isUsed?: BoolFilter<"refreshTokens"> | boolean
+    createdAt?: DateTimeFilter<"refreshTokens"> | Date | string
   }
 
   export type usersCreateWithoutRefreshTokensInput = {
@@ -28392,6 +28424,7 @@ export namespace Prisma {
     familyId: string
     role?: $Enums.Role
     isUsed: boolean
+    createdAt?: Date | string
   }
 
   export type authorizationsUpdateWithoutUserInput = {
@@ -28469,6 +28502,7 @@ export namespace Prisma {
     familyId?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     isUsed?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type refreshTokensUncheckedUpdateWithoutUserInput = {
@@ -28476,6 +28510,7 @@ export namespace Prisma {
     familyId?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     isUsed?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type refreshTokensUncheckedUpdateManyWithoutUserInput = {
@@ -28483,6 +28518,7 @@ export namespace Prisma {
     familyId?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     isUsed?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type projectsCreateManyCustomerInput = {

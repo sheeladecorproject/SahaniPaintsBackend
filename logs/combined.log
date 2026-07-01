@@ -669,3 +669,26 @@
 {"ip":"127.0.0.1","level":"http","message":"BRAND fetch all request received","timestamp":"2026-06-27 13:58:04","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
 {"level":"info","message":"BRAND records fetched","timestamp":"2026-06-27 13:58:04"}
 {"level":"info","message":"GET /v1/brands 185.457 ms","timestamp":"2026-06-27 13:58:04"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-06-30 11:33:12"}
+{"level":"info","message":"GET /v1/auth/ 2123.046 ms","timestamp":"2026-06-30 11:33:15"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-06-30 11:33:15"}
+{"level":"info","message":"GET /v1/reports 6.253 ms","timestamp":"2026-06-30 11:33:15"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-06-30 11:33:15","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"http","message":"TASK fetch all request received","timestamp":"2026-06-30 11:33:15","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"http","message":"INQUIRY fetch all request received","timestamp":"2026-06-30 11:33:15","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"GET /v1/reports 26.052 ms","timestamp":"2026-06-30 11:33:15"}
+{"level":"info","message":"GET /v1/auth/ 473.079 ms","timestamp":"2026-06-30 11:33:15"}
+{"level":"warn","message":"No TASK records found","timestamp":"2026-06-30 11:33:15"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-06-30 11:33:15"}
+{"level":"info","message":"GET /v1/tasks 434.861 ms","timestamp":"2026-06-30 11:33:15"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-06-30 11:33:16"}
+{"level":"info","message":"GET /v1/projects 1060.870 ms","timestamp":"2026-06-30 11:33:16"}
+{"level":"warn","message":"No INQUIRY records found","timestamp":"2026-06-30 11:33:16"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-06-30 11:33:16"}
+{"level":"info","message":"GET /v1/inquiries 915.882 ms","timestamp":"2026-06-30 11:33:16"}
+{"ip":"127.0.0.1","level":"http","message":"PRODUCT fetch all request received","timestamp":"2026-06-30 11:33:17","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"ip":"127.0.0.1","level":"http","message":"CUSTOMER fetch all request received","timestamp":"2026-06-30 11:33:17","userId":"6f4dd960-d43b-403d-babe-0052f2aaf529"}
+{"level":"info","message":"CUSTOMER records fetched","timestamp":"2026-06-30 11:33:17"}
+{"level":"info","message":"GET /v1/customers 177.562 ms","timestamp":"2026-06-30 11:33:17"}
+{"level":"info","message":"PRODUCT records fetched","timestamp":"2026-06-30 11:33:17"}
+{"level":"info","message":"GET /v1/products 348.837 ms","timestamp":"2026-06-30 11:33:17"}

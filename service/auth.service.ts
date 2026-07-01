@@ -46,6 +46,17 @@ class AuthService {
             logger.warn("Invalid refresh token id");
             throw new ServerError(errorMessage.UNAUTHORIZED);
         }
+        
+        // 30 days expiry check
+        const expiryTime = 30 * 24 * 60 * 60 * 1000;
+        if (new Date().getTime() - new Date(refreshToken.createdAt).getTime() > expiryTime) {
+            logger.warn("Refresh token expired");
+            await prisma.refreshTokens.delete({
+                where: { id: refreshTokenId }
+            }).catch(() => {});
+            throw new ServerError(errorMessage.UNAUTHORIZED);
+        }
+
         if(refreshToken.isUsed) {
             await prisma.refreshTokens.deleteMany({
                 where: {

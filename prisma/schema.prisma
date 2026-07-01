@@ -25,12 +25,13 @@ model users {
 }
 
 model refreshTokens {
-  id       String  @id @default(uuid()) @db.Uuid
-  familyId String  @map("family_id") @db.Uuid
-  userId   String  @map("user_id") @db.Uuid
-  role     Role    @default(INTERIOR)
-  isUsed   Boolean @map("is_used")
-  user     users   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id        String   @id @default(uuid()) @db.Uuid
+  familyId  String   @map("family_id") @db.Uuid
+  userId    String   @map("user_id") @db.Uuid
+  role      Role     @default(INTERIOR)
+  isUsed    Boolean  @map("is_used")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  user      users    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([familyId])
   @@map("refresh_tokens")

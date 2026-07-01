@@ -137,7 +137,8 @@ exports.Prisma.RefreshTokensScalarFieldEnum = {
   familyId: 'familyId',
   userId: 'userId',
   role: 'role',
-  isUsed: 'isUsed'
+  isUsed: 'isUsed',
+  createdAt: 'createdAt'
 };
 
 exports.Prisma.AuthorizationsScalarFieldEnum = {
