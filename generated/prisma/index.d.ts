@@ -12853,6 +12853,7 @@ export namespace Prisma {
     projectId: string | null
     areaId: string | null
     colorId: string | null
+    description: string | null
     createdAt: Date | null
   }
 
@@ -12861,6 +12862,7 @@ export namespace Prisma {
     projectId: string | null
     areaId: string | null
     colorId: string | null
+    description: string | null
     createdAt: Date | null
   }
 
@@ -12869,6 +12871,7 @@ export namespace Prisma {
     projectId: number
     areaId: number
     colorId: number
+    description: number
     createdAt: number
     _all: number
   }
@@ -12879,6 +12882,7 @@ export namespace Prisma {
     projectId?: true
     areaId?: true
     colorId?: true
+    description?: true
     createdAt?: true
   }
 
@@ -12887,6 +12891,7 @@ export namespace Prisma {
     projectId?: true
     areaId?: true
     colorId?: true
+    description?: true
     createdAt?: true
   }
 
@@ -12895,6 +12900,7 @@ export namespace Prisma {
     projectId?: true
     areaId?: true
     colorId?: true
+    description?: true
     createdAt?: true
     _all?: true
   }
@@ -12976,6 +12982,7 @@ export namespace Prisma {
     projectId: string
     areaId: string
     colorId: string
+    description: string | null
     createdAt: Date
     _count: Project_area_colorsCountAggregateOutputType | null
     _min: Project_area_colorsMinAggregateOutputType | null
@@ -13001,6 +13008,7 @@ export namespace Prisma {
     projectId?: boolean
     areaId?: boolean
     colorId?: boolean
+    description?: boolean
     createdAt?: boolean
     project?: boolean | projectsDefaultArgs<ExtArgs>
     area?: boolean | areasDefaultArgs<ExtArgs>
@@ -13012,6 +13020,7 @@ export namespace Prisma {
     projectId?: boolean
     areaId?: boolean
     colorId?: boolean
+    description?: boolean
     createdAt?: boolean
     project?: boolean | projectsDefaultArgs<ExtArgs>
     area?: boolean | areasDefaultArgs<ExtArgs>
@@ -13023,6 +13032,7 @@ export namespace Prisma {
     projectId?: boolean
     areaId?: boolean
     colorId?: boolean
+    description?: boolean
     createdAt?: boolean
     project?: boolean | projectsDefaultArgs<ExtArgs>
     area?: boolean | areasDefaultArgs<ExtArgs>
@@ -13034,10 +13044,11 @@ export namespace Prisma {
     projectId?: boolean
     areaId?: boolean
     colorId?: boolean
+    description?: boolean
     createdAt?: boolean
   }
 
-  export type project_area_colorsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "projectId" | "areaId" | "colorId" | "createdAt", ExtArgs["result"]["project_area_colors"]>
+  export type project_area_colorsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "projectId" | "areaId" | "colorId" | "description" | "createdAt", ExtArgs["result"]["project_area_colors"]>
   export type project_area_colorsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | projectsDefaultArgs<ExtArgs>
     area?: boolean | areasDefaultArgs<ExtArgs>
@@ -13066,6 +13077,7 @@ export namespace Prisma {
       projectId: string
       areaId: string
       colorId: string
+      description: string | null
       createdAt: Date
     }, ExtArgs["result"]["project_area_colors"]>
     composites: {}
@@ -13497,6 +13509,7 @@ export namespace Prisma {
     readonly projectId: FieldRef<"project_area_colors", 'String'>
     readonly areaId: FieldRef<"project_area_colors", 'String'>
     readonly colorId: FieldRef<"project_area_colors", 'String'>
+    readonly description: FieldRef<"project_area_colors", 'String'>
     readonly createdAt: FieldRef<"project_area_colors", 'DateTime'>
   }
     
@@ -18235,8 +18248,18 @@ export namespace Prisma {
 
   export type AggregateLabour_attendance = {
     _count: Labour_attendanceCountAggregateOutputType | null
+    _avg: Labour_attendanceAvgAggregateOutputType | null
+    _sum: Labour_attendanceSumAggregateOutputType | null
     _min: Labour_attendanceMinAggregateOutputType | null
     _max: Labour_attendanceMaxAggregateOutputType | null
+  }
+
+  export type Labour_attendanceAvgAggregateOutputType = {
+    workDayValue: Decimal | null
+  }
+
+  export type Labour_attendanceSumAggregateOutputType = {
+    workDayValue: Decimal | null
   }
 
   export type Labour_attendanceMinAggregateOutputType = {
@@ -18244,6 +18267,8 @@ export namespace Prisma {
     date: Date | null
     projectId: string | null
     labourId: string | null
+    workDayType: string | null
+    workDayValue: Decimal | null
     createdAt: Date | null
   }
 
@@ -18252,6 +18277,8 @@ export namespace Prisma {
     date: Date | null
     projectId: string | null
     labourId: string | null
+    workDayType: string | null
+    workDayValue: Decimal | null
     createdAt: Date | null
   }
 
@@ -18260,16 +18287,28 @@ export namespace Prisma {
     date: number
     projectId: number
     labourId: number
+    workDayType: number
+    workDayValue: number
     createdAt: number
     _all: number
   }
 
+
+  export type Labour_attendanceAvgAggregateInputType = {
+    workDayValue?: true
+  }
+
+  export type Labour_attendanceSumAggregateInputType = {
+    workDayValue?: true
+  }
 
   export type Labour_attendanceMinAggregateInputType = {
     id?: true
     date?: true
     projectId?: true
     labourId?: true
+    workDayType?: true
+    workDayValue?: true
     createdAt?: true
   }
 
@@ -18278,6 +18317,8 @@ export namespace Prisma {
     date?: true
     projectId?: true
     labourId?: true
+    workDayType?: true
+    workDayValue?: true
     createdAt?: true
   }
 
@@ -18286,6 +18327,8 @@ export namespace Prisma {
     date?: true
     projectId?: true
     labourId?: true
+    workDayType?: true
+    workDayValue?: true
     createdAt?: true
     _all?: true
   }
@@ -18328,6 +18371,18 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
+     * Select which fields to average
+    **/
+    _avg?: Labour_attendanceAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Labour_attendanceSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
      * Select which fields to find the minimum value
     **/
     _min?: Labour_attendanceMinAggregateInputType
@@ -18358,6 +18413,8 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: Labour_attendanceCountAggregateInputType | true
+    _avg?: Labour_attendanceAvgAggregateInputType
+    _sum?: Labour_attendanceSumAggregateInputType
     _min?: Labour_attendanceMinAggregateInputType
     _max?: Labour_attendanceMaxAggregateInputType
   }
@@ -18367,8 +18424,12 @@ export namespace Prisma {
     date: Date
     projectId: string
     labourId: string
+    workDayType: string
+    workDayValue: Decimal
     createdAt: Date
     _count: Labour_attendanceCountAggregateOutputType | null
+    _avg: Labour_attendanceAvgAggregateOutputType | null
+    _sum: Labour_attendanceSumAggregateOutputType | null
     _min: Labour_attendanceMinAggregateOutputType | null
     _max: Labour_attendanceMaxAggregateOutputType | null
   }
@@ -18392,6 +18453,8 @@ export namespace Prisma {
     date?: boolean
     projectId?: boolean
     labourId?: boolean
+    workDayType?: boolean
+    workDayValue?: boolean
     createdAt?: boolean
     project?: boolean | projectsDefaultArgs<ExtArgs>
     labour?: boolean | laboursDefaultArgs<ExtArgs>
@@ -18402,6 +18465,8 @@ export namespace Prisma {
     date?: boolean
     projectId?: boolean
     labourId?: boolean
+    workDayType?: boolean
+    workDayValue?: boolean
     createdAt?: boolean
     project?: boolean | projectsDefaultArgs<ExtArgs>
     labour?: boolean | laboursDefaultArgs<ExtArgs>
@@ -18412,6 +18477,8 @@ export namespace Prisma {
     date?: boolean
     projectId?: boolean
     labourId?: boolean
+    workDayType?: boolean
+    workDayValue?: boolean
     createdAt?: boolean
     project?: boolean | projectsDefaultArgs<ExtArgs>
     labour?: boolean | laboursDefaultArgs<ExtArgs>
@@ -18422,10 +18489,12 @@ export namespace Prisma {
     date?: boolean
     projectId?: boolean
     labourId?: boolean
+    workDayType?: boolean
+    workDayValue?: boolean
     createdAt?: boolean
   }
 
-  export type labour_attendanceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "date" | "projectId" | "labourId" | "createdAt", ExtArgs["result"]["labour_attendance"]>
+  export type labour_attendanceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "date" | "projectId" | "labourId" | "workDayType" | "workDayValue" | "createdAt", ExtArgs["result"]["labour_attendance"]>
   export type labour_attendanceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | projectsDefaultArgs<ExtArgs>
     labour?: boolean | laboursDefaultArgs<ExtArgs>
@@ -18450,6 +18519,8 @@ export namespace Prisma {
       date: Date
       projectId: string
       labourId: string
+      workDayType: string
+      workDayValue: Prisma.Decimal
       createdAt: Date
     }, ExtArgs["result"]["labour_attendance"]>
     composites: {}
@@ -18880,6 +18951,8 @@ export namespace Prisma {
     readonly date: FieldRef<"labour_attendance", 'DateTime'>
     readonly projectId: FieldRef<"labour_attendance", 'String'>
     readonly labourId: FieldRef<"labour_attendance", 'String'>
+    readonly workDayType: FieldRef<"labour_attendance", 'String'>
+    readonly workDayValue: FieldRef<"labour_attendance", 'Decimal'>
     readonly createdAt: FieldRef<"labour_attendance", 'DateTime'>
   }
     
@@ -21733,6 +21806,7 @@ export namespace Prisma {
     projectId: 'projectId',
     areaId: 'areaId',
     colorId: 'colorId',
+    description: 'description',
     createdAt: 'createdAt'
   };
 
@@ -21794,6 +21868,8 @@ export namespace Prisma {
     date: 'date',
     projectId: 'projectId',
     labourId: 'labourId',
+    workDayType: 'workDayType',
+    workDayValue: 'workDayValue',
     createdAt: 'createdAt'
   };
 
@@ -22593,6 +22669,7 @@ export namespace Prisma {
     projectId?: UuidFilter<"project_area_colors"> | string
     areaId?: UuidFilter<"project_area_colors"> | string
     colorId?: UuidFilter<"project_area_colors"> | string
+    description?: StringNullableFilter<"project_area_colors"> | string | null
     createdAt?: DateTimeFilter<"project_area_colors"> | Date | string
     project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
     area?: XOR<AreasScalarRelationFilter, areasWhereInput>
@@ -22604,6 +22681,7 @@ export namespace Prisma {
     projectId?: SortOrder
     areaId?: SortOrder
     colorId?: SortOrder
+    description?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     project?: projectsOrderByWithRelationInput
     area?: areasOrderByWithRelationInput
@@ -22619,6 +22697,7 @@ export namespace Prisma {
     projectId?: UuidFilter<"project_area_colors"> | string
     areaId?: UuidFilter<"project_area_colors"> | string
     colorId?: UuidFilter<"project_area_colors"> | string
+    description?: StringNullableFilter<"project_area_colors"> | string | null
     createdAt?: DateTimeFilter<"project_area_colors"> | Date | string
     project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
     area?: XOR<AreasScalarRelationFilter, areasWhereInput>
@@ -22630,6 +22709,7 @@ export namespace Prisma {
     projectId?: SortOrder
     areaId?: SortOrder
     colorId?: SortOrder
+    description?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     _count?: project_area_colorsCountOrderByAggregateInput
     _max?: project_area_colorsMaxOrderByAggregateInput
@@ -22644,6 +22724,7 @@ export namespace Prisma {
     projectId?: UuidWithAggregatesFilter<"project_area_colors"> | string
     areaId?: UuidWithAggregatesFilter<"project_area_colors"> | string
     colorId?: UuidWithAggregatesFilter<"project_area_colors"> | string
+    description?: StringNullableWithAggregatesFilter<"project_area_colors"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"project_area_colors"> | Date | string
   }
 
@@ -22908,6 +22989,8 @@ export namespace Prisma {
     date?: DateTimeFilter<"labour_attendance"> | Date | string
     projectId?: UuidFilter<"labour_attendance"> | string
     labourId?: UuidFilter<"labour_attendance"> | string
+    workDayType?: StringFilter<"labour_attendance"> | string
+    workDayValue?: DecimalFilter<"labour_attendance"> | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFilter<"labour_attendance"> | Date | string
     project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
     labour?: XOR<LaboursScalarRelationFilter, laboursWhereInput>
@@ -22918,6 +23001,8 @@ export namespace Prisma {
     date?: SortOrder
     projectId?: SortOrder
     labourId?: SortOrder
+    workDayType?: SortOrder
+    workDayValue?: SortOrder
     createdAt?: SortOrder
     project?: projectsOrderByWithRelationInput
     labour?: laboursOrderByWithRelationInput
@@ -22932,6 +23017,8 @@ export namespace Prisma {
     date?: DateTimeFilter<"labour_attendance"> | Date | string
     projectId?: UuidFilter<"labour_attendance"> | string
     labourId?: UuidFilter<"labour_attendance"> | string
+    workDayType?: StringFilter<"labour_attendance"> | string
+    workDayValue?: DecimalFilter<"labour_attendance"> | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFilter<"labour_attendance"> | Date | string
     project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
     labour?: XOR<LaboursScalarRelationFilter, laboursWhereInput>
@@ -22942,10 +23029,14 @@ export namespace Prisma {
     date?: SortOrder
     projectId?: SortOrder
     labourId?: SortOrder
+    workDayType?: SortOrder
+    workDayValue?: SortOrder
     createdAt?: SortOrder
     _count?: labour_attendanceCountOrderByAggregateInput
+    _avg?: labour_attendanceAvgOrderByAggregateInput
     _max?: labour_attendanceMaxOrderByAggregateInput
     _min?: labour_attendanceMinOrderByAggregateInput
+    _sum?: labour_attendanceSumOrderByAggregateInput
   }
 
   export type labour_attendanceScalarWhereWithAggregatesInput = {
@@ -22956,6 +23047,8 @@ export namespace Prisma {
     date?: DateTimeWithAggregatesFilter<"labour_attendance"> | Date | string
     projectId?: UuidWithAggregatesFilter<"labour_attendance"> | string
     labourId?: UuidWithAggregatesFilter<"labour_attendance"> | string
+    workDayType?: StringWithAggregatesFilter<"labour_attendance"> | string
+    workDayValue?: DecimalWithAggregatesFilter<"labour_attendance"> | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeWithAggregatesFilter<"labour_attendance"> | Date | string
   }
 
@@ -23748,6 +23841,7 @@ export namespace Prisma {
 
   export type project_area_colorsCreateInput = {
     id?: string
+    description?: string | null
     createdAt?: Date | string
     project: projectsCreateNestedOneWithoutProjectAreaColorsInput
     area: areasCreateNestedOneWithoutProjectAreaColorsInput
@@ -23759,11 +23853,13 @@ export namespace Prisma {
     projectId: string
     areaId: string
     colorId: string
+    description?: string | null
     createdAt?: Date | string
   }
 
   export type project_area_colorsUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: projectsUpdateOneRequiredWithoutProjectAreaColorsNestedInput
     area?: areasUpdateOneRequiredWithoutProjectAreaColorsNestedInput
@@ -23775,6 +23871,7 @@ export namespace Prisma {
     projectId?: StringFieldUpdateOperationsInput | string
     areaId?: StringFieldUpdateOperationsInput | string
     colorId?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -23783,11 +23880,13 @@ export namespace Prisma {
     projectId: string
     areaId: string
     colorId: string
+    description?: string | null
     createdAt?: Date | string
   }
 
   export type project_area_colorsUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -23796,6 +23895,7 @@ export namespace Prisma {
     projectId?: StringFieldUpdateOperationsInput | string
     areaId?: StringFieldUpdateOperationsInput | string
     colorId?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -24075,6 +24175,8 @@ export namespace Prisma {
   export type labour_attendanceCreateInput = {
     id?: string
     date: Date | string
+    workDayType?: string
+    workDayValue?: Decimal | DecimalJsLike | number | string
     createdAt?: Date | string
     project: projectsCreateNestedOneWithoutAttendanceInput
     labour: laboursCreateNestedOneWithoutAttendanceInput
@@ -24085,12 +24187,16 @@ export namespace Prisma {
     date: Date | string
     projectId: string
     labourId: string
+    workDayType?: string
+    workDayValue?: Decimal | DecimalJsLike | number | string
     createdAt?: Date | string
   }
 
   export type labour_attendanceUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
+    workDayType?: StringFieldUpdateOperationsInput | string
+    workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: projectsUpdateOneRequiredWithoutAttendanceNestedInput
     labour?: laboursUpdateOneRequiredWithoutAttendanceNestedInput
@@ -24101,6 +24207,8 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     projectId?: StringFieldUpdateOperationsInput | string
     labourId?: StringFieldUpdateOperationsInput | string
+    workDayType?: StringFieldUpdateOperationsInput | string
+    workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -24109,12 +24217,16 @@ export namespace Prisma {
     date: Date | string
     projectId: string
     labourId: string
+    workDayType?: string
+    workDayValue?: Decimal | DecimalJsLike | number | string
     createdAt?: Date | string
   }
 
   export type labour_attendanceUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
+    workDayType?: StringFieldUpdateOperationsInput | string
+    workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -24123,6 +24235,8 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     projectId?: StringFieldUpdateOperationsInput | string
     labourId?: StringFieldUpdateOperationsInput | string
+    workDayType?: StringFieldUpdateOperationsInput | string
+    workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -24944,6 +25058,7 @@ export namespace Prisma {
     projectId?: SortOrder
     areaId?: SortOrder
     colorId?: SortOrder
+    description?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -24952,6 +25067,7 @@ export namespace Prisma {
     projectId?: SortOrder
     areaId?: SortOrder
     colorId?: SortOrder
+    description?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -24960,6 +25076,7 @@ export namespace Prisma {
     projectId?: SortOrder
     areaId?: SortOrder
     colorId?: SortOrder
+    description?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -25180,7 +25297,13 @@ export namespace Prisma {
     date?: SortOrder
     projectId?: SortOrder
     labourId?: SortOrder
+    workDayType?: SortOrder
+    workDayValue?: SortOrder
     createdAt?: SortOrder
+  }
+
+  export type labour_attendanceAvgOrderByAggregateInput = {
+    workDayValue?: SortOrder
   }
 
   export type labour_attendanceMaxOrderByAggregateInput = {
@@ -25188,6 +25311,8 @@ export namespace Prisma {
     date?: SortOrder
     projectId?: SortOrder
     labourId?: SortOrder
+    workDayType?: SortOrder
+    workDayValue?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -25196,7 +25321,13 @@ export namespace Prisma {
     date?: SortOrder
     projectId?: SortOrder
     labourId?: SortOrder
+    workDayType?: SortOrder
+    workDayValue?: SortOrder
     createdAt?: SortOrder
+  }
+
+  export type labour_attendanceSumOrderByAggregateInput = {
+    workDayValue?: SortOrder
   }
 
   export type ProjectsNullableScalarRelationFilter = {
@@ -27166,6 +27297,7 @@ export namespace Prisma {
 
   export type project_area_colorsCreateWithoutProjectInput = {
     id?: string
+    description?: string | null
     createdAt?: Date | string
     area: areasCreateNestedOneWithoutProjectAreaColorsInput
     color: colorsCreateNestedOneWithoutProjectAreaColorsInput
@@ -27175,6 +27307,7 @@ export namespace Prisma {
     id?: string
     areaId: string
     colorId: string
+    description?: string | null
     createdAt?: Date | string
   }
 
@@ -27191,6 +27324,8 @@ export namespace Prisma {
   export type labour_attendanceCreateWithoutProjectInput = {
     id?: string
     date: Date | string
+    workDayType?: string
+    workDayValue?: Decimal | DecimalJsLike | number | string
     createdAt?: Date | string
     labour: laboursCreateNestedOneWithoutAttendanceInput
   }
@@ -27199,6 +27334,8 @@ export namespace Prisma {
     id?: string
     date: Date | string
     labourId: string
+    workDayType?: string
+    workDayValue?: Decimal | DecimalJsLike | number | string
     createdAt?: Date | string
   }
 
@@ -27394,6 +27531,7 @@ export namespace Prisma {
     projectId?: UuidFilter<"project_area_colors"> | string
     areaId?: UuidFilter<"project_area_colors"> | string
     colorId?: UuidFilter<"project_area_colors"> | string
+    description?: StringNullableFilter<"project_area_colors"> | string | null
     createdAt?: DateTimeFilter<"project_area_colors"> | Date | string
   }
 
@@ -27421,6 +27559,8 @@ export namespace Prisma {
     date?: DateTimeFilter<"labour_attendance"> | Date | string
     projectId?: UuidFilter<"labour_attendance"> | string
     labourId?: UuidFilter<"labour_attendance"> | string
+    workDayType?: StringFilter<"labour_attendance"> | string
+    workDayValue?: DecimalFilter<"labour_attendance"> | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFilter<"labour_attendance"> | Date | string
   }
 
@@ -27471,6 +27611,7 @@ export namespace Prisma {
 
   export type project_area_colorsCreateWithoutColorInput = {
     id?: string
+    description?: string | null
     createdAt?: Date | string
     project: projectsCreateNestedOneWithoutProjectAreaColorsInput
     area: areasCreateNestedOneWithoutProjectAreaColorsInput
@@ -27480,6 +27621,7 @@ export namespace Prisma {
     id?: string
     projectId: string
     areaId: string
+    description?: string | null
     createdAt?: Date | string
   }
 
@@ -27511,6 +27653,7 @@ export namespace Prisma {
 
   export type project_area_colorsCreateWithoutAreaInput = {
     id?: string
+    description?: string | null
     createdAt?: Date | string
     project: projectsCreateNestedOneWithoutProjectAreaColorsInput
     color: colorsCreateNestedOneWithoutProjectAreaColorsInput
@@ -27520,6 +27663,7 @@ export namespace Prisma {
     id?: string
     projectId: string
     colorId: string
+    description?: string | null
     createdAt?: Date | string
   }
 
@@ -27828,6 +27972,8 @@ export namespace Prisma {
   export type labour_attendanceCreateWithoutLabourInput = {
     id?: string
     date: Date | string
+    workDayType?: string
+    workDayValue?: Decimal | DecimalJsLike | number | string
     createdAt?: Date | string
     project: projectsCreateNestedOneWithoutAttendanceInput
   }
@@ -27836,6 +27982,8 @@ export namespace Prisma {
     id?: string
     date: Date | string
     projectId: string
+    workDayType?: string
+    workDayValue?: Decimal | DecimalJsLike | number | string
     createdAt?: Date | string
   }
 
@@ -28657,6 +28805,7 @@ export namespace Prisma {
     id?: string
     areaId: string
     colorId: string
+    description?: string | null
     createdAt?: Date | string
   }
 
@@ -28664,6 +28813,8 @@ export namespace Prisma {
     id?: string
     date: Date | string
     labourId: string
+    workDayType?: string
+    workDayValue?: Decimal | DecimalJsLike | number | string
     createdAt?: Date | string
   }
 
@@ -28718,6 +28869,7 @@ export namespace Prisma {
 
   export type project_area_colorsUpdateWithoutProjectInput = {
     id?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     area?: areasUpdateOneRequiredWithoutProjectAreaColorsNestedInput
     color?: colorsUpdateOneRequiredWithoutProjectAreaColorsNestedInput
@@ -28727,6 +28879,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     areaId?: StringFieldUpdateOperationsInput | string
     colorId?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -28734,12 +28887,15 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     areaId?: StringFieldUpdateOperationsInput | string
     colorId?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type labour_attendanceUpdateWithoutProjectInput = {
     id?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
+    workDayType?: StringFieldUpdateOperationsInput | string
+    workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     labour?: laboursUpdateOneRequiredWithoutAttendanceNestedInput
   }
@@ -28748,6 +28904,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     labourId?: StringFieldUpdateOperationsInput | string
+    workDayType?: StringFieldUpdateOperationsInput | string
+    workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -28755,6 +28913,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     labourId?: StringFieldUpdateOperationsInput | string
+    workDayType?: StringFieldUpdateOperationsInput | string
+    workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -28819,11 +28979,13 @@ export namespace Prisma {
     id?: string
     projectId: string
     areaId: string
+    description?: string | null
     createdAt?: Date | string
   }
 
   export type project_area_colorsUpdateWithoutColorInput = {
     id?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: projectsUpdateOneRequiredWithoutProjectAreaColorsNestedInput
     area?: areasUpdateOneRequiredWithoutProjectAreaColorsNestedInput
@@ -28833,6 +28995,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     projectId?: StringFieldUpdateOperationsInput | string
     areaId?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -28840,6 +29003,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     projectId?: StringFieldUpdateOperationsInput | string
     areaId?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -28847,11 +29011,13 @@ export namespace Prisma {
     id?: string
     projectId: string
     colorId: string
+    description?: string | null
     createdAt?: Date | string
   }
 
   export type project_area_colorsUpdateWithoutAreaInput = {
     id?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: projectsUpdateOneRequiredWithoutProjectAreaColorsNestedInput
     color?: colorsUpdateOneRequiredWithoutProjectAreaColorsNestedInput
@@ -28861,6 +29027,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     projectId?: StringFieldUpdateOperationsInput | string
     colorId?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -28868,6 +29035,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     projectId?: StringFieldUpdateOperationsInput | string
     colorId?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -28875,6 +29043,8 @@ export namespace Prisma {
     id?: string
     date: Date | string
     projectId: string
+    workDayType?: string
+    workDayValue?: Decimal | DecimalJsLike | number | string
     createdAt?: Date | string
   }
 
@@ -28890,6 +29060,8 @@ export namespace Prisma {
   export type labour_attendanceUpdateWithoutLabourInput = {
     id?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
+    workDayType?: StringFieldUpdateOperationsInput | string
+    workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: projectsUpdateOneRequiredWithoutAttendanceNestedInput
   }
@@ -28898,6 +29070,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     projectId?: StringFieldUpdateOperationsInput | string
+    workDayType?: StringFieldUpdateOperationsInput | string
+    workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -28905,6 +29079,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     projectId?: StringFieldUpdateOperationsInput | string
+    workDayType?: StringFieldUpdateOperationsInput | string
+    workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 

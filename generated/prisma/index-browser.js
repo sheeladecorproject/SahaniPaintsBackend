@@ -210,6 +210,7 @@ exports.Prisma.Project_area_colorsScalarFieldEnum = {
   projectId: 'projectId',
   areaId: 'areaId',
   colorId: 'colorId',
+  description: 'description',
   createdAt: 'createdAt'
 };
 
@@ -256,6 +257,8 @@ exports.Prisma.Labour_attendanceScalarFieldEnum = {
   date: 'date',
   projectId: 'projectId',
   labourId: 'labourId',
+  workDayType: 'workDayType',
+  workDayValue: 'workDayValue',
   createdAt: 'createdAt'
 };
 

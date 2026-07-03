@@ -131,11 +131,12 @@ model areas {
 }
 
 model project_area_colors {
-  id        String   @id @default(uuid()) @db.Uuid
-  projectId String   @map("project_id") @db.Uuid
-  areaId    String   @map("area_id") @db.Uuid
-  colorId   String   @map("color_id") @db.Uuid
-  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  id          String   @id @default(uuid()) @db.Uuid
+  projectId   String   @map("project_id") @db.Uuid
+  areaId      String   @map("area_id") @db.Uuid
+  colorId     String   @map("color_id") @db.Uuid
+  description String?
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
 
   project projects @relation(fields: [projectId], references: [id], onDelete: Cascade)
   area    areas    @relation(fields: [areaId], references: [id], onDelete: Cascade)
@@ -225,11 +226,13 @@ model labours {
 }
 
 model labour_attendance {
-  id        String   @id @default(uuid()) @db.Uuid
-  date      DateTime @db.Timestamptz(6)
-  projectId String   @map("project_id") @db.Uuid
-  labourId  String   @map("labour_id") @db.Uuid
-  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  id           String   @id @default(uuid()) @db.Uuid
+  date         DateTime @db.Timestamptz(6)
+  projectId    String   @map("project_id") @db.Uuid
+  labourId     String   @map("labour_id") @db.Uuid
+  workDayType  String   @default("DAY")
+  workDayValue Decimal  @default(1.0) @db.Decimal(5, 2)
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
 
   project projects @relation(fields: [projectId], references: [id], onDelete: Cascade)
   labour  labours  @relation(fields: [labourId], references: [id], onDelete: Cascade)
