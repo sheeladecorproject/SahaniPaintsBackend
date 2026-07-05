@@ -3,6 +3,7 @@ interface LabourPayments {
     labourId: string;
     projectId?: string | null;
     amount: number | any;
+    type: string;
     paymentDate: Date;
     remarks?: string | null;
     createdAt: Date;
@@ -14,6 +15,7 @@ interface LabourPaymentsData {
     labourId: string;
     projectId?: string | null;
     amount: number;
+    type?: string;
     paymentDate?: Date | string;
     remarks?: string | null;
 }

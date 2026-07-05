@@ -81,6 +81,7 @@ model products {
   createdAt       DateTime          @default(now()) @map("created_at") @db.Timestamptz(6)
   brand           brands            @relation(fields: [brandId], references: [id])
   projectProducts project_products[]
+  materialLogs    project_material_logs[]
 
   @@index([id, createdAt])
 }
@@ -106,6 +107,9 @@ model projects {
   attendance         labour_attendance[]
   labourPayments     labour_payments[]
   projectProducts    project_products[]
+  materialLogs       project_material_logs[]
+  projectPayments    project_payments[]
+  contractorPayments contractor_payments[]
 
   @@index([id, createdAt])
 }
@@ -218,6 +222,7 @@ model labours {
   name          String              @unique
   paymentPerDay Decimal             @map("payment_per_day")
   phonenumber   String?             @map("phone_number")
+  type          String              @default("WEEKLY")
   createdAt     DateTime            @default(now()) @map("created_at") @db.Timestamptz(6)
   attendance    labour_attendance[]
   payments      labour_payments[]
@@ -246,6 +251,7 @@ model labour_payments {
   labourId    String   @map("labour_id") @db.Uuid
   projectId   String?  @map("project_id") @db.Uuid
   amount      Decimal
+  type        String   @default("OUTGOING")
   paymentDate DateTime @default(now()) @map("payment_date") @db.Timestamptz(6)
   remarks     String?
   createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
@@ -271,4 +277,66 @@ model project_products {
   product     products @relation(fields: [productId], references: [id], onDelete: Cascade)
 
   @@index([id, createdAt])
+}
+
+model project_material_logs {
+  id        String   @id @default(uuid()) @db.Uuid
+  date      DateTime @db.Timestamptz(6)
+  projectId String   @map("project_id") @db.Uuid
+  productId String   @map("product_id") @db.Uuid
+  quantity  Decimal
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  project   projects @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  product   products @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([date, projectId, productId])
+  @@index([date, projectId])
+}
+
+model project_payments {
+  id          String   @id @default(uuid()) @db.Uuid
+  projectId   String   @map("project_id") @db.Uuid
+  amount      Decimal
+  type        String   @default("INCOMING")
+  paymentDate DateTime @default(now()) @map("payment_date") @db.Timestamptz(6)
+  remarks     String?
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  project     projects @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([id, createdAt])
+  @@map("project_payments")
+}
+
+model contractors {
+  id          String   @id @default(uuid()) @db.Uuid
+  name        String   @unique
+  phonenumber String?  @map("phone_number")
+  email       String?
+  address     String?
+  type        String   @default("WEEKLY")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  payments    contractor_payments[]
+
+  @@index([id, createdAt])
+  @@map("contractors")
+}
+
+model contractor_payments {
+  id           String   @id @default(uuid()) @db.Uuid
+  contractorId String   @map("contractor_id") @db.Uuid
+  projectId    String?  @map("project_id") @db.Uuid
+  amount       Decimal
+  type         String   @default("OUTGOING")
+  paymentDate  DateTime @default(now()) @map("payment_date") @db.Timestamptz(6)
+  remarks      String?
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  contractor   contractors @relation(fields: [contractorId], references: [id], onDelete: Cascade)
+  project      projects?   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([id, createdAt])
+  @@map("contractor_payments")
 }

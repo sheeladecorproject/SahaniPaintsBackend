@@ -249,6 +249,7 @@ exports.Prisma.LaboursScalarFieldEnum = {
   name: 'name',
   paymentPerDay: 'paymentPerDay',
   phonenumber: 'phonenumber',
+  type: 'type',
   createdAt: 'createdAt'
 };
 
@@ -267,6 +268,7 @@ exports.Prisma.Labour_paymentsScalarFieldEnum = {
   labourId: 'labourId',
   projectId: 'projectId',
   amount: 'amount',
+  type: 'type',
   paymentDate: 'paymentDate',
   remarks: 'remarks',
   createdAt: 'createdAt'
@@ -280,6 +282,46 @@ exports.Prisma.Project_productsScalarFieldEnum = {
   unit: 'unit',
   rate: 'rate',
   litresUsed: 'litresUsed',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.Project_material_logsScalarFieldEnum = {
+  id: 'id',
+  date: 'date',
+  projectId: 'projectId',
+  productId: 'productId',
+  quantity: 'quantity',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.Project_paymentsScalarFieldEnum = {
+  id: 'id',
+  projectId: 'projectId',
+  amount: 'amount',
+  type: 'type',
+  paymentDate: 'paymentDate',
+  remarks: 'remarks',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.ContractorsScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  phonenumber: 'phonenumber',
+  email: 'email',
+  address: 'address',
+  type: 'type',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.Contractor_paymentsScalarFieldEnum = {
+  id: 'id',
+  contractorId: 'contractorId',
+  projectId: 'projectId',
+  amount: 'amount',
+  type: 'type',
+  paymentDate: 'paymentDate',
+  remarks: 'remarks',
   createdAt: 'createdAt'
 };
 
@@ -344,7 +386,11 @@ exports.Prisma.ModelName = {
   labours: 'labours',
   labour_attendance: 'labour_attendance',
   labour_payments: 'labour_payments',
-  project_products: 'project_products'
+  project_products: 'project_products',
+  project_material_logs: 'project_material_logs',
+  project_payments: 'project_payments',
+  contractors: 'contractors',
+  contractor_payments: 'contractor_payments'
 };
 
 /**

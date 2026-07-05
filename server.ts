@@ -19,6 +19,10 @@ import { ProjectAreaColorsRouter } from "./router/projectAreaColors.router.js";
 import { LabourRouter } from "./router/labour.router.js";
 import { LabourAttendanceRouter } from "./router/labourAttendance.router.js"; 
 import { LabourPaymentRouter } from "./router/labourPayment.router.js";
+import { ProjectMaterialLogRouter } from "./router/projectMaterialLog.router.js";
+import { ProjectPaymentRouter } from "./router/projectPayment.router.js";
+import { ContractorRouter } from "./router/contractor.router.js";
+import { ContractorPaymentRouter } from "./router/contractorPayment.router.js";
 import cors from "cors";
 import { AuthorizationRouter } from "./router/authorization.router.js";
 import { authenticate, authorizePage } from "./middleware/authenticate.middleware.js";
@@ -69,6 +73,10 @@ app.use("/v1/project-area-colors", authorizePage("site-colors"), ProjectAreaColo
 app.use("/v1/labours", authorizePage("labours"), LabourRouter);
 app.use("/v1/labour-attendance", authorizePage("labour-attendance"), LabourAttendanceRouter);
 app.use("/v1/labour-payments", authorizePage("labours"), LabourPaymentRouter);
+app.use("/v1/project-material-logs", authorizePage("dashboard"), ProjectMaterialLogRouter);
+app.use("/v1/project-payments", authorizePage("dashboard"), ProjectPaymentRouter);
+app.use("/v1/contractors", authorizePage("labours"), ContractorRouter);
+app.use("/v1/contractor-payments", authorizePage("labours"), ContractorPaymentRouter);
 
 app.use(globalErrorHandler.handleError);
 
