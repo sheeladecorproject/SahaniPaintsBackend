@@ -260,6 +260,7 @@ exports.Prisma.Labour_attendanceScalarFieldEnum = {
   labourId: 'labourId',
   workDayType: 'workDayType',
   workDayValue: 'workDayValue',
+  markedById: 'markedById',
   createdAt: 'createdAt'
 };
 

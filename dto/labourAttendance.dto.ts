@@ -5,7 +5,9 @@ interface LabourAttendance {
     labourId: string;
     workDayType: string;
     workDayValue: number | any;
+    markedById?: string | null;
     createdAt: Date;
+    markedBy?: { id: string; username: string } | null;
 }
 
 interface LabourAttendanceData {
@@ -14,6 +16,7 @@ interface LabourAttendanceData {
     labourId: string;
     workDayType?: string;
     workDayValue?: number | any;
+    markedById?: string | null;
 }
 
 export type { LabourAttendance, LabourAttendanceData };

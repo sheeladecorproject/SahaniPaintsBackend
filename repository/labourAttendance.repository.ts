@@ -59,6 +59,12 @@ class LabourAttendanceRepository extends BaseRepository<LabourAttendance, Labour
                         paymentPerDay: true,
                         phonenumber: true
                     }
+                },
+                markedBy: {
+                    select: {
+                        id: true,
+                        username: true
+                    }
                 }
             },
             orderBy: [

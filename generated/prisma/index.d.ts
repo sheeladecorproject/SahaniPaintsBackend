@@ -2752,12 +2752,14 @@ export namespace Prisma {
     auth: number
     projects: number
     refreshTokens: number
+    markedAttendances: number
   }
 
   export type UsersCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     auth?: boolean | UsersCountOutputTypeCountAuthArgs
     projects?: boolean | UsersCountOutputTypeCountProjectsArgs
     refreshTokens?: boolean | UsersCountOutputTypeCountRefreshTokensArgs
+    markedAttendances?: boolean | UsersCountOutputTypeCountMarkedAttendancesArgs
   }
 
   // Custom InputTypes
@@ -2790,6 +2792,13 @@ export namespace Prisma {
    */
   export type UsersCountOutputTypeCountRefreshTokensArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: refreshTokensWhereInput
+  }
+
+  /**
+   * UsersCountOutputType without action
+   */
+  export type UsersCountOutputTypeCountMarkedAttendancesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: labour_attendanceWhereInput
   }
 
 
@@ -3325,6 +3334,7 @@ export namespace Prisma {
     auth?: boolean | users$authArgs<ExtArgs>
     projects?: boolean | users$projectsArgs<ExtArgs>
     refreshTokens?: boolean | users$refreshTokensArgs<ExtArgs>
+    markedAttendances?: boolean | users$markedAttendancesArgs<ExtArgs>
     _count?: boolean | UsersCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["users"]>
 
@@ -3369,6 +3379,7 @@ export namespace Prisma {
     auth?: boolean | users$authArgs<ExtArgs>
     projects?: boolean | users$projectsArgs<ExtArgs>
     refreshTokens?: boolean | users$refreshTokensArgs<ExtArgs>
+    markedAttendances?: boolean | users$markedAttendancesArgs<ExtArgs>
     _count?: boolean | UsersCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type usersIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -3380,6 +3391,7 @@ export namespace Prisma {
       auth: Prisma.$authorizationsPayload<ExtArgs>[]
       projects: Prisma.$projectsPayload<ExtArgs>[]
       refreshTokens: Prisma.$refreshTokensPayload<ExtArgs>[]
+      markedAttendances: Prisma.$labour_attendancePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -3788,6 +3800,7 @@ export namespace Prisma {
     auth<T extends users$authArgs<ExtArgs> = {}>(args?: Subset<T, users$authArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$authorizationsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     projects<T extends users$projectsArgs<ExtArgs> = {}>(args?: Subset<T, users$projectsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$projectsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     refreshTokens<T extends users$refreshTokensArgs<ExtArgs> = {}>(args?: Subset<T, users$refreshTokensArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$refreshTokensPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    markedAttendances<T extends users$markedAttendancesArgs<ExtArgs> = {}>(args?: Subset<T, users$markedAttendancesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$labour_attendancePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4288,6 +4301,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: RefreshTokensScalarFieldEnum | RefreshTokensScalarFieldEnum[]
+  }
+
+  /**
+   * users.markedAttendances
+   */
+  export type users$markedAttendancesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the labour_attendance
+     */
+    select?: labour_attendanceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the labour_attendance
+     */
+    omit?: labour_attendanceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: labour_attendanceInclude<ExtArgs> | null
+    where?: labour_attendanceWhereInput
+    orderBy?: labour_attendanceOrderByWithRelationInput | labour_attendanceOrderByWithRelationInput[]
+    cursor?: labour_attendanceWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Labour_attendanceScalarFieldEnum | Labour_attendanceScalarFieldEnum[]
   }
 
   /**
@@ -18825,6 +18862,7 @@ export namespace Prisma {
     labourId: string | null
     workDayType: string | null
     workDayValue: Decimal | null
+    markedById: string | null
     createdAt: Date | null
   }
 
@@ -18835,6 +18873,7 @@ export namespace Prisma {
     labourId: string | null
     workDayType: string | null
     workDayValue: Decimal | null
+    markedById: string | null
     createdAt: Date | null
   }
 
@@ -18845,6 +18884,7 @@ export namespace Prisma {
     labourId: number
     workDayType: number
     workDayValue: number
+    markedById: number
     createdAt: number
     _all: number
   }
@@ -18865,6 +18905,7 @@ export namespace Prisma {
     labourId?: true
     workDayType?: true
     workDayValue?: true
+    markedById?: true
     createdAt?: true
   }
 
@@ -18875,6 +18916,7 @@ export namespace Prisma {
     labourId?: true
     workDayType?: true
     workDayValue?: true
+    markedById?: true
     createdAt?: true
   }
 
@@ -18885,6 +18927,7 @@ export namespace Prisma {
     labourId?: true
     workDayType?: true
     workDayValue?: true
+    markedById?: true
     createdAt?: true
     _all?: true
   }
@@ -18982,6 +19025,7 @@ export namespace Prisma {
     labourId: string
     workDayType: string
     workDayValue: Decimal
+    markedById: string | null
     createdAt: Date
     _count: Labour_attendanceCountAggregateOutputType | null
     _avg: Labour_attendanceAvgAggregateOutputType | null
@@ -19011,9 +19055,11 @@ export namespace Prisma {
     labourId?: boolean
     workDayType?: boolean
     workDayValue?: boolean
+    markedById?: boolean
     createdAt?: boolean
     project?: boolean | projectsDefaultArgs<ExtArgs>
     labour?: boolean | laboursDefaultArgs<ExtArgs>
+    markedBy?: boolean | labour_attendance$markedByArgs<ExtArgs>
   }, ExtArgs["result"]["labour_attendance"]>
 
   export type labour_attendanceSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -19023,9 +19069,11 @@ export namespace Prisma {
     labourId?: boolean
     workDayType?: boolean
     workDayValue?: boolean
+    markedById?: boolean
     createdAt?: boolean
     project?: boolean | projectsDefaultArgs<ExtArgs>
     labour?: boolean | laboursDefaultArgs<ExtArgs>
+    markedBy?: boolean | labour_attendance$markedByArgs<ExtArgs>
   }, ExtArgs["result"]["labour_attendance"]>
 
   export type labour_attendanceSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -19035,9 +19083,11 @@ export namespace Prisma {
     labourId?: boolean
     workDayType?: boolean
     workDayValue?: boolean
+    markedById?: boolean
     createdAt?: boolean
     project?: boolean | projectsDefaultArgs<ExtArgs>
     labour?: boolean | laboursDefaultArgs<ExtArgs>
+    markedBy?: boolean | labour_attendance$markedByArgs<ExtArgs>
   }, ExtArgs["result"]["labour_attendance"]>
 
   export type labour_attendanceSelectScalar = {
@@ -19047,21 +19097,25 @@ export namespace Prisma {
     labourId?: boolean
     workDayType?: boolean
     workDayValue?: boolean
+    markedById?: boolean
     createdAt?: boolean
   }
 
-  export type labour_attendanceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "date" | "projectId" | "labourId" | "workDayType" | "workDayValue" | "createdAt", ExtArgs["result"]["labour_attendance"]>
+  export type labour_attendanceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "date" | "projectId" | "labourId" | "workDayType" | "workDayValue" | "markedById" | "createdAt", ExtArgs["result"]["labour_attendance"]>
   export type labour_attendanceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | projectsDefaultArgs<ExtArgs>
     labour?: boolean | laboursDefaultArgs<ExtArgs>
+    markedBy?: boolean | labour_attendance$markedByArgs<ExtArgs>
   }
   export type labour_attendanceIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | projectsDefaultArgs<ExtArgs>
     labour?: boolean | laboursDefaultArgs<ExtArgs>
+    markedBy?: boolean | labour_attendance$markedByArgs<ExtArgs>
   }
   export type labour_attendanceIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | projectsDefaultArgs<ExtArgs>
     labour?: boolean | laboursDefaultArgs<ExtArgs>
+    markedBy?: boolean | labour_attendance$markedByArgs<ExtArgs>
   }
 
   export type $labour_attendancePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -19069,6 +19123,7 @@ export namespace Prisma {
     objects: {
       project: Prisma.$projectsPayload<ExtArgs>
       labour: Prisma.$laboursPayload<ExtArgs>
+      markedBy: Prisma.$usersPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -19077,6 +19132,7 @@ export namespace Prisma {
       labourId: string
       workDayType: string
       workDayValue: Prisma.Decimal
+      markedById: string | null
       createdAt: Date
     }, ExtArgs["result"]["labour_attendance"]>
     composites: {}
@@ -19474,6 +19530,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     project<T extends projectsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, projectsDefaultArgs<ExtArgs>>): Prisma__projectsClient<$Result.GetResult<Prisma.$projectsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     labour<T extends laboursDefaultArgs<ExtArgs> = {}>(args?: Subset<T, laboursDefaultArgs<ExtArgs>>): Prisma__laboursClient<$Result.GetResult<Prisma.$laboursPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    markedBy<T extends labour_attendance$markedByArgs<ExtArgs> = {}>(args?: Subset<T, labour_attendance$markedByArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -19509,6 +19566,7 @@ export namespace Prisma {
     readonly labourId: FieldRef<"labour_attendance", 'String'>
     readonly workDayType: FieldRef<"labour_attendance", 'String'>
     readonly workDayValue: FieldRef<"labour_attendance", 'Decimal'>
+    readonly markedById: FieldRef<"labour_attendance", 'String'>
     readonly createdAt: FieldRef<"labour_attendance", 'DateTime'>
   }
     
@@ -19908,6 +19966,25 @@ export namespace Prisma {
      * Limit how many labour_attendances to delete.
      */
     limit?: number
+  }
+
+  /**
+   * labour_attendance.markedBy
+   */
+  export type labour_attendance$markedByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the users
+     */
+    select?: usersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the users
+     */
+    omit?: usersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+    where?: usersWhereInput
   }
 
   /**
@@ -26945,6 +27022,7 @@ export namespace Prisma {
     labourId: 'labourId',
     workDayType: 'workDayType',
     workDayValue: 'workDayValue',
+    markedById: 'markedById',
     createdAt: 'createdAt'
   };
 
@@ -27212,6 +27290,7 @@ export namespace Prisma {
     auth?: AuthorizationsListRelationFilter
     projects?: ProjectsListRelationFilter
     refreshTokens?: RefreshTokensListRelationFilter
+    markedAttendances?: Labour_attendanceListRelationFilter
   }
 
   export type usersOrderByWithRelationInput = {
@@ -27227,6 +27306,7 @@ export namespace Prisma {
     auth?: authorizationsOrderByRelationAggregateInput
     projects?: projectsOrderByRelationAggregateInput
     refreshTokens?: refreshTokensOrderByRelationAggregateInput
+    markedAttendances?: labour_attendanceOrderByRelationAggregateInput
   }
 
   export type usersWhereUniqueInput = Prisma.AtLeast<{
@@ -27245,6 +27325,7 @@ export namespace Prisma {
     auth?: AuthorizationsListRelationFilter
     projects?: ProjectsListRelationFilter
     refreshTokens?: RefreshTokensListRelationFilter
+    markedAttendances?: Labour_attendanceListRelationFilter
   }, "id" | "username" | "email">
 
   export type usersOrderByWithAggregationInput = {
@@ -28136,9 +28217,11 @@ export namespace Prisma {
     labourId?: UuidFilter<"labour_attendance"> | string
     workDayType?: StringFilter<"labour_attendance"> | string
     workDayValue?: DecimalFilter<"labour_attendance"> | Decimal | DecimalJsLike | number | string
+    markedById?: UuidNullableFilter<"labour_attendance"> | string | null
     createdAt?: DateTimeFilter<"labour_attendance"> | Date | string
     project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
     labour?: XOR<LaboursScalarRelationFilter, laboursWhereInput>
+    markedBy?: XOR<UsersNullableScalarRelationFilter, usersWhereInput> | null
   }
 
   export type labour_attendanceOrderByWithRelationInput = {
@@ -28148,9 +28231,11 @@ export namespace Prisma {
     labourId?: SortOrder
     workDayType?: SortOrder
     workDayValue?: SortOrder
+    markedById?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     project?: projectsOrderByWithRelationInput
     labour?: laboursOrderByWithRelationInput
+    markedBy?: usersOrderByWithRelationInput
   }
 
   export type labour_attendanceWhereUniqueInput = Prisma.AtLeast<{
@@ -28164,9 +28249,11 @@ export namespace Prisma {
     labourId?: UuidFilter<"labour_attendance"> | string
     workDayType?: StringFilter<"labour_attendance"> | string
     workDayValue?: DecimalFilter<"labour_attendance"> | Decimal | DecimalJsLike | number | string
+    markedById?: UuidNullableFilter<"labour_attendance"> | string | null
     createdAt?: DateTimeFilter<"labour_attendance"> | Date | string
     project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
     labour?: XOR<LaboursScalarRelationFilter, laboursWhereInput>
+    markedBy?: XOR<UsersNullableScalarRelationFilter, usersWhereInput> | null
   }, "id" | "date_projectId_labourId">
 
   export type labour_attendanceOrderByWithAggregationInput = {
@@ -28176,6 +28263,7 @@ export namespace Prisma {
     labourId?: SortOrder
     workDayType?: SortOrder
     workDayValue?: SortOrder
+    markedById?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     _count?: labour_attendanceCountOrderByAggregateInput
     _avg?: labour_attendanceAvgOrderByAggregateInput
@@ -28194,6 +28282,7 @@ export namespace Prisma {
     labourId?: UuidWithAggregatesFilter<"labour_attendance"> | string
     workDayType?: StringWithAggregatesFilter<"labour_attendance"> | string
     workDayValue?: DecimalWithAggregatesFilter<"labour_attendance"> | Decimal | DecimalJsLike | number | string
+    markedById?: UuidNullableWithAggregatesFilter<"labour_attendance"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"labour_attendance"> | Date | string
   }
 
@@ -28633,6 +28722,7 @@ export namespace Prisma {
     auth?: authorizationsCreateNestedManyWithoutUserInput
     projects?: projectsCreateNestedManyWithoutCreatorInput
     refreshTokens?: refreshTokensCreateNestedManyWithoutUserInput
+    markedAttendances?: labour_attendanceCreateNestedManyWithoutMarkedByInput
   }
 
   export type usersUncheckedCreateInput = {
@@ -28648,6 +28738,7 @@ export namespace Prisma {
     auth?: authorizationsUncheckedCreateNestedManyWithoutUserInput
     projects?: projectsUncheckedCreateNestedManyWithoutCreatorInput
     refreshTokens?: refreshTokensUncheckedCreateNestedManyWithoutUserInput
+    markedAttendances?: labour_attendanceUncheckedCreateNestedManyWithoutMarkedByInput
   }
 
   export type usersUpdateInput = {
@@ -28663,6 +28754,7 @@ export namespace Prisma {
     auth?: authorizationsUpdateManyWithoutUserNestedInput
     projects?: projectsUpdateManyWithoutCreatorNestedInput
     refreshTokens?: refreshTokensUpdateManyWithoutUserNestedInput
+    markedAttendances?: labour_attendanceUpdateManyWithoutMarkedByNestedInput
   }
 
   export type usersUncheckedUpdateInput = {
@@ -28678,6 +28770,7 @@ export namespace Prisma {
     auth?: authorizationsUncheckedUpdateManyWithoutUserNestedInput
     projects?: projectsUncheckedUpdateManyWithoutCreatorNestedInput
     refreshTokens?: refreshTokensUncheckedUpdateManyWithoutUserNestedInput
+    markedAttendances?: labour_attendanceUncheckedUpdateManyWithoutMarkedByNestedInput
   }
 
   export type usersCreateManyInput = {
@@ -29626,6 +29719,7 @@ export namespace Prisma {
     createdAt?: Date | string
     project: projectsCreateNestedOneWithoutAttendanceInput
     labour: laboursCreateNestedOneWithoutAttendanceInput
+    markedBy?: usersCreateNestedOneWithoutMarkedAttendancesInput
   }
 
   export type labour_attendanceUncheckedCreateInput = {
@@ -29635,6 +29729,7 @@ export namespace Prisma {
     labourId: string
     workDayType?: string
     workDayValue?: Decimal | DecimalJsLike | number | string
+    markedById?: string | null
     createdAt?: Date | string
   }
 
@@ -29646,6 +29741,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: projectsUpdateOneRequiredWithoutAttendanceNestedInput
     labour?: laboursUpdateOneRequiredWithoutAttendanceNestedInput
+    markedBy?: usersUpdateOneWithoutMarkedAttendancesNestedInput
   }
 
   export type labour_attendanceUncheckedUpdateInput = {
@@ -29655,6 +29751,7 @@ export namespace Prisma {
     labourId?: StringFieldUpdateOperationsInput | string
     workDayType?: StringFieldUpdateOperationsInput | string
     workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    markedById?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -29665,6 +29762,7 @@ export namespace Prisma {
     labourId: string
     workDayType?: string
     workDayValue?: Decimal | DecimalJsLike | number | string
+    markedById?: string | null
     createdAt?: Date | string
   }
 
@@ -29683,6 +29781,7 @@ export namespace Prisma {
     labourId?: StringFieldUpdateOperationsInput | string
     workDayType?: StringFieldUpdateOperationsInput | string
     workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    markedById?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -30193,6 +30292,12 @@ export namespace Prisma {
     none?: refreshTokensWhereInput
   }
 
+  export type Labour_attendanceListRelationFilter = {
+    every?: labour_attendanceWhereInput
+    some?: labour_attendanceWhereInput
+    none?: labour_attendanceWhereInput
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -30207,6 +30312,10 @@ export namespace Prisma {
   }
 
   export type refreshTokensOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type labour_attendanceOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -30613,12 +30722,6 @@ export namespace Prisma {
     none?: project_area_colorsWhereInput
   }
 
-  export type Labour_attendanceListRelationFilter = {
-    every?: labour_attendanceWhereInput
-    some?: labour_attendanceWhereInput
-    none?: labour_attendanceWhereInput
-  }
-
   export type Labour_paymentsListRelationFilter = {
     every?: labour_paymentsWhereInput
     some?: labour_paymentsWhereInput
@@ -30642,10 +30745,6 @@ export namespace Prisma {
   }
 
   export type project_area_colorsOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type labour_attendanceOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -31051,6 +31150,11 @@ export namespace Prisma {
     isNot?: laboursWhereInput
   }
 
+  export type UsersNullableScalarRelationFilter = {
+    is?: usersWhereInput | null
+    isNot?: usersWhereInput | null
+  }
+
   export type labour_attendanceDateProjectIdLabourIdCompoundUniqueInput = {
     date: Date | string
     projectId: string
@@ -31064,6 +31168,7 @@ export namespace Prisma {
     labourId?: SortOrder
     workDayType?: SortOrder
     workDayValue?: SortOrder
+    markedById?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -31078,6 +31183,7 @@ export namespace Prisma {
     labourId?: SortOrder
     workDayType?: SortOrder
     workDayValue?: SortOrder
+    markedById?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -31088,6 +31194,7 @@ export namespace Prisma {
     labourId?: SortOrder
     workDayType?: SortOrder
     workDayValue?: SortOrder
+    markedById?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -31367,6 +31474,13 @@ export namespace Prisma {
     connect?: refreshTokensWhereUniqueInput | refreshTokensWhereUniqueInput[]
   }
 
+  export type labour_attendanceCreateNestedManyWithoutMarkedByInput = {
+    create?: XOR<labour_attendanceCreateWithoutMarkedByInput, labour_attendanceUncheckedCreateWithoutMarkedByInput> | labour_attendanceCreateWithoutMarkedByInput[] | labour_attendanceUncheckedCreateWithoutMarkedByInput[]
+    connectOrCreate?: labour_attendanceCreateOrConnectWithoutMarkedByInput | labour_attendanceCreateOrConnectWithoutMarkedByInput[]
+    createMany?: labour_attendanceCreateManyMarkedByInputEnvelope
+    connect?: labour_attendanceWhereUniqueInput | labour_attendanceWhereUniqueInput[]
+  }
+
   export type authorizationsUncheckedCreateNestedManyWithoutUserInput = {
     create?: XOR<authorizationsCreateWithoutUserInput, authorizationsUncheckedCreateWithoutUserInput> | authorizationsCreateWithoutUserInput[] | authorizationsUncheckedCreateWithoutUserInput[]
     connectOrCreate?: authorizationsCreateOrConnectWithoutUserInput | authorizationsCreateOrConnectWithoutUserInput[]
@@ -31386,6 +31500,13 @@ export namespace Prisma {
     connectOrCreate?: refreshTokensCreateOrConnectWithoutUserInput | refreshTokensCreateOrConnectWithoutUserInput[]
     createMany?: refreshTokensCreateManyUserInputEnvelope
     connect?: refreshTokensWhereUniqueInput | refreshTokensWhereUniqueInput[]
+  }
+
+  export type labour_attendanceUncheckedCreateNestedManyWithoutMarkedByInput = {
+    create?: XOR<labour_attendanceCreateWithoutMarkedByInput, labour_attendanceUncheckedCreateWithoutMarkedByInput> | labour_attendanceCreateWithoutMarkedByInput[] | labour_attendanceUncheckedCreateWithoutMarkedByInput[]
+    connectOrCreate?: labour_attendanceCreateOrConnectWithoutMarkedByInput | labour_attendanceCreateOrConnectWithoutMarkedByInput[]
+    createMany?: labour_attendanceCreateManyMarkedByInputEnvelope
+    connect?: labour_attendanceWhereUniqueInput | labour_attendanceWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -31446,6 +31567,20 @@ export namespace Prisma {
     deleteMany?: refreshTokensScalarWhereInput | refreshTokensScalarWhereInput[]
   }
 
+  export type labour_attendanceUpdateManyWithoutMarkedByNestedInput = {
+    create?: XOR<labour_attendanceCreateWithoutMarkedByInput, labour_attendanceUncheckedCreateWithoutMarkedByInput> | labour_attendanceCreateWithoutMarkedByInput[] | labour_attendanceUncheckedCreateWithoutMarkedByInput[]
+    connectOrCreate?: labour_attendanceCreateOrConnectWithoutMarkedByInput | labour_attendanceCreateOrConnectWithoutMarkedByInput[]
+    upsert?: labour_attendanceUpsertWithWhereUniqueWithoutMarkedByInput | labour_attendanceUpsertWithWhereUniqueWithoutMarkedByInput[]
+    createMany?: labour_attendanceCreateManyMarkedByInputEnvelope
+    set?: labour_attendanceWhereUniqueInput | labour_attendanceWhereUniqueInput[]
+    disconnect?: labour_attendanceWhereUniqueInput | labour_attendanceWhereUniqueInput[]
+    delete?: labour_attendanceWhereUniqueInput | labour_attendanceWhereUniqueInput[]
+    connect?: labour_attendanceWhereUniqueInput | labour_attendanceWhereUniqueInput[]
+    update?: labour_attendanceUpdateWithWhereUniqueWithoutMarkedByInput | labour_attendanceUpdateWithWhereUniqueWithoutMarkedByInput[]
+    updateMany?: labour_attendanceUpdateManyWithWhereWithoutMarkedByInput | labour_attendanceUpdateManyWithWhereWithoutMarkedByInput[]
+    deleteMany?: labour_attendanceScalarWhereInput | labour_attendanceScalarWhereInput[]
+  }
+
   export type authorizationsUncheckedUpdateManyWithoutUserNestedInput = {
     create?: XOR<authorizationsCreateWithoutUserInput, authorizationsUncheckedCreateWithoutUserInput> | authorizationsCreateWithoutUserInput[] | authorizationsUncheckedCreateWithoutUserInput[]
     connectOrCreate?: authorizationsCreateOrConnectWithoutUserInput | authorizationsCreateOrConnectWithoutUserInput[]
@@ -31486,6 +31621,20 @@ export namespace Prisma {
     update?: refreshTokensUpdateWithWhereUniqueWithoutUserInput | refreshTokensUpdateWithWhereUniqueWithoutUserInput[]
     updateMany?: refreshTokensUpdateManyWithWhereWithoutUserInput | refreshTokensUpdateManyWithWhereWithoutUserInput[]
     deleteMany?: refreshTokensScalarWhereInput | refreshTokensScalarWhereInput[]
+  }
+
+  export type labour_attendanceUncheckedUpdateManyWithoutMarkedByNestedInput = {
+    create?: XOR<labour_attendanceCreateWithoutMarkedByInput, labour_attendanceUncheckedCreateWithoutMarkedByInput> | labour_attendanceCreateWithoutMarkedByInput[] | labour_attendanceUncheckedCreateWithoutMarkedByInput[]
+    connectOrCreate?: labour_attendanceCreateOrConnectWithoutMarkedByInput | labour_attendanceCreateOrConnectWithoutMarkedByInput[]
+    upsert?: labour_attendanceUpsertWithWhereUniqueWithoutMarkedByInput | labour_attendanceUpsertWithWhereUniqueWithoutMarkedByInput[]
+    createMany?: labour_attendanceCreateManyMarkedByInputEnvelope
+    set?: labour_attendanceWhereUniqueInput | labour_attendanceWhereUniqueInput[]
+    disconnect?: labour_attendanceWhereUniqueInput | labour_attendanceWhereUniqueInput[]
+    delete?: labour_attendanceWhereUniqueInput | labour_attendanceWhereUniqueInput[]
+    connect?: labour_attendanceWhereUniqueInput | labour_attendanceWhereUniqueInput[]
+    update?: labour_attendanceUpdateWithWhereUniqueWithoutMarkedByInput | labour_attendanceUpdateWithWhereUniqueWithoutMarkedByInput[]
+    updateMany?: labour_attendanceUpdateManyWithWhereWithoutMarkedByInput | labour_attendanceUpdateManyWithWhereWithoutMarkedByInput[]
+    deleteMany?: labour_attendanceScalarWhereInput | labour_attendanceScalarWhereInput[]
   }
 
   export type usersCreateNestedOneWithoutRefreshTokensInput = {
@@ -32340,6 +32489,12 @@ export namespace Prisma {
     connect?: laboursWhereUniqueInput
   }
 
+  export type usersCreateNestedOneWithoutMarkedAttendancesInput = {
+    create?: XOR<usersCreateWithoutMarkedAttendancesInput, usersUncheckedCreateWithoutMarkedAttendancesInput>
+    connectOrCreate?: usersCreateOrConnectWithoutMarkedAttendancesInput
+    connect?: usersWhereUniqueInput
+  }
+
   export type projectsUpdateOneRequiredWithoutAttendanceNestedInput = {
     create?: XOR<projectsCreateWithoutAttendanceInput, projectsUncheckedCreateWithoutAttendanceInput>
     connectOrCreate?: projectsCreateOrConnectWithoutAttendanceInput
@@ -32354,6 +32509,16 @@ export namespace Prisma {
     upsert?: laboursUpsertWithoutAttendanceInput
     connect?: laboursWhereUniqueInput
     update?: XOR<XOR<laboursUpdateToOneWithWhereWithoutAttendanceInput, laboursUpdateWithoutAttendanceInput>, laboursUncheckedUpdateWithoutAttendanceInput>
+  }
+
+  export type usersUpdateOneWithoutMarkedAttendancesNestedInput = {
+    create?: XOR<usersCreateWithoutMarkedAttendancesInput, usersUncheckedCreateWithoutMarkedAttendancesInput>
+    connectOrCreate?: usersCreateOrConnectWithoutMarkedAttendancesInput
+    upsert?: usersUpsertWithoutMarkedAttendancesInput
+    disconnect?: usersWhereInput | boolean
+    delete?: usersWhereInput | boolean
+    connect?: usersWhereUniqueInput
+    update?: XOR<XOR<usersUpdateToOneWithWhereWithoutMarkedAttendancesInput, usersUpdateWithoutMarkedAttendancesInput>, usersUncheckedUpdateWithoutMarkedAttendancesInput>
   }
 
   export type laboursCreateNestedOneWithoutPaymentsInput = {
@@ -32951,6 +33116,36 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type labour_attendanceCreateWithoutMarkedByInput = {
+    id?: string
+    date: Date | string
+    workDayType?: string
+    workDayValue?: Decimal | DecimalJsLike | number | string
+    createdAt?: Date | string
+    project: projectsCreateNestedOneWithoutAttendanceInput
+    labour: laboursCreateNestedOneWithoutAttendanceInput
+  }
+
+  export type labour_attendanceUncheckedCreateWithoutMarkedByInput = {
+    id?: string
+    date: Date | string
+    projectId: string
+    labourId: string
+    workDayType?: string
+    workDayValue?: Decimal | DecimalJsLike | number | string
+    createdAt?: Date | string
+  }
+
+  export type labour_attendanceCreateOrConnectWithoutMarkedByInput = {
+    where: labour_attendanceWhereUniqueInput
+    create: XOR<labour_attendanceCreateWithoutMarkedByInput, labour_attendanceUncheckedCreateWithoutMarkedByInput>
+  }
+
+  export type labour_attendanceCreateManyMarkedByInputEnvelope = {
+    data: labour_attendanceCreateManyMarkedByInput | labour_attendanceCreateManyMarkedByInput[]
+    skipDuplicates?: boolean
+  }
+
   export type authorizationsUpsertWithWhereUniqueWithoutUserInput = {
     where: authorizationsWhereUniqueInput
     update: XOR<authorizationsUpdateWithoutUserInput, authorizationsUncheckedUpdateWithoutUserInput>
@@ -33039,6 +33234,36 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"refreshTokens"> | Date | string
   }
 
+  export type labour_attendanceUpsertWithWhereUniqueWithoutMarkedByInput = {
+    where: labour_attendanceWhereUniqueInput
+    update: XOR<labour_attendanceUpdateWithoutMarkedByInput, labour_attendanceUncheckedUpdateWithoutMarkedByInput>
+    create: XOR<labour_attendanceCreateWithoutMarkedByInput, labour_attendanceUncheckedCreateWithoutMarkedByInput>
+  }
+
+  export type labour_attendanceUpdateWithWhereUniqueWithoutMarkedByInput = {
+    where: labour_attendanceWhereUniqueInput
+    data: XOR<labour_attendanceUpdateWithoutMarkedByInput, labour_attendanceUncheckedUpdateWithoutMarkedByInput>
+  }
+
+  export type labour_attendanceUpdateManyWithWhereWithoutMarkedByInput = {
+    where: labour_attendanceScalarWhereInput
+    data: XOR<labour_attendanceUpdateManyMutationInput, labour_attendanceUncheckedUpdateManyWithoutMarkedByInput>
+  }
+
+  export type labour_attendanceScalarWhereInput = {
+    AND?: labour_attendanceScalarWhereInput | labour_attendanceScalarWhereInput[]
+    OR?: labour_attendanceScalarWhereInput[]
+    NOT?: labour_attendanceScalarWhereInput | labour_attendanceScalarWhereInput[]
+    id?: UuidFilter<"labour_attendance"> | string
+    date?: DateTimeFilter<"labour_attendance"> | Date | string
+    projectId?: UuidFilter<"labour_attendance"> | string
+    labourId?: UuidFilter<"labour_attendance"> | string
+    workDayType?: StringFilter<"labour_attendance"> | string
+    workDayValue?: DecimalFilter<"labour_attendance"> | Decimal | DecimalJsLike | number | string
+    markedById?: UuidNullableFilter<"labour_attendance"> | string | null
+    createdAt?: DateTimeFilter<"labour_attendance"> | Date | string
+  }
+
   export type usersCreateWithoutRefreshTokensInput = {
     id?: string
     username: string
@@ -33051,6 +33276,7 @@ export namespace Prisma {
     createdAt?: Date | string
     auth?: authorizationsCreateNestedManyWithoutUserInput
     projects?: projectsCreateNestedManyWithoutCreatorInput
+    markedAttendances?: labour_attendanceCreateNestedManyWithoutMarkedByInput
   }
 
   export type usersUncheckedCreateWithoutRefreshTokensInput = {
@@ -33065,6 +33291,7 @@ export namespace Prisma {
     createdAt?: Date | string
     auth?: authorizationsUncheckedCreateNestedManyWithoutUserInput
     projects?: projectsUncheckedCreateNestedManyWithoutCreatorInput
+    markedAttendances?: labour_attendanceUncheckedCreateNestedManyWithoutMarkedByInput
   }
 
   export type usersCreateOrConnectWithoutRefreshTokensInput = {
@@ -33095,6 +33322,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     auth?: authorizationsUpdateManyWithoutUserNestedInput
     projects?: projectsUpdateManyWithoutCreatorNestedInput
+    markedAttendances?: labour_attendanceUpdateManyWithoutMarkedByNestedInput
   }
 
   export type usersUncheckedUpdateWithoutRefreshTokensInput = {
@@ -33109,6 +33337,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     auth?: authorizationsUncheckedUpdateManyWithoutUserNestedInput
     projects?: projectsUncheckedUpdateManyWithoutCreatorNestedInput
+    markedAttendances?: labour_attendanceUncheckedUpdateManyWithoutMarkedByNestedInput
   }
 
   export type usersCreateWithoutAuthInput = {
@@ -33123,6 +33352,7 @@ export namespace Prisma {
     createdAt?: Date | string
     projects?: projectsCreateNestedManyWithoutCreatorInput
     refreshTokens?: refreshTokensCreateNestedManyWithoutUserInput
+    markedAttendances?: labour_attendanceCreateNestedManyWithoutMarkedByInput
   }
 
   export type usersUncheckedCreateWithoutAuthInput = {
@@ -33137,6 +33367,7 @@ export namespace Prisma {
     createdAt?: Date | string
     projects?: projectsUncheckedCreateNestedManyWithoutCreatorInput
     refreshTokens?: refreshTokensUncheckedCreateNestedManyWithoutUserInput
+    markedAttendances?: labour_attendanceUncheckedCreateNestedManyWithoutMarkedByInput
   }
 
   export type usersCreateOrConnectWithoutAuthInput = {
@@ -33167,6 +33398,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     projects?: projectsUpdateManyWithoutCreatorNestedInput
     refreshTokens?: refreshTokensUpdateManyWithoutUserNestedInput
+    markedAttendances?: labour_attendanceUpdateManyWithoutMarkedByNestedInput
   }
 
   export type usersUncheckedUpdateWithoutAuthInput = {
@@ -33181,6 +33413,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     projects?: projectsUncheckedUpdateManyWithoutCreatorNestedInput
     refreshTokens?: refreshTokensUncheckedUpdateManyWithoutUserNestedInput
+    markedAttendances?: labour_attendanceUncheckedUpdateManyWithoutMarkedByNestedInput
   }
 
   export type projectsCreateWithoutCustomerInput = {
@@ -33492,6 +33725,7 @@ export namespace Prisma {
     createdAt?: Date | string
     auth?: authorizationsCreateNestedManyWithoutUserInput
     refreshTokens?: refreshTokensCreateNestedManyWithoutUserInput
+    markedAttendances?: labour_attendanceCreateNestedManyWithoutMarkedByInput
   }
 
   export type usersUncheckedCreateWithoutProjectsInput = {
@@ -33506,6 +33740,7 @@ export namespace Prisma {
     createdAt?: Date | string
     auth?: authorizationsUncheckedCreateNestedManyWithoutUserInput
     refreshTokens?: refreshTokensUncheckedCreateNestedManyWithoutUserInput
+    markedAttendances?: labour_attendanceUncheckedCreateNestedManyWithoutMarkedByInput
   }
 
   export type usersCreateOrConnectWithoutProjectsInput = {
@@ -33601,6 +33836,7 @@ export namespace Prisma {
     workDayValue?: Decimal | DecimalJsLike | number | string
     createdAt?: Date | string
     labour: laboursCreateNestedOneWithoutAttendanceInput
+    markedBy?: usersCreateNestedOneWithoutMarkedAttendancesInput
   }
 
   export type labour_attendanceUncheckedCreateWithoutProjectInput = {
@@ -33609,6 +33845,7 @@ export namespace Prisma {
     labourId: string
     workDayType?: string
     workDayValue?: Decimal | DecimalJsLike | number | string
+    markedById?: string | null
     createdAt?: Date | string
   }
 
@@ -33789,6 +34026,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     auth?: authorizationsUpdateManyWithoutUserNestedInput
     refreshTokens?: refreshTokensUpdateManyWithoutUserNestedInput
+    markedAttendances?: labour_attendanceUpdateManyWithoutMarkedByNestedInput
   }
 
   export type usersUncheckedUpdateWithoutProjectsInput = {
@@ -33803,6 +34041,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     auth?: authorizationsUncheckedUpdateManyWithoutUserNestedInput
     refreshTokens?: refreshTokensUncheckedUpdateManyWithoutUserNestedInput
+    markedAttendances?: labour_attendanceUncheckedUpdateManyWithoutMarkedByNestedInput
   }
 
   export type customersUpsertWithoutProjectsInput = {
@@ -33908,19 +34147,6 @@ export namespace Prisma {
   export type labour_attendanceUpdateManyWithWhereWithoutProjectInput = {
     where: labour_attendanceScalarWhereInput
     data: XOR<labour_attendanceUpdateManyMutationInput, labour_attendanceUncheckedUpdateManyWithoutProjectInput>
-  }
-
-  export type labour_attendanceScalarWhereInput = {
-    AND?: labour_attendanceScalarWhereInput | labour_attendanceScalarWhereInput[]
-    OR?: labour_attendanceScalarWhereInput[]
-    NOT?: labour_attendanceScalarWhereInput | labour_attendanceScalarWhereInput[]
-    id?: UuidFilter<"labour_attendance"> | string
-    date?: DateTimeFilter<"labour_attendance"> | Date | string
-    projectId?: UuidFilter<"labour_attendance"> | string
-    labourId?: UuidFilter<"labour_attendance"> | string
-    workDayType?: StringFilter<"labour_attendance"> | string
-    workDayValue?: DecimalFilter<"labour_attendance"> | Decimal | DecimalJsLike | number | string
-    createdAt?: DateTimeFilter<"labour_attendance"> | Date | string
   }
 
   export type labour_paymentsUpsertWithWhereUniqueWithoutProjectInput = {
@@ -34435,6 +34661,7 @@ export namespace Prisma {
     workDayValue?: Decimal | DecimalJsLike | number | string
     createdAt?: Date | string
     project: projectsCreateNestedOneWithoutAttendanceInput
+    markedBy?: usersCreateNestedOneWithoutMarkedAttendancesInput
   }
 
   export type labour_attendanceUncheckedCreateWithoutLabourInput = {
@@ -34443,6 +34670,7 @@ export namespace Prisma {
     projectId: string
     workDayType?: string
     workDayValue?: Decimal | DecimalJsLike | number | string
+    markedById?: string | null
     createdAt?: Date | string
   }
 
@@ -34594,6 +34822,41 @@ export namespace Prisma {
     create: XOR<laboursCreateWithoutAttendanceInput, laboursUncheckedCreateWithoutAttendanceInput>
   }
 
+  export type usersCreateWithoutMarkedAttendancesInput = {
+    id?: string
+    username: string
+    email: string
+    password: string
+    role: $Enums.Role
+    phonenumber?: string | null
+    address?: string | null
+    alternatePhonenumber?: string | null
+    createdAt?: Date | string
+    auth?: authorizationsCreateNestedManyWithoutUserInput
+    projects?: projectsCreateNestedManyWithoutCreatorInput
+    refreshTokens?: refreshTokensCreateNestedManyWithoutUserInput
+  }
+
+  export type usersUncheckedCreateWithoutMarkedAttendancesInput = {
+    id?: string
+    username: string
+    email: string
+    password: string
+    role: $Enums.Role
+    phonenumber?: string | null
+    address?: string | null
+    alternatePhonenumber?: string | null
+    createdAt?: Date | string
+    auth?: authorizationsUncheckedCreateNestedManyWithoutUserInput
+    projects?: projectsUncheckedCreateNestedManyWithoutCreatorInput
+    refreshTokens?: refreshTokensUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type usersCreateOrConnectWithoutMarkedAttendancesInput = {
+    where: usersWhereUniqueInput
+    create: XOR<usersCreateWithoutMarkedAttendancesInput, usersUncheckedCreateWithoutMarkedAttendancesInput>
+  }
+
   export type projectsUpsertWithoutAttendanceInput = {
     update: XOR<projectsUpdateWithoutAttendanceInput, projectsUncheckedUpdateWithoutAttendanceInput>
     create: XOR<projectsCreateWithoutAttendanceInput, projectsUncheckedCreateWithoutAttendanceInput>
@@ -34680,6 +34943,47 @@ export namespace Prisma {
     type?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     payments?: labour_paymentsUncheckedUpdateManyWithoutLabourNestedInput
+  }
+
+  export type usersUpsertWithoutMarkedAttendancesInput = {
+    update: XOR<usersUpdateWithoutMarkedAttendancesInput, usersUncheckedUpdateWithoutMarkedAttendancesInput>
+    create: XOR<usersCreateWithoutMarkedAttendancesInput, usersUncheckedCreateWithoutMarkedAttendancesInput>
+    where?: usersWhereInput
+  }
+
+  export type usersUpdateToOneWithWhereWithoutMarkedAttendancesInput = {
+    where?: usersWhereInput
+    data: XOR<usersUpdateWithoutMarkedAttendancesInput, usersUncheckedUpdateWithoutMarkedAttendancesInput>
+  }
+
+  export type usersUpdateWithoutMarkedAttendancesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    username?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    phonenumber?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    alternatePhonenumber?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    auth?: authorizationsUpdateManyWithoutUserNestedInput
+    projects?: projectsUpdateManyWithoutCreatorNestedInput
+    refreshTokens?: refreshTokensUpdateManyWithoutUserNestedInput
+  }
+
+  export type usersUncheckedUpdateWithoutMarkedAttendancesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    username?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    phonenumber?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    alternatePhonenumber?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    auth?: authorizationsUncheckedUpdateManyWithoutUserNestedInput
+    projects?: projectsUncheckedUpdateManyWithoutCreatorNestedInput
+    refreshTokens?: refreshTokensUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type laboursCreateWithoutPaymentsInput = {
@@ -35544,6 +35848,16 @@ export namespace Prisma {
     createdAt?: Date | string
   }
 
+  export type labour_attendanceCreateManyMarkedByInput = {
+    id?: string
+    date: Date | string
+    projectId: string
+    labourId: string
+    workDayType?: string
+    workDayValue?: Decimal | DecimalJsLike | number | string
+    createdAt?: Date | string
+  }
+
   export type authorizationsUpdateWithoutUserInput = {
     id?: StringFieldUpdateOperationsInput | string
     access?: StringFieldUpdateOperationsInput | string
@@ -35641,6 +35955,36 @@ export namespace Prisma {
     familyId?: StringFieldUpdateOperationsInput | string
     role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     isUsed?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type labour_attendanceUpdateWithoutMarkedByInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    workDayType?: StringFieldUpdateOperationsInput | string
+    workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    project?: projectsUpdateOneRequiredWithoutAttendanceNestedInput
+    labour?: laboursUpdateOneRequiredWithoutAttendanceNestedInput
+  }
+
+  export type labour_attendanceUncheckedUpdateWithoutMarkedByInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    projectId?: StringFieldUpdateOperationsInput | string
+    labourId?: StringFieldUpdateOperationsInput | string
+    workDayType?: StringFieldUpdateOperationsInput | string
+    workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type labour_attendanceUncheckedUpdateManyWithoutMarkedByInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    projectId?: StringFieldUpdateOperationsInput | string
+    labourId?: StringFieldUpdateOperationsInput | string
+    workDayType?: StringFieldUpdateOperationsInput | string
+    workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -35864,6 +36208,7 @@ export namespace Prisma {
     labourId: string
     workDayType?: string
     workDayValue?: Decimal | DecimalJsLike | number | string
+    markedById?: string | null
     createdAt?: Date | string
   }
 
@@ -35975,6 +36320,7 @@ export namespace Prisma {
     workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     labour?: laboursUpdateOneRequiredWithoutAttendanceNestedInput
+    markedBy?: usersUpdateOneWithoutMarkedAttendancesNestedInput
   }
 
   export type labour_attendanceUncheckedUpdateWithoutProjectInput = {
@@ -35983,6 +36329,7 @@ export namespace Prisma {
     labourId?: StringFieldUpdateOperationsInput | string
     workDayType?: StringFieldUpdateOperationsInput | string
     workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    markedById?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -35992,6 +36339,7 @@ export namespace Prisma {
     labourId?: StringFieldUpdateOperationsInput | string
     workDayType?: StringFieldUpdateOperationsInput | string
     workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    markedById?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -36206,6 +36554,7 @@ export namespace Prisma {
     projectId: string
     workDayType?: string
     workDayValue?: Decimal | DecimalJsLike | number | string
+    markedById?: string | null
     createdAt?: Date | string
   }
 
@@ -36226,6 +36575,7 @@ export namespace Prisma {
     workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: projectsUpdateOneRequiredWithoutAttendanceNestedInput
+    markedBy?: usersUpdateOneWithoutMarkedAttendancesNestedInput
   }
 
   export type labour_attendanceUncheckedUpdateWithoutLabourInput = {
@@ -36234,6 +36584,7 @@ export namespace Prisma {
     projectId?: StringFieldUpdateOperationsInput | string
     workDayType?: StringFieldUpdateOperationsInput | string
     workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    markedById?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -36243,6 +36594,7 @@ export namespace Prisma {
     projectId?: StringFieldUpdateOperationsInput | string
     workDayType?: StringFieldUpdateOperationsInput | string
     workDayValue?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    markedById?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
