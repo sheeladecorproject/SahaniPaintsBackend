@@ -173,6 +173,7 @@ exports.Prisma.ProductsScalarFieldEnum = {
   coverageSqFt: 'coverageSqFt',
   coverageRnFt: 'coverageRnFt',
   hasToken: 'hasToken',
+  size: 'size',
   createdAt: 'createdAt'
 };
 

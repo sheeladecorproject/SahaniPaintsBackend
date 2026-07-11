@@ -79,6 +79,7 @@ model products {
   coverageSqFt    Decimal?          @map("coverage_sqft")
   coverageRnFt    Decimal?          @map("coverage_rnft")
   hasToken        Boolean           @default(false) @map("has_token")
+  size            String            @default("1ltr")
   createdAt       DateTime          @default(now()) @map("created_at") @db.Timestamptz(6)
   brand           brands            @relation(fields: [brandId], references: [id])
   projectProducts project_products[]

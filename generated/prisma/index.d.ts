@@ -8655,6 +8655,7 @@ export namespace Prisma {
     coverageSqFt: Decimal | null
     coverageRnFt: Decimal | null
     hasToken: boolean | null
+    size: string | null
     createdAt: Date | null
   }
 
@@ -8667,6 +8668,7 @@ export namespace Prisma {
     coverageSqFt: Decimal | null
     coverageRnFt: Decimal | null
     hasToken: boolean | null
+    size: string | null
     createdAt: Date | null
   }
 
@@ -8679,6 +8681,7 @@ export namespace Prisma {
     coverageSqFt: number
     coverageRnFt: number
     hasToken: number
+    size: number
     createdAt: number
     _all: number
   }
@@ -8705,6 +8708,7 @@ export namespace Prisma {
     coverageSqFt?: true
     coverageRnFt?: true
     hasToken?: true
+    size?: true
     createdAt?: true
   }
 
@@ -8717,6 +8721,7 @@ export namespace Prisma {
     coverageSqFt?: true
     coverageRnFt?: true
     hasToken?: true
+    size?: true
     createdAt?: true
   }
 
@@ -8729,6 +8734,7 @@ export namespace Prisma {
     coverageSqFt?: true
     coverageRnFt?: true
     hasToken?: true
+    size?: true
     createdAt?: true
     _all?: true
   }
@@ -8828,6 +8834,7 @@ export namespace Prisma {
     coverageSqFt: Decimal | null
     coverageRnFt: Decimal | null
     hasToken: boolean
+    size: string
     createdAt: Date
     _count: ProductsCountAggregateOutputType | null
     _avg: ProductsAvgAggregateOutputType | null
@@ -8859,6 +8866,7 @@ export namespace Prisma {
     coverageSqFt?: boolean
     coverageRnFt?: boolean
     hasToken?: boolean
+    size?: boolean
     createdAt?: boolean
     brand?: boolean | brandsDefaultArgs<ExtArgs>
     projectProducts?: boolean | products$projectProductsArgs<ExtArgs>
@@ -8875,6 +8883,7 @@ export namespace Prisma {
     coverageSqFt?: boolean
     coverageRnFt?: boolean
     hasToken?: boolean
+    size?: boolean
     createdAt?: boolean
     brand?: boolean | brandsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["products"]>
@@ -8888,6 +8897,7 @@ export namespace Prisma {
     coverageSqFt?: boolean
     coverageRnFt?: boolean
     hasToken?: boolean
+    size?: boolean
     createdAt?: boolean
     brand?: boolean | brandsDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["products"]>
@@ -8901,10 +8911,11 @@ export namespace Prisma {
     coverageSqFt?: boolean
     coverageRnFt?: boolean
     hasToken?: boolean
+    size?: boolean
     createdAt?: boolean
   }
 
-  export type productsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "brandId" | "category" | "price" | "coverageSqFt" | "coverageRnFt" | "hasToken" | "createdAt", ExtArgs["result"]["products"]>
+  export type productsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "brandId" | "category" | "price" | "coverageSqFt" | "coverageRnFt" | "hasToken" | "size" | "createdAt", ExtArgs["result"]["products"]>
   export type productsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     brand?: boolean | brandsDefaultArgs<ExtArgs>
     projectProducts?: boolean | products$projectProductsArgs<ExtArgs>
@@ -8934,6 +8945,7 @@ export namespace Prisma {
       coverageSqFt: Prisma.Decimal | null
       coverageRnFt: Prisma.Decimal | null
       hasToken: boolean
+      size: string
       createdAt: Date
     }, ExtArgs["result"]["products"]>
     composites: {}
@@ -9369,6 +9381,7 @@ export namespace Prisma {
     readonly coverageSqFt: FieldRef<"products", 'Decimal'>
     readonly coverageRnFt: FieldRef<"products", 'Decimal'>
     readonly hasToken: FieldRef<"products", 'Boolean'>
+    readonly size: FieldRef<"products", 'String'>
     readonly createdAt: FieldRef<"products", 'DateTime'>
   }
     
@@ -26908,6 +26921,7 @@ export namespace Prisma {
     coverageSqFt: 'coverageSqFt',
     coverageRnFt: 'coverageRnFt',
     hasToken: 'hasToken',
+    size: 'size',
     createdAt: 'createdAt'
   };
 
@@ -27591,6 +27605,7 @@ export namespace Prisma {
     coverageSqFt?: DecimalNullableFilter<"products"> | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: DecimalNullableFilter<"products"> | Decimal | DecimalJsLike | number | string | null
     hasToken?: BoolFilter<"products"> | boolean
+    size?: StringFilter<"products"> | string
     createdAt?: DateTimeFilter<"products"> | Date | string
     brand?: XOR<BrandsScalarRelationFilter, brandsWhereInput>
     projectProducts?: Project_productsListRelationFilter
@@ -27606,6 +27621,7 @@ export namespace Prisma {
     coverageSqFt?: SortOrderInput | SortOrder
     coverageRnFt?: SortOrderInput | SortOrder
     hasToken?: SortOrder
+    size?: SortOrder
     createdAt?: SortOrder
     brand?: brandsOrderByWithRelationInput
     projectProducts?: project_productsOrderByRelationAggregateInput
@@ -27624,6 +27640,7 @@ export namespace Prisma {
     coverageSqFt?: DecimalNullableFilter<"products"> | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: DecimalNullableFilter<"products"> | Decimal | DecimalJsLike | number | string | null
     hasToken?: BoolFilter<"products"> | boolean
+    size?: StringFilter<"products"> | string
     createdAt?: DateTimeFilter<"products"> | Date | string
     brand?: XOR<BrandsScalarRelationFilter, brandsWhereInput>
     projectProducts?: Project_productsListRelationFilter
@@ -27639,6 +27656,7 @@ export namespace Prisma {
     coverageSqFt?: SortOrderInput | SortOrder
     coverageRnFt?: SortOrderInput | SortOrder
     hasToken?: SortOrder
+    size?: SortOrder
     createdAt?: SortOrder
     _count?: productsCountOrderByAggregateInput
     _avg?: productsAvgOrderByAggregateInput
@@ -27659,6 +27677,7 @@ export namespace Prisma {
     coverageSqFt?: DecimalNullableWithAggregatesFilter<"products"> | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: DecimalNullableWithAggregatesFilter<"products"> | Decimal | DecimalJsLike | number | string | null
     hasToken?: BoolWithAggregatesFilter<"products"> | boolean
+    size?: StringWithAggregatesFilter<"products"> | string
     createdAt?: DateTimeWithAggregatesFilter<"products"> | Date | string
   }
 
@@ -29047,6 +29066,7 @@ export namespace Prisma {
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
     hasToken?: boolean
+    size?: string
     createdAt?: Date | string
     brand: brandsCreateNestedOneWithoutProductsInput
     projectProducts?: project_productsCreateNestedManyWithoutProductInput
@@ -29062,6 +29082,7 @@ export namespace Prisma {
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
     hasToken?: boolean
+    size?: string
     createdAt?: Date | string
     projectProducts?: project_productsUncheckedCreateNestedManyWithoutProductInput
     materialLogs?: project_material_logsUncheckedCreateNestedManyWithoutProductInput
@@ -29075,6 +29096,7 @@ export namespace Prisma {
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     hasToken?: BoolFieldUpdateOperationsInput | boolean
+    size?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     brand?: brandsUpdateOneRequiredWithoutProductsNestedInput
     projectProducts?: project_productsUpdateManyWithoutProductNestedInput
@@ -29090,6 +29112,7 @@ export namespace Prisma {
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     hasToken?: BoolFieldUpdateOperationsInput | boolean
+    size?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     projectProducts?: project_productsUncheckedUpdateManyWithoutProductNestedInput
     materialLogs?: project_material_logsUncheckedUpdateManyWithoutProductNestedInput
@@ -29104,6 +29127,7 @@ export namespace Prisma {
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
     hasToken?: boolean
+    size?: string
     createdAt?: Date | string
   }
 
@@ -29115,6 +29139,7 @@ export namespace Prisma {
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     hasToken?: BoolFieldUpdateOperationsInput | boolean
+    size?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -29127,6 +29152,7 @@ export namespace Prisma {
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     hasToken?: BoolFieldUpdateOperationsInput | boolean
+    size?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -30615,6 +30641,7 @@ export namespace Prisma {
     coverageSqFt?: SortOrder
     coverageRnFt?: SortOrder
     hasToken?: SortOrder
+    size?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -30633,6 +30660,7 @@ export namespace Prisma {
     coverageSqFt?: SortOrder
     coverageRnFt?: SortOrder
     hasToken?: SortOrder
+    size?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -30645,6 +30673,7 @@ export namespace Prisma {
     coverageSqFt?: SortOrder
     coverageRnFt?: SortOrder
     hasToken?: SortOrder
+    size?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -33496,6 +33525,7 @@ export namespace Prisma {
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
     hasToken?: boolean
+    size?: string
     createdAt?: Date | string
     projectProducts?: project_productsCreateNestedManyWithoutProductInput
     materialLogs?: project_material_logsCreateNestedManyWithoutProductInput
@@ -33509,6 +33539,7 @@ export namespace Prisma {
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
     hasToken?: boolean
+    size?: string
     createdAt?: Date | string
     projectProducts?: project_productsUncheckedCreateNestedManyWithoutProductInput
     materialLogs?: project_material_logsUncheckedCreateNestedManyWithoutProductInput
@@ -33552,6 +33583,7 @@ export namespace Prisma {
     coverageSqFt?: DecimalNullableFilter<"products"> | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: DecimalNullableFilter<"products"> | Decimal | DecimalJsLike | number | string | null
     hasToken?: BoolFilter<"products"> | boolean
+    size?: StringFilter<"products"> | string
     createdAt?: DateTimeFilter<"products"> | Date | string
   }
 
@@ -35209,6 +35241,7 @@ export namespace Prisma {
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
     hasToken?: boolean
+    size?: string
     createdAt?: Date | string
     brand: brandsCreateNestedOneWithoutProductsInput
     materialLogs?: project_material_logsCreateNestedManyWithoutProductInput
@@ -35223,6 +35256,7 @@ export namespace Prisma {
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
     hasToken?: boolean
+    size?: string
     createdAt?: Date | string
     materialLogs?: project_material_logsUncheckedCreateNestedManyWithoutProductInput
   }
@@ -35308,6 +35342,7 @@ export namespace Prisma {
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     hasToken?: BoolFieldUpdateOperationsInput | boolean
+    size?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     brand?: brandsUpdateOneRequiredWithoutProductsNestedInput
     materialLogs?: project_material_logsUpdateManyWithoutProductNestedInput
@@ -35322,6 +35357,7 @@ export namespace Prisma {
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     hasToken?: BoolFieldUpdateOperationsInput | boolean
+    size?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     materialLogs?: project_material_logsUncheckedUpdateManyWithoutProductNestedInput
   }
@@ -35385,6 +35421,7 @@ export namespace Prisma {
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
     hasToken?: boolean
+    size?: string
     createdAt?: Date | string
     brand: brandsCreateNestedOneWithoutProductsInput
     projectProducts?: project_productsCreateNestedManyWithoutProductInput
@@ -35399,6 +35436,7 @@ export namespace Prisma {
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
     hasToken?: boolean
+    size?: string
     createdAt?: Date | string
     projectProducts?: project_productsUncheckedCreateNestedManyWithoutProductInput
   }
@@ -35484,6 +35522,7 @@ export namespace Prisma {
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     hasToken?: BoolFieldUpdateOperationsInput | boolean
+    size?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     brand?: brandsUpdateOneRequiredWithoutProductsNestedInput
     projectProducts?: project_productsUpdateManyWithoutProductNestedInput
@@ -35498,6 +35537,7 @@ export namespace Prisma {
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     hasToken?: BoolFieldUpdateOperationsInput | boolean
+    size?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     projectProducts?: project_productsUncheckedUpdateManyWithoutProductNestedInput
   }
@@ -36072,6 +36112,7 @@ export namespace Prisma {
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
     hasToken?: boolean
+    size?: string
     createdAt?: Date | string
   }
 
@@ -36083,6 +36124,7 @@ export namespace Prisma {
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     hasToken?: BoolFieldUpdateOperationsInput | boolean
+    size?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     projectProducts?: project_productsUpdateManyWithoutProductNestedInput
     materialLogs?: project_material_logsUpdateManyWithoutProductNestedInput
@@ -36096,6 +36138,7 @@ export namespace Prisma {
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     hasToken?: BoolFieldUpdateOperationsInput | boolean
+    size?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     projectProducts?: project_productsUncheckedUpdateManyWithoutProductNestedInput
     materialLogs?: project_material_logsUncheckedUpdateManyWithoutProductNestedInput
@@ -36109,6 +36152,7 @@ export namespace Prisma {
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     hasToken?: BoolFieldUpdateOperationsInput | boolean
+    size?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 

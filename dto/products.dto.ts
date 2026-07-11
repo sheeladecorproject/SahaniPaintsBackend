@@ -7,6 +7,7 @@ interface Products {
     coverageSqFt?: number | any;
     coverageRnFt?: number | any;
     hasToken?: boolean;
+    size?: string;
     createdAt: Date;
     brand?: any;
 }
@@ -19,6 +20,7 @@ interface ProductsData {
     coverageSqFt?: number | any;
     coverageRnFt?: number | any;
     hasToken?: boolean;
+    size?: string;
 }
 
 export type { Products, ProductsData };

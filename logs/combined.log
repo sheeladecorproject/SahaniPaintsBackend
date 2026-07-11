@@ -1746,3 +1746,69 @@
 {"level":"warn","message":"No CONTRACTOR_PAYMENT records found","timestamp":"2026-07-05 10:29:14"}
 {"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-05 10:29:14"}
 {"level":"info","message":"GET /v1/contractor-payments 289.719 ms","timestamp":"2026-07-05 10:29:14"}
+{"ip":"127.0.0.1","level":"http","message":"Login request received","timestamp":"2026-07-11 18:52:19"}
+{"level":"info","message":"POST /v1/auth/ 4525.457 ms","timestamp":"2026-07-11 18:52:23"}
+{"level":"info","message":"GET /v1/reports 9.309 ms","timestamp":"2026-07-11 18:52:23"}
+{"level":"info","message":"GET /v1/reports 3.425 ms","timestamp":"2026-07-11 18:52:23"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-07-11 18:52:23","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"TASK fetch all request received","timestamp":"2026-07-11 18:52:23","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"INQUIRY fetch all request received","timestamp":"2026-07-11 18:52:24","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"warn","message":"No INQUIRY records found","timestamp":"2026-07-11 18:52:25"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-11 18:52:25"}
+{"level":"info","message":"GET /v1/inquiries 1598.075 ms","timestamp":"2026-07-11 18:52:25"}
+{"level":"warn","message":"No TASK records found","timestamp":"2026-07-11 18:52:26"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-11 18:52:26"}
+{"level":"info","message":"GET /v1/tasks 2245.366 ms","timestamp":"2026-07-11 18:52:26"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-07-11 18:52:26"}
+{"level":"info","message":"GET /v1/projects 2303.033 ms","timestamp":"2026-07-11 18:52:26"}
+{"ip":"127.0.0.1","level":"http","message":"CUSTOMER fetch all request received","timestamp":"2026-07-11 18:54:33","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"PRODUCT fetch all request received","timestamp":"2026-07-11 18:54:33","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"info","message":"CUSTOMER records fetched","timestamp":"2026-07-11 18:54:34"}
+{"level":"info","message":"GET /v1/customers 1047.987 ms","timestamp":"2026-07-11 18:54:34"}
+{"level":"info","message":"PRODUCT records fetched","timestamp":"2026-07-11 18:54:35"}
+{"level":"info","message":"GET /v1/products 1220.913 ms","timestamp":"2026-07-11 18:54:35"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-11 19:20:19"}
+{"level":"info","message":"GET /v1/auth/ 1177.086 ms","timestamp":"2026-07-11 19:20:20"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-11 19:20:20"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-07-11 19:20:20","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"info","message":"GET /v1/auth/ 329.801 ms","timestamp":"2026-07-11 19:20:20"}
+{"ip":"127.0.0.1","level":"http","message":"CUSTOMER fetch all request received","timestamp":"2026-07-11 19:20:20","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"PRODUCT fetch all request received","timestamp":"2026-07-11 19:20:20","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"info","message":"CUSTOMER records fetched","timestamp":"2026-07-11 19:20:20"}
+{"level":"info","message":"GET /v1/customers 184.839 ms","timestamp":"2026-07-11 19:20:20"}
+{"level":"info","message":"PRODUCT records fetched","timestamp":"2026-07-11 19:20:21"}
+{"level":"info","message":"GET /v1/products 533.605 ms","timestamp":"2026-07-11 19:20:21"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-07-11 19:20:21"}
+{"level":"info","message":"GET /v1/projects 1368.918 ms","timestamp":"2026-07-11 19:20:21"}
+{"ip":"127.0.0.1","level":"http","message":"CUSTOMER create request received","timestamp":"2026-07-11 19:20:32","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"id":"30f2fea9-33f9-4a2a-b06d-1169ddbe402e","level":"info","message":"CUSTOMER created","timestamp":"2026-07-11 19:20:33"}
+{"level":"info","message":"POST /v1/customers 1042.538 ms","timestamp":"2026-07-11 19:20:33"}
+{"ip":"127.0.0.1","level":"http","message":"CUSTOMER fetch all request received","timestamp":"2026-07-11 19:20:34","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"info","message":"CUSTOMER records fetched","timestamp":"2026-07-11 19:20:34"}
+{"level":"info","message":"GET /v1/customers 154.847 ms","timestamp":"2026-07-11 19:20:34"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-11 19:20:49"}
+{"level":"info","message":"GET /v1/auth/ 1074.910 ms","timestamp":"2026-07-11 19:20:50"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-11 19:20:50"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-07-11 19:20:50","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"info","message":"GET /v1/auth/ 306.362 ms","timestamp":"2026-07-11 19:20:51"}
+{"ip":"127.0.0.1","level":"http","message":"CUSTOMER fetch all request received","timestamp":"2026-07-11 19:20:51","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"PRODUCT fetch all request received","timestamp":"2026-07-11 19:20:51","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"info","message":"CUSTOMER records fetched","timestamp":"2026-07-11 19:20:51"}
+{"level":"info","message":"GET /v1/customers 176.707 ms","timestamp":"2026-07-11 19:20:51"}
+{"level":"info","message":"PRODUCT records fetched","timestamp":"2026-07-11 19:20:51"}
+{"level":"info","message":"GET /v1/products 460.671 ms","timestamp":"2026-07-11 19:20:51"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-07-11 19:20:52"}
+{"level":"info","message":"GET /v1/projects 1228.690 ms","timestamp":"2026-07-11 19:20:52"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-11 19:24:54"}
+{"level":"info","message":"GET /v1/auth/ 1374.564 ms","timestamp":"2026-07-11 19:24:55"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-11 19:24:55"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-07-11 19:24:56","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"info","message":"GET /v1/auth/ 321.523 ms","timestamp":"2026-07-11 19:24:56"}
+{"ip":"127.0.0.1","level":"http","message":"CUSTOMER fetch all request received","timestamp":"2026-07-11 19:24:56","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"PRODUCT fetch all request received","timestamp":"2026-07-11 19:24:56","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"info","message":"CUSTOMER records fetched","timestamp":"2026-07-11 19:24:56"}
+{"level":"info","message":"GET /v1/customers 177.873 ms","timestamp":"2026-07-11 19:24:56"}
+{"level":"info","message":"PRODUCT records fetched","timestamp":"2026-07-11 19:24:56"}
+{"level":"info","message":"GET /v1/products 326.080 ms","timestamp":"2026-07-11 19:24:56"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-07-11 19:24:57"}
+{"level":"info","message":"GET /v1/projects 1157.713 ms","timestamp":"2026-07-11 19:24:57"}
