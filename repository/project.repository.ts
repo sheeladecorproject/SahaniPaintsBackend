@@ -35,7 +35,7 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
                         discountType: data.discountType || null,
                         tax: data.tax != null ? Number(data.tax) : null,
                         agreedPrice: data.agreedPrice != null ? Number(data.agreedPrice) : null,
-                        projectDate: data.projectDate ? new Date(data.projectDate) : new Date(),
+                        projectDate: data.projectDate ? new Date(data.projectDate) : null,
                         status: data.status || "PENDING",
                         creatorId: data.creatorId,
                     } as any,
@@ -97,7 +97,7 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
                 if (data.discountType !== undefined) updatePayload.discountType = data.discountType;
                 if (data.tax !== undefined) updatePayload.tax = data.tax != null ? Number(data.tax) : null;
                 if (data.agreedPrice !== undefined) updatePayload.agreedPrice = data.agreedPrice != null ? Number(data.agreedPrice) : null;
-                if (data.projectDate !== undefined) updatePayload.projectDate = data.projectDate ? new Date(data.projectDate) : undefined;
+                if (data.projectDate !== undefined) updatePayload.projectDate = data.projectDate ? new Date(data.projectDate) : null;
                 if (data.status !== undefined) updatePayload.status = data.status;
 
                 const project = await tx.projects.update({
