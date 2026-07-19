@@ -4,6 +4,7 @@ interface Project {
     id: string;
     name: string;
     customerId: string | null;
+    interiorId?: string | null;
     totalAmount: number | null;
     paid: number | null;
     discount: number | null;
@@ -17,6 +18,11 @@ interface Project {
     customer?: {
         name: string;
     } | null;
+    interior?: {
+        id: string;
+        name: string;
+        commissionFeePercentage?: number;
+    } | null;
     creator: {
         username: string;
     };
@@ -26,6 +32,7 @@ interface Project {
 interface ProjectData {
     name: string;
     customerId?: string | null;
+    interiorId?: string | null;
     totalAmount?: number | null;
     paid?: number | null;
     discount?: number | null;

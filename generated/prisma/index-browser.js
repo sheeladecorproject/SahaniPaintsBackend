@@ -177,11 +177,23 @@ exports.Prisma.ProductsScalarFieldEnum = {
   createdAt: 'createdAt'
 };
 
+exports.Prisma.InteriorsScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  email: 'email',
+  phonenumber: 'phonenumber',
+  alternatePhonenumber: 'alternatePhonenumber',
+  address: 'address',
+  commissionFeePercentage: 'commissionFeePercentage',
+  createdAt: 'createdAt'
+};
+
 exports.Prisma.ProjectsScalarFieldEnum = {
   id: 'id',
   name: 'name',
   customerId: 'customerId',
   creatorId: 'creatorId',
+  interiorId: 'interiorId',
   status: 'status',
   totalAmount: 'totalAmount',
   paid: 'paid',
@@ -249,6 +261,7 @@ exports.Prisma.LaboursScalarFieldEnum = {
   id: 'id',
   name: 'name',
   paymentPerDay: 'paymentPerDay',
+  tuesdayPaymentAmount: 'tuesdayPaymentAmount',
   phonenumber: 'phonenumber',
   type: 'type',
   createdAt: 'createdAt'
@@ -271,6 +284,7 @@ exports.Prisma.Labour_paymentsScalarFieldEnum = {
   projectId: 'projectId',
   amount: 'amount',
   type: 'type',
+  paymentMode: 'paymentMode',
   paymentDate: 'paymentDate',
   remarks: 'remarks',
   createdAt: 'createdAt'
@@ -301,6 +315,7 @@ exports.Prisma.Project_paymentsScalarFieldEnum = {
   projectId: 'projectId',
   amount: 'amount',
   type: 'type',
+  paymentMode: 'paymentMode',
   paymentDate: 'paymentDate',
   remarks: 'remarks',
   createdAt: 'createdAt'
@@ -322,6 +337,7 @@ exports.Prisma.Contractor_paymentsScalarFieldEnum = {
   projectId: 'projectId',
   amount: 'amount',
   type: 'type',
+  paymentMode: 'paymentMode',
   paymentDate: 'paymentDate',
   remarks: 'remarks',
   createdAt: 'createdAt'
@@ -378,6 +394,7 @@ exports.Prisma.ModelName = {
   customers: 'customers',
   brands: 'brands',
   products: 'products',
+  interiors: 'interiors',
   projects: 'projects',
   colors: 'colors',
   areas: 'areas',

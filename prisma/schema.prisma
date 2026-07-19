@@ -88,11 +88,26 @@ model products {
   @@index([id, createdAt])
 }
 
+model interiors {
+  id                      String     @id @default(uuid()) @db.Uuid
+  name                    String     @unique
+  email                   String?
+  phonenumber             String?
+  alternatePhonenumber    String?    @map("alternate_phonenumber")
+  address                 String?
+  commissionFeePercentage Decimal?   @map("commission_fee_percentage")
+  createdAt               DateTime   @default(now()) @map("created_at") @db.Timestamptz(6)
+  projects                projects[]
+
+  @@index([id, createdAt])
+}
+
 model projects {
   id                 String            @id @default(uuid()) @db.Uuid
   name               String            @unique
   customerId         String?           @map("customer_id") @db.Uuid
   creatorId          String            @map("creator_id") @db.Uuid
+  interiorId         String?           @map("interior_id") @db.Uuid
   status             ProjectStatus
   totalAmount        Decimal?          @map("total_amount")
   paid               Decimal?
@@ -104,6 +119,7 @@ model projects {
   createdAt          DateTime          @default(now()) @map("created_at") @db.Timestamptz(6)
   creator            users             @relation(fields: [creatorId], references: [id])
   customer           customers?        @relation(fields: [customerId], references: [id])
+  interior           interiors?        @relation(fields: [interiorId], references: [id])
   tasks              tasks[]
   projectAreaColors  project_area_colors[]
   attendance         labour_attendance[]
@@ -220,14 +236,15 @@ enum Priority {
 }
 
 model labours {
-  id            String              @id @default(uuid()) @db.Uuid
-  name          String              @unique
-  paymentPerDay Decimal             @map("payment_per_day")
-  phonenumber   String?             @map("phone_number")
-  type          String              @default("WEEKLY")
-  createdAt     DateTime            @default(now()) @map("created_at") @db.Timestamptz(6)
-  attendance    labour_attendance[]
-  payments      labour_payments[]
+  id                    String              @id @default(uuid()) @db.Uuid
+  name                  String              @unique
+  paymentPerDay         Decimal             @map("payment_per_day")
+  tuesdayPaymentAmount Decimal?            @default(0) @map("tuesday_payment_amount")
+  phonenumber           String?             @map("phone_number")
+  type                  String              @default("WEEKLY")
+  createdAt             DateTime            @default(now()) @map("created_at") @db.Timestamptz(6)
+  attendance            labour_attendance[]
+  payments              labour_payments[]
 
   @@index([id, createdAt])
 }
@@ -256,6 +273,7 @@ model labour_payments {
   projectId   String?  @map("project_id") @db.Uuid
   amount      Decimal
   type        String   @default("OUTGOING")
+  paymentMode String?  @default("CASH") @map("payment_mode")
   paymentDate DateTime @default(now()) @map("payment_date") @db.Timestamptz(6)
   remarks     String?
   createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
@@ -303,6 +321,7 @@ model project_payments {
   projectId   String   @map("project_id") @db.Uuid
   amount      Decimal
   type        String   @default("INCOMING")
+  paymentMode String?  @default("CASH") @map("payment_mode")
   paymentDate DateTime @default(now()) @map("payment_date") @db.Timestamptz(6)
   remarks     String?
   createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
@@ -334,6 +353,7 @@ model contractor_payments {
   projectId    String?  @map("project_id") @db.Uuid
   amount       Decimal
   type         String   @default("OUTGOING")
+  paymentMode  String?  @default("CASH") @map("payment_mode")
   paymentDate  DateTime @default(now()) @map("payment_date") @db.Timestamptz(6)
   remarks      String?
   createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)

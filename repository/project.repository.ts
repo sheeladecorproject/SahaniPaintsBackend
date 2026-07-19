@@ -29,6 +29,7 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
                     data: {
                         name: data.name,
                         customerId: customerId || null,
+                        interiorId: data.interiorId || null,
                         totalAmount: data.totalAmount != null ? Number(data.totalAmount) : null,
                         paid: data.paid != null ? Number(data.paid) : 0,
                         discount: data.discount != null ? Number(data.discount) : null,
@@ -91,6 +92,7 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
                 const updatePayload: any = {};
                 if (data.name !== undefined) updatePayload.name = data.name;
                 if (customerId !== undefined) updatePayload.customerId = customerId;
+                if (data.interiorId !== undefined) updatePayload.interiorId = data.interiorId || null;
                 if (data.totalAmount !== undefined) updatePayload.totalAmount = data.totalAmount != null ? Number(data.totalAmount) : null;
                 if (data.paid !== undefined) updatePayload.paid = data.paid != null ? Number(data.paid) : 0;
                 if (data.discount !== undefined) updatePayload.discount = data.discount != null ? Number(data.discount) : null;
@@ -148,6 +150,13 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
                         phonenumber: true,
                         email: true,
                         address: true
+                    }
+                },
+                interior: {
+                    select: {
+                        id: true,
+                        name: true,
+                        commissionFeePercentage: true
                     }
                 },
                 creator: {
@@ -221,6 +230,12 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
             include: {
                 customer: {
                     select: {
+                        name: true
+                    }
+                },
+                interior: {
+                    select: {
+                        id: true,
                         name: true
                     }
                 },

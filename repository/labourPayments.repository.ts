@@ -27,6 +27,11 @@ class LabourPaymentsRepository extends BaseRepository<LabourPayments, LabourPaym
             take: data.limit || 1000,
             where,
             include: {
+                labour: {
+                    select: {
+                        name: true
+                    }
+                },
                 project: {
                     select: {
                         name: true

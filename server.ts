@@ -24,8 +24,9 @@ import { ProjectPaymentRouter } from "./router/projectPayment.router.js";
 import { ContractorRouter } from "./router/contractor.router.js";
 import { ContractorPaymentRouter } from "./router/contractorPayment.router.js";
 import cors from "cors";
+import { InteriorRouter } from "./router/interior.router.js";
 import { AuthorizationRouter } from "./router/authorization.router.js";
-import { authenticate, authorizePage } from "./middleware/authenticate.middleware.js";
+import { authenticate, authorizePage, authenticateAdmin } from "./middleware/authenticate.middleware.js";
 
 dotenv.config();
 
@@ -65,6 +66,7 @@ app.use("/v1/products", authorizePage("products"), ProductRouter);
 app.use("/v1/tasks", authorizePage("tasks"), TaskRouter);
 app.use("/v1/projects", authorizePage("dashboard"), ProjectRouter);
 app.use("/v1/customers", authorizePage("customers"), CustomerRouter);
+app.use("/v1/interiors", authorizePage("interiors"), InteriorRouter);
 app.use("/v1/inquiries", authorizePage("dashboard"), InquiryRouter);
 app.use("/v1/authorizations", authorizePage("settings"), AuthorizationRouter);
 app.use("/v1/colors", authorizePage("colors"), ColorRouter);
@@ -72,11 +74,11 @@ app.use("/v1/areas", authorizePage("site-colors"), AreaRouter);
 app.use("/v1/project-area-colors", authorizePage("site-colors"), ProjectAreaColorsRouter);
 app.use("/v1/labours", authorizePage("labours"), LabourRouter);
 app.use("/v1/labour-attendance", authorizePage("labour-attendance"), LabourAttendanceRouter);
-app.use("/v1/labour-payments", authorizePage("labours"), LabourPaymentRouter);
+app.use("/v1/labour-payments", authenticateAdmin, LabourPaymentRouter);
 app.use("/v1/project-material-logs", authorizePage("dashboard"), ProjectMaterialLogRouter);
-app.use("/v1/project-payments", authorizePage("dashboard"), ProjectPaymentRouter);
+app.use("/v1/project-payments", authenticateAdmin, ProjectPaymentRouter);
 app.use("/v1/contractors", authorizePage("labours"), ContractorRouter);
-app.use("/v1/contractor-payments", authorizePage("labours"), ContractorPaymentRouter);
+app.use("/v1/contractor-payments", authenticateAdmin, ContractorPaymentRouter);
 
 app.use(globalErrorHandler.handleError);
 

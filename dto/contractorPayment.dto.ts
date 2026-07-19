@@ -4,6 +4,7 @@ interface ContractorPayment {
     projectId?: string | null;
     amount: number | any;
     type: string;
+    paymentMode?: string | null;
     paymentDate: Date;
     remarks?: string | null;
     createdAt: Date;
@@ -20,6 +21,7 @@ interface ContractorPaymentData {
     projectId?: string | null;
     amount: number | any;
     type?: string;
+    paymentMode?: string | null;
     paymentDate: string;
     remarks?: string | null;
 }

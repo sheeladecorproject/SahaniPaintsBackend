@@ -17,6 +17,7 @@ class ProjectPaymentRepository extends BaseRepository<ProjectPayment, ProjectPay
                         projectId: data.projectId,
                         amount: Number(data.amount),
                         type: isIncoming ? "INCOMING" : "OUTGOING",
+                        paymentMode: data.paymentMode || "CASH",
                         paymentDate: data.paymentDate ? new Date(data.paymentDate) : new Date(),
                         remarks: data.remarks || null,
                     },
