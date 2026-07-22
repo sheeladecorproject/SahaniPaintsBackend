@@ -128,6 +128,7 @@ model projects {
   materialLogs       project_material_logs[]
   projectPayments    project_payments[]
   contractorPayments contractor_payments[]
+  contractorWorkLogs contractor_work_logs[]
 
   @@index([id, createdAt])
 }
@@ -312,7 +313,7 @@ model project_material_logs {
   project projects @relation(fields: [projectId], references: [id], onDelete: Cascade)
   product products @relation(fields: [productId], references: [id], onDelete: Cascade)
 
-  @@unique([date, projectId, productId])
+  @@index([date, projectId, productId])
   @@index([date, projectId])
 }
 
@@ -333,15 +334,17 @@ model project_payments {
 }
 
 model contractors {
-  id          String   @id @default(uuid()) @db.Uuid
-  name        String   @unique
-  phonenumber String?  @map("phone_number")
-  email       String?
-  address     String?
-  type        String   @default("WEEKLY")
-  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  id           String   @id @default(uuid()) @db.Uuid
+  name         String   @unique
+  phonenumber  String?  @map("phone_number")
+  email        String?
+  address      String?
+  type         String   @default("WEEKLY")
+  pricePerSqFt Decimal? @map("price_per_sqft")
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
 
   payments contractor_payments[]
+  workLogs contractor_work_logs[]
 
   @@index([id, createdAt])
   @@map("contractors")
@@ -363,4 +366,21 @@ model contractor_payments {
 
   @@index([id, createdAt])
   @@map("contractor_payments")
+}
+
+model contractor_work_logs {
+  id           String   @id @default(uuid()) @db.Uuid
+  date         DateTime @db.Timestamptz(6)
+  projectId    String   @map("project_id") @db.Uuid
+  contractorId String   @map("contractor_id") @db.Uuid
+  sqFt         Decimal  @map("sq_ft")
+  remarks      String?
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  contractor contractors @relation(fields: [contractorId], references: [id], onDelete: Cascade)
+  project    projects    @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([id, createdAt])
+  @@index([projectId])
+  @@map("contractor_work_logs")
 }

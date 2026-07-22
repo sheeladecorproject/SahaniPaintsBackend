@@ -5,6 +5,7 @@ interface Contractor {
     email?: string | null;
     address?: string | null;
     type: string;
+    pricePerSqFt?: number | any | null;
     createdAt: Date;
 }
 
@@ -14,6 +15,7 @@ interface ContractorData {
     email?: string | null;
     address?: string | null;
     type?: string;
+    pricePerSqFt?: number | any | null;
 }
 
 export type { Contractor, ContractorData };

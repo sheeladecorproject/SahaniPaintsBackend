@@ -194,7 +194,12 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
                     }
                 },
                 projectPayments: true,
-                contractorPayments: true
+                contractorPayments: true,
+                contractorWorkLogs: {
+                    include: {
+                        contractor: true
+                    }
+                }
             }
         });
         return project ?? ({} as any);
