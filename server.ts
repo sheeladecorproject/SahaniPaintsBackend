@@ -24,6 +24,7 @@ import { ProjectPaymentRouter } from "./router/projectPayment.router.js";
 import { ContractorRouter } from "./router/contractor.router.js";
 import { ContractorPaymentRouter } from "./router/contractorPayment.router.js";
 import { ContractorWorkLogRouter } from "./router/contractorWorkLog.router.js";
+import { ReportRouter } from "./router/report.router.js";
 import cors from "cors";
 import { InteriorRouter } from "./router/interior.router.js";
 import { AuthorizationRouter } from "./router/authorization.router.js";
@@ -81,6 +82,7 @@ app.use("/v1/project-payments", authenticateAdmin, ProjectPaymentRouter);
 app.use("/v1/contractors", authorizePage("labours"), ContractorRouter);
 app.use("/v1/contractor-payments", authenticateAdmin, ContractorPaymentRouter);
 app.use("/v1/contractor-work-logs", authorizePage("labours"), ContractorWorkLogRouter);
+app.use("/v1/reports", authorizePage("dashboard"), ReportRouter);
 
 app.use(globalErrorHandler.handleError);
 

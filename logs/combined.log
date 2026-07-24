@@ -2652,3 +2652,38 @@
 {"level":"info","message":"GET /v1/labour-payments 968.962 ms","timestamp":"2026-07-19 21:34:54"}
 {"level":"info","message":"CONTRACTOR_PAYMENT records fetched","timestamp":"2026-07-19 21:34:55"}
 {"level":"info","message":"GET /v1/contractor-payments 1257.796 ms","timestamp":"2026-07-19 21:34:55"}
+{"ip":"127.0.0.1","level":"http","message":"Login request received","timestamp":"2026-07-24 14:38:36"}
+{"level":"info","message":"POST /v1/auth/ 2805.716 ms","timestamp":"2026-07-24 14:38:38"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-07-24 14:38:38","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"TASK fetch all request received","timestamp":"2026-07-24 14:38:39","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"INQUIRY fetch all request received","timestamp":"2026-07-24 14:38:39","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"info","message":"TASK records fetched","timestamp":"2026-07-24 14:38:39"}
+{"level":"info","message":"GET /v1/tasks 326.434 ms","timestamp":"2026-07-24 14:38:39"}
+{"level":"info","message":"GET /v1/reports 803.671 ms","timestamp":"2026-07-24 14:38:39"}
+{"level":"info","message":"GET /v1/reports 147.594 ms","timestamp":"2026-07-24 14:38:39"}
+{"level":"info","message":"INQUIRY records fetched","timestamp":"2026-07-24 14:38:40"}
+{"level":"info","message":"GET /v1/inquiries 726.098 ms","timestamp":"2026-07-24 14:38:40"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-07-24 14:38:40"}
+{"level":"info","message":"GET /v1/projects 1558.204 ms","timestamp":"2026-07-24 14:38:40"}
+{"level":"info","message":"GET /v1/reports/projects 533.010 ms","timestamp":"2026-07-24 14:38:46"}
+{"ip":"127.0.0.1","level":"http","message":"CUSTOMER fetch all request received","timestamp":"2026-07-24 14:41:45","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"PRODUCT fetch all request received","timestamp":"2026-07-24 14:41:46","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch request received","timestamp":"2026-07-24 14:41:47","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"info","message":"CUSTOMER records fetched","timestamp":"2026-07-24 14:41:47"}
+{"level":"info","message":"GET /v1/customers 2250.179 ms","timestamp":"2026-07-24 14:41:47"}
+{"level":"info","message":"PRODUCT records fetched","timestamp":"2026-07-24 14:41:48"}
+{"level":"info","message":"GET /v1/products 1708.766 ms","timestamp":"2026-07-24 14:41:48"}
+{"id":"aa0fdb45-f082-4f8f-a6bb-c31dbeb716b2","level":"info","message":"PROJECT fetched","timestamp":"2026-07-24 14:41:49"}
+{"level":"info","message":"GET /v1/projects/aa0fdb45-f082-4f8f-a6bb-c31dbeb716b2 2264.240 ms","timestamp":"2026-07-24 14:41:49"}
+{"ip":"127.0.0.1","level":"http","message":"TASK fetch all request received","timestamp":"2026-07-24 14:41:49","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"CONTRACTOR fetch all request received","timestamp":"2026-07-24 14:41:49","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"info","message":"CONTRACTOR records fetched","timestamp":"2026-07-24 14:41:49"}
+{"level":"info","message":"GET /v1/contractors 155.914 ms","timestamp":"2026-07-24 14:41:49"}
+{"level":"warn","message":"No TASK records found","timestamp":"2026-07-24 14:41:49"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-07-24 14:41:49"}
+{"level":"info","message":"GET /v1/tasks?projectId=aa0fdb45-f082-4f8f-a6bb-c31dbeb716b2 275.100 ms","timestamp":"2026-07-24 14:41:49"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-24 14:43:08"}
+{"level":"info","message":"GET /v1/auth/ 1174.118 ms","timestamp":"2026-07-24 14:43:10"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-07-24 14:43:10"}
+{"level":"info","message":"GET /v1/auth/ 766.002 ms","timestamp":"2026-07-24 14:43:10"}
+{"level":"info","message":"GET /v1/reports/projects 3617.349 ms","timestamp":"2026-07-24 14:43:13"}
