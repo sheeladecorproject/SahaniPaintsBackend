@@ -1,4 +1,4 @@
-type Role = "USER" | "ADMIN" | "INTERIOR" | "SALES_ASSOCIATE";
+type Role = "USER" | "ADMIN" | "INTERIOR" | "SALES_ASSOCIATE" | "SUPERVISOR";
 
 interface User {
     id: string;

@@ -128,6 +128,11 @@ export type contractor_payments = $Result.DefaultSelection<Prisma.$contractor_pa
  * 
  */
 export type contractor_work_logs = $Result.DefaultSelection<Prisma.$contractor_work_logsPayload>
+/**
+ * Model low_materials
+ * 
+ */
+export type low_materials = $Result.DefaultSelection<Prisma.$low_materialsPayload>
 
 /**
  * Enums
@@ -137,7 +142,8 @@ export namespace $Enums {
   USER: 'USER',
   ADMIN: 'ADMIN',
   INTERIOR: 'INTERIOR',
-  SALES_ASSOCIATE: 'SALES_ASSOCIATE'
+  SALES_ASSOCIATE: 'SALES_ASSOCIATE',
+  SUPERVISOR: 'SUPERVISOR'
 };
 
 export type Role = (typeof Role)[keyof typeof Role]
@@ -542,6 +548,16 @@ export class PrismaClient<
     * ```
     */
   get contractor_work_logs(): Prisma.contractor_work_logsDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.low_materials`: Exposes CRUD operations for the **low_materials** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Low_materials
+    * const low_materials = await prisma.low_materials.findMany()
+    * ```
+    */
+  get low_materials(): Prisma.low_materialsDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -998,7 +1014,8 @@ export namespace Prisma {
     project_payments: 'project_payments',
     contractors: 'contractors',
     contractor_payments: 'contractor_payments',
-    contractor_work_logs: 'contractor_work_logs'
+    contractor_work_logs: 'contractor_work_logs',
+    low_materials: 'low_materials'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -1014,7 +1031,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "users" | "refreshTokens" | "authorizations" | "customers" | "brands" | "products" | "interiors" | "projects" | "colors" | "areas" | "project_area_colors" | "tasks" | "inquiries" | "stores" | "labours" | "labour_attendance" | "labour_payments" | "project_products" | "project_material_logs" | "project_payments" | "contractors" | "contractor_payments" | "contractor_work_logs"
+      modelProps: "users" | "refreshTokens" | "authorizations" | "customers" | "brands" | "products" | "interiors" | "projects" | "colors" | "areas" | "project_area_colors" | "tasks" | "inquiries" | "stores" | "labours" | "labour_attendance" | "labour_payments" | "project_products" | "project_material_logs" | "project_payments" | "contractors" | "contractor_payments" | "contractor_work_logs" | "low_materials"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -2720,6 +2737,80 @@ export namespace Prisma {
           }
         }
       }
+      low_materials: {
+        payload: Prisma.$low_materialsPayload<ExtArgs>
+        fields: Prisma.low_materialsFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.low_materialsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$low_materialsPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.low_materialsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$low_materialsPayload>
+          }
+          findFirst: {
+            args: Prisma.low_materialsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$low_materialsPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.low_materialsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$low_materialsPayload>
+          }
+          findMany: {
+            args: Prisma.low_materialsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$low_materialsPayload>[]
+          }
+          create: {
+            args: Prisma.low_materialsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$low_materialsPayload>
+          }
+          createMany: {
+            args: Prisma.low_materialsCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.low_materialsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$low_materialsPayload>[]
+          }
+          delete: {
+            args: Prisma.low_materialsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$low_materialsPayload>
+          }
+          update: {
+            args: Prisma.low_materialsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$low_materialsPayload>
+          }
+          deleteMany: {
+            args: Prisma.low_materialsDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.low_materialsUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.low_materialsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$low_materialsPayload>[]
+          }
+          upsert: {
+            args: Prisma.low_materialsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$low_materialsPayload>
+          }
+          aggregate: {
+            args: Prisma.Low_materialsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateLow_materials>
+          }
+          groupBy: {
+            args: Prisma.low_materialsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Low_materialsGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.low_materialsCountArgs<ExtArgs>
+            result: $Utils.Optional<Low_materialsCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -2851,6 +2942,7 @@ export namespace Prisma {
     contractors?: contractorsOmit
     contractor_payments?: contractor_paymentsOmit
     contractor_work_logs?: contractor_work_logsOmit
+    low_materials?: low_materialsOmit
   }
 
   /* Types for Logging */
@@ -2933,6 +3025,7 @@ export namespace Prisma {
   export type UsersCountOutputType = {
     auth: number
     projects: number
+    supervisedProjects: number
     refreshTokens: number
     markedAttendances: number
   }
@@ -2940,6 +3033,7 @@ export namespace Prisma {
   export type UsersCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     auth?: boolean | UsersCountOutputTypeCountAuthArgs
     projects?: boolean | UsersCountOutputTypeCountProjectsArgs
+    supervisedProjects?: boolean | UsersCountOutputTypeCountSupervisedProjectsArgs
     refreshTokens?: boolean | UsersCountOutputTypeCountRefreshTokensArgs
     markedAttendances?: boolean | UsersCountOutputTypeCountMarkedAttendancesArgs
   }
@@ -2966,6 +3060,13 @@ export namespace Prisma {
    * UsersCountOutputType without action
    */
   export type UsersCountOutputTypeCountProjectsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: projectsWhereInput
+  }
+
+  /**
+   * UsersCountOutputType without action
+   */
+  export type UsersCountOutputTypeCountSupervisedProjectsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: projectsWhereInput
   }
 
@@ -3131,6 +3232,7 @@ export namespace Prisma {
     projectPayments: number
     contractorPayments: number
     contractorWorkLogs: number
+    lowMaterials: number
   }
 
   export type ProjectsCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -3143,6 +3245,7 @@ export namespace Prisma {
     projectPayments?: boolean | ProjectsCountOutputTypeCountProjectPaymentsArgs
     contractorPayments?: boolean | ProjectsCountOutputTypeCountContractorPaymentsArgs
     contractorWorkLogs?: boolean | ProjectsCountOutputTypeCountContractorWorkLogsArgs
+    lowMaterials?: boolean | ProjectsCountOutputTypeCountLowMaterialsArgs
   }
 
   // Custom InputTypes
@@ -3217,6 +3320,13 @@ export namespace Prisma {
    */
   export type ProjectsCountOutputTypeCountContractorWorkLogsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: contractor_work_logsWhereInput
+  }
+
+  /**
+   * ProjectsCountOutputType without action
+   */
+  export type ProjectsCountOutputTypeCountLowMaterialsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: low_materialsWhereInput
   }
 
 
@@ -3564,6 +3674,7 @@ export namespace Prisma {
     createdAt?: boolean
     auth?: boolean | users$authArgs<ExtArgs>
     projects?: boolean | users$projectsArgs<ExtArgs>
+    supervisedProjects?: boolean | users$supervisedProjectsArgs<ExtArgs>
     refreshTokens?: boolean | users$refreshTokensArgs<ExtArgs>
     markedAttendances?: boolean | users$markedAttendancesArgs<ExtArgs>
     _count?: boolean | UsersCountOutputTypeDefaultArgs<ExtArgs>
@@ -3609,6 +3720,7 @@ export namespace Prisma {
   export type usersInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     auth?: boolean | users$authArgs<ExtArgs>
     projects?: boolean | users$projectsArgs<ExtArgs>
+    supervisedProjects?: boolean | users$supervisedProjectsArgs<ExtArgs>
     refreshTokens?: boolean | users$refreshTokensArgs<ExtArgs>
     markedAttendances?: boolean | users$markedAttendancesArgs<ExtArgs>
     _count?: boolean | UsersCountOutputTypeDefaultArgs<ExtArgs>
@@ -3621,6 +3733,7 @@ export namespace Prisma {
     objects: {
       auth: Prisma.$authorizationsPayload<ExtArgs>[]
       projects: Prisma.$projectsPayload<ExtArgs>[]
+      supervisedProjects: Prisma.$projectsPayload<ExtArgs>[]
       refreshTokens: Prisma.$refreshTokensPayload<ExtArgs>[]
       markedAttendances: Prisma.$labour_attendancePayload<ExtArgs>[]
     }
@@ -4030,6 +4143,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     auth<T extends users$authArgs<ExtArgs> = {}>(args?: Subset<T, users$authArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$authorizationsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     projects<T extends users$projectsArgs<ExtArgs> = {}>(args?: Subset<T, users$projectsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$projectsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    supervisedProjects<T extends users$supervisedProjectsArgs<ExtArgs> = {}>(args?: Subset<T, users$supervisedProjectsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$projectsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     refreshTokens<T extends users$refreshTokensArgs<ExtArgs> = {}>(args?: Subset<T, users$refreshTokensArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$refreshTokensPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     markedAttendances<T extends users$markedAttendancesArgs<ExtArgs> = {}>(args?: Subset<T, users$markedAttendancesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$labour_attendancePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
@@ -4490,6 +4604,30 @@ export namespace Prisma {
    * users.projects
    */
   export type users$projectsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the projects
+     */
+    select?: projectsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the projects
+     */
+    omit?: projectsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: projectsInclude<ExtArgs> | null
+    where?: projectsWhereInput
+    orderBy?: projectsOrderByWithRelationInput | projectsOrderByWithRelationInput[]
+    cursor?: projectsWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ProjectsScalarFieldEnum | ProjectsScalarFieldEnum[]
+  }
+
+  /**
+   * users.supervisedProjects
+   */
+  export type users$supervisedProjectsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the projects
      */
@@ -11271,7 +11409,9 @@ export namespace Prisma {
     tax: Decimal | null
     agreedPrice: Decimal | null
     projectDate: Date | null
+    stage: string | null
     createdAt: Date | null
+    supervisorId: string | null
   }
 
   export type ProjectsMaxAggregateOutputType = {
@@ -11288,7 +11428,9 @@ export namespace Prisma {
     tax: Decimal | null
     agreedPrice: Decimal | null
     projectDate: Date | null
+    stage: string | null
     createdAt: Date | null
+    supervisorId: string | null
   }
 
   export type ProjectsCountAggregateOutputType = {
@@ -11305,7 +11447,9 @@ export namespace Prisma {
     tax: number
     agreedPrice: number
     projectDate: number
+    stage: number
     createdAt: number
+    supervisorId: number
     _all: number
   }
 
@@ -11340,7 +11484,9 @@ export namespace Prisma {
     tax?: true
     agreedPrice?: true
     projectDate?: true
+    stage?: true
     createdAt?: true
+    supervisorId?: true
   }
 
   export type ProjectsMaxAggregateInputType = {
@@ -11357,7 +11503,9 @@ export namespace Prisma {
     tax?: true
     agreedPrice?: true
     projectDate?: true
+    stage?: true
     createdAt?: true
+    supervisorId?: true
   }
 
   export type ProjectsCountAggregateInputType = {
@@ -11374,7 +11522,9 @@ export namespace Prisma {
     tax?: true
     agreedPrice?: true
     projectDate?: true
+    stage?: true
     createdAt?: true
+    supervisorId?: true
     _all?: true
   }
 
@@ -11478,7 +11628,9 @@ export namespace Prisma {
     tax: Decimal | null
     agreedPrice: Decimal | null
     projectDate: Date | null
+    stage: string
     createdAt: Date
+    supervisorId: string | null
     _count: ProjectsCountAggregateOutputType | null
     _avg: ProjectsAvgAggregateOutputType | null
     _sum: ProjectsSumAggregateOutputType | null
@@ -11514,10 +11666,13 @@ export namespace Prisma {
     tax?: boolean
     agreedPrice?: boolean
     projectDate?: boolean
+    stage?: boolean
     createdAt?: boolean
+    supervisorId?: boolean
     creator?: boolean | usersDefaultArgs<ExtArgs>
     customer?: boolean | projects$customerArgs<ExtArgs>
     interior?: boolean | projects$interiorArgs<ExtArgs>
+    supervisor?: boolean | projects$supervisorArgs<ExtArgs>
     tasks?: boolean | projects$tasksArgs<ExtArgs>
     projectAreaColors?: boolean | projects$projectAreaColorsArgs<ExtArgs>
     attendance?: boolean | projects$attendanceArgs<ExtArgs>
@@ -11527,6 +11682,7 @@ export namespace Prisma {
     projectPayments?: boolean | projects$projectPaymentsArgs<ExtArgs>
     contractorPayments?: boolean | projects$contractorPaymentsArgs<ExtArgs>
     contractorWorkLogs?: boolean | projects$contractorWorkLogsArgs<ExtArgs>
+    lowMaterials?: boolean | projects$lowMaterialsArgs<ExtArgs>
     _count?: boolean | ProjectsCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["projects"]>
 
@@ -11544,10 +11700,13 @@ export namespace Prisma {
     tax?: boolean
     agreedPrice?: boolean
     projectDate?: boolean
+    stage?: boolean
     createdAt?: boolean
+    supervisorId?: boolean
     creator?: boolean | usersDefaultArgs<ExtArgs>
     customer?: boolean | projects$customerArgs<ExtArgs>
     interior?: boolean | projects$interiorArgs<ExtArgs>
+    supervisor?: boolean | projects$supervisorArgs<ExtArgs>
   }, ExtArgs["result"]["projects"]>
 
   export type projectsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -11564,10 +11723,13 @@ export namespace Prisma {
     tax?: boolean
     agreedPrice?: boolean
     projectDate?: boolean
+    stage?: boolean
     createdAt?: boolean
+    supervisorId?: boolean
     creator?: boolean | usersDefaultArgs<ExtArgs>
     customer?: boolean | projects$customerArgs<ExtArgs>
     interior?: boolean | projects$interiorArgs<ExtArgs>
+    supervisor?: boolean | projects$supervisorArgs<ExtArgs>
   }, ExtArgs["result"]["projects"]>
 
   export type projectsSelectScalar = {
@@ -11584,14 +11746,17 @@ export namespace Prisma {
     tax?: boolean
     agreedPrice?: boolean
     projectDate?: boolean
+    stage?: boolean
     createdAt?: boolean
+    supervisorId?: boolean
   }
 
-  export type projectsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "customerId" | "creatorId" | "interiorId" | "status" | "totalAmount" | "paid" | "discount" | "discountType" | "tax" | "agreedPrice" | "projectDate" | "createdAt", ExtArgs["result"]["projects"]>
+  export type projectsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "customerId" | "creatorId" | "interiorId" | "status" | "totalAmount" | "paid" | "discount" | "discountType" | "tax" | "agreedPrice" | "projectDate" | "stage" | "createdAt" | "supervisorId", ExtArgs["result"]["projects"]>
   export type projectsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     creator?: boolean | usersDefaultArgs<ExtArgs>
     customer?: boolean | projects$customerArgs<ExtArgs>
     interior?: boolean | projects$interiorArgs<ExtArgs>
+    supervisor?: boolean | projects$supervisorArgs<ExtArgs>
     tasks?: boolean | projects$tasksArgs<ExtArgs>
     projectAreaColors?: boolean | projects$projectAreaColorsArgs<ExtArgs>
     attendance?: boolean | projects$attendanceArgs<ExtArgs>
@@ -11601,17 +11766,20 @@ export namespace Prisma {
     projectPayments?: boolean | projects$projectPaymentsArgs<ExtArgs>
     contractorPayments?: boolean | projects$contractorPaymentsArgs<ExtArgs>
     contractorWorkLogs?: boolean | projects$contractorWorkLogsArgs<ExtArgs>
+    lowMaterials?: boolean | projects$lowMaterialsArgs<ExtArgs>
     _count?: boolean | ProjectsCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type projectsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     creator?: boolean | usersDefaultArgs<ExtArgs>
     customer?: boolean | projects$customerArgs<ExtArgs>
     interior?: boolean | projects$interiorArgs<ExtArgs>
+    supervisor?: boolean | projects$supervisorArgs<ExtArgs>
   }
   export type projectsIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     creator?: boolean | usersDefaultArgs<ExtArgs>
     customer?: boolean | projects$customerArgs<ExtArgs>
     interior?: boolean | projects$interiorArgs<ExtArgs>
+    supervisor?: boolean | projects$supervisorArgs<ExtArgs>
   }
 
   export type $projectsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -11620,6 +11788,7 @@ export namespace Prisma {
       creator: Prisma.$usersPayload<ExtArgs>
       customer: Prisma.$customersPayload<ExtArgs> | null
       interior: Prisma.$interiorsPayload<ExtArgs> | null
+      supervisor: Prisma.$usersPayload<ExtArgs> | null
       tasks: Prisma.$tasksPayload<ExtArgs>[]
       projectAreaColors: Prisma.$project_area_colorsPayload<ExtArgs>[]
       attendance: Prisma.$labour_attendancePayload<ExtArgs>[]
@@ -11629,6 +11798,7 @@ export namespace Prisma {
       projectPayments: Prisma.$project_paymentsPayload<ExtArgs>[]
       contractorPayments: Prisma.$contractor_paymentsPayload<ExtArgs>[]
       contractorWorkLogs: Prisma.$contractor_work_logsPayload<ExtArgs>[]
+      lowMaterials: Prisma.$low_materialsPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -11644,7 +11814,9 @@ export namespace Prisma {
       tax: Prisma.Decimal | null
       agreedPrice: Prisma.Decimal | null
       projectDate: Date | null
+      stage: string
       createdAt: Date
+      supervisorId: string | null
     }, ExtArgs["result"]["projects"]>
     composites: {}
   }
@@ -12042,6 +12214,7 @@ export namespace Prisma {
     creator<T extends usersDefaultArgs<ExtArgs> = {}>(args?: Subset<T, usersDefaultArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     customer<T extends projects$customerArgs<ExtArgs> = {}>(args?: Subset<T, projects$customerArgs<ExtArgs>>): Prisma__customersClient<$Result.GetResult<Prisma.$customersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     interior<T extends projects$interiorArgs<ExtArgs> = {}>(args?: Subset<T, projects$interiorArgs<ExtArgs>>): Prisma__interiorsClient<$Result.GetResult<Prisma.$interiorsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    supervisor<T extends projects$supervisorArgs<ExtArgs> = {}>(args?: Subset<T, projects$supervisorArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     tasks<T extends projects$tasksArgs<ExtArgs> = {}>(args?: Subset<T, projects$tasksArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tasksPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     projectAreaColors<T extends projects$projectAreaColorsArgs<ExtArgs> = {}>(args?: Subset<T, projects$projectAreaColorsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$project_area_colorsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     attendance<T extends projects$attendanceArgs<ExtArgs> = {}>(args?: Subset<T, projects$attendanceArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$labour_attendancePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -12051,6 +12224,7 @@ export namespace Prisma {
     projectPayments<T extends projects$projectPaymentsArgs<ExtArgs> = {}>(args?: Subset<T, projects$projectPaymentsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$project_paymentsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     contractorPayments<T extends projects$contractorPaymentsArgs<ExtArgs> = {}>(args?: Subset<T, projects$contractorPaymentsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$contractor_paymentsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     contractorWorkLogs<T extends projects$contractorWorkLogsArgs<ExtArgs> = {}>(args?: Subset<T, projects$contractorWorkLogsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$contractor_work_logsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    lowMaterials<T extends projects$lowMaterialsArgs<ExtArgs> = {}>(args?: Subset<T, projects$lowMaterialsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$low_materialsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -12093,7 +12267,9 @@ export namespace Prisma {
     readonly tax: FieldRef<"projects", 'Decimal'>
     readonly agreedPrice: FieldRef<"projects", 'Decimal'>
     readonly projectDate: FieldRef<"projects", 'DateTime'>
+    readonly stage: FieldRef<"projects", 'String'>
     readonly createdAt: FieldRef<"projects", 'DateTime'>
+    readonly supervisorId: FieldRef<"projects", 'String'>
   }
     
 
@@ -12533,6 +12709,25 @@ export namespace Prisma {
   }
 
   /**
+   * projects.supervisor
+   */
+  export type projects$supervisorArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the users
+     */
+    select?: usersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the users
+     */
+    omit?: usersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+    where?: usersWhereInput
+  }
+
+  /**
    * projects.tasks
    */
   export type projects$tasksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -12746,6 +12941,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: Contractor_work_logsScalarFieldEnum | Contractor_work_logsScalarFieldEnum[]
+  }
+
+  /**
+   * projects.lowMaterials
+   */
+  export type projects$lowMaterialsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the low_materials
+     */
+    select?: low_materialsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the low_materials
+     */
+    omit?: low_materialsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: low_materialsInclude<ExtArgs> | null
+    where?: low_materialsWhereInput
+    orderBy?: low_materialsOrderByWithRelationInput | low_materialsOrderByWithRelationInput[]
+    cursor?: low_materialsWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Low_materialsScalarFieldEnum | Low_materialsScalarFieldEnum[]
   }
 
   /**
@@ -29549,6 +29768,1108 @@ export namespace Prisma {
 
 
   /**
+   * Model low_materials
+   */
+
+  export type AggregateLow_materials = {
+    _count: Low_materialsCountAggregateOutputType | null
+    _min: Low_materialsMinAggregateOutputType | null
+    _max: Low_materialsMaxAggregateOutputType | null
+  }
+
+  export type Low_materialsMinAggregateOutputType = {
+    id: string | null
+    projectId: string | null
+    material: string | null
+    quantity: string | null
+    approved: boolean | null
+    delivered: boolean | null
+    date: Date | null
+    createdAt: Date | null
+  }
+
+  export type Low_materialsMaxAggregateOutputType = {
+    id: string | null
+    projectId: string | null
+    material: string | null
+    quantity: string | null
+    approved: boolean | null
+    delivered: boolean | null
+    date: Date | null
+    createdAt: Date | null
+  }
+
+  export type Low_materialsCountAggregateOutputType = {
+    id: number
+    projectId: number
+    material: number
+    quantity: number
+    approved: number
+    delivered: number
+    date: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type Low_materialsMinAggregateInputType = {
+    id?: true
+    projectId?: true
+    material?: true
+    quantity?: true
+    approved?: true
+    delivered?: true
+    date?: true
+    createdAt?: true
+  }
+
+  export type Low_materialsMaxAggregateInputType = {
+    id?: true
+    projectId?: true
+    material?: true
+    quantity?: true
+    approved?: true
+    delivered?: true
+    date?: true
+    createdAt?: true
+  }
+
+  export type Low_materialsCountAggregateInputType = {
+    id?: true
+    projectId?: true
+    material?: true
+    quantity?: true
+    approved?: true
+    delivered?: true
+    date?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type Low_materialsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which low_materials to aggregate.
+     */
+    where?: low_materialsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of low_materials to fetch.
+     */
+    orderBy?: low_materialsOrderByWithRelationInput | low_materialsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: low_materialsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` low_materials from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` low_materials.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned low_materials
+    **/
+    _count?: true | Low_materialsCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Low_materialsMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Low_materialsMaxAggregateInputType
+  }
+
+  export type GetLow_materialsAggregateType<T extends Low_materialsAggregateArgs> = {
+        [P in keyof T & keyof AggregateLow_materials]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateLow_materials[P]>
+      : GetScalarType<T[P], AggregateLow_materials[P]>
+  }
+
+
+
+
+  export type low_materialsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: low_materialsWhereInput
+    orderBy?: low_materialsOrderByWithAggregationInput | low_materialsOrderByWithAggregationInput[]
+    by: Low_materialsScalarFieldEnum[] | Low_materialsScalarFieldEnum
+    having?: low_materialsScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Low_materialsCountAggregateInputType | true
+    _min?: Low_materialsMinAggregateInputType
+    _max?: Low_materialsMaxAggregateInputType
+  }
+
+  export type Low_materialsGroupByOutputType = {
+    id: string
+    projectId: string
+    material: string
+    quantity: string
+    approved: boolean
+    delivered: boolean
+    date: Date
+    createdAt: Date
+    _count: Low_materialsCountAggregateOutputType | null
+    _min: Low_materialsMinAggregateOutputType | null
+    _max: Low_materialsMaxAggregateOutputType | null
+  }
+
+  type GetLow_materialsGroupByPayload<T extends low_materialsGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Low_materialsGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Low_materialsGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Low_materialsGroupByOutputType[P]>
+            : GetScalarType<T[P], Low_materialsGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type low_materialsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    projectId?: boolean
+    material?: boolean
+    quantity?: boolean
+    approved?: boolean
+    delivered?: boolean
+    date?: boolean
+    createdAt?: boolean
+    project?: boolean | projectsDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["low_materials"]>
+
+  export type low_materialsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    projectId?: boolean
+    material?: boolean
+    quantity?: boolean
+    approved?: boolean
+    delivered?: boolean
+    date?: boolean
+    createdAt?: boolean
+    project?: boolean | projectsDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["low_materials"]>
+
+  export type low_materialsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    projectId?: boolean
+    material?: boolean
+    quantity?: boolean
+    approved?: boolean
+    delivered?: boolean
+    date?: boolean
+    createdAt?: boolean
+    project?: boolean | projectsDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["low_materials"]>
+
+  export type low_materialsSelectScalar = {
+    id?: boolean
+    projectId?: boolean
+    material?: boolean
+    quantity?: boolean
+    approved?: boolean
+    delivered?: boolean
+    date?: boolean
+    createdAt?: boolean
+  }
+
+  export type low_materialsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "projectId" | "material" | "quantity" | "approved" | "delivered" | "date" | "createdAt", ExtArgs["result"]["low_materials"]>
+  export type low_materialsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    project?: boolean | projectsDefaultArgs<ExtArgs>
+  }
+  export type low_materialsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    project?: boolean | projectsDefaultArgs<ExtArgs>
+  }
+  export type low_materialsIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    project?: boolean | projectsDefaultArgs<ExtArgs>
+  }
+
+  export type $low_materialsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "low_materials"
+    objects: {
+      project: Prisma.$projectsPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      projectId: string
+      material: string
+      quantity: string
+      approved: boolean
+      delivered: boolean
+      date: Date
+      createdAt: Date
+    }, ExtArgs["result"]["low_materials"]>
+    composites: {}
+  }
+
+  type low_materialsGetPayload<S extends boolean | null | undefined | low_materialsDefaultArgs> = $Result.GetResult<Prisma.$low_materialsPayload, S>
+
+  type low_materialsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<low_materialsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Low_materialsCountAggregateInputType | true
+    }
+
+  export interface low_materialsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['low_materials'], meta: { name: 'low_materials' } }
+    /**
+     * Find zero or one Low_materials that matches the filter.
+     * @param {low_materialsFindUniqueArgs} args - Arguments to find a Low_materials
+     * @example
+     * // Get one Low_materials
+     * const low_materials = await prisma.low_materials.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends low_materialsFindUniqueArgs>(args: SelectSubset<T, low_materialsFindUniqueArgs<ExtArgs>>): Prisma__low_materialsClient<$Result.GetResult<Prisma.$low_materialsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Low_materials that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {low_materialsFindUniqueOrThrowArgs} args - Arguments to find a Low_materials
+     * @example
+     * // Get one Low_materials
+     * const low_materials = await prisma.low_materials.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends low_materialsFindUniqueOrThrowArgs>(args: SelectSubset<T, low_materialsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__low_materialsClient<$Result.GetResult<Prisma.$low_materialsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Low_materials that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {low_materialsFindFirstArgs} args - Arguments to find a Low_materials
+     * @example
+     * // Get one Low_materials
+     * const low_materials = await prisma.low_materials.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends low_materialsFindFirstArgs>(args?: SelectSubset<T, low_materialsFindFirstArgs<ExtArgs>>): Prisma__low_materialsClient<$Result.GetResult<Prisma.$low_materialsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Low_materials that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {low_materialsFindFirstOrThrowArgs} args - Arguments to find a Low_materials
+     * @example
+     * // Get one Low_materials
+     * const low_materials = await prisma.low_materials.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends low_materialsFindFirstOrThrowArgs>(args?: SelectSubset<T, low_materialsFindFirstOrThrowArgs<ExtArgs>>): Prisma__low_materialsClient<$Result.GetResult<Prisma.$low_materialsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Low_materials that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {low_materialsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Low_materials
+     * const low_materials = await prisma.low_materials.findMany()
+     * 
+     * // Get first 10 Low_materials
+     * const low_materials = await prisma.low_materials.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const low_materialsWithIdOnly = await prisma.low_materials.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends low_materialsFindManyArgs>(args?: SelectSubset<T, low_materialsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$low_materialsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Low_materials.
+     * @param {low_materialsCreateArgs} args - Arguments to create a Low_materials.
+     * @example
+     * // Create one Low_materials
+     * const Low_materials = await prisma.low_materials.create({
+     *   data: {
+     *     // ... data to create a Low_materials
+     *   }
+     * })
+     * 
+     */
+    create<T extends low_materialsCreateArgs>(args: SelectSubset<T, low_materialsCreateArgs<ExtArgs>>): Prisma__low_materialsClient<$Result.GetResult<Prisma.$low_materialsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Low_materials.
+     * @param {low_materialsCreateManyArgs} args - Arguments to create many Low_materials.
+     * @example
+     * // Create many Low_materials
+     * const low_materials = await prisma.low_materials.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends low_materialsCreateManyArgs>(args?: SelectSubset<T, low_materialsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Low_materials and returns the data saved in the database.
+     * @param {low_materialsCreateManyAndReturnArgs} args - Arguments to create many Low_materials.
+     * @example
+     * // Create many Low_materials
+     * const low_materials = await prisma.low_materials.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Low_materials and only return the `id`
+     * const low_materialsWithIdOnly = await prisma.low_materials.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends low_materialsCreateManyAndReturnArgs>(args?: SelectSubset<T, low_materialsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$low_materialsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Low_materials.
+     * @param {low_materialsDeleteArgs} args - Arguments to delete one Low_materials.
+     * @example
+     * // Delete one Low_materials
+     * const Low_materials = await prisma.low_materials.delete({
+     *   where: {
+     *     // ... filter to delete one Low_materials
+     *   }
+     * })
+     * 
+     */
+    delete<T extends low_materialsDeleteArgs>(args: SelectSubset<T, low_materialsDeleteArgs<ExtArgs>>): Prisma__low_materialsClient<$Result.GetResult<Prisma.$low_materialsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Low_materials.
+     * @param {low_materialsUpdateArgs} args - Arguments to update one Low_materials.
+     * @example
+     * // Update one Low_materials
+     * const low_materials = await prisma.low_materials.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends low_materialsUpdateArgs>(args: SelectSubset<T, low_materialsUpdateArgs<ExtArgs>>): Prisma__low_materialsClient<$Result.GetResult<Prisma.$low_materialsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Low_materials.
+     * @param {low_materialsDeleteManyArgs} args - Arguments to filter Low_materials to delete.
+     * @example
+     * // Delete a few Low_materials
+     * const { count } = await prisma.low_materials.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends low_materialsDeleteManyArgs>(args?: SelectSubset<T, low_materialsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Low_materials.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {low_materialsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Low_materials
+     * const low_materials = await prisma.low_materials.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends low_materialsUpdateManyArgs>(args: SelectSubset<T, low_materialsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Low_materials and returns the data updated in the database.
+     * @param {low_materialsUpdateManyAndReturnArgs} args - Arguments to update many Low_materials.
+     * @example
+     * // Update many Low_materials
+     * const low_materials = await prisma.low_materials.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Low_materials and only return the `id`
+     * const low_materialsWithIdOnly = await prisma.low_materials.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends low_materialsUpdateManyAndReturnArgs>(args: SelectSubset<T, low_materialsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$low_materialsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Low_materials.
+     * @param {low_materialsUpsertArgs} args - Arguments to update or create a Low_materials.
+     * @example
+     * // Update or create a Low_materials
+     * const low_materials = await prisma.low_materials.upsert({
+     *   create: {
+     *     // ... data to create a Low_materials
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Low_materials we want to update
+     *   }
+     * })
+     */
+    upsert<T extends low_materialsUpsertArgs>(args: SelectSubset<T, low_materialsUpsertArgs<ExtArgs>>): Prisma__low_materialsClient<$Result.GetResult<Prisma.$low_materialsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Low_materials.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {low_materialsCountArgs} args - Arguments to filter Low_materials to count.
+     * @example
+     * // Count the number of Low_materials
+     * const count = await prisma.low_materials.count({
+     *   where: {
+     *     // ... the filter for the Low_materials we want to count
+     *   }
+     * })
+    **/
+    count<T extends low_materialsCountArgs>(
+      args?: Subset<T, low_materialsCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Low_materialsCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Low_materials.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Low_materialsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Low_materialsAggregateArgs>(args: Subset<T, Low_materialsAggregateArgs>): Prisma.PrismaPromise<GetLow_materialsAggregateType<T>>
+
+    /**
+     * Group by Low_materials.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {low_materialsGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends low_materialsGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: low_materialsGroupByArgs['orderBy'] }
+        : { orderBy?: low_materialsGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, low_materialsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLow_materialsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the low_materials model
+   */
+  readonly fields: low_materialsFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for low_materials.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__low_materialsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    project<T extends projectsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, projectsDefaultArgs<ExtArgs>>): Prisma__projectsClient<$Result.GetResult<Prisma.$projectsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the low_materials model
+   */
+  interface low_materialsFieldRefs {
+    readonly id: FieldRef<"low_materials", 'String'>
+    readonly projectId: FieldRef<"low_materials", 'String'>
+    readonly material: FieldRef<"low_materials", 'String'>
+    readonly quantity: FieldRef<"low_materials", 'String'>
+    readonly approved: FieldRef<"low_materials", 'Boolean'>
+    readonly delivered: FieldRef<"low_materials", 'Boolean'>
+    readonly date: FieldRef<"low_materials", 'DateTime'>
+    readonly createdAt: FieldRef<"low_materials", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * low_materials findUnique
+   */
+  export type low_materialsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the low_materials
+     */
+    select?: low_materialsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the low_materials
+     */
+    omit?: low_materialsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: low_materialsInclude<ExtArgs> | null
+    /**
+     * Filter, which low_materials to fetch.
+     */
+    where: low_materialsWhereUniqueInput
+  }
+
+  /**
+   * low_materials findUniqueOrThrow
+   */
+  export type low_materialsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the low_materials
+     */
+    select?: low_materialsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the low_materials
+     */
+    omit?: low_materialsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: low_materialsInclude<ExtArgs> | null
+    /**
+     * Filter, which low_materials to fetch.
+     */
+    where: low_materialsWhereUniqueInput
+  }
+
+  /**
+   * low_materials findFirst
+   */
+  export type low_materialsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the low_materials
+     */
+    select?: low_materialsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the low_materials
+     */
+    omit?: low_materialsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: low_materialsInclude<ExtArgs> | null
+    /**
+     * Filter, which low_materials to fetch.
+     */
+    where?: low_materialsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of low_materials to fetch.
+     */
+    orderBy?: low_materialsOrderByWithRelationInput | low_materialsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for low_materials.
+     */
+    cursor?: low_materialsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` low_materials from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` low_materials.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of low_materials.
+     */
+    distinct?: Low_materialsScalarFieldEnum | Low_materialsScalarFieldEnum[]
+  }
+
+  /**
+   * low_materials findFirstOrThrow
+   */
+  export type low_materialsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the low_materials
+     */
+    select?: low_materialsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the low_materials
+     */
+    omit?: low_materialsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: low_materialsInclude<ExtArgs> | null
+    /**
+     * Filter, which low_materials to fetch.
+     */
+    where?: low_materialsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of low_materials to fetch.
+     */
+    orderBy?: low_materialsOrderByWithRelationInput | low_materialsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for low_materials.
+     */
+    cursor?: low_materialsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` low_materials from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` low_materials.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of low_materials.
+     */
+    distinct?: Low_materialsScalarFieldEnum | Low_materialsScalarFieldEnum[]
+  }
+
+  /**
+   * low_materials findMany
+   */
+  export type low_materialsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the low_materials
+     */
+    select?: low_materialsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the low_materials
+     */
+    omit?: low_materialsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: low_materialsInclude<ExtArgs> | null
+    /**
+     * Filter, which low_materials to fetch.
+     */
+    where?: low_materialsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of low_materials to fetch.
+     */
+    orderBy?: low_materialsOrderByWithRelationInput | low_materialsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing low_materials.
+     */
+    cursor?: low_materialsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` low_materials from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` low_materials.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of low_materials.
+     */
+    distinct?: Low_materialsScalarFieldEnum | Low_materialsScalarFieldEnum[]
+  }
+
+  /**
+   * low_materials create
+   */
+  export type low_materialsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the low_materials
+     */
+    select?: low_materialsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the low_materials
+     */
+    omit?: low_materialsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: low_materialsInclude<ExtArgs> | null
+    /**
+     * The data needed to create a low_materials.
+     */
+    data: XOR<low_materialsCreateInput, low_materialsUncheckedCreateInput>
+  }
+
+  /**
+   * low_materials createMany
+   */
+  export type low_materialsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many low_materials.
+     */
+    data: low_materialsCreateManyInput | low_materialsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * low_materials createManyAndReturn
+   */
+  export type low_materialsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the low_materials
+     */
+    select?: low_materialsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the low_materials
+     */
+    omit?: low_materialsOmit<ExtArgs> | null
+    /**
+     * The data used to create many low_materials.
+     */
+    data: low_materialsCreateManyInput | low_materialsCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: low_materialsIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * low_materials update
+   */
+  export type low_materialsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the low_materials
+     */
+    select?: low_materialsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the low_materials
+     */
+    omit?: low_materialsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: low_materialsInclude<ExtArgs> | null
+    /**
+     * The data needed to update a low_materials.
+     */
+    data: XOR<low_materialsUpdateInput, low_materialsUncheckedUpdateInput>
+    /**
+     * Choose, which low_materials to update.
+     */
+    where: low_materialsWhereUniqueInput
+  }
+
+  /**
+   * low_materials updateMany
+   */
+  export type low_materialsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update low_materials.
+     */
+    data: XOR<low_materialsUpdateManyMutationInput, low_materialsUncheckedUpdateManyInput>
+    /**
+     * Filter which low_materials to update
+     */
+    where?: low_materialsWhereInput
+    /**
+     * Limit how many low_materials to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * low_materials updateManyAndReturn
+   */
+  export type low_materialsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the low_materials
+     */
+    select?: low_materialsSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the low_materials
+     */
+    omit?: low_materialsOmit<ExtArgs> | null
+    /**
+     * The data used to update low_materials.
+     */
+    data: XOR<low_materialsUpdateManyMutationInput, low_materialsUncheckedUpdateManyInput>
+    /**
+     * Filter which low_materials to update
+     */
+    where?: low_materialsWhereInput
+    /**
+     * Limit how many low_materials to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: low_materialsIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * low_materials upsert
+   */
+  export type low_materialsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the low_materials
+     */
+    select?: low_materialsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the low_materials
+     */
+    omit?: low_materialsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: low_materialsInclude<ExtArgs> | null
+    /**
+     * The filter to search for the low_materials to update in case it exists.
+     */
+    where: low_materialsWhereUniqueInput
+    /**
+     * In case the low_materials found by the `where` argument doesn't exist, create a new low_materials with this data.
+     */
+    create: XOR<low_materialsCreateInput, low_materialsUncheckedCreateInput>
+    /**
+     * In case the low_materials was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<low_materialsUpdateInput, low_materialsUncheckedUpdateInput>
+  }
+
+  /**
+   * low_materials delete
+   */
+  export type low_materialsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the low_materials
+     */
+    select?: low_materialsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the low_materials
+     */
+    omit?: low_materialsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: low_materialsInclude<ExtArgs> | null
+    /**
+     * Filter which low_materials to delete.
+     */
+    where: low_materialsWhereUniqueInput
+  }
+
+  /**
+   * low_materials deleteMany
+   */
+  export type low_materialsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which low_materials to delete
+     */
+    where?: low_materialsWhereInput
+    /**
+     * Limit how many low_materials to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * low_materials without action
+   */
+  export type low_materialsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the low_materials
+     */
+    select?: low_materialsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the low_materials
+     */
+    omit?: low_materialsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: low_materialsInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -29665,7 +30986,9 @@ export namespace Prisma {
     tax: 'tax',
     agreedPrice: 'agreedPrice',
     projectDate: 'projectDate',
-    createdAt: 'createdAt'
+    stage: 'stage',
+    createdAt: 'createdAt',
+    supervisorId: 'supervisorId'
   };
 
   export type ProjectsScalarFieldEnum = (typeof ProjectsScalarFieldEnum)[keyof typeof ProjectsScalarFieldEnum]
@@ -29865,6 +31188,20 @@ export namespace Prisma {
   export type Contractor_work_logsScalarFieldEnum = (typeof Contractor_work_logsScalarFieldEnum)[keyof typeof Contractor_work_logsScalarFieldEnum]
 
 
+  export const Low_materialsScalarFieldEnum: {
+    id: 'id',
+    projectId: 'projectId',
+    material: 'material',
+    quantity: 'quantity',
+    approved: 'approved',
+    delivered: 'delivered',
+    date: 'date',
+    createdAt: 'createdAt'
+  };
+
+  export type Low_materialsScalarFieldEnum = (typeof Low_materialsScalarFieldEnum)[keyof typeof Low_materialsScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -30045,6 +31382,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"users"> | Date | string
     auth?: AuthorizationsListRelationFilter
     projects?: ProjectsListRelationFilter
+    supervisedProjects?: ProjectsListRelationFilter
     refreshTokens?: RefreshTokensListRelationFilter
     markedAttendances?: Labour_attendanceListRelationFilter
   }
@@ -30061,6 +31399,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     auth?: authorizationsOrderByRelationAggregateInput
     projects?: projectsOrderByRelationAggregateInput
+    supervisedProjects?: projectsOrderByRelationAggregateInput
     refreshTokens?: refreshTokensOrderByRelationAggregateInput
     markedAttendances?: labour_attendanceOrderByRelationAggregateInput
   }
@@ -30080,6 +31419,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"users"> | Date | string
     auth?: AuthorizationsListRelationFilter
     projects?: ProjectsListRelationFilter
+    supervisedProjects?: ProjectsListRelationFilter
     refreshTokens?: RefreshTokensListRelationFilter
     markedAttendances?: Labour_attendanceListRelationFilter
   }, "id" | "username" | "email">
@@ -30512,10 +31852,13 @@ export namespace Prisma {
     tax?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     projectDate?: DateTimeNullableFilter<"projects"> | Date | string | null
+    stage?: StringFilter<"projects"> | string
     createdAt?: DateTimeFilter<"projects"> | Date | string
+    supervisorId?: UuidNullableFilter<"projects"> | string | null
     creator?: XOR<UsersScalarRelationFilter, usersWhereInput>
     customer?: XOR<CustomersNullableScalarRelationFilter, customersWhereInput> | null
     interior?: XOR<InteriorsNullableScalarRelationFilter, interiorsWhereInput> | null
+    supervisor?: XOR<UsersNullableScalarRelationFilter, usersWhereInput> | null
     tasks?: TasksListRelationFilter
     projectAreaColors?: Project_area_colorsListRelationFilter
     attendance?: Labour_attendanceListRelationFilter
@@ -30525,6 +31868,7 @@ export namespace Prisma {
     projectPayments?: Project_paymentsListRelationFilter
     contractorPayments?: Contractor_paymentsListRelationFilter
     contractorWorkLogs?: Contractor_work_logsListRelationFilter
+    lowMaterials?: Low_materialsListRelationFilter
   }
 
   export type projectsOrderByWithRelationInput = {
@@ -30541,10 +31885,13 @@ export namespace Prisma {
     tax?: SortOrderInput | SortOrder
     agreedPrice?: SortOrderInput | SortOrder
     projectDate?: SortOrderInput | SortOrder
+    stage?: SortOrder
     createdAt?: SortOrder
+    supervisorId?: SortOrderInput | SortOrder
     creator?: usersOrderByWithRelationInput
     customer?: customersOrderByWithRelationInput
     interior?: interiorsOrderByWithRelationInput
+    supervisor?: usersOrderByWithRelationInput
     tasks?: tasksOrderByRelationAggregateInput
     projectAreaColors?: project_area_colorsOrderByRelationAggregateInput
     attendance?: labour_attendanceOrderByRelationAggregateInput
@@ -30554,6 +31901,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsOrderByRelationAggregateInput
     contractorPayments?: contractor_paymentsOrderByRelationAggregateInput
     contractorWorkLogs?: contractor_work_logsOrderByRelationAggregateInput
+    lowMaterials?: low_materialsOrderByRelationAggregateInput
   }
 
   export type projectsWhereUniqueInput = Prisma.AtLeast<{
@@ -30573,10 +31921,13 @@ export namespace Prisma {
     tax?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     projectDate?: DateTimeNullableFilter<"projects"> | Date | string | null
+    stage?: StringFilter<"projects"> | string
     createdAt?: DateTimeFilter<"projects"> | Date | string
+    supervisorId?: UuidNullableFilter<"projects"> | string | null
     creator?: XOR<UsersScalarRelationFilter, usersWhereInput>
     customer?: XOR<CustomersNullableScalarRelationFilter, customersWhereInput> | null
     interior?: XOR<InteriorsNullableScalarRelationFilter, interiorsWhereInput> | null
+    supervisor?: XOR<UsersNullableScalarRelationFilter, usersWhereInput> | null
     tasks?: TasksListRelationFilter
     projectAreaColors?: Project_area_colorsListRelationFilter
     attendance?: Labour_attendanceListRelationFilter
@@ -30586,6 +31937,7 @@ export namespace Prisma {
     projectPayments?: Project_paymentsListRelationFilter
     contractorPayments?: Contractor_paymentsListRelationFilter
     contractorWorkLogs?: Contractor_work_logsListRelationFilter
+    lowMaterials?: Low_materialsListRelationFilter
   }, "id" | "name">
 
   export type projectsOrderByWithAggregationInput = {
@@ -30602,7 +31954,9 @@ export namespace Prisma {
     tax?: SortOrderInput | SortOrder
     agreedPrice?: SortOrderInput | SortOrder
     projectDate?: SortOrderInput | SortOrder
+    stage?: SortOrder
     createdAt?: SortOrder
+    supervisorId?: SortOrderInput | SortOrder
     _count?: projectsCountOrderByAggregateInput
     _avg?: projectsAvgOrderByAggregateInput
     _max?: projectsMaxOrderByAggregateInput
@@ -30627,7 +31981,9 @@ export namespace Prisma {
     tax?: DecimalNullableWithAggregatesFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: DecimalNullableWithAggregatesFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     projectDate?: DateTimeNullableWithAggregatesFilter<"projects"> | Date | string | null
+    stage?: StringWithAggregatesFilter<"projects"> | string
     createdAt?: DateTimeWithAggregatesFilter<"projects"> | Date | string
+    supervisorId?: UuidNullableWithAggregatesFilter<"projects"> | string | null
   }
 
   export type colorsWhereInput = {
@@ -31652,6 +33008,76 @@ export namespace Prisma {
     createdAt?: DateTimeWithAggregatesFilter<"contractor_work_logs"> | Date | string
   }
 
+  export type low_materialsWhereInput = {
+    AND?: low_materialsWhereInput | low_materialsWhereInput[]
+    OR?: low_materialsWhereInput[]
+    NOT?: low_materialsWhereInput | low_materialsWhereInput[]
+    id?: UuidFilter<"low_materials"> | string
+    projectId?: UuidFilter<"low_materials"> | string
+    material?: StringFilter<"low_materials"> | string
+    quantity?: StringFilter<"low_materials"> | string
+    approved?: BoolFilter<"low_materials"> | boolean
+    delivered?: BoolFilter<"low_materials"> | boolean
+    date?: DateTimeFilter<"low_materials"> | Date | string
+    createdAt?: DateTimeFilter<"low_materials"> | Date | string
+    project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
+  }
+
+  export type low_materialsOrderByWithRelationInput = {
+    id?: SortOrder
+    projectId?: SortOrder
+    material?: SortOrder
+    quantity?: SortOrder
+    approved?: SortOrder
+    delivered?: SortOrder
+    date?: SortOrder
+    createdAt?: SortOrder
+    project?: projectsOrderByWithRelationInput
+  }
+
+  export type low_materialsWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: low_materialsWhereInput | low_materialsWhereInput[]
+    OR?: low_materialsWhereInput[]
+    NOT?: low_materialsWhereInput | low_materialsWhereInput[]
+    projectId?: UuidFilter<"low_materials"> | string
+    material?: StringFilter<"low_materials"> | string
+    quantity?: StringFilter<"low_materials"> | string
+    approved?: BoolFilter<"low_materials"> | boolean
+    delivered?: BoolFilter<"low_materials"> | boolean
+    date?: DateTimeFilter<"low_materials"> | Date | string
+    createdAt?: DateTimeFilter<"low_materials"> | Date | string
+    project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
+  }, "id">
+
+  export type low_materialsOrderByWithAggregationInput = {
+    id?: SortOrder
+    projectId?: SortOrder
+    material?: SortOrder
+    quantity?: SortOrder
+    approved?: SortOrder
+    delivered?: SortOrder
+    date?: SortOrder
+    createdAt?: SortOrder
+    _count?: low_materialsCountOrderByAggregateInput
+    _max?: low_materialsMaxOrderByAggregateInput
+    _min?: low_materialsMinOrderByAggregateInput
+  }
+
+  export type low_materialsScalarWhereWithAggregatesInput = {
+    AND?: low_materialsScalarWhereWithAggregatesInput | low_materialsScalarWhereWithAggregatesInput[]
+    OR?: low_materialsScalarWhereWithAggregatesInput[]
+    NOT?: low_materialsScalarWhereWithAggregatesInput | low_materialsScalarWhereWithAggregatesInput[]
+    id?: UuidWithAggregatesFilter<"low_materials"> | string
+    projectId?: UuidWithAggregatesFilter<"low_materials"> | string
+    material?: StringWithAggregatesFilter<"low_materials"> | string
+    quantity?: StringWithAggregatesFilter<"low_materials"> | string
+    approved?: BoolWithAggregatesFilter<"low_materials"> | boolean
+    delivered?: BoolWithAggregatesFilter<"low_materials"> | boolean
+    date?: DateTimeWithAggregatesFilter<"low_materials"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"low_materials"> | Date | string
+  }
+
   export type usersCreateInput = {
     id?: string
     username: string
@@ -31664,6 +33090,7 @@ export namespace Prisma {
     createdAt?: Date | string
     auth?: authorizationsCreateNestedManyWithoutUserInput
     projects?: projectsCreateNestedManyWithoutCreatorInput
+    supervisedProjects?: projectsCreateNestedManyWithoutSupervisorInput
     refreshTokens?: refreshTokensCreateNestedManyWithoutUserInput
     markedAttendances?: labour_attendanceCreateNestedManyWithoutMarkedByInput
   }
@@ -31680,6 +33107,7 @@ export namespace Prisma {
     createdAt?: Date | string
     auth?: authorizationsUncheckedCreateNestedManyWithoutUserInput
     projects?: projectsUncheckedCreateNestedManyWithoutCreatorInput
+    supervisedProjects?: projectsUncheckedCreateNestedManyWithoutSupervisorInput
     refreshTokens?: refreshTokensUncheckedCreateNestedManyWithoutUserInput
     markedAttendances?: labour_attendanceUncheckedCreateNestedManyWithoutMarkedByInput
   }
@@ -31696,6 +33124,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     auth?: authorizationsUpdateManyWithoutUserNestedInput
     projects?: projectsUpdateManyWithoutCreatorNestedInput
+    supervisedProjects?: projectsUpdateManyWithoutSupervisorNestedInput
     refreshTokens?: refreshTokensUpdateManyWithoutUserNestedInput
     markedAttendances?: labour_attendanceUpdateManyWithoutMarkedByNestedInput
   }
@@ -31712,6 +33141,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     auth?: authorizationsUncheckedUpdateManyWithoutUserNestedInput
     projects?: projectsUncheckedUpdateManyWithoutCreatorNestedInput
+    supervisedProjects?: projectsUncheckedUpdateManyWithoutSupervisorNestedInput
     refreshTokens?: refreshTokensUncheckedUpdateManyWithoutUserNestedInput
     markedAttendances?: labour_attendanceUncheckedUpdateManyWithoutMarkedByNestedInput
   }
@@ -32172,10 +33602,12 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
     interior?: interiorsCreateNestedOneWithoutProjectsInput
+    supervisor?: usersCreateNestedOneWithoutSupervisedProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
@@ -32185,6 +33617,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsCreateNestedManyWithoutProjectInput
   }
 
   export type projectsUncheckedCreateInput = {
@@ -32201,7 +33634,9 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
+    supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
@@ -32211,6 +33646,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsUncheckedCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type projectsUpdateInput = {
@@ -32224,10 +33660,12 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
     interior?: interiorsUpdateOneWithoutProjectsNestedInput
+    supervisor?: usersUpdateOneWithoutSupervisedProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
@@ -32237,6 +33675,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsUncheckedUpdateInput = {
@@ -32253,7 +33692,9 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
@@ -32263,6 +33704,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUncheckedUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsCreateManyInput = {
@@ -32279,7 +33721,9 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
+    supervisorId?: string | null
   }
 
   export type projectsUpdateManyMutationInput = {
@@ -32293,6 +33737,7 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -32310,7 +33755,9 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type colorsCreateInput = {
@@ -33362,6 +34809,82 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type low_materialsCreateInput = {
+    id?: string
+    material: string
+    quantity: string
+    approved?: boolean
+    delivered?: boolean
+    date?: Date | string
+    createdAt?: Date | string
+    project: projectsCreateNestedOneWithoutLowMaterialsInput
+  }
+
+  export type low_materialsUncheckedCreateInput = {
+    id?: string
+    projectId: string
+    material: string
+    quantity: string
+    approved?: boolean
+    delivered?: boolean
+    date?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type low_materialsUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    material?: StringFieldUpdateOperationsInput | string
+    quantity?: StringFieldUpdateOperationsInput | string
+    approved?: BoolFieldUpdateOperationsInput | boolean
+    delivered?: BoolFieldUpdateOperationsInput | boolean
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    project?: projectsUpdateOneRequiredWithoutLowMaterialsNestedInput
+  }
+
+  export type low_materialsUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    projectId?: StringFieldUpdateOperationsInput | string
+    material?: StringFieldUpdateOperationsInput | string
+    quantity?: StringFieldUpdateOperationsInput | string
+    approved?: BoolFieldUpdateOperationsInput | boolean
+    delivered?: BoolFieldUpdateOperationsInput | boolean
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type low_materialsCreateManyInput = {
+    id?: string
+    projectId: string
+    material: string
+    quantity: string
+    approved?: boolean
+    delivered?: boolean
+    date?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type low_materialsUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    material?: StringFieldUpdateOperationsInput | string
+    quantity?: StringFieldUpdateOperationsInput | string
+    approved?: BoolFieldUpdateOperationsInput | boolean
+    delivered?: BoolFieldUpdateOperationsInput | boolean
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type low_materialsUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    projectId?: StringFieldUpdateOperationsInput | string
+    material?: StringFieldUpdateOperationsInput | string
+    quantity?: StringFieldUpdateOperationsInput | string
+    approved?: BoolFieldUpdateOperationsInput | boolean
+    delivered?: BoolFieldUpdateOperationsInput | boolean
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type UuidFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -33918,6 +35441,11 @@ export namespace Prisma {
     isNot?: interiorsWhereInput | null
   }
 
+  export type UsersNullableScalarRelationFilter = {
+    is?: usersWhereInput | null
+    isNot?: usersWhereInput | null
+  }
+
   export type TasksListRelationFilter = {
     every?: tasksWhereInput
     some?: tasksWhereInput
@@ -33954,6 +35482,12 @@ export namespace Prisma {
     none?: contractor_work_logsWhereInput
   }
 
+  export type Low_materialsListRelationFilter = {
+    every?: low_materialsWhereInput
+    some?: low_materialsWhereInput
+    none?: low_materialsWhereInput
+  }
+
   export type tasksOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
@@ -33978,6 +35512,10 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
+  export type low_materialsOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
   export type projectsCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
@@ -33992,7 +35530,9 @@ export namespace Prisma {
     tax?: SortOrder
     agreedPrice?: SortOrder
     projectDate?: SortOrder
+    stage?: SortOrder
     createdAt?: SortOrder
+    supervisorId?: SortOrder
   }
 
   export type projectsAvgOrderByAggregateInput = {
@@ -34017,7 +35557,9 @@ export namespace Prisma {
     tax?: SortOrder
     agreedPrice?: SortOrder
     projectDate?: SortOrder
+    stage?: SortOrder
     createdAt?: SortOrder
+    supervisorId?: SortOrder
   }
 
   export type projectsMinOrderByAggregateInput = {
@@ -34034,7 +35576,9 @@ export namespace Prisma {
     tax?: SortOrder
     agreedPrice?: SortOrder
     projectDate?: SortOrder
+    stage?: SortOrder
     createdAt?: SortOrder
+    supervisorId?: SortOrder
   }
 
   export type projectsSumOrderByAggregateInput = {
@@ -34390,11 +35934,6 @@ export namespace Prisma {
     isNot?: laboursWhereInput
   }
 
-  export type UsersNullableScalarRelationFilter = {
-    is?: usersWhereInput | null
-    isNot?: usersWhereInput | null
-  }
-
   export type labour_attendanceDateProjectIdLabourIdCompoundUniqueInput = {
     date: Date | string
     projectId: string
@@ -34745,6 +36284,39 @@ export namespace Prisma {
     sqFt?: SortOrder
   }
 
+  export type low_materialsCountOrderByAggregateInput = {
+    id?: SortOrder
+    projectId?: SortOrder
+    material?: SortOrder
+    quantity?: SortOrder
+    approved?: SortOrder
+    delivered?: SortOrder
+    date?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type low_materialsMaxOrderByAggregateInput = {
+    id?: SortOrder
+    projectId?: SortOrder
+    material?: SortOrder
+    quantity?: SortOrder
+    approved?: SortOrder
+    delivered?: SortOrder
+    date?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type low_materialsMinOrderByAggregateInput = {
+    id?: SortOrder
+    projectId?: SortOrder
+    material?: SortOrder
+    quantity?: SortOrder
+    approved?: SortOrder
+    delivered?: SortOrder
+    date?: SortOrder
+    createdAt?: SortOrder
+  }
+
   export type authorizationsCreateNestedManyWithoutUserInput = {
     create?: XOR<authorizationsCreateWithoutUserInput, authorizationsUncheckedCreateWithoutUserInput> | authorizationsCreateWithoutUserInput[] | authorizationsUncheckedCreateWithoutUserInput[]
     connectOrCreate?: authorizationsCreateOrConnectWithoutUserInput | authorizationsCreateOrConnectWithoutUserInput[]
@@ -34756,6 +36328,13 @@ export namespace Prisma {
     create?: XOR<projectsCreateWithoutCreatorInput, projectsUncheckedCreateWithoutCreatorInput> | projectsCreateWithoutCreatorInput[] | projectsUncheckedCreateWithoutCreatorInput[]
     connectOrCreate?: projectsCreateOrConnectWithoutCreatorInput | projectsCreateOrConnectWithoutCreatorInput[]
     createMany?: projectsCreateManyCreatorInputEnvelope
+    connect?: projectsWhereUniqueInput | projectsWhereUniqueInput[]
+  }
+
+  export type projectsCreateNestedManyWithoutSupervisorInput = {
+    create?: XOR<projectsCreateWithoutSupervisorInput, projectsUncheckedCreateWithoutSupervisorInput> | projectsCreateWithoutSupervisorInput[] | projectsUncheckedCreateWithoutSupervisorInput[]
+    connectOrCreate?: projectsCreateOrConnectWithoutSupervisorInput | projectsCreateOrConnectWithoutSupervisorInput[]
+    createMany?: projectsCreateManySupervisorInputEnvelope
     connect?: projectsWhereUniqueInput | projectsWhereUniqueInput[]
   }
 
@@ -34784,6 +36363,13 @@ export namespace Prisma {
     create?: XOR<projectsCreateWithoutCreatorInput, projectsUncheckedCreateWithoutCreatorInput> | projectsCreateWithoutCreatorInput[] | projectsUncheckedCreateWithoutCreatorInput[]
     connectOrCreate?: projectsCreateOrConnectWithoutCreatorInput | projectsCreateOrConnectWithoutCreatorInput[]
     createMany?: projectsCreateManyCreatorInputEnvelope
+    connect?: projectsWhereUniqueInput | projectsWhereUniqueInput[]
+  }
+
+  export type projectsUncheckedCreateNestedManyWithoutSupervisorInput = {
+    create?: XOR<projectsCreateWithoutSupervisorInput, projectsUncheckedCreateWithoutSupervisorInput> | projectsCreateWithoutSupervisorInput[] | projectsUncheckedCreateWithoutSupervisorInput[]
+    connectOrCreate?: projectsCreateOrConnectWithoutSupervisorInput | projectsCreateOrConnectWithoutSupervisorInput[]
+    createMany?: projectsCreateManySupervisorInputEnvelope
     connect?: projectsWhereUniqueInput | projectsWhereUniqueInput[]
   }
 
@@ -34845,6 +36431,20 @@ export namespace Prisma {
     deleteMany?: projectsScalarWhereInput | projectsScalarWhereInput[]
   }
 
+  export type projectsUpdateManyWithoutSupervisorNestedInput = {
+    create?: XOR<projectsCreateWithoutSupervisorInput, projectsUncheckedCreateWithoutSupervisorInput> | projectsCreateWithoutSupervisorInput[] | projectsUncheckedCreateWithoutSupervisorInput[]
+    connectOrCreate?: projectsCreateOrConnectWithoutSupervisorInput | projectsCreateOrConnectWithoutSupervisorInput[]
+    upsert?: projectsUpsertWithWhereUniqueWithoutSupervisorInput | projectsUpsertWithWhereUniqueWithoutSupervisorInput[]
+    createMany?: projectsCreateManySupervisorInputEnvelope
+    set?: projectsWhereUniqueInput | projectsWhereUniqueInput[]
+    disconnect?: projectsWhereUniqueInput | projectsWhereUniqueInput[]
+    delete?: projectsWhereUniqueInput | projectsWhereUniqueInput[]
+    connect?: projectsWhereUniqueInput | projectsWhereUniqueInput[]
+    update?: projectsUpdateWithWhereUniqueWithoutSupervisorInput | projectsUpdateWithWhereUniqueWithoutSupervisorInput[]
+    updateMany?: projectsUpdateManyWithWhereWithoutSupervisorInput | projectsUpdateManyWithWhereWithoutSupervisorInput[]
+    deleteMany?: projectsScalarWhereInput | projectsScalarWhereInput[]
+  }
+
   export type refreshTokensUpdateManyWithoutUserNestedInput = {
     create?: XOR<refreshTokensCreateWithoutUserInput, refreshTokensUncheckedCreateWithoutUserInput> | refreshTokensCreateWithoutUserInput[] | refreshTokensUncheckedCreateWithoutUserInput[]
     connectOrCreate?: refreshTokensCreateOrConnectWithoutUserInput | refreshTokensCreateOrConnectWithoutUserInput[]
@@ -34898,6 +36498,20 @@ export namespace Prisma {
     connect?: projectsWhereUniqueInput | projectsWhereUniqueInput[]
     update?: projectsUpdateWithWhereUniqueWithoutCreatorInput | projectsUpdateWithWhereUniqueWithoutCreatorInput[]
     updateMany?: projectsUpdateManyWithWhereWithoutCreatorInput | projectsUpdateManyWithWhereWithoutCreatorInput[]
+    deleteMany?: projectsScalarWhereInput | projectsScalarWhereInput[]
+  }
+
+  export type projectsUncheckedUpdateManyWithoutSupervisorNestedInput = {
+    create?: XOR<projectsCreateWithoutSupervisorInput, projectsUncheckedCreateWithoutSupervisorInput> | projectsCreateWithoutSupervisorInput[] | projectsUncheckedCreateWithoutSupervisorInput[]
+    connectOrCreate?: projectsCreateOrConnectWithoutSupervisorInput | projectsCreateOrConnectWithoutSupervisorInput[]
+    upsert?: projectsUpsertWithWhereUniqueWithoutSupervisorInput | projectsUpsertWithWhereUniqueWithoutSupervisorInput[]
+    createMany?: projectsCreateManySupervisorInputEnvelope
+    set?: projectsWhereUniqueInput | projectsWhereUniqueInput[]
+    disconnect?: projectsWhereUniqueInput | projectsWhereUniqueInput[]
+    delete?: projectsWhereUniqueInput | projectsWhereUniqueInput[]
+    connect?: projectsWhereUniqueInput | projectsWhereUniqueInput[]
+    update?: projectsUpdateWithWhereUniqueWithoutSupervisorInput | projectsUpdateWithWhereUniqueWithoutSupervisorInput[]
+    updateMany?: projectsUpdateManyWithWhereWithoutSupervisorInput | projectsUpdateManyWithWhereWithoutSupervisorInput[]
     deleteMany?: projectsScalarWhereInput | projectsScalarWhereInput[]
   }
 
@@ -35219,6 +36833,12 @@ export namespace Prisma {
     connect?: interiorsWhereUniqueInput
   }
 
+  export type usersCreateNestedOneWithoutSupervisedProjectsInput = {
+    create?: XOR<usersCreateWithoutSupervisedProjectsInput, usersUncheckedCreateWithoutSupervisedProjectsInput>
+    connectOrCreate?: usersCreateOrConnectWithoutSupervisedProjectsInput
+    connect?: usersWhereUniqueInput
+  }
+
   export type tasksCreateNestedManyWithoutProjectInput = {
     create?: XOR<tasksCreateWithoutProjectInput, tasksUncheckedCreateWithoutProjectInput> | tasksCreateWithoutProjectInput[] | tasksUncheckedCreateWithoutProjectInput[]
     connectOrCreate?: tasksCreateOrConnectWithoutProjectInput | tasksCreateOrConnectWithoutProjectInput[]
@@ -35280,6 +36900,13 @@ export namespace Prisma {
     connectOrCreate?: contractor_work_logsCreateOrConnectWithoutProjectInput | contractor_work_logsCreateOrConnectWithoutProjectInput[]
     createMany?: contractor_work_logsCreateManyProjectInputEnvelope
     connect?: contractor_work_logsWhereUniqueInput | contractor_work_logsWhereUniqueInput[]
+  }
+
+  export type low_materialsCreateNestedManyWithoutProjectInput = {
+    create?: XOR<low_materialsCreateWithoutProjectInput, low_materialsUncheckedCreateWithoutProjectInput> | low_materialsCreateWithoutProjectInput[] | low_materialsUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: low_materialsCreateOrConnectWithoutProjectInput | low_materialsCreateOrConnectWithoutProjectInput[]
+    createMany?: low_materialsCreateManyProjectInputEnvelope
+    connect?: low_materialsWhereUniqueInput | low_materialsWhereUniqueInput[]
   }
 
   export type tasksUncheckedCreateNestedManyWithoutProjectInput = {
@@ -35345,6 +36972,13 @@ export namespace Prisma {
     connect?: contractor_work_logsWhereUniqueInput | contractor_work_logsWhereUniqueInput[]
   }
 
+  export type low_materialsUncheckedCreateNestedManyWithoutProjectInput = {
+    create?: XOR<low_materialsCreateWithoutProjectInput, low_materialsUncheckedCreateWithoutProjectInput> | low_materialsCreateWithoutProjectInput[] | low_materialsUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: low_materialsCreateOrConnectWithoutProjectInput | low_materialsCreateOrConnectWithoutProjectInput[]
+    createMany?: low_materialsCreateManyProjectInputEnvelope
+    connect?: low_materialsWhereUniqueInput | low_materialsWhereUniqueInput[]
+  }
+
   export type EnumProjectStatusFieldUpdateOperationsInput = {
     set?: $Enums.ProjectStatus
   }
@@ -35379,6 +37013,16 @@ export namespace Prisma {
     delete?: interiorsWhereInput | boolean
     connect?: interiorsWhereUniqueInput
     update?: XOR<XOR<interiorsUpdateToOneWithWhereWithoutProjectsInput, interiorsUpdateWithoutProjectsInput>, interiorsUncheckedUpdateWithoutProjectsInput>
+  }
+
+  export type usersUpdateOneWithoutSupervisedProjectsNestedInput = {
+    create?: XOR<usersCreateWithoutSupervisedProjectsInput, usersUncheckedCreateWithoutSupervisedProjectsInput>
+    connectOrCreate?: usersCreateOrConnectWithoutSupervisedProjectsInput
+    upsert?: usersUpsertWithoutSupervisedProjectsInput
+    disconnect?: usersWhereInput | boolean
+    delete?: usersWhereInput | boolean
+    connect?: usersWhereUniqueInput
+    update?: XOR<XOR<usersUpdateToOneWithWhereWithoutSupervisedProjectsInput, usersUpdateWithoutSupervisedProjectsInput>, usersUncheckedUpdateWithoutSupervisedProjectsInput>
   }
 
   export type tasksUpdateManyWithoutProjectNestedInput = {
@@ -35507,6 +37151,20 @@ export namespace Prisma {
     deleteMany?: contractor_work_logsScalarWhereInput | contractor_work_logsScalarWhereInput[]
   }
 
+  export type low_materialsUpdateManyWithoutProjectNestedInput = {
+    create?: XOR<low_materialsCreateWithoutProjectInput, low_materialsUncheckedCreateWithoutProjectInput> | low_materialsCreateWithoutProjectInput[] | low_materialsUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: low_materialsCreateOrConnectWithoutProjectInput | low_materialsCreateOrConnectWithoutProjectInput[]
+    upsert?: low_materialsUpsertWithWhereUniqueWithoutProjectInput | low_materialsUpsertWithWhereUniqueWithoutProjectInput[]
+    createMany?: low_materialsCreateManyProjectInputEnvelope
+    set?: low_materialsWhereUniqueInput | low_materialsWhereUniqueInput[]
+    disconnect?: low_materialsWhereUniqueInput | low_materialsWhereUniqueInput[]
+    delete?: low_materialsWhereUniqueInput | low_materialsWhereUniqueInput[]
+    connect?: low_materialsWhereUniqueInput | low_materialsWhereUniqueInput[]
+    update?: low_materialsUpdateWithWhereUniqueWithoutProjectInput | low_materialsUpdateWithWhereUniqueWithoutProjectInput[]
+    updateMany?: low_materialsUpdateManyWithWhereWithoutProjectInput | low_materialsUpdateManyWithWhereWithoutProjectInput[]
+    deleteMany?: low_materialsScalarWhereInput | low_materialsScalarWhereInput[]
+  }
+
   export type tasksUncheckedUpdateManyWithoutProjectNestedInput = {
     create?: XOR<tasksCreateWithoutProjectInput, tasksUncheckedCreateWithoutProjectInput> | tasksCreateWithoutProjectInput[] | tasksUncheckedCreateWithoutProjectInput[]
     connectOrCreate?: tasksCreateOrConnectWithoutProjectInput | tasksCreateOrConnectWithoutProjectInput[]
@@ -35631,6 +37289,20 @@ export namespace Prisma {
     update?: contractor_work_logsUpdateWithWhereUniqueWithoutProjectInput | contractor_work_logsUpdateWithWhereUniqueWithoutProjectInput[]
     updateMany?: contractor_work_logsUpdateManyWithWhereWithoutProjectInput | contractor_work_logsUpdateManyWithWhereWithoutProjectInput[]
     deleteMany?: contractor_work_logsScalarWhereInput | contractor_work_logsScalarWhereInput[]
+  }
+
+  export type low_materialsUncheckedUpdateManyWithoutProjectNestedInput = {
+    create?: XOR<low_materialsCreateWithoutProjectInput, low_materialsUncheckedCreateWithoutProjectInput> | low_materialsCreateWithoutProjectInput[] | low_materialsUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: low_materialsCreateOrConnectWithoutProjectInput | low_materialsCreateOrConnectWithoutProjectInput[]
+    upsert?: low_materialsUpsertWithWhereUniqueWithoutProjectInput | low_materialsUpsertWithWhereUniqueWithoutProjectInput[]
+    createMany?: low_materialsCreateManyProjectInputEnvelope
+    set?: low_materialsWhereUniqueInput | low_materialsWhereUniqueInput[]
+    disconnect?: low_materialsWhereUniqueInput | low_materialsWhereUniqueInput[]
+    delete?: low_materialsWhereUniqueInput | low_materialsWhereUniqueInput[]
+    connect?: low_materialsWhereUniqueInput | low_materialsWhereUniqueInput[]
+    update?: low_materialsUpdateWithWhereUniqueWithoutProjectInput | low_materialsUpdateWithWhereUniqueWithoutProjectInput[]
+    updateMany?: low_materialsUpdateManyWithWhereWithoutProjectInput | low_materialsUpdateManyWithWhereWithoutProjectInput[]
+    deleteMany?: low_materialsScalarWhereInput | low_materialsScalarWhereInput[]
   }
 
   export type project_area_colorsCreateNestedManyWithoutColorInput = {
@@ -36159,6 +37831,20 @@ export namespace Prisma {
     update?: XOR<XOR<projectsUpdateToOneWithWhereWithoutContractorWorkLogsInput, projectsUpdateWithoutContractorWorkLogsInput>, projectsUncheckedUpdateWithoutContractorWorkLogsInput>
   }
 
+  export type projectsCreateNestedOneWithoutLowMaterialsInput = {
+    create?: XOR<projectsCreateWithoutLowMaterialsInput, projectsUncheckedCreateWithoutLowMaterialsInput>
+    connectOrCreate?: projectsCreateOrConnectWithoutLowMaterialsInput
+    connect?: projectsWhereUniqueInput
+  }
+
+  export type projectsUpdateOneRequiredWithoutLowMaterialsNestedInput = {
+    create?: XOR<projectsCreateWithoutLowMaterialsInput, projectsUncheckedCreateWithoutLowMaterialsInput>
+    connectOrCreate?: projectsCreateOrConnectWithoutLowMaterialsInput
+    upsert?: projectsUpsertWithoutLowMaterialsInput
+    connect?: projectsWhereUniqueInput
+    update?: XOR<XOR<projectsUpdateToOneWithWhereWithoutLowMaterialsInput, projectsUpdateWithoutLowMaterialsInput>, projectsUncheckedUpdateWithoutLowMaterialsInput>
+  }
+
   export type NestedUuidFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -36536,9 +38222,11 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
     customer?: customersCreateNestedOneWithoutProjectsInput
     interior?: interiorsCreateNestedOneWithoutProjectsInput
+    supervisor?: usersCreateNestedOneWithoutSupervisedProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
@@ -36548,6 +38236,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsCreateNestedManyWithoutProjectInput
   }
 
   export type projectsUncheckedCreateWithoutCreatorInput = {
@@ -36563,6 +38252,74 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
+    createdAt?: Date | string
+    supervisorId?: string | null
+    tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
+    attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
+    labourPayments?: labour_paymentsUncheckedCreateNestedManyWithoutProjectInput
+    projectProducts?: project_productsUncheckedCreateNestedManyWithoutProjectInput
+    materialLogs?: project_material_logsUncheckedCreateNestedManyWithoutProjectInput
+    projectPayments?: project_paymentsUncheckedCreateNestedManyWithoutProjectInput
+    contractorPayments?: contractor_paymentsUncheckedCreateNestedManyWithoutProjectInput
+    contractorWorkLogs?: contractor_work_logsUncheckedCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsUncheckedCreateNestedManyWithoutProjectInput
+  }
+
+  export type projectsCreateOrConnectWithoutCreatorInput = {
+    where: projectsWhereUniqueInput
+    create: XOR<projectsCreateWithoutCreatorInput, projectsUncheckedCreateWithoutCreatorInput>
+  }
+
+  export type projectsCreateManyCreatorInputEnvelope = {
+    data: projectsCreateManyCreatorInput | projectsCreateManyCreatorInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type projectsCreateWithoutSupervisorInput = {
+    id?: string
+    name: string
+    status: $Enums.ProjectStatus
+    totalAmount?: Decimal | DecimalJsLike | number | string | null
+    paid?: Decimal | DecimalJsLike | number | string | null
+    discount?: Decimal | DecimalJsLike | number | string | null
+    discountType?: string | null
+    tax?: Decimal | DecimalJsLike | number | string | null
+    agreedPrice?: Decimal | DecimalJsLike | number | string | null
+    projectDate?: Date | string | null
+    stage?: string
+    createdAt?: Date | string
+    creator: usersCreateNestedOneWithoutProjectsInput
+    customer?: customersCreateNestedOneWithoutProjectsInput
+    interior?: interiorsCreateNestedOneWithoutProjectsInput
+    tasks?: tasksCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
+    attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
+    labourPayments?: labour_paymentsCreateNestedManyWithoutProjectInput
+    projectProducts?: project_productsCreateNestedManyWithoutProjectInput
+    materialLogs?: project_material_logsCreateNestedManyWithoutProjectInput
+    projectPayments?: project_paymentsCreateNestedManyWithoutProjectInput
+    contractorPayments?: contractor_paymentsCreateNestedManyWithoutProjectInput
+    contractorWorkLogs?: contractor_work_logsCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsCreateNestedManyWithoutProjectInput
+  }
+
+  export type projectsUncheckedCreateWithoutSupervisorInput = {
+    id?: string
+    name: string
+    customerId?: string | null
+    creatorId: string
+    interiorId?: string | null
+    status: $Enums.ProjectStatus
+    totalAmount?: Decimal | DecimalJsLike | number | string | null
+    paid?: Decimal | DecimalJsLike | number | string | null
+    discount?: Decimal | DecimalJsLike | number | string | null
+    discountType?: string | null
+    tax?: Decimal | DecimalJsLike | number | string | null
+    agreedPrice?: Decimal | DecimalJsLike | number | string | null
+    projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
@@ -36573,15 +38330,16 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsUncheckedCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsUncheckedCreateNestedManyWithoutProjectInput
   }
 
-  export type projectsCreateOrConnectWithoutCreatorInput = {
+  export type projectsCreateOrConnectWithoutSupervisorInput = {
     where: projectsWhereUniqueInput
-    create: XOR<projectsCreateWithoutCreatorInput, projectsUncheckedCreateWithoutCreatorInput>
+    create: XOR<projectsCreateWithoutSupervisorInput, projectsUncheckedCreateWithoutSupervisorInput>
   }
 
-  export type projectsCreateManyCreatorInputEnvelope = {
-    data: projectsCreateManyCreatorInput | projectsCreateManyCreatorInput[]
+  export type projectsCreateManySupervisorInputEnvelope = {
+    data: projectsCreateManySupervisorInput | projectsCreateManySupervisorInput[]
     skipDuplicates?: boolean
   }
 
@@ -36699,7 +38457,25 @@ export namespace Prisma {
     tax?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     projectDate?: DateTimeNullableFilter<"projects"> | Date | string | null
+    stage?: StringFilter<"projects"> | string
     createdAt?: DateTimeFilter<"projects"> | Date | string
+    supervisorId?: UuidNullableFilter<"projects"> | string | null
+  }
+
+  export type projectsUpsertWithWhereUniqueWithoutSupervisorInput = {
+    where: projectsWhereUniqueInput
+    update: XOR<projectsUpdateWithoutSupervisorInput, projectsUncheckedUpdateWithoutSupervisorInput>
+    create: XOR<projectsCreateWithoutSupervisorInput, projectsUncheckedCreateWithoutSupervisorInput>
+  }
+
+  export type projectsUpdateWithWhereUniqueWithoutSupervisorInput = {
+    where: projectsWhereUniqueInput
+    data: XOR<projectsUpdateWithoutSupervisorInput, projectsUncheckedUpdateWithoutSupervisorInput>
+  }
+
+  export type projectsUpdateManyWithWhereWithoutSupervisorInput = {
+    where: projectsScalarWhereInput
+    data: XOR<projectsUpdateManyMutationInput, projectsUncheckedUpdateManyWithoutSupervisorInput>
   }
 
   export type refreshTokensUpsertWithWhereUniqueWithoutUserInput = {
@@ -36772,6 +38548,7 @@ export namespace Prisma {
     createdAt?: Date | string
     auth?: authorizationsCreateNestedManyWithoutUserInput
     projects?: projectsCreateNestedManyWithoutCreatorInput
+    supervisedProjects?: projectsCreateNestedManyWithoutSupervisorInput
     markedAttendances?: labour_attendanceCreateNestedManyWithoutMarkedByInput
   }
 
@@ -36787,6 +38564,7 @@ export namespace Prisma {
     createdAt?: Date | string
     auth?: authorizationsUncheckedCreateNestedManyWithoutUserInput
     projects?: projectsUncheckedCreateNestedManyWithoutCreatorInput
+    supervisedProjects?: projectsUncheckedCreateNestedManyWithoutSupervisorInput
     markedAttendances?: labour_attendanceUncheckedCreateNestedManyWithoutMarkedByInput
   }
 
@@ -36818,6 +38596,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     auth?: authorizationsUpdateManyWithoutUserNestedInput
     projects?: projectsUpdateManyWithoutCreatorNestedInput
+    supervisedProjects?: projectsUpdateManyWithoutSupervisorNestedInput
     markedAttendances?: labour_attendanceUpdateManyWithoutMarkedByNestedInput
   }
 
@@ -36833,6 +38612,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     auth?: authorizationsUncheckedUpdateManyWithoutUserNestedInput
     projects?: projectsUncheckedUpdateManyWithoutCreatorNestedInput
+    supervisedProjects?: projectsUncheckedUpdateManyWithoutSupervisorNestedInput
     markedAttendances?: labour_attendanceUncheckedUpdateManyWithoutMarkedByNestedInput
   }
 
@@ -36847,6 +38627,7 @@ export namespace Prisma {
     alternatePhonenumber?: string | null
     createdAt?: Date | string
     projects?: projectsCreateNestedManyWithoutCreatorInput
+    supervisedProjects?: projectsCreateNestedManyWithoutSupervisorInput
     refreshTokens?: refreshTokensCreateNestedManyWithoutUserInput
     markedAttendances?: labour_attendanceCreateNestedManyWithoutMarkedByInput
   }
@@ -36862,6 +38643,7 @@ export namespace Prisma {
     alternatePhonenumber?: string | null
     createdAt?: Date | string
     projects?: projectsUncheckedCreateNestedManyWithoutCreatorInput
+    supervisedProjects?: projectsUncheckedCreateNestedManyWithoutSupervisorInput
     refreshTokens?: refreshTokensUncheckedCreateNestedManyWithoutUserInput
     markedAttendances?: labour_attendanceUncheckedCreateNestedManyWithoutMarkedByInput
   }
@@ -36893,6 +38675,7 @@ export namespace Prisma {
     alternatePhonenumber?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     projects?: projectsUpdateManyWithoutCreatorNestedInput
+    supervisedProjects?: projectsUpdateManyWithoutSupervisorNestedInput
     refreshTokens?: refreshTokensUpdateManyWithoutUserNestedInput
     markedAttendances?: labour_attendanceUpdateManyWithoutMarkedByNestedInput
   }
@@ -36908,6 +38691,7 @@ export namespace Prisma {
     alternatePhonenumber?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     projects?: projectsUncheckedUpdateManyWithoutCreatorNestedInput
+    supervisedProjects?: projectsUncheckedUpdateManyWithoutSupervisorNestedInput
     refreshTokens?: refreshTokensUncheckedUpdateManyWithoutUserNestedInput
     markedAttendances?: labour_attendanceUncheckedUpdateManyWithoutMarkedByNestedInput
   }
@@ -36923,9 +38707,11 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     interior?: interiorsCreateNestedOneWithoutProjectsInput
+    supervisor?: usersCreateNestedOneWithoutSupervisedProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
@@ -36935,6 +38721,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsCreateNestedManyWithoutProjectInput
   }
 
   export type projectsUncheckedCreateWithoutCustomerInput = {
@@ -36950,7 +38737,9 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
+    supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
@@ -36960,6 +38749,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsUncheckedCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type projectsCreateOrConnectWithoutCustomerInput = {
@@ -37227,9 +39017,11 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
+    supervisor?: usersCreateNestedOneWithoutSupervisedProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
@@ -37239,6 +39031,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsCreateNestedManyWithoutProjectInput
   }
 
   export type projectsUncheckedCreateWithoutInteriorInput = {
@@ -37254,7 +39047,9 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
+    supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
@@ -37264,6 +39059,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsUncheckedCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type projectsCreateOrConnectWithoutInteriorInput = {
@@ -37303,6 +39099,7 @@ export namespace Prisma {
     alternatePhonenumber?: string | null
     createdAt?: Date | string
     auth?: authorizationsCreateNestedManyWithoutUserInput
+    supervisedProjects?: projectsCreateNestedManyWithoutSupervisorInput
     refreshTokens?: refreshTokensCreateNestedManyWithoutUserInput
     markedAttendances?: labour_attendanceCreateNestedManyWithoutMarkedByInput
   }
@@ -37318,6 +39115,7 @@ export namespace Prisma {
     alternatePhonenumber?: string | null
     createdAt?: Date | string
     auth?: authorizationsUncheckedCreateNestedManyWithoutUserInput
+    supervisedProjects?: projectsUncheckedCreateNestedManyWithoutSupervisorInput
     refreshTokens?: refreshTokensUncheckedCreateNestedManyWithoutUserInput
     markedAttendances?: labour_attendanceUncheckedCreateNestedManyWithoutMarkedByInput
   }
@@ -37377,6 +39175,43 @@ export namespace Prisma {
   export type interiorsCreateOrConnectWithoutProjectsInput = {
     where: interiorsWhereUniqueInput
     create: XOR<interiorsCreateWithoutProjectsInput, interiorsUncheckedCreateWithoutProjectsInput>
+  }
+
+  export type usersCreateWithoutSupervisedProjectsInput = {
+    id?: string
+    username: string
+    email: string
+    password: string
+    role: $Enums.Role
+    phonenumber?: string | null
+    address?: string | null
+    alternatePhonenumber?: string | null
+    createdAt?: Date | string
+    auth?: authorizationsCreateNestedManyWithoutUserInput
+    projects?: projectsCreateNestedManyWithoutCreatorInput
+    refreshTokens?: refreshTokensCreateNestedManyWithoutUserInput
+    markedAttendances?: labour_attendanceCreateNestedManyWithoutMarkedByInput
+  }
+
+  export type usersUncheckedCreateWithoutSupervisedProjectsInput = {
+    id?: string
+    username: string
+    email: string
+    password: string
+    role: $Enums.Role
+    phonenumber?: string | null
+    address?: string | null
+    alternatePhonenumber?: string | null
+    createdAt?: Date | string
+    auth?: authorizationsUncheckedCreateNestedManyWithoutUserInput
+    projects?: projectsUncheckedCreateNestedManyWithoutCreatorInput
+    refreshTokens?: refreshTokensUncheckedCreateNestedManyWithoutUserInput
+    markedAttendances?: labour_attendanceUncheckedCreateNestedManyWithoutMarkedByInput
+  }
+
+  export type usersCreateOrConnectWithoutSupervisedProjectsInput = {
+    where: usersWhereUniqueInput
+    create: XOR<usersCreateWithoutSupervisedProjectsInput, usersUncheckedCreateWithoutSupervisedProjectsInput>
   }
 
   export type tasksCreateWithoutProjectInput = {
@@ -37643,6 +39478,36 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type low_materialsCreateWithoutProjectInput = {
+    id?: string
+    material: string
+    quantity: string
+    approved?: boolean
+    delivered?: boolean
+    date?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type low_materialsUncheckedCreateWithoutProjectInput = {
+    id?: string
+    material: string
+    quantity: string
+    approved?: boolean
+    delivered?: boolean
+    date?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type low_materialsCreateOrConnectWithoutProjectInput = {
+    where: low_materialsWhereUniqueInput
+    create: XOR<low_materialsCreateWithoutProjectInput, low_materialsUncheckedCreateWithoutProjectInput>
+  }
+
+  export type low_materialsCreateManyProjectInputEnvelope = {
+    data: low_materialsCreateManyProjectInput | low_materialsCreateManyProjectInput[]
+    skipDuplicates?: boolean
+  }
+
   export type usersUpsertWithoutProjectsInput = {
     update: XOR<usersUpdateWithoutProjectsInput, usersUncheckedUpdateWithoutProjectsInput>
     create: XOR<usersCreateWithoutProjectsInput, usersUncheckedCreateWithoutProjectsInput>
@@ -37665,6 +39530,7 @@ export namespace Prisma {
     alternatePhonenumber?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     auth?: authorizationsUpdateManyWithoutUserNestedInput
+    supervisedProjects?: projectsUpdateManyWithoutSupervisorNestedInput
     refreshTokens?: refreshTokensUpdateManyWithoutUserNestedInput
     markedAttendances?: labour_attendanceUpdateManyWithoutMarkedByNestedInput
   }
@@ -37680,6 +39546,7 @@ export namespace Prisma {
     alternatePhonenumber?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     auth?: authorizationsUncheckedUpdateManyWithoutUserNestedInput
+    supervisedProjects?: projectsUncheckedUpdateManyWithoutSupervisorNestedInput
     refreshTokens?: refreshTokensUncheckedUpdateManyWithoutUserNestedInput
     markedAttendances?: labour_attendanceUncheckedUpdateManyWithoutMarkedByNestedInput
   }
@@ -37746,6 +39613,49 @@ export namespace Prisma {
     address?: NullableStringFieldUpdateOperationsInput | string | null
     commissionFeePercentage?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type usersUpsertWithoutSupervisedProjectsInput = {
+    update: XOR<usersUpdateWithoutSupervisedProjectsInput, usersUncheckedUpdateWithoutSupervisedProjectsInput>
+    create: XOR<usersCreateWithoutSupervisedProjectsInput, usersUncheckedCreateWithoutSupervisedProjectsInput>
+    where?: usersWhereInput
+  }
+
+  export type usersUpdateToOneWithWhereWithoutSupervisedProjectsInput = {
+    where?: usersWhereInput
+    data: XOR<usersUpdateWithoutSupervisedProjectsInput, usersUncheckedUpdateWithoutSupervisedProjectsInput>
+  }
+
+  export type usersUpdateWithoutSupervisedProjectsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    username?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    phonenumber?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    alternatePhonenumber?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    auth?: authorizationsUpdateManyWithoutUserNestedInput
+    projects?: projectsUpdateManyWithoutCreatorNestedInput
+    refreshTokens?: refreshTokensUpdateManyWithoutUserNestedInput
+    markedAttendances?: labour_attendanceUpdateManyWithoutMarkedByNestedInput
+  }
+
+  export type usersUncheckedUpdateWithoutSupervisedProjectsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    username?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
+    phonenumber?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    alternatePhonenumber?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    auth?: authorizationsUncheckedUpdateManyWithoutUserNestedInput
+    projects?: projectsUncheckedUpdateManyWithoutCreatorNestedInput
+    refreshTokens?: refreshTokensUncheckedUpdateManyWithoutUserNestedInput
+    markedAttendances?: labour_attendanceUncheckedUpdateManyWithoutMarkedByNestedInput
   }
 
   export type tasksUpsertWithWhereUniqueWithoutProjectInput = {
@@ -37975,6 +39885,36 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"contractor_work_logs"> | Date | string
   }
 
+  export type low_materialsUpsertWithWhereUniqueWithoutProjectInput = {
+    where: low_materialsWhereUniqueInput
+    update: XOR<low_materialsUpdateWithoutProjectInput, low_materialsUncheckedUpdateWithoutProjectInput>
+    create: XOR<low_materialsCreateWithoutProjectInput, low_materialsUncheckedCreateWithoutProjectInput>
+  }
+
+  export type low_materialsUpdateWithWhereUniqueWithoutProjectInput = {
+    where: low_materialsWhereUniqueInput
+    data: XOR<low_materialsUpdateWithoutProjectInput, low_materialsUncheckedUpdateWithoutProjectInput>
+  }
+
+  export type low_materialsUpdateManyWithWhereWithoutProjectInput = {
+    where: low_materialsScalarWhereInput
+    data: XOR<low_materialsUpdateManyMutationInput, low_materialsUncheckedUpdateManyWithoutProjectInput>
+  }
+
+  export type low_materialsScalarWhereInput = {
+    AND?: low_materialsScalarWhereInput | low_materialsScalarWhereInput[]
+    OR?: low_materialsScalarWhereInput[]
+    NOT?: low_materialsScalarWhereInput | low_materialsScalarWhereInput[]
+    id?: UuidFilter<"low_materials"> | string
+    projectId?: UuidFilter<"low_materials"> | string
+    material?: StringFilter<"low_materials"> | string
+    quantity?: StringFilter<"low_materials"> | string
+    approved?: BoolFilter<"low_materials"> | boolean
+    delivered?: BoolFilter<"low_materials"> | boolean
+    date?: DateTimeFilter<"low_materials"> | Date | string
+    createdAt?: DateTimeFilter<"low_materials"> | Date | string
+  }
+
   export type project_area_colorsCreateWithoutColorInput = {
     id?: string
     description?: string | null
@@ -38070,10 +40010,12 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
     interior?: interiorsCreateNestedOneWithoutProjectsInput
+    supervisor?: usersCreateNestedOneWithoutSupervisedProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsCreateNestedManyWithoutProjectInput
@@ -38082,6 +40024,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsCreateNestedManyWithoutProjectInput
   }
 
   export type projectsUncheckedCreateWithoutProjectAreaColorsInput = {
@@ -38098,7 +40041,9 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
+    supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsUncheckedCreateNestedManyWithoutProjectInput
@@ -38107,6 +40052,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsUncheckedCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type projectsCreateOrConnectWithoutProjectAreaColorsInput = {
@@ -38172,10 +40118,12 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
     interior?: interiorsUpdateOneWithoutProjectsNestedInput
+    supervisor?: usersUpdateOneWithoutSupervisedProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUpdateManyWithoutProjectNestedInput
@@ -38184,6 +40132,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsUncheckedUpdateWithoutProjectAreaColorsInput = {
@@ -38200,7 +40149,9 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUncheckedUpdateManyWithoutProjectNestedInput
@@ -38209,6 +40160,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUncheckedUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type areasUpsertWithoutProjectAreaColorsInput = {
@@ -38270,10 +40222,12 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
     interior?: interiorsCreateNestedOneWithoutProjectsInput
+    supervisor?: usersCreateNestedOneWithoutSupervisedProjectsInput
     projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsCreateNestedManyWithoutProjectInput
@@ -38282,6 +40236,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsCreateNestedManyWithoutProjectInput
   }
 
   export type projectsUncheckedCreateWithoutTasksInput = {
@@ -38298,7 +40253,9 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
+    supervisorId?: string | null
     projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsUncheckedCreateNestedManyWithoutProjectInput
@@ -38307,6 +40264,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsUncheckedCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type projectsCreateOrConnectWithoutTasksInput = {
@@ -38336,10 +40294,12 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
     interior?: interiorsUpdateOneWithoutProjectsNestedInput
+    supervisor?: usersUpdateOneWithoutSupervisedProjectsNestedInput
     projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUpdateManyWithoutProjectNestedInput
@@ -38348,6 +40308,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsUncheckedUpdateWithoutTasksInput = {
@@ -38364,7 +40325,9 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUncheckedUpdateManyWithoutProjectNestedInput
@@ -38373,6 +40336,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUncheckedUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type labour_attendanceCreateWithoutLabourInput = {
@@ -38480,10 +40444,12 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
     interior?: interiorsCreateNestedOneWithoutProjectsInput
+    supervisor?: usersCreateNestedOneWithoutSupervisedProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsCreateNestedManyWithoutProjectInput
@@ -38492,6 +40458,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsCreateNestedManyWithoutProjectInput
   }
 
   export type projectsUncheckedCreateWithoutAttendanceInput = {
@@ -38508,7 +40475,9 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
+    supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     labourPayments?: labour_paymentsUncheckedCreateNestedManyWithoutProjectInput
@@ -38517,6 +40486,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsUncheckedCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type projectsCreateOrConnectWithoutAttendanceInput = {
@@ -38563,6 +40533,7 @@ export namespace Prisma {
     createdAt?: Date | string
     auth?: authorizationsCreateNestedManyWithoutUserInput
     projects?: projectsCreateNestedManyWithoutCreatorInput
+    supervisedProjects?: projectsCreateNestedManyWithoutSupervisorInput
     refreshTokens?: refreshTokensCreateNestedManyWithoutUserInput
   }
 
@@ -38578,6 +40549,7 @@ export namespace Prisma {
     createdAt?: Date | string
     auth?: authorizationsUncheckedCreateNestedManyWithoutUserInput
     projects?: projectsUncheckedCreateNestedManyWithoutCreatorInput
+    supervisedProjects?: projectsUncheckedCreateNestedManyWithoutSupervisorInput
     refreshTokens?: refreshTokensUncheckedCreateNestedManyWithoutUserInput
   }
 
@@ -38608,10 +40580,12 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
     interior?: interiorsUpdateOneWithoutProjectsNestedInput
+    supervisor?: usersUpdateOneWithoutSupervisedProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUpdateManyWithoutProjectNestedInput
@@ -38620,6 +40594,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsUncheckedUpdateWithoutAttendanceInput = {
@@ -38636,7 +40611,9 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     labourPayments?: labour_paymentsUncheckedUpdateManyWithoutProjectNestedInput
@@ -38645,6 +40622,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUncheckedUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type laboursUpsertWithoutAttendanceInput = {
@@ -38703,6 +40681,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     auth?: authorizationsUpdateManyWithoutUserNestedInput
     projects?: projectsUpdateManyWithoutCreatorNestedInput
+    supervisedProjects?: projectsUpdateManyWithoutSupervisorNestedInput
     refreshTokens?: refreshTokensUpdateManyWithoutUserNestedInput
   }
 
@@ -38718,6 +40697,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     auth?: authorizationsUncheckedUpdateManyWithoutUserNestedInput
     projects?: projectsUncheckedUpdateManyWithoutCreatorNestedInput
+    supervisedProjects?: projectsUncheckedUpdateManyWithoutSupervisorNestedInput
     refreshTokens?: refreshTokensUncheckedUpdateManyWithoutUserNestedInput
   }
 
@@ -38759,10 +40739,12 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
     interior?: interiorsCreateNestedOneWithoutProjectsInput
+    supervisor?: usersCreateNestedOneWithoutSupervisedProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
@@ -38771,6 +40753,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsCreateNestedManyWithoutProjectInput
   }
 
   export type projectsUncheckedCreateWithoutLabourPaymentsInput = {
@@ -38787,7 +40770,9 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
+    supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
@@ -38796,6 +40781,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsUncheckedCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type projectsCreateOrConnectWithoutLabourPaymentsInput = {
@@ -38858,10 +40844,12 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
     interior?: interiorsUpdateOneWithoutProjectsNestedInput
+    supervisor?: usersUpdateOneWithoutSupervisedProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
@@ -38870,6 +40858,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsUncheckedUpdateWithoutLabourPaymentsInput = {
@@ -38886,7 +40875,9 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
@@ -38895,6 +40886,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUncheckedUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsCreateWithoutProjectProductsInput = {
@@ -38908,10 +40900,12 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
     interior?: interiorsCreateNestedOneWithoutProjectsInput
+    supervisor?: usersCreateNestedOneWithoutSupervisedProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
@@ -38920,6 +40914,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsCreateNestedManyWithoutProjectInput
   }
 
   export type projectsUncheckedCreateWithoutProjectProductsInput = {
@@ -38936,7 +40931,9 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
+    supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
@@ -38945,6 +40942,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsUncheckedCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type projectsCreateOrConnectWithoutProjectProductsInput = {
@@ -39007,10 +41005,12 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
     interior?: interiorsUpdateOneWithoutProjectsNestedInput
+    supervisor?: usersUpdateOneWithoutSupervisedProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
@@ -39019,6 +41019,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsUncheckedUpdateWithoutProjectProductsInput = {
@@ -39035,7 +41036,9 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
@@ -39044,6 +41047,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUncheckedUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type productsUpsertWithoutProjectProductsInput = {
@@ -39096,10 +41100,12 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
     interior?: interiorsCreateNestedOneWithoutProjectsInput
+    supervisor?: usersCreateNestedOneWithoutSupervisedProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
@@ -39108,6 +41114,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsCreateNestedManyWithoutProjectInput
   }
 
   export type projectsUncheckedCreateWithoutMaterialLogsInput = {
@@ -39124,7 +41131,9 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
+    supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
@@ -39133,6 +41142,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsUncheckedCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type projectsCreateOrConnectWithoutMaterialLogsInput = {
@@ -39195,10 +41205,12 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
     interior?: interiorsUpdateOneWithoutProjectsNestedInput
+    supervisor?: usersUpdateOneWithoutSupervisedProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
@@ -39207,6 +41219,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsUncheckedUpdateWithoutMaterialLogsInput = {
@@ -39223,7 +41236,9 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
@@ -39232,6 +41247,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUncheckedUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type productsUpsertWithoutMaterialLogsInput = {
@@ -39284,10 +41300,12 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
     interior?: interiorsCreateNestedOneWithoutProjectsInput
+    supervisor?: usersCreateNestedOneWithoutSupervisedProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
@@ -39296,6 +41314,7 @@ export namespace Prisma {
     materialLogs?: project_material_logsCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsCreateNestedManyWithoutProjectInput
   }
 
   export type projectsUncheckedCreateWithoutProjectPaymentsInput = {
@@ -39312,7 +41331,9 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
+    supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
@@ -39321,6 +41342,7 @@ export namespace Prisma {
     materialLogs?: project_material_logsUncheckedCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsUncheckedCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type projectsCreateOrConnectWithoutProjectPaymentsInput = {
@@ -39350,10 +41372,12 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
     interior?: interiorsUpdateOneWithoutProjectsNestedInput
+    supervisor?: usersUpdateOneWithoutSupervisedProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
@@ -39362,6 +41386,7 @@ export namespace Prisma {
     materialLogs?: project_material_logsUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsUncheckedUpdateWithoutProjectPaymentsInput = {
@@ -39378,7 +41403,9 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
@@ -39387,6 +41414,7 @@ export namespace Prisma {
     materialLogs?: project_material_logsUncheckedUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUncheckedUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type contractor_paymentsCreateWithoutContractorInput = {
@@ -39521,10 +41549,12 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
     interior?: interiorsCreateNestedOneWithoutProjectsInput
+    supervisor?: usersCreateNestedOneWithoutSupervisedProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
@@ -39533,6 +41563,7 @@ export namespace Prisma {
     materialLogs?: project_material_logsCreateNestedManyWithoutProjectInput
     projectPayments?: project_paymentsCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsCreateNestedManyWithoutProjectInput
   }
 
   export type projectsUncheckedCreateWithoutContractorPaymentsInput = {
@@ -39549,7 +41580,9 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
+    supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
@@ -39558,6 +41591,7 @@ export namespace Prisma {
     materialLogs?: project_material_logsUncheckedCreateNestedManyWithoutProjectInput
     projectPayments?: project_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorWorkLogs?: contractor_work_logsUncheckedCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type projectsCreateOrConnectWithoutContractorPaymentsInput = {
@@ -39622,10 +41656,12 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
     interior?: interiorsUpdateOneWithoutProjectsNestedInput
+    supervisor?: usersUpdateOneWithoutSupervisedProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
@@ -39634,6 +41670,7 @@ export namespace Prisma {
     materialLogs?: project_material_logsUpdateManyWithoutProjectNestedInput
     projectPayments?: project_paymentsUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsUncheckedUpdateWithoutContractorPaymentsInput = {
@@ -39650,7 +41687,9 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
@@ -39659,6 +41698,7 @@ export namespace Prisma {
     materialLogs?: project_material_logsUncheckedUpdateManyWithoutProjectNestedInput
     projectPayments?: project_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUncheckedUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type contractorsCreateWithoutWorkLogsInput = {
@@ -39701,10 +41741,12 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
     interior?: interiorsCreateNestedOneWithoutProjectsInput
+    supervisor?: usersCreateNestedOneWithoutSupervisedProjectsInput
     tasks?: tasksCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
@@ -39713,6 +41755,7 @@ export namespace Prisma {
     materialLogs?: project_material_logsCreateNestedManyWithoutProjectInput
     projectPayments?: project_paymentsCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsCreateNestedManyWithoutProjectInput
   }
 
   export type projectsUncheckedCreateWithoutContractorWorkLogsInput = {
@@ -39729,7 +41772,9 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
+    supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
     attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
@@ -39738,6 +41783,7 @@ export namespace Prisma {
     materialLogs?: project_material_logsUncheckedCreateNestedManyWithoutProjectInput
     projectPayments?: project_paymentsUncheckedCreateNestedManyWithoutProjectInput
     contractorPayments?: contractor_paymentsUncheckedCreateNestedManyWithoutProjectInput
+    lowMaterials?: low_materialsUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type projectsCreateOrConnectWithoutContractorWorkLogsInput = {
@@ -39802,10 +41848,12 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
     interior?: interiorsUpdateOneWithoutProjectsNestedInput
+    supervisor?: usersUpdateOneWithoutSupervisedProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
@@ -39814,6 +41862,7 @@ export namespace Prisma {
     materialLogs?: project_material_logsUpdateManyWithoutProjectNestedInput
     projectPayments?: project_paymentsUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsUncheckedUpdateWithoutContractorWorkLogsInput = {
@@ -39830,7 +41879,9 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
@@ -39839,6 +41890,135 @@ export namespace Prisma {
     materialLogs?: project_material_logsUncheckedUpdateManyWithoutProjectNestedInput
     projectPayments?: project_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUncheckedUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUncheckedUpdateManyWithoutProjectNestedInput
+  }
+
+  export type projectsCreateWithoutLowMaterialsInput = {
+    id?: string
+    name: string
+    status: $Enums.ProjectStatus
+    totalAmount?: Decimal | DecimalJsLike | number | string | null
+    paid?: Decimal | DecimalJsLike | number | string | null
+    discount?: Decimal | DecimalJsLike | number | string | null
+    discountType?: string | null
+    tax?: Decimal | DecimalJsLike | number | string | null
+    agreedPrice?: Decimal | DecimalJsLike | number | string | null
+    projectDate?: Date | string | null
+    stage?: string
+    createdAt?: Date | string
+    creator: usersCreateNestedOneWithoutProjectsInput
+    customer?: customersCreateNestedOneWithoutProjectsInput
+    interior?: interiorsCreateNestedOneWithoutProjectsInput
+    supervisor?: usersCreateNestedOneWithoutSupervisedProjectsInput
+    tasks?: tasksCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsCreateNestedManyWithoutProjectInput
+    attendance?: labour_attendanceCreateNestedManyWithoutProjectInput
+    labourPayments?: labour_paymentsCreateNestedManyWithoutProjectInput
+    projectProducts?: project_productsCreateNestedManyWithoutProjectInput
+    materialLogs?: project_material_logsCreateNestedManyWithoutProjectInput
+    projectPayments?: project_paymentsCreateNestedManyWithoutProjectInput
+    contractorPayments?: contractor_paymentsCreateNestedManyWithoutProjectInput
+    contractorWorkLogs?: contractor_work_logsCreateNestedManyWithoutProjectInput
+  }
+
+  export type projectsUncheckedCreateWithoutLowMaterialsInput = {
+    id?: string
+    name: string
+    customerId?: string | null
+    creatorId: string
+    interiorId?: string | null
+    status: $Enums.ProjectStatus
+    totalAmount?: Decimal | DecimalJsLike | number | string | null
+    paid?: Decimal | DecimalJsLike | number | string | null
+    discount?: Decimal | DecimalJsLike | number | string | null
+    discountType?: string | null
+    tax?: Decimal | DecimalJsLike | number | string | null
+    agreedPrice?: Decimal | DecimalJsLike | number | string | null
+    projectDate?: Date | string | null
+    stage?: string
+    createdAt?: Date | string
+    supervisorId?: string | null
+    tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
+    projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
+    attendance?: labour_attendanceUncheckedCreateNestedManyWithoutProjectInput
+    labourPayments?: labour_paymentsUncheckedCreateNestedManyWithoutProjectInput
+    projectProducts?: project_productsUncheckedCreateNestedManyWithoutProjectInput
+    materialLogs?: project_material_logsUncheckedCreateNestedManyWithoutProjectInput
+    projectPayments?: project_paymentsUncheckedCreateNestedManyWithoutProjectInput
+    contractorPayments?: contractor_paymentsUncheckedCreateNestedManyWithoutProjectInput
+    contractorWorkLogs?: contractor_work_logsUncheckedCreateNestedManyWithoutProjectInput
+  }
+
+  export type projectsCreateOrConnectWithoutLowMaterialsInput = {
+    where: projectsWhereUniqueInput
+    create: XOR<projectsCreateWithoutLowMaterialsInput, projectsUncheckedCreateWithoutLowMaterialsInput>
+  }
+
+  export type projectsUpsertWithoutLowMaterialsInput = {
+    update: XOR<projectsUpdateWithoutLowMaterialsInput, projectsUncheckedUpdateWithoutLowMaterialsInput>
+    create: XOR<projectsCreateWithoutLowMaterialsInput, projectsUncheckedCreateWithoutLowMaterialsInput>
+    where?: projectsWhereInput
+  }
+
+  export type projectsUpdateToOneWithWhereWithoutLowMaterialsInput = {
+    where?: projectsWhereInput
+    data: XOR<projectsUpdateWithoutLowMaterialsInput, projectsUncheckedUpdateWithoutLowMaterialsInput>
+  }
+
+  export type projectsUpdateWithoutLowMaterialsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    status?: EnumProjectStatusFieldUpdateOperationsInput | $Enums.ProjectStatus
+    totalAmount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    paid?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    discount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    discountType?: NullableStringFieldUpdateOperationsInput | string | null
+    tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
+    customer?: customersUpdateOneWithoutProjectsNestedInput
+    interior?: interiorsUpdateOneWithoutProjectsNestedInput
+    supervisor?: usersUpdateOneWithoutSupervisedProjectsNestedInput
+    tasks?: tasksUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
+    attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
+    labourPayments?: labour_paymentsUpdateManyWithoutProjectNestedInput
+    projectProducts?: project_productsUpdateManyWithoutProjectNestedInput
+    materialLogs?: project_material_logsUpdateManyWithoutProjectNestedInput
+    projectPayments?: project_paymentsUpdateManyWithoutProjectNestedInput
+    contractorPayments?: contractor_paymentsUpdateManyWithoutProjectNestedInput
+    contractorWorkLogs?: contractor_work_logsUpdateManyWithoutProjectNestedInput
+  }
+
+  export type projectsUncheckedUpdateWithoutLowMaterialsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    customerId?: NullableStringFieldUpdateOperationsInput | string | null
+    creatorId?: StringFieldUpdateOperationsInput | string
+    interiorId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: EnumProjectStatusFieldUpdateOperationsInput | $Enums.ProjectStatus
+    totalAmount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    paid?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    discount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    discountType?: NullableStringFieldUpdateOperationsInput | string | null
+    tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
+    tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
+    attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
+    labourPayments?: labour_paymentsUncheckedUpdateManyWithoutProjectNestedInput
+    projectProducts?: project_productsUncheckedUpdateManyWithoutProjectNestedInput
+    materialLogs?: project_material_logsUncheckedUpdateManyWithoutProjectNestedInput
+    projectPayments?: project_paymentsUncheckedUpdateManyWithoutProjectNestedInput
+    contractorPayments?: contractor_paymentsUncheckedUpdateManyWithoutProjectNestedInput
+    contractorWorkLogs?: contractor_work_logsUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type authorizationsCreateManyUserInput = {
@@ -39859,6 +42039,26 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
+    createdAt?: Date | string
+    supervisorId?: string | null
+  }
+
+  export type projectsCreateManySupervisorInput = {
+    id?: string
+    name: string
+    customerId?: string | null
+    creatorId: string
+    interiorId?: string | null
+    status: $Enums.ProjectStatus
+    totalAmount?: Decimal | DecimalJsLike | number | string | null
+    paid?: Decimal | DecimalJsLike | number | string | null
+    discount?: Decimal | DecimalJsLike | number | string | null
+    discountType?: string | null
+    tax?: Decimal | DecimalJsLike | number | string | null
+    agreedPrice?: Decimal | DecimalJsLike | number | string | null
+    projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
   }
 
@@ -39906,9 +42106,11 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     customer?: customersUpdateOneWithoutProjectsNestedInput
     interior?: interiorsUpdateOneWithoutProjectsNestedInput
+    supervisor?: usersUpdateOneWithoutSupervisedProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
@@ -39918,6 +42120,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsUncheckedUpdateWithoutCreatorInput = {
@@ -39933,7 +42136,9 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
@@ -39943,6 +42148,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUncheckedUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsUncheckedUpdateManyWithoutCreatorInput = {
@@ -39958,6 +42164,82 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type projectsUpdateWithoutSupervisorInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    status?: EnumProjectStatusFieldUpdateOperationsInput | $Enums.ProjectStatus
+    totalAmount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    paid?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    discount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    discountType?: NullableStringFieldUpdateOperationsInput | string | null
+    tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
+    customer?: customersUpdateOneWithoutProjectsNestedInput
+    interior?: interiorsUpdateOneWithoutProjectsNestedInput
+    tasks?: tasksUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
+    attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
+    labourPayments?: labour_paymentsUpdateManyWithoutProjectNestedInput
+    projectProducts?: project_productsUpdateManyWithoutProjectNestedInput
+    materialLogs?: project_material_logsUpdateManyWithoutProjectNestedInput
+    projectPayments?: project_paymentsUpdateManyWithoutProjectNestedInput
+    contractorPayments?: contractor_paymentsUpdateManyWithoutProjectNestedInput
+    contractorWorkLogs?: contractor_work_logsUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUpdateManyWithoutProjectNestedInput
+  }
+
+  export type projectsUncheckedUpdateWithoutSupervisorInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    customerId?: NullableStringFieldUpdateOperationsInput | string | null
+    creatorId?: StringFieldUpdateOperationsInput | string
+    interiorId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: EnumProjectStatusFieldUpdateOperationsInput | $Enums.ProjectStatus
+    totalAmount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    paid?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    discount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    discountType?: NullableStringFieldUpdateOperationsInput | string | null
+    tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
+    projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
+    attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
+    labourPayments?: labour_paymentsUncheckedUpdateManyWithoutProjectNestedInput
+    projectProducts?: project_productsUncheckedUpdateManyWithoutProjectNestedInput
+    materialLogs?: project_material_logsUncheckedUpdateManyWithoutProjectNestedInput
+    projectPayments?: project_paymentsUncheckedUpdateManyWithoutProjectNestedInput
+    contractorPayments?: contractor_paymentsUncheckedUpdateManyWithoutProjectNestedInput
+    contractorWorkLogs?: contractor_work_logsUncheckedUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUncheckedUpdateManyWithoutProjectNestedInput
+  }
+
+  export type projectsUncheckedUpdateManyWithoutSupervisorInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    customerId?: NullableStringFieldUpdateOperationsInput | string | null
+    creatorId?: StringFieldUpdateOperationsInput | string
+    interiorId?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: EnumProjectStatusFieldUpdateOperationsInput | $Enums.ProjectStatus
+    totalAmount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    paid?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    discount?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    discountType?: NullableStringFieldUpdateOperationsInput | string | null
+    tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -40028,7 +42310,9 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
+    supervisorId?: string | null
   }
 
   export type projectsUpdateWithoutCustomerInput = {
@@ -40042,9 +42326,11 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     interior?: interiorsUpdateOneWithoutProjectsNestedInput
+    supervisor?: usersUpdateOneWithoutSupervisedProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
@@ -40054,6 +42340,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsUncheckedUpdateWithoutCustomerInput = {
@@ -40069,7 +42356,9 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
@@ -40079,6 +42368,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUncheckedUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsUncheckedUpdateManyWithoutCustomerInput = {
@@ -40094,7 +42384,9 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type productsCreateManyBrandInput = {
@@ -40234,7 +42526,9 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
+    stage?: string
     createdAt?: Date | string
+    supervisorId?: string | null
   }
 
   export type projectsUpdateWithoutInteriorInput = {
@@ -40248,9 +42542,11 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
+    supervisor?: usersUpdateOneWithoutSupervisedProjectsNestedInput
     tasks?: tasksUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUpdateManyWithoutProjectNestedInput
@@ -40260,6 +42556,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsUncheckedUpdateWithoutInteriorInput = {
@@ -40275,7 +42572,9 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
     attendance?: labour_attendanceUncheckedUpdateManyWithoutProjectNestedInput
@@ -40285,6 +42584,7 @@ export namespace Prisma {
     projectPayments?: project_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorPayments?: contractor_paymentsUncheckedUpdateManyWithoutProjectNestedInput
     contractorWorkLogs?: contractor_work_logsUncheckedUpdateManyWithoutProjectNestedInput
+    lowMaterials?: low_materialsUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type projectsUncheckedUpdateManyWithoutInteriorInput = {
@@ -40300,7 +42600,9 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type tasksCreateManyProjectInput = {
@@ -40387,6 +42689,16 @@ export namespace Prisma {
     contractorId: string
     sqFt: Decimal | DecimalJsLike | number | string
     remarks?: string | null
+    createdAt?: Date | string
+  }
+
+  export type low_materialsCreateManyProjectInput = {
+    id?: string
+    material: string
+    quantity: string
+    approved?: boolean
+    delivered?: boolean
+    date?: Date | string
     createdAt?: Date | string
   }
 
@@ -40648,6 +42960,36 @@ export namespace Prisma {
     contractorId?: StringFieldUpdateOperationsInput | string
     sqFt?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     remarks?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type low_materialsUpdateWithoutProjectInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    material?: StringFieldUpdateOperationsInput | string
+    quantity?: StringFieldUpdateOperationsInput | string
+    approved?: BoolFieldUpdateOperationsInput | boolean
+    delivered?: BoolFieldUpdateOperationsInput | boolean
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type low_materialsUncheckedUpdateWithoutProjectInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    material?: StringFieldUpdateOperationsInput | string
+    quantity?: StringFieldUpdateOperationsInput | string
+    approved?: BoolFieldUpdateOperationsInput | boolean
+    delivered?: BoolFieldUpdateOperationsInput | boolean
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type low_materialsUncheckedUpdateManyWithoutProjectInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    material?: StringFieldUpdateOperationsInput | string
+    quantity?: StringFieldUpdateOperationsInput | string
+    approved?: BoolFieldUpdateOperationsInput | boolean
+    delivered?: BoolFieldUpdateOperationsInput | boolean
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 

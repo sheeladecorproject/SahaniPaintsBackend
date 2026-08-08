@@ -18,7 +18,8 @@ model users {
   alternatePhonenumber String?          @map("alternate_phonenumber")
   createdAt            DateTime         @default(now()) @map("created_at") @db.Timestamptz(6)
   auth                 authorizations[]
-  projects             projects[]
+  projects             projects[]       @relation("ProjectCreator")
+  supervisedProjects   projects[]       @relation("ProjectSupervisor")
   refreshTokens        refreshTokens[]
   markedAttendances    labour_attendance[]
 
@@ -116,10 +117,13 @@ model projects {
   tax                Decimal?          @map("tax")
   agreedPrice        Decimal?          @map("agreed_price")
   projectDate        DateTime?         @map("project_date") @db.Timestamptz(6)
+  stage              String            @default("Putty")
   createdAt          DateTime          @default(now()) @map("created_at") @db.Timestamptz(6)
-  creator            users             @relation(fields: [creatorId], references: [id])
+  creator            users             @relation("ProjectCreator", fields: [creatorId], references: [id])
   customer           customers?        @relation(fields: [customerId], references: [id])
   interior           interiors?        @relation(fields: [interiorId], references: [id])
+  supervisorId       String?           @map("supervisor_id") @db.Uuid
+  supervisor         users?            @relation("ProjectSupervisor", fields: [supervisorId], references: [id])
   tasks              tasks[]
   projectAreaColors  project_area_colors[]
   attendance         labour_attendance[]
@@ -129,6 +133,7 @@ model projects {
   projectPayments    project_payments[]
   contractorPayments contractor_payments[]
   contractorWorkLogs contractor_work_logs[]
+  lowMaterials       low_materials[]
 
   @@index([id, createdAt])
 }
@@ -211,6 +216,7 @@ enum Role {
   ADMIN
   INTERIOR
   SALES_ASSOCIATE
+  SUPERVISOR
 }
 
 enum Status {
@@ -383,4 +389,20 @@ model contractor_work_logs {
   @@index([id, createdAt])
   @@index([projectId])
   @@map("contractor_work_logs")
+}
+
+model low_materials {
+  id        String   @id @default(uuid()) @db.Uuid
+  projectId String   @map("project_id") @db.Uuid
+  material  String
+  quantity  String
+  approved  Boolean  @default(false)
+  delivered Boolean  @default(false)
+  date      DateTime @default(now()) @db.Timestamptz(6)
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  project   projects @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([id, createdAt])
+  @@map("low_materials")
 }

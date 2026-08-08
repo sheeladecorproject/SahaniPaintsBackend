@@ -1,20 +1,20 @@
 import { prisma } from "../db/prisma.js";
 import type { PaginationData } from "../dto/pagination.dto.js";
-import type { Task, TaskData } from "../dto/tasks.dto.js";
+import type { LowMaterial, LowMaterialData } from "../dto/lowMaterials.dto.js";
 import { serverUtils } from "../utils/server.utils.js";
 import { BaseRepository } from "./base.repository.js";
 
-class TaskRepository extends BaseRepository<Task, TaskData, any> {
+class LowMaterialsRepository extends BaseRepository<LowMaterial, LowMaterialData, any> {
     constructor() {
-        super(prisma.tasks, "TASK");
+        super(prisma.low_materials, "LOW_MATERIALS");
     }
 
-    create = async (data: TaskData): Promise<Task> => {
+    create = async (data: LowMaterialData): Promise<LowMaterial> => {
         try {
             return await this.model.create({
                 data: {
                     ...data,
-                    taskDate: new Date(data.taskDate)
+                    date: data.date ? new Date(data.date) : new Date(),
                 }
             });
         } catch (error) {
@@ -22,15 +22,10 @@ class TaskRepository extends BaseRepository<Task, TaskData, any> {
         }
     };
 
-    fetch = async (id: string, userId?: string) => {
+    fetch = async (id: string) => {
         const where: any = {
-            [this.config.primaryKey]: id,
-            ...(userId ? { userId } : {})
+            id
         };
-
-        if (this.config.statusField) {
-            where[this.config.statusField] = null;
-        }
         const record = await this.model.findFirst({
             where,
             include: {
@@ -42,26 +37,18 @@ class TaskRepository extends BaseRepository<Task, TaskData, any> {
                 }
             }
         });
-        return record ?? ({} as Task);
+        return record ?? ({} as LowMaterial);
     };
 
     fetchAll = async (data: PaginationData, filters: any, searchFields: string[] = []) => {
         let where: any = {};
-
-        if (this.config.statusField) {
-            where[this.config.statusField] = null;
-        }
-
         where = serverUtils.buildWhere(where, filters, data, searchFields);
 
         return await this.model.findMany({
             take: data.limit,
             where,
             orderBy: [
-                ...(this.config.hasCreatedAt !== false
-                    ? [{ createdAt: (data.sort ?? "desc") as 'asc' | 'desc' }]
-                    : []
-                ),
+                { createdAt: (data.sort ?? "desc") as 'asc' | 'desc' },
                 { id: (data.sort ?? "desc") as 'asc' | 'desc' }
             ],
             include: {
@@ -76,4 +63,4 @@ class TaskRepository extends BaseRepository<Task, TaskData, any> {
     };
 }
 
-export { TaskRepository };
+export { LowMaterialsRepository };

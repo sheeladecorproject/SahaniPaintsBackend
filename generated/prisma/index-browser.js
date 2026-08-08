@@ -202,7 +202,9 @@ exports.Prisma.ProjectsScalarFieldEnum = {
   tax: 'tax',
   agreedPrice: 'agreedPrice',
   projectDate: 'projectDate',
-  createdAt: 'createdAt'
+  stage: 'stage',
+  createdAt: 'createdAt',
+  supervisorId: 'supervisorId'
 };
 
 exports.Prisma.ColorsScalarFieldEnum = {
@@ -354,6 +356,17 @@ exports.Prisma.Contractor_work_logsScalarFieldEnum = {
   createdAt: 'createdAt'
 };
 
+exports.Prisma.Low_materialsScalarFieldEnum = {
+  id: 'id',
+  projectId: 'projectId',
+  material: 'material',
+  quantity: 'quantity',
+  approved: 'approved',
+  delivered: 'delivered',
+  date: 'date',
+  createdAt: 'createdAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -372,7 +385,8 @@ exports.Role = exports.$Enums.Role = {
   USER: 'USER',
   ADMIN: 'ADMIN',
   INTERIOR: 'INTERIOR',
-  SALES_ASSOCIATE: 'SALES_ASSOCIATE'
+  SALES_ASSOCIATE: 'SALES_ASSOCIATE',
+  SUPERVISOR: 'SUPERVISOR'
 };
 
 exports.ProjectStatus = exports.$Enums.ProjectStatus = {
@@ -421,7 +435,8 @@ exports.Prisma.ModelName = {
   project_payments: 'project_payments',
   contractors: 'contractors',
   contractor_payments: 'contractor_payments',
-  contractor_work_logs: 'contractor_work_logs'
+  contractor_work_logs: 'contractor_work_logs',
+  low_materials: 'low_materials'
 };
 
 /**

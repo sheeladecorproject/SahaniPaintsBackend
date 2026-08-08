@@ -69,7 +69,7 @@ class LabourAttendanceRepository extends BaseRepository<LabourAttendance, Labour
                     labourId: data.labourId,
                     workDayType: data.workDayType || "DAY",
                     workDayValue: data.workDayValue !== undefined ? data.workDayValue : 1.0,
-                    markedById: data.markedById,
+                    markedById: data.markedById ?? null,
                 }
             });
 

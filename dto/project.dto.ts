@@ -13,6 +13,7 @@ interface Project {
     agreedPrice: number | null;
     projectDate: Date;
     status: ProjectStatus;
+    stage: string;
     createdAt: Date;
     creatorId: string;
     customer?: {
@@ -26,6 +27,13 @@ interface Project {
     creator: {
         username: string;
     };
+    supervisorId?: string | null;
+    supervisor?: {
+        id: string;
+        username: string;
+        email?: string;
+        phonenumber?: string | null;
+    } | null;
     projectProducts?: any[];
 }
 
@@ -33,6 +41,7 @@ interface ProjectData {
     name: string;
     customerId?: string | null;
     interiorId?: string | null;
+    supervisorId?: string | null;
     totalAmount?: number | null;
     paid?: number | null;
     discount?: number | null;
@@ -41,6 +50,7 @@ interface ProjectData {
     agreedPrice?: number | null;
     projectDate: Date;
     status: ProjectStatus;
+    stage?: string;
     creatorId: string;
     projectProducts?: any[];
 }
