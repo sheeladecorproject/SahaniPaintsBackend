@@ -346,7 +346,6 @@ model contractors {
   email         String?
   address       String?
   type          String   @default("WEEKLY")
-  pricePerSqFt Decimal? @map("price_per_sqft")
   createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
 
   payments      contractor_payments[]
@@ -380,6 +379,8 @@ model contractor_work_logs {
   projectId    String   @map("project_id") @db.Uuid
   contractorId String   @map("contractor_id") @db.Uuid
   sqFt         Decimal  @map("sq_ft")
+  pricePerSqFt Decimal? @map("price_per_sqft")
+  material     String?
   remarks      String?
   createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
 

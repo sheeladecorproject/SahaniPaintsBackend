@@ -330,7 +330,6 @@ exports.Prisma.ContractorsScalarFieldEnum = {
   email: 'email',
   address: 'address',
   type: 'type',
-  pricePerSqFt: 'pricePerSqFt',
   createdAt: 'createdAt'
 };
 
@@ -352,6 +351,8 @@ exports.Prisma.Contractor_work_logsScalarFieldEnum = {
   projectId: 'projectId',
   contractorId: 'contractorId',
   sqFt: 'sqFt',
+  pricePerSqFt: 'pricePerSqFt',
+  material: 'material',
   remarks: 'remarks',
   createdAt: 'createdAt'
 };

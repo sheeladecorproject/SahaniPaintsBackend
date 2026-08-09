@@ -110,11 +110,8 @@ class ReportRepository {
                         select: {
                             id: true,
                             sqFt: true,
-                            contractor: {
-                                select: {
-                                    pricePerSqFt: true,
-                                }
-                            }
+                            pricePerSqFt: true,
+                            material: true,
                         }
                     },
                     projectProducts: {
@@ -194,7 +191,7 @@ class ReportRepository {
 
                 // Compute Contractor Cost
                 const contractorCost = p.contractorWorkLogs.reduce((sum: number, log: any) => {
-                    const rate = Number(log.contractor?.pricePerSqFt ?? 0);
+                    const rate = Number(log.pricePerSqFt ?? 0);
                     return sum + Number(log.sqFt || 0) * rate;
                 }, 0);
 

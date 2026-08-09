@@ -55,8 +55,7 @@ class ContractorWorkLogRepository extends BaseRepository<ContractorWorkLog, Cont
                 },
                 contractor: {
                     select: {
-                        name: true,
-                        pricePerSqFt: true
+                        name: true
                     }
                 }
             },

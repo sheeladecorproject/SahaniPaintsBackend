@@ -26290,18 +26290,8 @@ export namespace Prisma {
 
   export type AggregateContractors = {
     _count: ContractorsCountAggregateOutputType | null
-    _avg: ContractorsAvgAggregateOutputType | null
-    _sum: ContractorsSumAggregateOutputType | null
     _min: ContractorsMinAggregateOutputType | null
     _max: ContractorsMaxAggregateOutputType | null
-  }
-
-  export type ContractorsAvgAggregateOutputType = {
-    pricePerSqFt: Decimal | null
-  }
-
-  export type ContractorsSumAggregateOutputType = {
-    pricePerSqFt: Decimal | null
   }
 
   export type ContractorsMinAggregateOutputType = {
@@ -26311,7 +26301,6 @@ export namespace Prisma {
     email: string | null
     address: string | null
     type: string | null
-    pricePerSqFt: Decimal | null
     createdAt: Date | null
   }
 
@@ -26322,7 +26311,6 @@ export namespace Prisma {
     email: string | null
     address: string | null
     type: string | null
-    pricePerSqFt: Decimal | null
     createdAt: Date | null
   }
 
@@ -26333,19 +26321,10 @@ export namespace Prisma {
     email: number
     address: number
     type: number
-    pricePerSqFt: number
     createdAt: number
     _all: number
   }
 
-
-  export type ContractorsAvgAggregateInputType = {
-    pricePerSqFt?: true
-  }
-
-  export type ContractorsSumAggregateInputType = {
-    pricePerSqFt?: true
-  }
 
   export type ContractorsMinAggregateInputType = {
     id?: true
@@ -26354,7 +26333,6 @@ export namespace Prisma {
     email?: true
     address?: true
     type?: true
-    pricePerSqFt?: true
     createdAt?: true
   }
 
@@ -26365,7 +26343,6 @@ export namespace Prisma {
     email?: true
     address?: true
     type?: true
-    pricePerSqFt?: true
     createdAt?: true
   }
 
@@ -26376,7 +26353,6 @@ export namespace Prisma {
     email?: true
     address?: true
     type?: true
-    pricePerSqFt?: true
     createdAt?: true
     _all?: true
   }
@@ -26419,18 +26395,6 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Select which fields to average
-    **/
-    _avg?: ContractorsAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: ContractorsSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
      * Select which fields to find the minimum value
     **/
     _min?: ContractorsMinAggregateInputType
@@ -26461,8 +26425,6 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: ContractorsCountAggregateInputType | true
-    _avg?: ContractorsAvgAggregateInputType
-    _sum?: ContractorsSumAggregateInputType
     _min?: ContractorsMinAggregateInputType
     _max?: ContractorsMaxAggregateInputType
   }
@@ -26474,11 +26436,8 @@ export namespace Prisma {
     email: string | null
     address: string | null
     type: string
-    pricePerSqFt: Decimal | null
     createdAt: Date
     _count: ContractorsCountAggregateOutputType | null
-    _avg: ContractorsAvgAggregateOutputType | null
-    _sum: ContractorsSumAggregateOutputType | null
     _min: ContractorsMinAggregateOutputType | null
     _max: ContractorsMaxAggregateOutputType | null
   }
@@ -26504,7 +26463,6 @@ export namespace Prisma {
     email?: boolean
     address?: boolean
     type?: boolean
-    pricePerSqFt?: boolean
     createdAt?: boolean
     payments?: boolean | contractors$paymentsArgs<ExtArgs>
     workLogs?: boolean | contractors$workLogsArgs<ExtArgs>
@@ -26518,7 +26476,6 @@ export namespace Prisma {
     email?: boolean
     address?: boolean
     type?: boolean
-    pricePerSqFt?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["contractors"]>
 
@@ -26529,7 +26486,6 @@ export namespace Prisma {
     email?: boolean
     address?: boolean
     type?: boolean
-    pricePerSqFt?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["contractors"]>
 
@@ -26540,11 +26496,10 @@ export namespace Prisma {
     email?: boolean
     address?: boolean
     type?: boolean
-    pricePerSqFt?: boolean
     createdAt?: boolean
   }
 
-  export type contractorsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "phonenumber" | "email" | "address" | "type" | "pricePerSqFt" | "createdAt", ExtArgs["result"]["contractors"]>
+  export type contractorsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "phonenumber" | "email" | "address" | "type" | "createdAt", ExtArgs["result"]["contractors"]>
   export type contractorsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     payments?: boolean | contractors$paymentsArgs<ExtArgs>
     workLogs?: boolean | contractors$workLogsArgs<ExtArgs>
@@ -26566,7 +26521,6 @@ export namespace Prisma {
       email: string | null
       address: string | null
       type: string
-      pricePerSqFt: Prisma.Decimal | null
       createdAt: Date
     }, ExtArgs["result"]["contractors"]>
     composites: {}
@@ -26999,7 +26953,6 @@ export namespace Prisma {
     readonly email: FieldRef<"contractors", 'String'>
     readonly address: FieldRef<"contractors", 'String'>
     readonly type: FieldRef<"contractors", 'String'>
-    readonly pricePerSqFt: FieldRef<"contractors", 'Decimal'>
     readonly createdAt: FieldRef<"contractors", 'DateTime'>
   }
     
@@ -28650,10 +28603,12 @@ export namespace Prisma {
 
   export type Contractor_work_logsAvgAggregateOutputType = {
     sqFt: Decimal | null
+    pricePerSqFt: Decimal | null
   }
 
   export type Contractor_work_logsSumAggregateOutputType = {
     sqFt: Decimal | null
+    pricePerSqFt: Decimal | null
   }
 
   export type Contractor_work_logsMinAggregateOutputType = {
@@ -28662,6 +28617,8 @@ export namespace Prisma {
     projectId: string | null
     contractorId: string | null
     sqFt: Decimal | null
+    pricePerSqFt: Decimal | null
+    material: string | null
     remarks: string | null
     createdAt: Date | null
   }
@@ -28672,6 +28629,8 @@ export namespace Prisma {
     projectId: string | null
     contractorId: string | null
     sqFt: Decimal | null
+    pricePerSqFt: Decimal | null
+    material: string | null
     remarks: string | null
     createdAt: Date | null
   }
@@ -28682,6 +28641,8 @@ export namespace Prisma {
     projectId: number
     contractorId: number
     sqFt: number
+    pricePerSqFt: number
+    material: number
     remarks: number
     createdAt: number
     _all: number
@@ -28690,10 +28651,12 @@ export namespace Prisma {
 
   export type Contractor_work_logsAvgAggregateInputType = {
     sqFt?: true
+    pricePerSqFt?: true
   }
 
   export type Contractor_work_logsSumAggregateInputType = {
     sqFt?: true
+    pricePerSqFt?: true
   }
 
   export type Contractor_work_logsMinAggregateInputType = {
@@ -28702,6 +28665,8 @@ export namespace Prisma {
     projectId?: true
     contractorId?: true
     sqFt?: true
+    pricePerSqFt?: true
+    material?: true
     remarks?: true
     createdAt?: true
   }
@@ -28712,6 +28677,8 @@ export namespace Prisma {
     projectId?: true
     contractorId?: true
     sqFt?: true
+    pricePerSqFt?: true
+    material?: true
     remarks?: true
     createdAt?: true
   }
@@ -28722,6 +28689,8 @@ export namespace Prisma {
     projectId?: true
     contractorId?: true
     sqFt?: true
+    pricePerSqFt?: true
+    material?: true
     remarks?: true
     createdAt?: true
     _all?: true
@@ -28819,6 +28788,8 @@ export namespace Prisma {
     projectId: string
     contractorId: string
     sqFt: Decimal
+    pricePerSqFt: Decimal | null
+    material: string | null
     remarks: string | null
     createdAt: Date
     _count: Contractor_work_logsCountAggregateOutputType | null
@@ -28848,6 +28819,8 @@ export namespace Prisma {
     projectId?: boolean
     contractorId?: boolean
     sqFt?: boolean
+    pricePerSqFt?: boolean
+    material?: boolean
     remarks?: boolean
     createdAt?: boolean
     contractor?: boolean | contractorsDefaultArgs<ExtArgs>
@@ -28860,6 +28833,8 @@ export namespace Prisma {
     projectId?: boolean
     contractorId?: boolean
     sqFt?: boolean
+    pricePerSqFt?: boolean
+    material?: boolean
     remarks?: boolean
     createdAt?: boolean
     contractor?: boolean | contractorsDefaultArgs<ExtArgs>
@@ -28872,6 +28847,8 @@ export namespace Prisma {
     projectId?: boolean
     contractorId?: boolean
     sqFt?: boolean
+    pricePerSqFt?: boolean
+    material?: boolean
     remarks?: boolean
     createdAt?: boolean
     contractor?: boolean | contractorsDefaultArgs<ExtArgs>
@@ -28884,11 +28861,13 @@ export namespace Prisma {
     projectId?: boolean
     contractorId?: boolean
     sqFt?: boolean
+    pricePerSqFt?: boolean
+    material?: boolean
     remarks?: boolean
     createdAt?: boolean
   }
 
-  export type contractor_work_logsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "date" | "projectId" | "contractorId" | "sqFt" | "remarks" | "createdAt", ExtArgs["result"]["contractor_work_logs"]>
+  export type contractor_work_logsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "date" | "projectId" | "contractorId" | "sqFt" | "pricePerSqFt" | "material" | "remarks" | "createdAt", ExtArgs["result"]["contractor_work_logs"]>
   export type contractor_work_logsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     contractor?: boolean | contractorsDefaultArgs<ExtArgs>
     project?: boolean | projectsDefaultArgs<ExtArgs>
@@ -28914,6 +28893,8 @@ export namespace Prisma {
       projectId: string
       contractorId: string
       sqFt: Prisma.Decimal
+      pricePerSqFt: Prisma.Decimal | null
+      material: string | null
       remarks: string | null
       createdAt: Date
     }, ExtArgs["result"]["contractor_work_logs"]>
@@ -29346,6 +29327,8 @@ export namespace Prisma {
     readonly projectId: FieldRef<"contractor_work_logs", 'String'>
     readonly contractorId: FieldRef<"contractor_work_logs", 'String'>
     readonly sqFt: FieldRef<"contractor_work_logs", 'Decimal'>
+    readonly pricePerSqFt: FieldRef<"contractor_work_logs", 'Decimal'>
+    readonly material: FieldRef<"contractor_work_logs", 'String'>
     readonly remarks: FieldRef<"contractor_work_logs", 'String'>
     readonly createdAt: FieldRef<"contractor_work_logs", 'DateTime'>
   }
@@ -31153,7 +31136,6 @@ export namespace Prisma {
     email: 'email',
     address: 'address',
     type: 'type',
-    pricePerSqFt: 'pricePerSqFt',
     createdAt: 'createdAt'
   };
 
@@ -31181,6 +31163,8 @@ export namespace Prisma {
     projectId: 'projectId',
     contractorId: 'contractorId',
     sqFt: 'sqFt',
+    pricePerSqFt: 'pricePerSqFt',
+    material: 'material',
     remarks: 'remarks',
     createdAt: 'createdAt'
   };
@@ -32793,7 +32777,6 @@ export namespace Prisma {
     email?: StringNullableFilter<"contractors"> | string | null
     address?: StringNullableFilter<"contractors"> | string | null
     type?: StringFilter<"contractors"> | string
-    pricePerSqFt?: DecimalNullableFilter<"contractors"> | Decimal | DecimalJsLike | number | string | null
     createdAt?: DateTimeFilter<"contractors"> | Date | string
     payments?: Contractor_paymentsListRelationFilter
     workLogs?: Contractor_work_logsListRelationFilter
@@ -32806,7 +32789,6 @@ export namespace Prisma {
     email?: SortOrderInput | SortOrder
     address?: SortOrderInput | SortOrder
     type?: SortOrder
-    pricePerSqFt?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     payments?: contractor_paymentsOrderByRelationAggregateInput
     workLogs?: contractor_work_logsOrderByRelationAggregateInput
@@ -32822,7 +32804,6 @@ export namespace Prisma {
     email?: StringNullableFilter<"contractors"> | string | null
     address?: StringNullableFilter<"contractors"> | string | null
     type?: StringFilter<"contractors"> | string
-    pricePerSqFt?: DecimalNullableFilter<"contractors"> | Decimal | DecimalJsLike | number | string | null
     createdAt?: DateTimeFilter<"contractors"> | Date | string
     payments?: Contractor_paymentsListRelationFilter
     workLogs?: Contractor_work_logsListRelationFilter
@@ -32835,13 +32816,10 @@ export namespace Prisma {
     email?: SortOrderInput | SortOrder
     address?: SortOrderInput | SortOrder
     type?: SortOrder
-    pricePerSqFt?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     _count?: contractorsCountOrderByAggregateInput
-    _avg?: contractorsAvgOrderByAggregateInput
     _max?: contractorsMaxOrderByAggregateInput
     _min?: contractorsMinOrderByAggregateInput
-    _sum?: contractorsSumOrderByAggregateInput
   }
 
   export type contractorsScalarWhereWithAggregatesInput = {
@@ -32854,7 +32832,6 @@ export namespace Prisma {
     email?: StringNullableWithAggregatesFilter<"contractors"> | string | null
     address?: StringNullableWithAggregatesFilter<"contractors"> | string | null
     type?: StringWithAggregatesFilter<"contractors"> | string
-    pricePerSqFt?: DecimalNullableWithAggregatesFilter<"contractors"> | Decimal | DecimalJsLike | number | string | null
     createdAt?: DateTimeWithAggregatesFilter<"contractors"> | Date | string
   }
 
@@ -32947,6 +32924,8 @@ export namespace Prisma {
     projectId?: UuidFilter<"contractor_work_logs"> | string
     contractorId?: UuidFilter<"contractor_work_logs"> | string
     sqFt?: DecimalFilter<"contractor_work_logs"> | Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: DecimalNullableFilter<"contractor_work_logs"> | Decimal | DecimalJsLike | number | string | null
+    material?: StringNullableFilter<"contractor_work_logs"> | string | null
     remarks?: StringNullableFilter<"contractor_work_logs"> | string | null
     createdAt?: DateTimeFilter<"contractor_work_logs"> | Date | string
     contractor?: XOR<ContractorsScalarRelationFilter, contractorsWhereInput>
@@ -32959,6 +32938,8 @@ export namespace Prisma {
     projectId?: SortOrder
     contractorId?: SortOrder
     sqFt?: SortOrder
+    pricePerSqFt?: SortOrderInput | SortOrder
+    material?: SortOrderInput | SortOrder
     remarks?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     contractor?: contractorsOrderByWithRelationInput
@@ -32974,6 +32955,8 @@ export namespace Prisma {
     projectId?: UuidFilter<"contractor_work_logs"> | string
     contractorId?: UuidFilter<"contractor_work_logs"> | string
     sqFt?: DecimalFilter<"contractor_work_logs"> | Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: DecimalNullableFilter<"contractor_work_logs"> | Decimal | DecimalJsLike | number | string | null
+    material?: StringNullableFilter<"contractor_work_logs"> | string | null
     remarks?: StringNullableFilter<"contractor_work_logs"> | string | null
     createdAt?: DateTimeFilter<"contractor_work_logs"> | Date | string
     contractor?: XOR<ContractorsScalarRelationFilter, contractorsWhereInput>
@@ -32986,6 +32969,8 @@ export namespace Prisma {
     projectId?: SortOrder
     contractorId?: SortOrder
     sqFt?: SortOrder
+    pricePerSqFt?: SortOrderInput | SortOrder
+    material?: SortOrderInput | SortOrder
     remarks?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     _count?: contractor_work_logsCountOrderByAggregateInput
@@ -33004,6 +32989,8 @@ export namespace Prisma {
     projectId?: UuidWithAggregatesFilter<"contractor_work_logs"> | string
     contractorId?: UuidWithAggregatesFilter<"contractor_work_logs"> | string
     sqFt?: DecimalWithAggregatesFilter<"contractor_work_logs"> | Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: DecimalNullableWithAggregatesFilter<"contractor_work_logs"> | Decimal | DecimalJsLike | number | string | null
+    material?: StringNullableWithAggregatesFilter<"contractor_work_logs"> | string | null
     remarks?: StringNullableWithAggregatesFilter<"contractor_work_logs"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"contractor_work_logs"> | Date | string
   }
@@ -34581,7 +34568,6 @@ export namespace Prisma {
     email?: string | null
     address?: string | null
     type?: string
-    pricePerSqFt?: Decimal | DecimalJsLike | number | string | null
     createdAt?: Date | string
     payments?: contractor_paymentsCreateNestedManyWithoutContractorInput
     workLogs?: contractor_work_logsCreateNestedManyWithoutContractorInput
@@ -34594,7 +34580,6 @@ export namespace Prisma {
     email?: string | null
     address?: string | null
     type?: string
-    pricePerSqFt?: Decimal | DecimalJsLike | number | string | null
     createdAt?: Date | string
     payments?: contractor_paymentsUncheckedCreateNestedManyWithoutContractorInput
     workLogs?: contractor_work_logsUncheckedCreateNestedManyWithoutContractorInput
@@ -34607,7 +34592,6 @@ export namespace Prisma {
     email?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
     type?: StringFieldUpdateOperationsInput | string
-    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     payments?: contractor_paymentsUpdateManyWithoutContractorNestedInput
     workLogs?: contractor_work_logsUpdateManyWithoutContractorNestedInput
@@ -34620,7 +34604,6 @@ export namespace Prisma {
     email?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
     type?: StringFieldUpdateOperationsInput | string
-    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     payments?: contractor_paymentsUncheckedUpdateManyWithoutContractorNestedInput
     workLogs?: contractor_work_logsUncheckedUpdateManyWithoutContractorNestedInput
@@ -34633,7 +34616,6 @@ export namespace Prisma {
     email?: string | null
     address?: string | null
     type?: string
-    pricePerSqFt?: Decimal | DecimalJsLike | number | string | null
     createdAt?: Date | string
   }
 
@@ -34644,7 +34626,6 @@ export namespace Prisma {
     email?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
     type?: StringFieldUpdateOperationsInput | string
-    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -34655,7 +34636,6 @@ export namespace Prisma {
     email?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
     type?: StringFieldUpdateOperationsInput | string
-    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -34745,6 +34725,8 @@ export namespace Prisma {
     id?: string
     date: Date | string
     sqFt: Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: Decimal | DecimalJsLike | number | string | null
+    material?: string | null
     remarks?: string | null
     createdAt?: Date | string
     contractor: contractorsCreateNestedOneWithoutWorkLogsInput
@@ -34757,6 +34739,8 @@ export namespace Prisma {
     projectId: string
     contractorId: string
     sqFt: Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: Decimal | DecimalJsLike | number | string | null
+    material?: string | null
     remarks?: string | null
     createdAt?: Date | string
   }
@@ -34765,6 +34749,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     sqFt?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
     remarks?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     contractor?: contractorsUpdateOneRequiredWithoutWorkLogsNestedInput
@@ -34777,6 +34763,8 @@ export namespace Prisma {
     projectId?: StringFieldUpdateOperationsInput | string
     contractorId?: StringFieldUpdateOperationsInput | string
     sqFt?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
     remarks?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -34787,6 +34775,8 @@ export namespace Prisma {
     projectId: string
     contractorId: string
     sqFt: Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: Decimal | DecimalJsLike | number | string | null
+    material?: string | null
     remarks?: string | null
     createdAt?: Date | string
   }
@@ -34795,6 +34785,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     sqFt?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
     remarks?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -34805,6 +34797,8 @@ export namespace Prisma {
     projectId?: StringFieldUpdateOperationsInput | string
     contractorId?: StringFieldUpdateOperationsInput | string
     sqFt?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
     remarks?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36163,12 +36157,7 @@ export namespace Prisma {
     email?: SortOrder
     address?: SortOrder
     type?: SortOrder
-    pricePerSqFt?: SortOrder
     createdAt?: SortOrder
-  }
-
-  export type contractorsAvgOrderByAggregateInput = {
-    pricePerSqFt?: SortOrder
   }
 
   export type contractorsMaxOrderByAggregateInput = {
@@ -36178,7 +36167,6 @@ export namespace Prisma {
     email?: SortOrder
     address?: SortOrder
     type?: SortOrder
-    pricePerSqFt?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -36189,12 +36177,7 @@ export namespace Prisma {
     email?: SortOrder
     address?: SortOrder
     type?: SortOrder
-    pricePerSqFt?: SortOrder
     createdAt?: SortOrder
-  }
-
-  export type contractorsSumOrderByAggregateInput = {
-    pricePerSqFt?: SortOrder
   }
 
   export type ContractorsScalarRelationFilter = {
@@ -36252,12 +36235,15 @@ export namespace Prisma {
     projectId?: SortOrder
     contractorId?: SortOrder
     sqFt?: SortOrder
+    pricePerSqFt?: SortOrder
+    material?: SortOrder
     remarks?: SortOrder
     createdAt?: SortOrder
   }
 
   export type contractor_work_logsAvgOrderByAggregateInput = {
     sqFt?: SortOrder
+    pricePerSqFt?: SortOrder
   }
 
   export type contractor_work_logsMaxOrderByAggregateInput = {
@@ -36266,6 +36252,8 @@ export namespace Prisma {
     projectId?: SortOrder
     contractorId?: SortOrder
     sqFt?: SortOrder
+    pricePerSqFt?: SortOrder
+    material?: SortOrder
     remarks?: SortOrder
     createdAt?: SortOrder
   }
@@ -36276,12 +36264,15 @@ export namespace Prisma {
     projectId?: SortOrder
     contractorId?: SortOrder
     sqFt?: SortOrder
+    pricePerSqFt?: SortOrder
+    material?: SortOrder
     remarks?: SortOrder
     createdAt?: SortOrder
   }
 
   export type contractor_work_logsSumOrderByAggregateInput = {
     sqFt?: SortOrder
+    pricePerSqFt?: SortOrder
   }
 
   export type low_materialsCountOrderByAggregateInput = {
@@ -39447,6 +39438,8 @@ export namespace Prisma {
     id?: string
     date: Date | string
     sqFt: Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: Decimal | DecimalJsLike | number | string | null
+    material?: string | null
     remarks?: string | null
     createdAt?: Date | string
     contractor: contractorsCreateNestedOneWithoutWorkLogsInput
@@ -39457,6 +39450,8 @@ export namespace Prisma {
     date: Date | string
     contractorId: string
     sqFt: Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: Decimal | DecimalJsLike | number | string | null
+    material?: string | null
     remarks?: string | null
     createdAt?: Date | string
   }
@@ -39875,6 +39870,8 @@ export namespace Prisma {
     projectId?: UuidFilter<"contractor_work_logs"> | string
     contractorId?: UuidFilter<"contractor_work_logs"> | string
     sqFt?: DecimalFilter<"contractor_work_logs"> | Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: DecimalNullableFilter<"contractor_work_logs"> | Decimal | DecimalJsLike | number | string | null
+    material?: StringNullableFilter<"contractor_work_logs"> | string | null
     remarks?: StringNullableFilter<"contractor_work_logs"> | string | null
     createdAt?: DateTimeFilter<"contractor_work_logs"> | Date | string
   }
@@ -41423,6 +41420,8 @@ export namespace Prisma {
     id?: string
     date: Date | string
     sqFt: Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: Decimal | DecimalJsLike | number | string | null
+    material?: string | null
     remarks?: string | null
     createdAt?: Date | string
     project: projectsCreateNestedOneWithoutContractorWorkLogsInput
@@ -41433,6 +41432,8 @@ export namespace Prisma {
     date: Date | string
     projectId: string
     sqFt: Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: Decimal | DecimalJsLike | number | string | null
+    material?: string | null
     remarks?: string | null
     createdAt?: Date | string
   }
@@ -41486,7 +41487,6 @@ export namespace Prisma {
     email?: string | null
     address?: string | null
     type?: string
-    pricePerSqFt?: Decimal | DecimalJsLike | number | string | null
     createdAt?: Date | string
     workLogs?: contractor_work_logsCreateNestedManyWithoutContractorInput
   }
@@ -41498,7 +41498,6 @@ export namespace Prisma {
     email?: string | null
     address?: string | null
     type?: string
-    pricePerSqFt?: Decimal | DecimalJsLike | number | string | null
     createdAt?: Date | string
     workLogs?: contractor_work_logsUncheckedCreateNestedManyWithoutContractorInput
   }
@@ -41585,7 +41584,6 @@ export namespace Prisma {
     email?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
     type?: StringFieldUpdateOperationsInput | string
-    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     workLogs?: contractor_work_logsUpdateManyWithoutContractorNestedInput
   }
@@ -41597,7 +41595,6 @@ export namespace Prisma {
     email?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
     type?: StringFieldUpdateOperationsInput | string
-    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     workLogs?: contractor_work_logsUncheckedUpdateManyWithoutContractorNestedInput
   }
@@ -41674,7 +41671,6 @@ export namespace Prisma {
     email?: string | null
     address?: string | null
     type?: string
-    pricePerSqFt?: Decimal | DecimalJsLike | number | string | null
     createdAt?: Date | string
     payments?: contractor_paymentsCreateNestedManyWithoutContractorInput
   }
@@ -41686,7 +41682,6 @@ export namespace Prisma {
     email?: string | null
     address?: string | null
     type?: string
-    pricePerSqFt?: Decimal | DecimalJsLike | number | string | null
     createdAt?: Date | string
     payments?: contractor_paymentsUncheckedCreateNestedManyWithoutContractorInput
   }
@@ -41773,7 +41768,6 @@ export namespace Prisma {
     email?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
     type?: StringFieldUpdateOperationsInput | string
-    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     payments?: contractor_paymentsUpdateManyWithoutContractorNestedInput
   }
@@ -41785,7 +41779,6 @@ export namespace Prisma {
     email?: NullableStringFieldUpdateOperationsInput | string | null
     address?: NullableStringFieldUpdateOperationsInput | string | null
     type?: StringFieldUpdateOperationsInput | string
-    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     payments?: contractor_paymentsUncheckedUpdateManyWithoutContractorNestedInput
   }
@@ -42631,6 +42624,8 @@ export namespace Prisma {
     date: Date | string
     contractorId: string
     sqFt: Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: Decimal | DecimalJsLike | number | string | null
+    material?: string | null
     remarks?: string | null
     createdAt?: Date | string
   }
@@ -42886,6 +42881,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     sqFt?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
     remarks?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     contractor?: contractorsUpdateOneRequiredWithoutWorkLogsNestedInput
@@ -42896,6 +42893,8 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     contractorId?: StringFieldUpdateOperationsInput | string
     sqFt?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
     remarks?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -42905,6 +42904,8 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     contractorId?: StringFieldUpdateOperationsInput | string
     sqFt?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
     remarks?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -43111,6 +43112,8 @@ export namespace Prisma {
     date: Date | string
     projectId: string
     sqFt: Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: Decimal | DecimalJsLike | number | string | null
+    material?: string | null
     remarks?: string | null
     createdAt?: Date | string
   }
@@ -43152,6 +43155,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     sqFt?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
     remarks?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: projectsUpdateOneRequiredWithoutContractorWorkLogsNestedInput
@@ -43162,6 +43167,8 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     projectId?: StringFieldUpdateOperationsInput | string
     sqFt?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
     remarks?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -43171,6 +43178,8 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     projectId?: StringFieldUpdateOperationsInput | string
     sqFt?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    pricePerSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
+    material?: NullableStringFieldUpdateOperationsInput | string | null
     remarks?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
