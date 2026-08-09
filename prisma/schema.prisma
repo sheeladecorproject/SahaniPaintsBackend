@@ -117,7 +117,6 @@ model projects {
   tax                Decimal?          @map("tax")
   agreedPrice        Decimal?          @map("agreed_price")
   projectDate        DateTime?         @map("project_date") @db.Timestamptz(6)
-  stage              String            @default("Putty")
   createdAt          DateTime          @default(now()) @map("created_at") @db.Timestamptz(6)
   creator            users             @relation("ProjectCreator", fields: [creatorId], references: [id])
   customer           customers?        @relation(fields: [customerId], references: [id])
@@ -164,6 +163,7 @@ model project_area_colors {
   areaId      String   @map("area_id") @db.Uuid
   colorId     String   @map("color_id") @db.Uuid
   description String?
+  stage       String   @default("Putty")
   createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
 
   project   projects @relation(fields: [projectId], references: [id], onDelete: Cascade)

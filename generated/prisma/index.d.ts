@@ -11409,7 +11409,6 @@ export namespace Prisma {
     tax: Decimal | null
     agreedPrice: Decimal | null
     projectDate: Date | null
-    stage: string | null
     createdAt: Date | null
     supervisorId: string | null
   }
@@ -11428,7 +11427,6 @@ export namespace Prisma {
     tax: Decimal | null
     agreedPrice: Decimal | null
     projectDate: Date | null
-    stage: string | null
     createdAt: Date | null
     supervisorId: string | null
   }
@@ -11447,7 +11445,6 @@ export namespace Prisma {
     tax: number
     agreedPrice: number
     projectDate: number
-    stage: number
     createdAt: number
     supervisorId: number
     _all: number
@@ -11484,7 +11481,6 @@ export namespace Prisma {
     tax?: true
     agreedPrice?: true
     projectDate?: true
-    stage?: true
     createdAt?: true
     supervisorId?: true
   }
@@ -11503,7 +11499,6 @@ export namespace Prisma {
     tax?: true
     agreedPrice?: true
     projectDate?: true
-    stage?: true
     createdAt?: true
     supervisorId?: true
   }
@@ -11522,7 +11517,6 @@ export namespace Prisma {
     tax?: true
     agreedPrice?: true
     projectDate?: true
-    stage?: true
     createdAt?: true
     supervisorId?: true
     _all?: true
@@ -11628,7 +11622,6 @@ export namespace Prisma {
     tax: Decimal | null
     agreedPrice: Decimal | null
     projectDate: Date | null
-    stage: string
     createdAt: Date
     supervisorId: string | null
     _count: ProjectsCountAggregateOutputType | null
@@ -11666,7 +11659,6 @@ export namespace Prisma {
     tax?: boolean
     agreedPrice?: boolean
     projectDate?: boolean
-    stage?: boolean
     createdAt?: boolean
     supervisorId?: boolean
     creator?: boolean | usersDefaultArgs<ExtArgs>
@@ -11700,7 +11692,6 @@ export namespace Prisma {
     tax?: boolean
     agreedPrice?: boolean
     projectDate?: boolean
-    stage?: boolean
     createdAt?: boolean
     supervisorId?: boolean
     creator?: boolean | usersDefaultArgs<ExtArgs>
@@ -11723,7 +11714,6 @@ export namespace Prisma {
     tax?: boolean
     agreedPrice?: boolean
     projectDate?: boolean
-    stage?: boolean
     createdAt?: boolean
     supervisorId?: boolean
     creator?: boolean | usersDefaultArgs<ExtArgs>
@@ -11746,12 +11736,11 @@ export namespace Prisma {
     tax?: boolean
     agreedPrice?: boolean
     projectDate?: boolean
-    stage?: boolean
     createdAt?: boolean
     supervisorId?: boolean
   }
 
-  export type projectsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "customerId" | "creatorId" | "interiorId" | "status" | "totalAmount" | "paid" | "discount" | "discountType" | "tax" | "agreedPrice" | "projectDate" | "stage" | "createdAt" | "supervisorId", ExtArgs["result"]["projects"]>
+  export type projectsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "customerId" | "creatorId" | "interiorId" | "status" | "totalAmount" | "paid" | "discount" | "discountType" | "tax" | "agreedPrice" | "projectDate" | "createdAt" | "supervisorId", ExtArgs["result"]["projects"]>
   export type projectsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     creator?: boolean | usersDefaultArgs<ExtArgs>
     customer?: boolean | projects$customerArgs<ExtArgs>
@@ -11814,7 +11803,6 @@ export namespace Prisma {
       tax: Prisma.Decimal | null
       agreedPrice: Prisma.Decimal | null
       projectDate: Date | null
-      stage: string
       createdAt: Date
       supervisorId: string | null
     }, ExtArgs["result"]["projects"]>
@@ -12267,7 +12255,6 @@ export namespace Prisma {
     readonly tax: FieldRef<"projects", 'Decimal'>
     readonly agreedPrice: FieldRef<"projects", 'Decimal'>
     readonly projectDate: FieldRef<"projects", 'DateTime'>
-    readonly stage: FieldRef<"projects", 'String'>
     readonly createdAt: FieldRef<"projects", 'DateTime'>
     readonly supervisorId: FieldRef<"projects", 'String'>
   }
@@ -15113,6 +15100,7 @@ export namespace Prisma {
     areaId: string | null
     colorId: string | null
     description: string | null
+    stage: string | null
     createdAt: Date | null
   }
 
@@ -15122,6 +15110,7 @@ export namespace Prisma {
     areaId: string | null
     colorId: string | null
     description: string | null
+    stage: string | null
     createdAt: Date | null
   }
 
@@ -15131,6 +15120,7 @@ export namespace Prisma {
     areaId: number
     colorId: number
     description: number
+    stage: number
     createdAt: number
     _all: number
   }
@@ -15142,6 +15132,7 @@ export namespace Prisma {
     areaId?: true
     colorId?: true
     description?: true
+    stage?: true
     createdAt?: true
   }
 
@@ -15151,6 +15142,7 @@ export namespace Prisma {
     areaId?: true
     colorId?: true
     description?: true
+    stage?: true
     createdAt?: true
   }
 
@@ -15160,6 +15152,7 @@ export namespace Prisma {
     areaId?: true
     colorId?: true
     description?: true
+    stage?: true
     createdAt?: true
     _all?: true
   }
@@ -15242,6 +15235,7 @@ export namespace Prisma {
     areaId: string
     colorId: string
     description: string | null
+    stage: string
     createdAt: Date
     _count: Project_area_colorsCountAggregateOutputType | null
     _min: Project_area_colorsMinAggregateOutputType | null
@@ -15268,6 +15262,7 @@ export namespace Prisma {
     areaId?: boolean
     colorId?: boolean
     description?: boolean
+    stage?: boolean
     createdAt?: boolean
     project?: boolean | projectsDefaultArgs<ExtArgs>
     area?: boolean | areasDefaultArgs<ExtArgs>
@@ -15280,6 +15275,7 @@ export namespace Prisma {
     areaId?: boolean
     colorId?: boolean
     description?: boolean
+    stage?: boolean
     createdAt?: boolean
     project?: boolean | projectsDefaultArgs<ExtArgs>
     area?: boolean | areasDefaultArgs<ExtArgs>
@@ -15292,6 +15288,7 @@ export namespace Prisma {
     areaId?: boolean
     colorId?: boolean
     description?: boolean
+    stage?: boolean
     createdAt?: boolean
     project?: boolean | projectsDefaultArgs<ExtArgs>
     area?: boolean | areasDefaultArgs<ExtArgs>
@@ -15304,10 +15301,11 @@ export namespace Prisma {
     areaId?: boolean
     colorId?: boolean
     description?: boolean
+    stage?: boolean
     createdAt?: boolean
   }
 
-  export type project_area_colorsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "projectId" | "areaId" | "colorId" | "description" | "createdAt", ExtArgs["result"]["project_area_colors"]>
+  export type project_area_colorsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "projectId" | "areaId" | "colorId" | "description" | "stage" | "createdAt", ExtArgs["result"]["project_area_colors"]>
   export type project_area_colorsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | projectsDefaultArgs<ExtArgs>
     area?: boolean | areasDefaultArgs<ExtArgs>
@@ -15337,6 +15335,7 @@ export namespace Prisma {
       areaId: string
       colorId: string
       description: string | null
+      stage: string
       createdAt: Date
     }, ExtArgs["result"]["project_area_colors"]>
     composites: {}
@@ -15769,6 +15768,7 @@ export namespace Prisma {
     readonly areaId: FieldRef<"project_area_colors", 'String'>
     readonly colorId: FieldRef<"project_area_colors", 'String'>
     readonly description: FieldRef<"project_area_colors", 'String'>
+    readonly stage: FieldRef<"project_area_colors", 'String'>
     readonly createdAt: FieldRef<"project_area_colors", 'DateTime'>
   }
     
@@ -30986,7 +30986,6 @@ export namespace Prisma {
     tax: 'tax',
     agreedPrice: 'agreedPrice',
     projectDate: 'projectDate',
-    stage: 'stage',
     createdAt: 'createdAt',
     supervisorId: 'supervisorId'
   };
@@ -31019,6 +31018,7 @@ export namespace Prisma {
     areaId: 'areaId',
     colorId: 'colorId',
     description: 'description',
+    stage: 'stage',
     createdAt: 'createdAt'
   };
 
@@ -31852,7 +31852,6 @@ export namespace Prisma {
     tax?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     projectDate?: DateTimeNullableFilter<"projects"> | Date | string | null
-    stage?: StringFilter<"projects"> | string
     createdAt?: DateTimeFilter<"projects"> | Date | string
     supervisorId?: UuidNullableFilter<"projects"> | string | null
     creator?: XOR<UsersScalarRelationFilter, usersWhereInput>
@@ -31885,7 +31884,6 @@ export namespace Prisma {
     tax?: SortOrderInput | SortOrder
     agreedPrice?: SortOrderInput | SortOrder
     projectDate?: SortOrderInput | SortOrder
-    stage?: SortOrder
     createdAt?: SortOrder
     supervisorId?: SortOrderInput | SortOrder
     creator?: usersOrderByWithRelationInput
@@ -31921,7 +31919,6 @@ export namespace Prisma {
     tax?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     projectDate?: DateTimeNullableFilter<"projects"> | Date | string | null
-    stage?: StringFilter<"projects"> | string
     createdAt?: DateTimeFilter<"projects"> | Date | string
     supervisorId?: UuidNullableFilter<"projects"> | string | null
     creator?: XOR<UsersScalarRelationFilter, usersWhereInput>
@@ -31954,7 +31951,6 @@ export namespace Prisma {
     tax?: SortOrderInput | SortOrder
     agreedPrice?: SortOrderInput | SortOrder
     projectDate?: SortOrderInput | SortOrder
-    stage?: SortOrder
     createdAt?: SortOrder
     supervisorId?: SortOrderInput | SortOrder
     _count?: projectsCountOrderByAggregateInput
@@ -31981,7 +31977,6 @@ export namespace Prisma {
     tax?: DecimalNullableWithAggregatesFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: DecimalNullableWithAggregatesFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     projectDate?: DateTimeNullableWithAggregatesFilter<"projects"> | Date | string | null
-    stage?: StringWithAggregatesFilter<"projects"> | string
     createdAt?: DateTimeWithAggregatesFilter<"projects"> | Date | string
     supervisorId?: UuidNullableWithAggregatesFilter<"projects"> | string | null
   }
@@ -32091,6 +32086,7 @@ export namespace Prisma {
     areaId?: UuidFilter<"project_area_colors"> | string
     colorId?: UuidFilter<"project_area_colors"> | string
     description?: StringNullableFilter<"project_area_colors"> | string | null
+    stage?: StringFilter<"project_area_colors"> | string
     createdAt?: DateTimeFilter<"project_area_colors"> | Date | string
     project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
     area?: XOR<AreasScalarRelationFilter, areasWhereInput>
@@ -32103,6 +32099,7 @@ export namespace Prisma {
     areaId?: SortOrder
     colorId?: SortOrder
     description?: SortOrderInput | SortOrder
+    stage?: SortOrder
     createdAt?: SortOrder
     project?: projectsOrderByWithRelationInput
     area?: areasOrderByWithRelationInput
@@ -32119,6 +32116,7 @@ export namespace Prisma {
     areaId?: UuidFilter<"project_area_colors"> | string
     colorId?: UuidFilter<"project_area_colors"> | string
     description?: StringNullableFilter<"project_area_colors"> | string | null
+    stage?: StringFilter<"project_area_colors"> | string
     createdAt?: DateTimeFilter<"project_area_colors"> | Date | string
     project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
     area?: XOR<AreasScalarRelationFilter, areasWhereInput>
@@ -32131,6 +32129,7 @@ export namespace Prisma {
     areaId?: SortOrder
     colorId?: SortOrder
     description?: SortOrderInput | SortOrder
+    stage?: SortOrder
     createdAt?: SortOrder
     _count?: project_area_colorsCountOrderByAggregateInput
     _max?: project_area_colorsMaxOrderByAggregateInput
@@ -32146,6 +32145,7 @@ export namespace Prisma {
     areaId?: UuidWithAggregatesFilter<"project_area_colors"> | string
     colorId?: UuidWithAggregatesFilter<"project_area_colors"> | string
     description?: StringNullableWithAggregatesFilter<"project_area_colors"> | string | null
+    stage?: StringWithAggregatesFilter<"project_area_colors"> | string
     createdAt?: DateTimeWithAggregatesFilter<"project_area_colors"> | Date | string
   }
 
@@ -33602,7 +33602,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
@@ -33634,7 +33633,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
@@ -33660,7 +33658,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
@@ -33692,7 +33689,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
@@ -33721,7 +33717,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
   }
@@ -33737,7 +33732,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -33755,7 +33749,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -33862,6 +33855,7 @@ export namespace Prisma {
   export type project_area_colorsCreateInput = {
     id?: string
     description?: string | null
+    stage?: string
     createdAt?: Date | string
     project: projectsCreateNestedOneWithoutProjectAreaColorsInput
     area: areasCreateNestedOneWithoutProjectAreaColorsInput
@@ -33874,12 +33868,14 @@ export namespace Prisma {
     areaId: string
     colorId: string
     description?: string | null
+    stage?: string
     createdAt?: Date | string
   }
 
   export type project_area_colorsUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: projectsUpdateOneRequiredWithoutProjectAreaColorsNestedInput
     area?: areasUpdateOneRequiredWithoutProjectAreaColorsNestedInput
@@ -33892,6 +33888,7 @@ export namespace Prisma {
     areaId?: StringFieldUpdateOperationsInput | string
     colorId?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -33901,12 +33898,14 @@ export namespace Prisma {
     areaId: string
     colorId: string
     description?: string | null
+    stage?: string
     createdAt?: Date | string
   }
 
   export type project_area_colorsUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -33916,6 +33915,7 @@ export namespace Prisma {
     areaId?: StringFieldUpdateOperationsInput | string
     colorId?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -35530,7 +35530,6 @@ export namespace Prisma {
     tax?: SortOrder
     agreedPrice?: SortOrder
     projectDate?: SortOrder
-    stage?: SortOrder
     createdAt?: SortOrder
     supervisorId?: SortOrder
   }
@@ -35557,7 +35556,6 @@ export namespace Prisma {
     tax?: SortOrder
     agreedPrice?: SortOrder
     projectDate?: SortOrder
-    stage?: SortOrder
     createdAt?: SortOrder
     supervisorId?: SortOrder
   }
@@ -35576,7 +35574,6 @@ export namespace Prisma {
     tax?: SortOrder
     agreedPrice?: SortOrder
     projectDate?: SortOrder
-    stage?: SortOrder
     createdAt?: SortOrder
     supervisorId?: SortOrder
   }
@@ -35699,6 +35696,7 @@ export namespace Prisma {
     areaId?: SortOrder
     colorId?: SortOrder
     description?: SortOrder
+    stage?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -35708,6 +35706,7 @@ export namespace Prisma {
     areaId?: SortOrder
     colorId?: SortOrder
     description?: SortOrder
+    stage?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -35717,6 +35716,7 @@ export namespace Prisma {
     areaId?: SortOrder
     colorId?: SortOrder
     description?: SortOrder
+    stage?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -38222,7 +38222,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     customer?: customersCreateNestedOneWithoutProjectsInput
     interior?: interiorsCreateNestedOneWithoutProjectsInput
@@ -38252,7 +38251,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
@@ -38288,7 +38286,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
@@ -38319,7 +38316,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
     projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
@@ -38457,7 +38453,6 @@ export namespace Prisma {
     tax?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     projectDate?: DateTimeNullableFilter<"projects"> | Date | string | null
-    stage?: StringFilter<"projects"> | string
     createdAt?: DateTimeFilter<"projects"> | Date | string
     supervisorId?: UuidNullableFilter<"projects"> | string | null
   }
@@ -38707,7 +38702,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     interior?: interiorsCreateNestedOneWithoutProjectsInput
@@ -38737,7 +38731,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
@@ -39017,7 +39010,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
@@ -39047,7 +39039,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
@@ -39247,6 +39238,7 @@ export namespace Prisma {
   export type project_area_colorsCreateWithoutProjectInput = {
     id?: string
     description?: string | null
+    stage?: string
     createdAt?: Date | string
     area: areasCreateNestedOneWithoutProjectAreaColorsInput
     color: colorsCreateNestedOneWithoutProjectAreaColorsInput
@@ -39257,6 +39249,7 @@ export namespace Prisma {
     areaId: string
     colorId: string
     description?: string | null
+    stage?: string
     createdAt?: Date | string
   }
 
@@ -39713,6 +39706,7 @@ export namespace Prisma {
     areaId?: UuidFilter<"project_area_colors"> | string
     colorId?: UuidFilter<"project_area_colors"> | string
     description?: StringNullableFilter<"project_area_colors"> | string | null
+    stage?: StringFilter<"project_area_colors"> | string
     createdAt?: DateTimeFilter<"project_area_colors"> | Date | string
   }
 
@@ -39918,6 +39912,7 @@ export namespace Prisma {
   export type project_area_colorsCreateWithoutColorInput = {
     id?: string
     description?: string | null
+    stage?: string
     createdAt?: Date | string
     project: projectsCreateNestedOneWithoutProjectAreaColorsInput
     area: areasCreateNestedOneWithoutProjectAreaColorsInput
@@ -39928,6 +39923,7 @@ export namespace Prisma {
     projectId: string
     areaId: string
     description?: string | null
+    stage?: string
     createdAt?: Date | string
   }
 
@@ -39960,6 +39956,7 @@ export namespace Prisma {
   export type project_area_colorsCreateWithoutAreaInput = {
     id?: string
     description?: string | null
+    stage?: string
     createdAt?: Date | string
     project: projectsCreateNestedOneWithoutProjectAreaColorsInput
     color: colorsCreateNestedOneWithoutProjectAreaColorsInput
@@ -39970,6 +39967,7 @@ export namespace Prisma {
     projectId: string
     colorId: string
     description?: string | null
+    stage?: string
     createdAt?: Date | string
   }
 
@@ -40010,7 +40008,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
@@ -40041,7 +40038,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
@@ -40118,7 +40114,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
@@ -40149,7 +40144,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
@@ -40222,7 +40216,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
@@ -40253,7 +40246,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
     projectAreaColors?: project_area_colorsUncheckedCreateNestedManyWithoutProjectInput
@@ -40294,7 +40286,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
@@ -40325,7 +40316,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
@@ -40444,7 +40434,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
@@ -40475,7 +40464,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
@@ -40580,7 +40568,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
@@ -40611,7 +40598,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
@@ -40739,7 +40725,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
@@ -40770,7 +40755,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
@@ -40844,7 +40828,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
@@ -40875,7 +40858,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
@@ -40900,7 +40882,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
@@ -40931,7 +40912,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
@@ -41005,7 +40985,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
@@ -41036,7 +41015,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
@@ -41100,7 +41078,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
@@ -41131,7 +41108,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
@@ -41205,7 +41181,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
@@ -41236,7 +41211,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
@@ -41300,7 +41274,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
@@ -41331,7 +41304,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
@@ -41372,7 +41344,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
@@ -41403,7 +41374,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
@@ -41549,7 +41519,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
@@ -41580,7 +41549,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
@@ -41656,7 +41624,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
@@ -41687,7 +41654,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
@@ -41741,7 +41707,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
@@ -41772,7 +41737,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
@@ -41848,7 +41812,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
@@ -41879,7 +41842,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
@@ -41904,7 +41866,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     creator: usersCreateNestedOneWithoutProjectsInput
     customer?: customersCreateNestedOneWithoutProjectsInput
@@ -41935,7 +41896,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
     tasks?: tasksUncheckedCreateNestedManyWithoutProjectInput
@@ -41976,7 +41936,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
@@ -42007,7 +41966,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
@@ -42039,7 +41997,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
   }
@@ -42058,7 +42015,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
   }
 
@@ -42106,7 +42062,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     customer?: customersUpdateOneWithoutProjectsNestedInput
     interior?: interiorsUpdateOneWithoutProjectsNestedInput
@@ -42136,7 +42091,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
@@ -42164,7 +42118,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -42180,7 +42133,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
@@ -42211,7 +42163,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
     projectAreaColors?: project_area_colorsUncheckedUpdateManyWithoutProjectNestedInput
@@ -42239,7 +42190,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -42310,7 +42260,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
   }
@@ -42326,7 +42275,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     interior?: interiorsUpdateOneWithoutProjectsNestedInput
@@ -42356,7 +42304,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
@@ -42384,7 +42331,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -42526,7 +42472,6 @@ export namespace Prisma {
     tax?: Decimal | DecimalJsLike | number | string | null
     agreedPrice?: Decimal | DecimalJsLike | number | string | null
     projectDate?: Date | string | null
-    stage?: string
     createdAt?: Date | string
     supervisorId?: string | null
   }
@@ -42542,7 +42487,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     creator?: usersUpdateOneRequiredWithoutProjectsNestedInput
     customer?: customersUpdateOneWithoutProjectsNestedInput
@@ -42572,7 +42516,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
     tasks?: tasksUncheckedUpdateManyWithoutProjectNestedInput
@@ -42600,7 +42543,6 @@ export namespace Prisma {
     tax?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     agreedPrice?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     projectDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     supervisorId?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -42620,6 +42562,7 @@ export namespace Prisma {
     areaId: string
     colorId: string
     description?: string | null
+    stage?: string
     createdAt?: Date | string
   }
 
@@ -42735,6 +42678,7 @@ export namespace Prisma {
   export type project_area_colorsUpdateWithoutProjectInput = {
     id?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     area?: areasUpdateOneRequiredWithoutProjectAreaColorsNestedInput
     color?: colorsUpdateOneRequiredWithoutProjectAreaColorsNestedInput
@@ -42745,6 +42689,7 @@ export namespace Prisma {
     areaId?: StringFieldUpdateOperationsInput | string
     colorId?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -42753,6 +42698,7 @@ export namespace Prisma {
     areaId?: StringFieldUpdateOperationsInput | string
     colorId?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -42998,12 +42944,14 @@ export namespace Prisma {
     projectId: string
     areaId: string
     description?: string | null
+    stage?: string
     createdAt?: Date | string
   }
 
   export type project_area_colorsUpdateWithoutColorInput = {
     id?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: projectsUpdateOneRequiredWithoutProjectAreaColorsNestedInput
     area?: areasUpdateOneRequiredWithoutProjectAreaColorsNestedInput
@@ -43014,6 +42962,7 @@ export namespace Prisma {
     projectId?: StringFieldUpdateOperationsInput | string
     areaId?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -43022,6 +42971,7 @@ export namespace Prisma {
     projectId?: StringFieldUpdateOperationsInput | string
     areaId?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -43030,12 +42980,14 @@ export namespace Prisma {
     projectId: string
     colorId: string
     description?: string | null
+    stage?: string
     createdAt?: Date | string
   }
 
   export type project_area_colorsUpdateWithoutAreaInput = {
     id?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: projectsUpdateOneRequiredWithoutProjectAreaColorsNestedInput
     color?: colorsUpdateOneRequiredWithoutProjectAreaColorsNestedInput
@@ -43046,6 +42998,7 @@ export namespace Prisma {
     projectId?: StringFieldUpdateOperationsInput | string
     colorId?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -43054,6 +43007,7 @@ export namespace Prisma {
     projectId?: StringFieldUpdateOperationsInput | string
     colorId?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    stage?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 

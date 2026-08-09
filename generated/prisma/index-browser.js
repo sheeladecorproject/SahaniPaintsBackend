@@ -202,7 +202,6 @@ exports.Prisma.ProjectsScalarFieldEnum = {
   tax: 'tax',
   agreedPrice: 'agreedPrice',
   projectDate: 'projectDate',
-  stage: 'stage',
   createdAt: 'createdAt',
   supervisorId: 'supervisorId'
 };
@@ -226,6 +225,7 @@ exports.Prisma.Project_area_colorsScalarFieldEnum = {
   areaId: 'areaId',
   colorId: 'colorId',
   description: 'description',
+  stage: 'stage',
   createdAt: 'createdAt'
 };
 
