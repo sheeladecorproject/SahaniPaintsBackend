@@ -38,7 +38,6 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
                         agreedPrice: data.agreedPrice != null ? Number(data.agreedPrice) : null,
                         projectDate: data.projectDate ? new Date(data.projectDate) : null,
                         status: data.status || "PENDING",
-                        stage: data.stage || "Putty",
                         creatorId: data.creatorId,
                         supervisorId: data.supervisorId || null,
                     } as any,
@@ -103,7 +102,6 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
                 if (data.agreedPrice !== undefined) updatePayload.agreedPrice = data.agreedPrice != null ? Number(data.agreedPrice) : null;
                 if (data.projectDate !== undefined) updatePayload.projectDate = data.projectDate ? new Date(data.projectDate) : null;
                 if (data.status !== undefined) updatePayload.status = data.status;
-                if (data.stage !== undefined) updatePayload.stage = data.stage;
                 if (data.supervisorId !== undefined) updatePayload.supervisorId = data.supervisorId || null;
 
                 const project = await tx.projects.update({
