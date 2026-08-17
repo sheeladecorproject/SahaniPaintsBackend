@@ -43,10 +43,22 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
                     } as any,
                     select: {
                         id: true,
+                        name: true,
                         createdAt: true,
                         status: true,
                         paid: true,
-                        creator: { select: { username: true } }
+                        totalAmount: true,
+                        agreedPrice: true,
+                        discount: true,
+                        discountType: true,
+                        tax: true,
+                        projectDate: true,
+                        supervisorId: true,
+                        customerId: true,
+                        interiorId: true,
+                        creator: { select: { username: true } },
+                        supervisor: { select: { id: true, username: true, email: true, phonenumber: true } },
+                        customer: { select: { id: true, name: true, phonenumber: true, email: true, address: true } },
                     }
                 });
 

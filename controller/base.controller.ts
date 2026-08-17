@@ -112,8 +112,8 @@ abstract class BaseController <TService> {
     delete = async (req: Request, res: Response) => {
         this.logRequest(req, this.messages.DELETE.req);
         // @ts-ignore
-        const result = await this.service.delete(req.params.id?.toString());
-        return ApiResponse.success(res, this.messages.DELETE.res, result);
+        await this.service.delete(req.params.id?.toString());
+        return res.status(204).send();
     }
 }
 

@@ -11,12 +11,18 @@ class LowMaterialsRepository extends BaseRepository<LowMaterial, LowMaterialData
 
     create = async (data: LowMaterialData): Promise<LowMaterial> => {
         try {
-            return await this.model.create({
+            const record = await this.model.create({
                 data: {
                     ...data,
                     date: data.date ? new Date(data.date) : new Date(),
+                },
+                include: {
+                    project: {
+                        select: { id: true, name: true }
+                    }
                 }
             });
+            return record as LowMaterial;
         } catch (error) {
             this.handlePrismaError(error);
         }
