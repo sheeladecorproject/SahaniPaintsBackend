@@ -57,7 +57,7 @@ class AuthRepository {
                     ...(flag ? { userId: token.userId } : { familyId: token.familyId })
                 }
             });
-        });
+        }, { maxWait: 15000, timeout: 20000 });
     }
 }
 

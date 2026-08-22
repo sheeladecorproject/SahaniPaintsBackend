@@ -73,7 +73,7 @@ export abstract class BaseRepository<T, TCreateData, TUpdateData> {
                     if (record) results.push(record);
                 }
                 return results;
-            });
+            }, { maxWait: 15000, timeout: 20000 });
         } catch (error) {
             this.handlePrismaError(error);
         }

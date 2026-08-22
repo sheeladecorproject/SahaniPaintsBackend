@@ -62,6 +62,19 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
                     }
                 });
 
+                if (data.paid && Number(data.paid) > 0) {
+                    await tx.project_payments.create({
+                        data: {
+                            projectId: project.id,
+                            amount: Number(data.paid),
+                            type: "INCOMING",
+                            paymentMode: "CASH",
+                            paymentDate: data.projectDate ? new Date(data.projectDate) : new Date(),
+                            remarks: "Initial payment recorded during project creation",
+                        }
+                    });
+                }
+
                 const projectProducts = data.projectProducts ?? [];
                 const productRows = projectProducts.map((item: any) => ({
                     projectId: project.id,
@@ -79,7 +92,7 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
                 }
 
                 return project;
-            });
+            }, { maxWait: 15000, timeout: 20000 });
         } catch (error) {
             this.handlePrismaError(error);
         }
@@ -144,7 +157,7 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
                 }
 
                 return project;
-            });
+            }, { maxWait: 15000, timeout: 20000 });
         } catch (error) {
             this.handlePrismaError(error);
         }
@@ -217,6 +230,7 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
                 },
                 projectPayments: true,
                 contractorPayments: true,
+                lowMaterials: true,
                 contractorWorkLogs: {
                     include: {
                         contractor: true

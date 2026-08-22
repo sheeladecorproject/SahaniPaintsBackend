@@ -84,6 +84,36 @@ class LabourAttendanceRepository extends BaseRepository<LabourAttendance, Labour
         }
     };
 
+    fetch = async (id: string): Promise<any> => {
+        try {
+            return await prisma.labour_attendance.findFirst({
+                where: { id },
+                include: {
+                    project: {
+                        select: {
+                            name: true
+                        }
+                    },
+                    labour: {
+                        select: {
+                            name: true,
+                            paymentPerDay: true,
+                            phonenumber: true
+                        }
+                    },
+                    markedBy: {
+                        select: {
+                            id: true,
+                            username: true
+                        }
+                    }
+                }
+            });
+        } catch (error) {
+            this.handlePrismaError(error);
+        }
+    };
+
     fetchAll = async (
         data: any,
         filters: any,

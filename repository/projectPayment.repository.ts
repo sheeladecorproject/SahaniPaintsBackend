@@ -41,13 +41,13 @@ class ProjectPaymentRepository extends BaseRepository<ProjectPayment, ProjectPay
                 });
 
                 return payment;
-            });
+            }, { maxWait: 15000, timeout: 20000 });
         } catch (error) {
             this.handlePrismaError(error);
         }
     }
 
-    delete = async (id: string): Promise<any> => {
+    hardDelete = async (id: string): Promise<any> => {
         try {
             return await prisma.$transaction(async (tx) => {
                 const payment = await tx.project_payments.findUnique({
@@ -75,7 +75,7 @@ class ProjectPaymentRepository extends BaseRepository<ProjectPayment, ProjectPay
                 });
 
                 return payment;
-            });
+            }, { maxWait: 15000, timeout: 20000 });
         } catch (error) {
             this.handlePrismaError(error);
         }

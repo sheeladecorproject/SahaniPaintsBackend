@@ -8,6 +8,36 @@ class ContractorWorkLogRepository extends BaseRepository<ContractorWorkLog, Cont
         super(prisma.contractor_work_logs, "CONTRACTOR_WORK_LOG");
     }
 
+    create = async (data: any): Promise<any> => {
+        try {
+            return await prisma.contractor_work_logs.create({
+                data: {
+                    projectId: data.projectId,
+                    contractorId: data.contractorId,
+                    sqFt: Number(data.sqFt),
+                    pricePerSqFt: data.pricePerSqFt !== undefined && data.pricePerSqFt !== null ? Number(data.pricePerSqFt) : null,
+                    material: data.material || null,
+                    date: data.date ? new Date(data.date) : new Date(),
+                    remarks: data.remarks || null,
+                },
+                include: {
+                    project: {
+                        select: {
+                            name: true
+                        }
+                    },
+                    contractor: {
+                        select: {
+                            name: true
+                        }
+                    }
+                }
+            });
+        } catch (error) {
+            this.handlePrismaError(error);
+        }
+    }
+
     fetchAll = async (
         data: any,
         filters: any,
