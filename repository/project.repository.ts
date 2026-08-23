@@ -59,6 +59,7 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
                         creator: { select: { username: true } },
                         supervisor: { select: { id: true, username: true, email: true, phonenumber: true } },
                         customer: { select: { id: true, name: true, phonenumber: true, email: true, address: true } },
+                        projectAreaColors: true,
                     }
                 });
 
@@ -290,7 +291,8 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
                         id: true,
                         username: true
                     }
-                }
+                },
+                projectAreaColors: true
             },
             orderBy: [
                 { createdAt: "desc" as const },
