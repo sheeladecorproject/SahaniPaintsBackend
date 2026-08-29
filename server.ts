@@ -31,6 +31,9 @@ import { InteriorRouter } from "./router/interior.router.js";
 import { AuthorizationRouter } from "./router/authorization.router.js";
 import { authenticate, authorizePage, authenticateAdmin } from "./middleware/authenticate.middleware.js";
 
+import { ActivityLogRouter } from "./router/activityLog.router.js";
+import { activityLogger } from "./middleware/activityLogger.middleware.js";
+
 dotenv.config();
 
 const app = express();
@@ -63,7 +66,9 @@ app.use("/v1/users", UserRouter);
 app.use("/v1/auth", AuthRouter);
 
 app.use(authenticate);
+app.use(activityLogger);
 
+app.use("/v1/activity-logs", ActivityLogRouter);
 app.use("/v1/brands", authorizePage("brands"), BrandRouter);
 app.use("/v1/products", authorizePage("products"), ProductRouter);
 app.use("/v1/tasks", authorizePage("tasks"), TaskRouter);

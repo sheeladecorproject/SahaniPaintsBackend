@@ -368,6 +368,18 @@ exports.Prisma.Low_materialsScalarFieldEnum = {
   createdAt: 'createdAt'
 };
 
+exports.Prisma.Activity_logsScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  userName: 'userName',
+  userRole: 'userRole',
+  action: 'action',
+  entity: 'entity',
+  details: 'details',
+  ipAddress: 'ipAddress',
+  createdAt: 'createdAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -437,7 +449,8 @@ exports.Prisma.ModelName = {
   contractors: 'contractors',
   contractor_payments: 'contractor_payments',
   contractor_work_logs: 'contractor_work_logs',
-  low_materials: 'low_materials'
+  low_materials: 'low_materials',
+  activity_logs: 'activity_logs'
 };
 
 /**

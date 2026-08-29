@@ -22,6 +22,7 @@ model users {
   supervisedProjects   projects[]       @relation("ProjectSupervisor")
   refreshTokens        refreshTokens[]
   markedAttendances    labour_attendance[]
+  activityLogs         activity_logs[]
 
   @@index([id, createdAt])
 }
@@ -406,4 +407,22 @@ model low_materials {
 
   @@index([id, createdAt])
   @@map("low_materials")
+}
+
+model activity_logs {
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String?  @map("user_id") @db.Uuid
+  user      users?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+  userName  String?  @map("user_name")
+  userRole  String?  @map("user_role")
+  action    String
+  entity    String
+  details   String
+  ipAddress String?  @map("ip_address")
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@index([createdAt])
+  @@index([userId])
+  @@index([entity])
+  @@map("activity_logs")
 }
