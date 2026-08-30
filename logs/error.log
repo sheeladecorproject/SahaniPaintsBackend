@@ -364,3 +364,7 @@
 {"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-08-29 19:53:09"}
 {"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-08-29 20:05:47"}
 {"ip":"127.0.0.1","level":"error","message":"\nInvalid `prisma.projects.findFirst()` invocation in\nC:\\Users\\kanaka\\Documents\\InteriorProject\\Paints\\backend\\repository\\project.repository.ts:168:47\n\n  165 };\n  166 \n  167 fetch = async (id: string, userId?: string): Promise<any> => {\n→ 168     const project = await prisma.projects.findFirst(\nServer has closed the connection.","timestamp":"2026-08-29 20:29:20"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-08-30 13:07:30"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-08-30 13:11:26"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-08-30 13:14:19"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-08-30 13:16:38"}
