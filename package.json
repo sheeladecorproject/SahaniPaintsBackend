@@ -5,11 +5,14 @@
   "main": "server.ts",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --exec tsx server.ts",
+    "dev": "wrangler dev --port 3001",
     "build": "npx prisma generate && tsc",
+    "generate": "prisma generate",
     "seed": "npx tsx prisma/seed.ts"
   },
   "dependencies": {
+    "@cloudflare/workers-types": "^5.20260920.1",
+    "@prisma/adapter-d1": "^7.10.0",
     "@prisma/adapter-pg": "^7.6.0",
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
@@ -22,6 +25,7 @@
     "pg": "^8.20.0",
     "tsx": "^4.21.0",
     "winston": "^3.19.0",
+    "wrangler": "^4.135.0",
     "zod": "^4.3.6"
   },
   "devDependencies": {

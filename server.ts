@@ -93,6 +93,12 @@ app.use("/v1/low-materials", authorizePage("dashboard"), LowMaterialsRouter);
 
 app.use(globalErrorHandler.handleError);
 
-app.listen(config.port, "0.0.0.0", () => {
-    console.log(`Sahani Paints backend listening on port : ${config.port}`);
+import { httpServerHandler } from "cloudflare:node";
+
+const port = Number(config.port || 3001);
+
+app.listen(port, "0.0.0.0", () => {
+    console.log(`Sahani Paints backend listening on port : ${port}`);
 });
+
+export default httpServerHandler({ port });

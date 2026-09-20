@@ -24,7 +24,7 @@ class AuthorizationRepository extends BaseRepository<any, any, any> {
 
         if (!records.length) return [];
 
-        return await prisma.authorizations.createMany({
+        return await (prisma.authorizations as any).createMany({
             data: records,
             skipDuplicates: true,
         });
@@ -56,7 +56,7 @@ class AuthorizationRepository extends BaseRepository<any, any, any> {
 
             if (!records.length) return [];
 
-            return await prisma.authorizations.createMany({
+            return await (prisma.authorizations as any).createMany({
                 data: records,
                 skipDuplicates: true,
             });
