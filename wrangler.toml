@@ -1,0 +1,19 @@
+name = "sahani-paints"
+main = "server.ts"
+compatibility_date = "2025-09-01"
+compatibility_flags = [ "nodejs_compat", "enable_nodejs_http_server_modules" ]
+
+[build]
+command = "npm run generate"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sahani-paints"
+database_id = "4de15c22-2810-4e49-b5b2-12c3b6f7f55b"
+
+[vars]
+PORT = "4000"
+CRON_KEY = "cronjobvalue"
+NODE_ENV = "production"
+JWT_SECRET = "sheeladecor"
+APP_PASSWORD = "sqpr rhwo dsrr diqg"

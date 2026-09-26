@@ -27,7 +27,7 @@ class UserService extends BaseService<User, UserData, UserRepository> {
             "brands", "interiors", "sales-associate", "tasks", "settings", "dashboard", "customers"
         ];
 
-        await prisma.authorizations.createMany({
+        await (prisma.authorizations as any).createMany({
             data: defaultAccess.map(key => ({
                 userId: user.id,
                 access: key

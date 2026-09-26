@@ -1,11 +1,7 @@
 import { PrismaClient } from '../generated/prisma/client.js';
-import { PrismaPg } from '@prisma/adapter-pg';
-import pkg from 'pg';
-const { Pool } = pkg;
-import { config } from '../config/index.js';
+import { PrismaD1 } from '@prisma/adapter-d1';
+import { env } from 'cloudflare:workers';
 
-// Setup connection pooling with postgres adapter as used in the root project
-const pool = new Pool({ connectionString: config.databaseUrl });
-const adapter = new PrismaPg(pool);
-
+// Initialize Prisma Client using the Cloudflare D1 database adapter
+const adapter = new PrismaD1((env as any).DB as any);
 export const prisma = new PrismaClient({ adapter });
