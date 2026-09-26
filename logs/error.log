@@ -368,3 +368,18 @@
 {"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-08-30 13:11:26"}
 {"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-08-30 13:14:19"}
 {"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-08-30 13:16:38"}
+{"ip":"127.0.0.1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-09-26 18:24:51"}
+{"ip":"127.0.0.1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-09-26 18:24:51"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-09-26 18:25:46"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-09-26 18:26:42"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-09-26 18:27:00"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-09-26 18:27:00"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-09-26 18:27:03"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-09-26 18:27:28"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-09-26 21:34:11"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-09-26 21:41:48"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-09-26 21:42:53"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-09-26 21:45:39"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-09-26 22:04:29"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-09-26 22:04:29"}
+{"ip":"127.0.0.1","level":"error","message":"Resource not found!","status":404,"timestamp":"2026-09-26 22:04:31"}

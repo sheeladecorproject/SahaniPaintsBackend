@@ -22,14 +22,14 @@ class ReportRepository {
 
         const dateRange = { gte: start, lte: end };
 
-        const [payments, revenue, projects] = await Promise.all([
+        const [payments, projectsForRevenue, projects] = await Promise.all([
             prisma.project_payments.aggregate({
                 _sum: { amount: true },
                 where: { createdAt: dateRange }
             }),
-            prisma.projects.aggregate({
-                _sum: { totalAmount: true },
-                where: { createdAt: dateRange }
+            prisma.projects.findMany({
+                where: { createdAt: dateRange },
+                select: { totalAmount: true, agreedPrice: true }
             }),
             prisma.projects.count({
                 where: {
@@ -39,10 +39,15 @@ class ReportRepository {
             })
         ]);
 
+        const totalRevenue = projectsForRevenue.reduce((sum, p) => {
+            const val = p.agreedPrice != null ? Number(p.agreedPrice) : Number(p.totalAmount ?? 0);
+            return sum + val;
+        }, 0);
+
         return [
             {
                 totalPayments: Number(payments._sum.amount ?? 0),
-                totalRevenue: Number(revenue._sum.totalAmount ?? 0),
+                totalRevenue,
                 totalProjects: projects
             }
         ];
