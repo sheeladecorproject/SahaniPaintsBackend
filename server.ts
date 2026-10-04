@@ -26,6 +26,7 @@ import { ContractorPaymentRouter } from "./router/contractorPayment.router.js";
 import { ContractorWorkLogRouter } from "./router/contractorWorkLog.router.js";
 import { ReportRouter } from "./router/report.router.js";
 import { LowMaterialsRouter } from "./router/lowMaterials.router.js";
+import { WastageMaterialsRouter } from "./router/wastageMaterials.router.js";
 import cors from "cors";
 import { InteriorRouter } from "./router/interior.router.js";
 import { AuthorizationRouter } from "./router/authorization.router.js";
@@ -77,7 +78,7 @@ app.use("/v1/customers", authorizePage("customers"), CustomerRouter);
 app.use("/v1/interiors", authorizePage("interiors"), InteriorRouter);
 app.use("/v1/inquiries", authorizePage("dashboard"), InquiryRouter);
 app.use("/v1/authorizations", authorizePage("settings"), AuthorizationRouter);
-app.use("/v1/colors", authorizePage("colors"), ColorRouter);
+app.use("/v1/colors", authorizePage("site-colors"), ColorRouter);
 app.use("/v1/areas", authorizePage("site-colors"), AreaRouter);
 app.use("/v1/project-area-colors", authorizePage("site-colors"), ProjectAreaColorsRouter);
 app.use("/v1/labours", authorizePage("labours"), LabourRouter);
@@ -90,6 +91,7 @@ app.use("/v1/contractor-payments", authenticateAdmin, ContractorPaymentRouter);
 app.use("/v1/contractor-work-logs", authorizePage("labours"), ContractorWorkLogRouter);
 app.use("/v1/reports", authorizePage("dashboard"), ReportRouter);
 app.use("/v1/low-materials", authorizePage("dashboard"), LowMaterialsRouter);
+app.use("/v1/wastage-materials", authorizePage("dashboard"), WastageMaterialsRouter);
 
 app.use(globalErrorHandler.handleError);
 
