@@ -4522,6 +4522,7 @@ export namespace Prisma {
      * The data used to create many users.
      */
     data: usersCreateManyInput | usersCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -4540,6 +4541,7 @@ export namespace Prisma {
      * The data used to create many users.
      */
     data: usersCreateManyInput | usersCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -5732,6 +5734,7 @@ export namespace Prisma {
      * The data used to create many refreshTokens.
      */
     data: refreshTokensCreateManyInput | refreshTokensCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -5750,6 +5753,7 @@ export namespace Prisma {
      * The data used to create many refreshTokens.
      */
     data: refreshTokensCreateManyInput | refreshTokensCreateManyInput[]
+    skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
@@ -6767,6 +6771,7 @@ export namespace Prisma {
      * The data used to create many authorizations.
      */
     data: authorizationsCreateManyInput | authorizationsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -6785,6 +6790,7 @@ export namespace Prisma {
      * The data used to create many authorizations.
      */
     data: authorizationsCreateManyInput | authorizationsCreateManyInput[]
+    skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
@@ -7850,6 +7856,7 @@ export namespace Prisma {
      * The data used to create many customers.
      */
     data: customersCreateManyInput | customersCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -7868,6 +7875,7 @@ export namespace Prisma {
      * The data used to create many customers.
      */
     data: customersCreateManyInput | customersCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -8910,6 +8918,7 @@ export namespace Prisma {
      * The data used to create many brands.
      */
     data: brandsCreateManyInput | brandsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -8928,6 +8937,7 @@ export namespace Prisma {
      * The data used to create many brands.
      */
     data: brandsCreateManyInput | brandsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -10104,6 +10114,7 @@ export namespace Prisma {
      * The data used to create many products.
      */
     data: productsCreateManyInput | productsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -10122,6 +10133,7 @@ export namespace Prisma {
      * The data used to create many products.
      */
     data: productsCreateManyInput | productsCreateManyInput[]
+    skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
@@ -11282,6 +11294,7 @@ export namespace Prisma {
      * The data used to create many interiors.
      */
     data: interiorsCreateManyInput | interiorsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -11300,6 +11313,7 @@ export namespace Prisma {
      * The data used to create many interiors.
      */
     data: interiorsCreateManyInput | interiorsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -12605,6 +12619,7 @@ export namespace Prisma {
      * The data used to create many projects.
      */
     data: projectsCreateManyInput | projectsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -12623,6 +12638,7 @@ export namespace Prisma {
      * The data used to create many projects.
      */
     data: projectsCreateManyInput | projectsCreateManyInput[]
+    skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
@@ -13946,6 +13962,7 @@ export namespace Prisma {
      * The data used to create many colors.
      */
     data: colorsCreateManyInput | colorsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -13964,6 +13981,7 @@ export namespace Prisma {
      * The data used to create many colors.
      */
     data: colorsCreateManyInput | colorsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -14993,6 +15011,7 @@ export namespace Prisma {
      * The data used to create many areas.
      */
     data: areasCreateManyInput | areasCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -15011,6 +15030,7 @@ export namespace Prisma {
      * The data used to create many areas.
      */
     data: areasCreateManyInput | areasCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -16112,6 +16132,7 @@ export namespace Prisma {
      * The data used to create many project_area_colors.
      */
     data: project_area_colorsCreateManyInput | project_area_colorsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -16130,6 +16151,7 @@ export namespace Prisma {
      * The data used to create many project_area_colors.
      */
     data: project_area_colorsCreateManyInput | project_area_colorsCreateManyInput[]
+    skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
@@ -17212,6 +17234,7 @@ export namespace Prisma {
      * The data used to create many tasks.
      */
     data: tasksCreateManyInput | tasksCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -17230,6 +17253,7 @@ export namespace Prisma {
      * The data used to create many tasks.
      */
     data: tasksCreateManyInput | tasksCreateManyInput[]
+    skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
@@ -18260,6 +18284,7 @@ export namespace Prisma {
      * The data used to create many inquiries.
      */
     data: inquiriesCreateManyInput | inquiriesCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -18278,6 +18303,7 @@ export namespace Prisma {
      * The data used to create many inquiries.
      */
     data: inquiriesCreateManyInput | inquiriesCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -19305,6 +19331,7 @@ export namespace Prisma {
      * The data used to create many stores.
      */
     data: storesCreateManyInput | storesCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -19323,6 +19350,7 @@ export namespace Prisma {
      * The data used to create many stores.
      */
     data: storesCreateManyInput | storesCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -20406,6 +20434,7 @@ export namespace Prisma {
      * The data used to create many labours.
      */
     data: laboursCreateManyInput | laboursCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -20424,6 +20453,7 @@ export namespace Prisma {
      * The data used to create many labours.
      */
     data: laboursCreateManyInput | laboursCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -21596,6 +21626,7 @@ export namespace Prisma {
      * The data used to create many labour_attendances.
      */
     data: labour_attendanceCreateManyInput | labour_attendanceCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -21614,6 +21645,7 @@ export namespace Prisma {
      * The data used to create many labour_attendances.
      */
     data: labour_attendanceCreateManyInput | labour_attendanceCreateManyInput[]
+    skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
@@ -22770,6 +22802,7 @@ export namespace Prisma {
      * The data used to create many labour_payments.
      */
     data: labour_paymentsCreateManyInput | labour_paymentsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -22788,6 +22821,7 @@ export namespace Prisma {
      * The data used to create many labour_payments.
      */
     data: labour_paymentsCreateManyInput | labour_paymentsCreateManyInput[]
+    skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
@@ -23939,6 +23973,7 @@ export namespace Prisma {
      * The data used to create many project_products.
      */
     data: project_productsCreateManyInput | project_productsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -23957,6 +23992,7 @@ export namespace Prisma {
      * The data used to create many project_products.
      */
     data: project_productsCreateManyInput | project_productsCreateManyInput[]
+    skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
@@ -25055,6 +25091,7 @@ export namespace Prisma {
      * The data used to create many project_material_logs.
      */
     data: project_material_logsCreateManyInput | project_material_logsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -25073,6 +25110,7 @@ export namespace Prisma {
      * The data used to create many project_material_logs.
      */
     data: project_material_logsCreateManyInput | project_material_logsCreateManyInput[]
+    skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
@@ -26189,6 +26227,7 @@ export namespace Prisma {
      * The data used to create many project_payments.
      */
     data: project_paymentsCreateManyInput | project_paymentsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -26207,6 +26246,7 @@ export namespace Prisma {
      * The data used to create many project_payments.
      */
     data: project_paymentsCreateManyInput | project_paymentsCreateManyInput[]
+    skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
@@ -27276,6 +27316,7 @@ export namespace Prisma {
      * The data used to create many contractors.
      */
     data: contractorsCreateManyInput | contractorsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -27294,6 +27335,7 @@ export namespace Prisma {
      * The data used to create many contractors.
      */
     data: contractorsCreateManyInput | contractorsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -28471,6 +28513,7 @@ export namespace Prisma {
      * The data used to create many contractor_payments.
      */
     data: contractor_paymentsCreateManyInput | contractor_paymentsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -28489,6 +28532,7 @@ export namespace Prisma {
      * The data used to create many contractor_payments.
      */
     data: contractor_paymentsCreateManyInput | contractor_paymentsCreateManyInput[]
+    skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
@@ -29649,6 +29693,7 @@ export namespace Prisma {
      * The data used to create many contractor_work_logs.
      */
     data: contractor_work_logsCreateManyInput | contractor_work_logsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -29667,6 +29712,7 @@ export namespace Prisma {
      * The data used to create many contractor_work_logs.
      */
     data: contractor_work_logsCreateManyInput | contractor_work_logsCreateManyInput[]
+    skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
@@ -30749,6 +30795,7 @@ export namespace Prisma {
      * The data used to create many low_materials.
      */
     data: low_materialsCreateManyInput | low_materialsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -30767,6 +30814,7 @@ export namespace Prisma {
      * The data used to create many low_materials.
      */
     data: low_materialsCreateManyInput | low_materialsCreateManyInput[]
+    skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
@@ -31862,6 +31910,7 @@ export namespace Prisma {
      * The data used to create many activity_logs.
      */
     data: activity_logsCreateManyInput | activity_logsCreateManyInput[]
+    skipDuplicates?: boolean
   }
 
   /**
@@ -31880,6 +31929,7 @@ export namespace Prisma {
      * The data used to create many activity_logs.
      */
     data: activity_logsCreateManyInput | activity_logsCreateManyInput[]
+    skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
@@ -32069,6 +32119,9 @@ export namespace Prisma {
    */
 
   export const TransactionIsolationLevel: {
+    ReadUncommitted: 'ReadUncommitted',
+    ReadCommitted: 'ReadCommitted',
+    RepeatableRead: 'RepeatableRead',
     Serializable: 'Serializable'
   };
 
@@ -32418,6 +32471,14 @@ export namespace Prisma {
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
+  export const QueryMode: {
+    default: 'default',
+    insensitive: 'insensitive'
+  };
+
+  export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
   export const NullsOrder: {
     first: 'first',
     last: 'last'
@@ -32439,6 +32500,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'String[]'
+   */
+  export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Role'
    */
   export type EnumRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Role'>
@@ -32446,9 +32514,23 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Role[]'
+   */
+  export type ListEnumRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Role[]'>
+    
+
+
+  /**
    * Reference to a field of type 'DateTime'
    */
   export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+  /**
+   * Reference to a field of type 'DateTime[]'
+   */
+  export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
     
 
 
@@ -32467,9 +32549,23 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Decimal[]'
+   */
+  export type ListDecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal[]'>
+    
+
+
+  /**
    * Reference to a field of type 'ProjectStatus'
    */
   export type EnumProjectStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProjectStatus'>
+    
+
+
+  /**
+   * Reference to a field of type 'ProjectStatus[]'
+   */
+  export type ListEnumProjectStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProjectStatus[]'>
     
 
 
@@ -32481,9 +32577,23 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Priority[]'
+   */
+  export type ListEnumPriorityFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Priority[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Status'
    */
   export type EnumStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Status'>
+    
+
+
+  /**
+   * Reference to a field of type 'Status[]'
+   */
+  export type ListEnumStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Status[]'>
     
 
 
@@ -32495,9 +32605,23 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Int[]'
+   */
+  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+    
+
+
+  /**
+   * Reference to a field of type 'Float[]'
+   */
+  export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
     
   /**
    * Deep Input Types
@@ -32508,7 +32632,7 @@ export namespace Prisma {
     AND?: usersWhereInput | usersWhereInput[]
     OR?: usersWhereInput[]
     NOT?: usersWhereInput | usersWhereInput[]
-    id?: StringFilter<"users"> | string
+    id?: UuidFilter<"users"> | string
     username?: StringFilter<"users"> | string
     email?: StringFilter<"users"> | string
     password?: StringFilter<"users"> | string
@@ -32583,7 +32707,7 @@ export namespace Prisma {
     AND?: usersScalarWhereWithAggregatesInput | usersScalarWhereWithAggregatesInput[]
     OR?: usersScalarWhereWithAggregatesInput[]
     NOT?: usersScalarWhereWithAggregatesInput | usersScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"users"> | string
+    id?: UuidWithAggregatesFilter<"users"> | string
     username?: StringWithAggregatesFilter<"users"> | string
     email?: StringWithAggregatesFilter<"users"> | string
     password?: StringWithAggregatesFilter<"users"> | string
@@ -32598,9 +32722,9 @@ export namespace Prisma {
     AND?: refreshTokensWhereInput | refreshTokensWhereInput[]
     OR?: refreshTokensWhereInput[]
     NOT?: refreshTokensWhereInput | refreshTokensWhereInput[]
-    id?: StringFilter<"refreshTokens"> | string
-    familyId?: StringFilter<"refreshTokens"> | string
-    userId?: StringFilter<"refreshTokens"> | string
+    id?: UuidFilter<"refreshTokens"> | string
+    familyId?: UuidFilter<"refreshTokens"> | string
+    userId?: UuidFilter<"refreshTokens"> | string
     role?: EnumRoleFilter<"refreshTokens"> | $Enums.Role
     isUsed?: BoolFilter<"refreshTokens"> | boolean
     createdAt?: DateTimeFilter<"refreshTokens"> | Date | string
@@ -32622,8 +32746,8 @@ export namespace Prisma {
     AND?: refreshTokensWhereInput | refreshTokensWhereInput[]
     OR?: refreshTokensWhereInput[]
     NOT?: refreshTokensWhereInput | refreshTokensWhereInput[]
-    familyId?: StringFilter<"refreshTokens"> | string
-    userId?: StringFilter<"refreshTokens"> | string
+    familyId?: UuidFilter<"refreshTokens"> | string
+    userId?: UuidFilter<"refreshTokens"> | string
     role?: EnumRoleFilter<"refreshTokens"> | $Enums.Role
     isUsed?: BoolFilter<"refreshTokens"> | boolean
     createdAt?: DateTimeFilter<"refreshTokens"> | Date | string
@@ -32646,9 +32770,9 @@ export namespace Prisma {
     AND?: refreshTokensScalarWhereWithAggregatesInput | refreshTokensScalarWhereWithAggregatesInput[]
     OR?: refreshTokensScalarWhereWithAggregatesInput[]
     NOT?: refreshTokensScalarWhereWithAggregatesInput | refreshTokensScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"refreshTokens"> | string
-    familyId?: StringWithAggregatesFilter<"refreshTokens"> | string
-    userId?: StringWithAggregatesFilter<"refreshTokens"> | string
+    id?: UuidWithAggregatesFilter<"refreshTokens"> | string
+    familyId?: UuidWithAggregatesFilter<"refreshTokens"> | string
+    userId?: UuidWithAggregatesFilter<"refreshTokens"> | string
     role?: EnumRoleWithAggregatesFilter<"refreshTokens"> | $Enums.Role
     isUsed?: BoolWithAggregatesFilter<"refreshTokens"> | boolean
     createdAt?: DateTimeWithAggregatesFilter<"refreshTokens"> | Date | string
@@ -32658,8 +32782,8 @@ export namespace Prisma {
     AND?: authorizationsWhereInput | authorizationsWhereInput[]
     OR?: authorizationsWhereInput[]
     NOT?: authorizationsWhereInput | authorizationsWhereInput[]
-    id?: StringFilter<"authorizations"> | string
-    userId?: StringFilter<"authorizations"> | string
+    id?: UuidFilter<"authorizations"> | string
+    userId?: UuidFilter<"authorizations"> | string
     access?: StringFilter<"authorizations"> | string
     user?: XOR<UsersScalarRelationFilter, usersWhereInput>
   }
@@ -32677,7 +32801,7 @@ export namespace Prisma {
     AND?: authorizationsWhereInput | authorizationsWhereInput[]
     OR?: authorizationsWhereInput[]
     NOT?: authorizationsWhereInput | authorizationsWhereInput[]
-    userId?: StringFilter<"authorizations"> | string
+    userId?: UuidFilter<"authorizations"> | string
     access?: StringFilter<"authorizations"> | string
     user?: XOR<UsersScalarRelationFilter, usersWhereInput>
   }, "id" | "userId_access">
@@ -32695,8 +32819,8 @@ export namespace Prisma {
     AND?: authorizationsScalarWhereWithAggregatesInput | authorizationsScalarWhereWithAggregatesInput[]
     OR?: authorizationsScalarWhereWithAggregatesInput[]
     NOT?: authorizationsScalarWhereWithAggregatesInput | authorizationsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"authorizations"> | string
-    userId?: StringWithAggregatesFilter<"authorizations"> | string
+    id?: UuidWithAggregatesFilter<"authorizations"> | string
+    userId?: UuidWithAggregatesFilter<"authorizations"> | string
     access?: StringWithAggregatesFilter<"authorizations"> | string
   }
 
@@ -32704,7 +32828,7 @@ export namespace Prisma {
     AND?: customersWhereInput | customersWhereInput[]
     OR?: customersWhereInput[]
     NOT?: customersWhereInput | customersWhereInput[]
-    id?: StringFilter<"customers"> | string
+    id?: UuidFilter<"customers"> | string
     name?: StringFilter<"customers"> | string
     email?: StringNullableFilter<"customers"> | string | null
     phonenumber?: StringNullableFilter<"customers"> | string | null
@@ -32756,7 +32880,7 @@ export namespace Prisma {
     AND?: customersScalarWhereWithAggregatesInput | customersScalarWhereWithAggregatesInput[]
     OR?: customersScalarWhereWithAggregatesInput[]
     NOT?: customersScalarWhereWithAggregatesInput | customersScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"customers"> | string
+    id?: UuidWithAggregatesFilter<"customers"> | string
     name?: StringWithAggregatesFilter<"customers"> | string
     email?: StringNullableWithAggregatesFilter<"customers"> | string | null
     phonenumber?: StringNullableWithAggregatesFilter<"customers"> | string | null
@@ -32769,7 +32893,7 @@ export namespace Prisma {
     AND?: brandsWhereInput | brandsWhereInput[]
     OR?: brandsWhereInput[]
     NOT?: brandsWhereInput | brandsWhereInput[]
-    id?: StringFilter<"brands"> | string
+    id?: UuidFilter<"brands"> | string
     name?: StringFilter<"brands"> | string
     description?: StringNullableFilter<"brands"> | string | null
     createdAt?: DateTimeFilter<"brands"> | Date | string
@@ -32809,7 +32933,7 @@ export namespace Prisma {
     AND?: brandsScalarWhereWithAggregatesInput | brandsScalarWhereWithAggregatesInput[]
     OR?: brandsScalarWhereWithAggregatesInput[]
     NOT?: brandsScalarWhereWithAggregatesInput | brandsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"brands"> | string
+    id?: UuidWithAggregatesFilter<"brands"> | string
     name?: StringWithAggregatesFilter<"brands"> | string
     description?: StringNullableWithAggregatesFilter<"brands"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"brands"> | Date | string
@@ -32819,9 +32943,9 @@ export namespace Prisma {
     AND?: productsWhereInput | productsWhereInput[]
     OR?: productsWhereInput[]
     NOT?: productsWhereInput | productsWhereInput[]
-    id?: StringFilter<"products"> | string
+    id?: UuidFilter<"products"> | string
     name?: StringFilter<"products"> | string
-    brandId?: StringFilter<"products"> | string
+    brandId?: UuidFilter<"products"> | string
     category?: StringFilter<"products"> | string
     price?: DecimalFilter<"products"> | Decimal | DecimalJsLike | number | string
     coverageSqFt?: DecimalNullableFilter<"products"> | Decimal | DecimalJsLike | number | string | null
@@ -32856,7 +32980,7 @@ export namespace Prisma {
     AND?: productsWhereInput | productsWhereInput[]
     OR?: productsWhereInput[]
     NOT?: productsWhereInput | productsWhereInput[]
-    brandId?: StringFilter<"products"> | string
+    brandId?: UuidFilter<"products"> | string
     category?: StringFilter<"products"> | string
     price?: DecimalFilter<"products"> | Decimal | DecimalJsLike | number | string
     coverageSqFt?: DecimalNullableFilter<"products"> | Decimal | DecimalJsLike | number | string | null
@@ -32891,9 +33015,9 @@ export namespace Prisma {
     AND?: productsScalarWhereWithAggregatesInput | productsScalarWhereWithAggregatesInput[]
     OR?: productsScalarWhereWithAggregatesInput[]
     NOT?: productsScalarWhereWithAggregatesInput | productsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"products"> | string
+    id?: UuidWithAggregatesFilter<"products"> | string
     name?: StringWithAggregatesFilter<"products"> | string
-    brandId?: StringWithAggregatesFilter<"products"> | string
+    brandId?: UuidWithAggregatesFilter<"products"> | string
     category?: StringWithAggregatesFilter<"products"> | string
     price?: DecimalWithAggregatesFilter<"products"> | Decimal | DecimalJsLike | number | string
     coverageSqFt?: DecimalNullableWithAggregatesFilter<"products"> | Decimal | DecimalJsLike | number | string | null
@@ -32907,7 +33031,7 @@ export namespace Prisma {
     AND?: interiorsWhereInput | interiorsWhereInput[]
     OR?: interiorsWhereInput[]
     NOT?: interiorsWhereInput | interiorsWhereInput[]
-    id?: StringFilter<"interiors"> | string
+    id?: UuidFilter<"interiors"> | string
     name?: StringFilter<"interiors"> | string
     email?: StringNullableFilter<"interiors"> | string | null
     phonenumber?: StringNullableFilter<"interiors"> | string | null
@@ -32965,7 +33089,7 @@ export namespace Prisma {
     AND?: interiorsScalarWhereWithAggregatesInput | interiorsScalarWhereWithAggregatesInput[]
     OR?: interiorsScalarWhereWithAggregatesInput[]
     NOT?: interiorsScalarWhereWithAggregatesInput | interiorsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"interiors"> | string
+    id?: UuidWithAggregatesFilter<"interiors"> | string
     name?: StringWithAggregatesFilter<"interiors"> | string
     email?: StringNullableWithAggregatesFilter<"interiors"> | string | null
     phonenumber?: StringNullableWithAggregatesFilter<"interiors"> | string | null
@@ -32979,11 +33103,11 @@ export namespace Prisma {
     AND?: projectsWhereInput | projectsWhereInput[]
     OR?: projectsWhereInput[]
     NOT?: projectsWhereInput | projectsWhereInput[]
-    id?: StringFilter<"projects"> | string
+    id?: UuidFilter<"projects"> | string
     name?: StringFilter<"projects"> | string
-    customerId?: StringNullableFilter<"projects"> | string | null
-    creatorId?: StringFilter<"projects"> | string
-    interiorId?: StringNullableFilter<"projects"> | string | null
+    customerId?: UuidNullableFilter<"projects"> | string | null
+    creatorId?: UuidFilter<"projects"> | string
+    interiorId?: UuidNullableFilter<"projects"> | string | null
     status?: EnumProjectStatusFilter<"projects"> | $Enums.ProjectStatus
     totalAmount?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     paid?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
@@ -32993,7 +33117,7 @@ export namespace Prisma {
     agreedPrice?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     projectDate?: DateTimeNullableFilter<"projects"> | Date | string | null
     createdAt?: DateTimeFilter<"projects"> | Date | string
-    supervisorId?: StringNullableFilter<"projects"> | string | null
+    supervisorId?: UuidNullableFilter<"projects"> | string | null
     creator?: XOR<UsersScalarRelationFilter, usersWhereInput>
     customer?: XOR<CustomersNullableScalarRelationFilter, customersWhereInput> | null
     interior?: XOR<InteriorsNullableScalarRelationFilter, interiorsWhereInput> | null
@@ -33048,9 +33172,9 @@ export namespace Prisma {
     AND?: projectsWhereInput | projectsWhereInput[]
     OR?: projectsWhereInput[]
     NOT?: projectsWhereInput | projectsWhereInput[]
-    customerId?: StringNullableFilter<"projects"> | string | null
-    creatorId?: StringFilter<"projects"> | string
-    interiorId?: StringNullableFilter<"projects"> | string | null
+    customerId?: UuidNullableFilter<"projects"> | string | null
+    creatorId?: UuidFilter<"projects"> | string
+    interiorId?: UuidNullableFilter<"projects"> | string | null
     status?: EnumProjectStatusFilter<"projects"> | $Enums.ProjectStatus
     totalAmount?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     paid?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
@@ -33060,7 +33184,7 @@ export namespace Prisma {
     agreedPrice?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     projectDate?: DateTimeNullableFilter<"projects"> | Date | string | null
     createdAt?: DateTimeFilter<"projects"> | Date | string
-    supervisorId?: StringNullableFilter<"projects"> | string | null
+    supervisorId?: UuidNullableFilter<"projects"> | string | null
     creator?: XOR<UsersScalarRelationFilter, usersWhereInput>
     customer?: XOR<CustomersNullableScalarRelationFilter, customersWhereInput> | null
     interior?: XOR<InteriorsNullableScalarRelationFilter, interiorsWhereInput> | null
@@ -33104,11 +33228,11 @@ export namespace Prisma {
     AND?: projectsScalarWhereWithAggregatesInput | projectsScalarWhereWithAggregatesInput[]
     OR?: projectsScalarWhereWithAggregatesInput[]
     NOT?: projectsScalarWhereWithAggregatesInput | projectsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"projects"> | string
+    id?: UuidWithAggregatesFilter<"projects"> | string
     name?: StringWithAggregatesFilter<"projects"> | string
-    customerId?: StringNullableWithAggregatesFilter<"projects"> | string | null
-    creatorId?: StringWithAggregatesFilter<"projects"> | string
-    interiorId?: StringNullableWithAggregatesFilter<"projects"> | string | null
+    customerId?: UuidNullableWithAggregatesFilter<"projects"> | string | null
+    creatorId?: UuidWithAggregatesFilter<"projects"> | string
+    interiorId?: UuidNullableWithAggregatesFilter<"projects"> | string | null
     status?: EnumProjectStatusWithAggregatesFilter<"projects"> | $Enums.ProjectStatus
     totalAmount?: DecimalNullableWithAggregatesFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     paid?: DecimalNullableWithAggregatesFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
@@ -33118,14 +33242,14 @@ export namespace Prisma {
     agreedPrice?: DecimalNullableWithAggregatesFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     projectDate?: DateTimeNullableWithAggregatesFilter<"projects"> | Date | string | null
     createdAt?: DateTimeWithAggregatesFilter<"projects"> | Date | string
-    supervisorId?: StringNullableWithAggregatesFilter<"projects"> | string | null
+    supervisorId?: UuidNullableWithAggregatesFilter<"projects"> | string | null
   }
 
   export type colorsWhereInput = {
     AND?: colorsWhereInput | colorsWhereInput[]
     OR?: colorsWhereInput[]
     NOT?: colorsWhereInput | colorsWhereInput[]
-    id?: StringFilter<"colors"> | string
+    id?: UuidFilter<"colors"> | string
     name?: StringFilter<"colors"> | string
     shade?: StringNullableFilter<"colors"> | string | null
     createdAt?: DateTimeFilter<"colors"> | Date | string
@@ -33166,7 +33290,7 @@ export namespace Prisma {
     AND?: colorsScalarWhereWithAggregatesInput | colorsScalarWhereWithAggregatesInput[]
     OR?: colorsScalarWhereWithAggregatesInput[]
     NOT?: colorsScalarWhereWithAggregatesInput | colorsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"colors"> | string
+    id?: UuidWithAggregatesFilter<"colors"> | string
     name?: StringWithAggregatesFilter<"colors"> | string
     shade?: StringNullableWithAggregatesFilter<"colors"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"colors"> | Date | string
@@ -33176,7 +33300,7 @@ export namespace Prisma {
     AND?: areasWhereInput | areasWhereInput[]
     OR?: areasWhereInput[]
     NOT?: areasWhereInput | areasWhereInput[]
-    id?: StringFilter<"areas"> | string
+    id?: UuidFilter<"areas"> | string
     name?: StringFilter<"areas"> | string
     createdAt?: DateTimeFilter<"areas"> | Date | string
     projectAreaColors?: Project_area_colorsListRelationFilter
@@ -33212,7 +33336,7 @@ export namespace Prisma {
     AND?: areasScalarWhereWithAggregatesInput | areasScalarWhereWithAggregatesInput[]
     OR?: areasScalarWhereWithAggregatesInput[]
     NOT?: areasScalarWhereWithAggregatesInput | areasScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"areas"> | string
+    id?: UuidWithAggregatesFilter<"areas"> | string
     name?: StringWithAggregatesFilter<"areas"> | string
     createdAt?: DateTimeWithAggregatesFilter<"areas"> | Date | string
   }
@@ -33221,10 +33345,10 @@ export namespace Prisma {
     AND?: project_area_colorsWhereInput | project_area_colorsWhereInput[]
     OR?: project_area_colorsWhereInput[]
     NOT?: project_area_colorsWhereInput | project_area_colorsWhereInput[]
-    id?: StringFilter<"project_area_colors"> | string
-    projectId?: StringFilter<"project_area_colors"> | string
-    areaId?: StringFilter<"project_area_colors"> | string
-    colorId?: StringFilter<"project_area_colors"> | string
+    id?: UuidFilter<"project_area_colors"> | string
+    projectId?: UuidFilter<"project_area_colors"> | string
+    areaId?: UuidFilter<"project_area_colors"> | string
+    colorId?: UuidFilter<"project_area_colors"> | string
     description?: StringNullableFilter<"project_area_colors"> | string | null
     stage?: StringFilter<"project_area_colors"> | string
     createdAt?: DateTimeFilter<"project_area_colors"> | Date | string
@@ -33252,9 +33376,9 @@ export namespace Prisma {
     AND?: project_area_colorsWhereInput | project_area_colorsWhereInput[]
     OR?: project_area_colorsWhereInput[]
     NOT?: project_area_colorsWhereInput | project_area_colorsWhereInput[]
-    projectId?: StringFilter<"project_area_colors"> | string
-    areaId?: StringFilter<"project_area_colors"> | string
-    colorId?: StringFilter<"project_area_colors"> | string
+    projectId?: UuidFilter<"project_area_colors"> | string
+    areaId?: UuidFilter<"project_area_colors"> | string
+    colorId?: UuidFilter<"project_area_colors"> | string
     description?: StringNullableFilter<"project_area_colors"> | string | null
     stage?: StringFilter<"project_area_colors"> | string
     createdAt?: DateTimeFilter<"project_area_colors"> | Date | string
@@ -33280,10 +33404,10 @@ export namespace Prisma {
     AND?: project_area_colorsScalarWhereWithAggregatesInput | project_area_colorsScalarWhereWithAggregatesInput[]
     OR?: project_area_colorsScalarWhereWithAggregatesInput[]
     NOT?: project_area_colorsScalarWhereWithAggregatesInput | project_area_colorsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"project_area_colors"> | string
-    projectId?: StringWithAggregatesFilter<"project_area_colors"> | string
-    areaId?: StringWithAggregatesFilter<"project_area_colors"> | string
-    colorId?: StringWithAggregatesFilter<"project_area_colors"> | string
+    id?: UuidWithAggregatesFilter<"project_area_colors"> | string
+    projectId?: UuidWithAggregatesFilter<"project_area_colors"> | string
+    areaId?: UuidWithAggregatesFilter<"project_area_colors"> | string
+    colorId?: UuidWithAggregatesFilter<"project_area_colors"> | string
     description?: StringNullableWithAggregatesFilter<"project_area_colors"> | string | null
     stage?: StringWithAggregatesFilter<"project_area_colors"> | string
     createdAt?: DateTimeWithAggregatesFilter<"project_area_colors"> | Date | string
@@ -33293,11 +33417,11 @@ export namespace Prisma {
     AND?: tasksWhereInput | tasksWhereInput[]
     OR?: tasksWhereInput[]
     NOT?: tasksWhereInput | tasksWhereInput[]
-    id?: StringFilter<"tasks"> | string
+    id?: UuidFilter<"tasks"> | string
     title?: StringFilter<"tasks"> | string
     description?: StringNullableFilter<"tasks"> | string | null
     taskDate?: DateTimeFilter<"tasks"> | Date | string
-    projectId?: StringFilter<"tasks"> | string
+    projectId?: UuidFilter<"tasks"> | string
     priority?: EnumPriorityFilter<"tasks"> | $Enums.Priority
     status?: EnumStatusFilter<"tasks"> | $Enums.Status
     createdAt?: DateTimeFilter<"tasks"> | Date | string
@@ -33325,7 +33449,7 @@ export namespace Prisma {
     title?: StringFilter<"tasks"> | string
     description?: StringNullableFilter<"tasks"> | string | null
     taskDate?: DateTimeFilter<"tasks"> | Date | string
-    projectId?: StringFilter<"tasks"> | string
+    projectId?: UuidFilter<"tasks"> | string
     priority?: EnumPriorityFilter<"tasks"> | $Enums.Priority
     status?: EnumStatusFilter<"tasks"> | $Enums.Status
     createdAt?: DateTimeFilter<"tasks"> | Date | string
@@ -33350,11 +33474,11 @@ export namespace Prisma {
     AND?: tasksScalarWhereWithAggregatesInput | tasksScalarWhereWithAggregatesInput[]
     OR?: tasksScalarWhereWithAggregatesInput[]
     NOT?: tasksScalarWhereWithAggregatesInput | tasksScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"tasks"> | string
+    id?: UuidWithAggregatesFilter<"tasks"> | string
     title?: StringWithAggregatesFilter<"tasks"> | string
     description?: StringNullableWithAggregatesFilter<"tasks"> | string | null
     taskDate?: DateTimeWithAggregatesFilter<"tasks"> | Date | string
-    projectId?: StringWithAggregatesFilter<"tasks"> | string
+    projectId?: UuidWithAggregatesFilter<"tasks"> | string
     priority?: EnumPriorityWithAggregatesFilter<"tasks"> | $Enums.Priority
     status?: EnumStatusWithAggregatesFilter<"tasks"> | $Enums.Status
     createdAt?: DateTimeWithAggregatesFilter<"tasks"> | Date | string
@@ -33364,7 +33488,7 @@ export namespace Prisma {
     AND?: inquiriesWhereInput | inquiriesWhereInput[]
     OR?: inquiriesWhereInput[]
     NOT?: inquiriesWhereInput | inquiriesWhereInput[]
-    id?: StringFilter<"inquiries"> | string
+    id?: UuidFilter<"inquiries"> | string
     projectName?: StringFilter<"inquiries"> | string
     customerName?: StringFilter<"inquiries"> | string
     phonenumber?: StringFilter<"inquiries"> | string
@@ -33414,7 +33538,7 @@ export namespace Prisma {
     AND?: inquiriesScalarWhereWithAggregatesInput | inquiriesScalarWhereWithAggregatesInput[]
     OR?: inquiriesScalarWhereWithAggregatesInput[]
     NOT?: inquiriesScalarWhereWithAggregatesInput | inquiriesScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"inquiries"> | string
+    id?: UuidWithAggregatesFilter<"inquiries"> | string
     projectName?: StringWithAggregatesFilter<"inquiries"> | string
     customerName?: StringWithAggregatesFilter<"inquiries"> | string
     phonenumber?: StringWithAggregatesFilter<"inquiries"> | string
@@ -33427,7 +33551,7 @@ export namespace Prisma {
     AND?: storesWhereInput | storesWhereInput[]
     OR?: storesWhereInput[]
     NOT?: storesWhereInput | storesWhereInput[]
-    id?: StringFilter<"stores"> | string
+    id?: UuidFilter<"stores"> | string
     name?: StringFilter<"stores"> | string
     address?: StringNullableFilter<"stores"> | string | null
     phonenumber?: IntFilter<"stores"> | number
@@ -33474,7 +33598,7 @@ export namespace Prisma {
     AND?: storesScalarWhereWithAggregatesInput | storesScalarWhereWithAggregatesInput[]
     OR?: storesScalarWhereWithAggregatesInput[]
     NOT?: storesScalarWhereWithAggregatesInput | storesScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"stores"> | string
+    id?: UuidWithAggregatesFilter<"stores"> | string
     name?: StringWithAggregatesFilter<"stores"> | string
     address?: StringNullableWithAggregatesFilter<"stores"> | string | null
     phonenumber?: IntWithAggregatesFilter<"stores"> | number
@@ -33486,7 +33610,7 @@ export namespace Prisma {
     AND?: laboursWhereInput | laboursWhereInput[]
     OR?: laboursWhereInput[]
     NOT?: laboursWhereInput | laboursWhereInput[]
-    id?: StringFilter<"labours"> | string
+    id?: UuidFilter<"labours"> | string
     name?: StringFilter<"labours"> | string
     paymentPerDay?: DecimalFilter<"labours"> | Decimal | DecimalJsLike | number | string
     tuesdayPaymentAmount?: DecimalNullableFilter<"labours"> | Decimal | DecimalJsLike | number | string | null
@@ -33543,7 +33667,7 @@ export namespace Prisma {
     AND?: laboursScalarWhereWithAggregatesInput | laboursScalarWhereWithAggregatesInput[]
     OR?: laboursScalarWhereWithAggregatesInput[]
     NOT?: laboursScalarWhereWithAggregatesInput | laboursScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"labours"> | string
+    id?: UuidWithAggregatesFilter<"labours"> | string
     name?: StringWithAggregatesFilter<"labours"> | string
     paymentPerDay?: DecimalWithAggregatesFilter<"labours"> | Decimal | DecimalJsLike | number | string
     tuesdayPaymentAmount?: DecimalNullableWithAggregatesFilter<"labours"> | Decimal | DecimalJsLike | number | string | null
@@ -33556,13 +33680,13 @@ export namespace Prisma {
     AND?: labour_attendanceWhereInput | labour_attendanceWhereInput[]
     OR?: labour_attendanceWhereInput[]
     NOT?: labour_attendanceWhereInput | labour_attendanceWhereInput[]
-    id?: StringFilter<"labour_attendance"> | string
+    id?: UuidFilter<"labour_attendance"> | string
     date?: DateTimeFilter<"labour_attendance"> | Date | string
-    projectId?: StringFilter<"labour_attendance"> | string
-    labourId?: StringFilter<"labour_attendance"> | string
+    projectId?: UuidFilter<"labour_attendance"> | string
+    labourId?: UuidFilter<"labour_attendance"> | string
     workDayType?: StringFilter<"labour_attendance"> | string
     workDayValue?: DecimalFilter<"labour_attendance"> | Decimal | DecimalJsLike | number | string
-    markedById?: StringNullableFilter<"labour_attendance"> | string | null
+    markedById?: UuidNullableFilter<"labour_attendance"> | string | null
     createdAt?: DateTimeFilter<"labour_attendance"> | Date | string
     project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
     labour?: XOR<LaboursScalarRelationFilter, laboursWhereInput>
@@ -33590,11 +33714,11 @@ export namespace Prisma {
     OR?: labour_attendanceWhereInput[]
     NOT?: labour_attendanceWhereInput | labour_attendanceWhereInput[]
     date?: DateTimeFilter<"labour_attendance"> | Date | string
-    projectId?: StringFilter<"labour_attendance"> | string
-    labourId?: StringFilter<"labour_attendance"> | string
+    projectId?: UuidFilter<"labour_attendance"> | string
+    labourId?: UuidFilter<"labour_attendance"> | string
     workDayType?: StringFilter<"labour_attendance"> | string
     workDayValue?: DecimalFilter<"labour_attendance"> | Decimal | DecimalJsLike | number | string
-    markedById?: StringNullableFilter<"labour_attendance"> | string | null
+    markedById?: UuidNullableFilter<"labour_attendance"> | string | null
     createdAt?: DateTimeFilter<"labour_attendance"> | Date | string
     project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
     labour?: XOR<LaboursScalarRelationFilter, laboursWhereInput>
@@ -33621,13 +33745,13 @@ export namespace Prisma {
     AND?: labour_attendanceScalarWhereWithAggregatesInput | labour_attendanceScalarWhereWithAggregatesInput[]
     OR?: labour_attendanceScalarWhereWithAggregatesInput[]
     NOT?: labour_attendanceScalarWhereWithAggregatesInput | labour_attendanceScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"labour_attendance"> | string
+    id?: UuidWithAggregatesFilter<"labour_attendance"> | string
     date?: DateTimeWithAggregatesFilter<"labour_attendance"> | Date | string
-    projectId?: StringWithAggregatesFilter<"labour_attendance"> | string
-    labourId?: StringWithAggregatesFilter<"labour_attendance"> | string
+    projectId?: UuidWithAggregatesFilter<"labour_attendance"> | string
+    labourId?: UuidWithAggregatesFilter<"labour_attendance"> | string
     workDayType?: StringWithAggregatesFilter<"labour_attendance"> | string
     workDayValue?: DecimalWithAggregatesFilter<"labour_attendance"> | Decimal | DecimalJsLike | number | string
-    markedById?: StringNullableWithAggregatesFilter<"labour_attendance"> | string | null
+    markedById?: UuidNullableWithAggregatesFilter<"labour_attendance"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"labour_attendance"> | Date | string
   }
 
@@ -33635,9 +33759,9 @@ export namespace Prisma {
     AND?: labour_paymentsWhereInput | labour_paymentsWhereInput[]
     OR?: labour_paymentsWhereInput[]
     NOT?: labour_paymentsWhereInput | labour_paymentsWhereInput[]
-    id?: StringFilter<"labour_payments"> | string
-    labourId?: StringFilter<"labour_payments"> | string
-    projectId?: StringNullableFilter<"labour_payments"> | string | null
+    id?: UuidFilter<"labour_payments"> | string
+    labourId?: UuidFilter<"labour_payments"> | string
+    projectId?: UuidNullableFilter<"labour_payments"> | string | null
     amount?: DecimalFilter<"labour_payments"> | Decimal | DecimalJsLike | number | string
     type?: StringFilter<"labour_payments"> | string
     paymentMode?: StringNullableFilter<"labour_payments"> | string | null
@@ -33667,8 +33791,8 @@ export namespace Prisma {
     AND?: labour_paymentsWhereInput | labour_paymentsWhereInput[]
     OR?: labour_paymentsWhereInput[]
     NOT?: labour_paymentsWhereInput | labour_paymentsWhereInput[]
-    labourId?: StringFilter<"labour_payments"> | string
-    projectId?: StringNullableFilter<"labour_payments"> | string | null
+    labourId?: UuidFilter<"labour_payments"> | string
+    projectId?: UuidNullableFilter<"labour_payments"> | string | null
     amount?: DecimalFilter<"labour_payments"> | Decimal | DecimalJsLike | number | string
     type?: StringFilter<"labour_payments"> | string
     paymentMode?: StringNullableFilter<"labour_payments"> | string | null
@@ -33700,9 +33824,9 @@ export namespace Prisma {
     AND?: labour_paymentsScalarWhereWithAggregatesInput | labour_paymentsScalarWhereWithAggregatesInput[]
     OR?: labour_paymentsScalarWhereWithAggregatesInput[]
     NOT?: labour_paymentsScalarWhereWithAggregatesInput | labour_paymentsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"labour_payments"> | string
-    labourId?: StringWithAggregatesFilter<"labour_payments"> | string
-    projectId?: StringNullableWithAggregatesFilter<"labour_payments"> | string | null
+    id?: UuidWithAggregatesFilter<"labour_payments"> | string
+    labourId?: UuidWithAggregatesFilter<"labour_payments"> | string
+    projectId?: UuidNullableWithAggregatesFilter<"labour_payments"> | string | null
     amount?: DecimalWithAggregatesFilter<"labour_payments"> | Decimal | DecimalJsLike | number | string
     type?: StringWithAggregatesFilter<"labour_payments"> | string
     paymentMode?: StringNullableWithAggregatesFilter<"labour_payments"> | string | null
@@ -33715,9 +33839,9 @@ export namespace Prisma {
     AND?: project_productsWhereInput | project_productsWhereInput[]
     OR?: project_productsWhereInput[]
     NOT?: project_productsWhereInput | project_productsWhereInput[]
-    id?: StringFilter<"project_products"> | string
-    projectId?: StringFilter<"project_products"> | string
-    productId?: StringFilter<"project_products"> | string
+    id?: UuidFilter<"project_products"> | string
+    projectId?: UuidFilter<"project_products"> | string
+    productId?: UuidFilter<"project_products"> | string
     area?: DecimalFilter<"project_products"> | Decimal | DecimalJsLike | number | string
     unit?: StringFilter<"project_products"> | string
     rate?: DecimalFilter<"project_products"> | Decimal | DecimalJsLike | number | string
@@ -33745,8 +33869,8 @@ export namespace Prisma {
     AND?: project_productsWhereInput | project_productsWhereInput[]
     OR?: project_productsWhereInput[]
     NOT?: project_productsWhereInput | project_productsWhereInput[]
-    projectId?: StringFilter<"project_products"> | string
-    productId?: StringFilter<"project_products"> | string
+    projectId?: UuidFilter<"project_products"> | string
+    productId?: UuidFilter<"project_products"> | string
     area?: DecimalFilter<"project_products"> | Decimal | DecimalJsLike | number | string
     unit?: StringFilter<"project_products"> | string
     rate?: DecimalFilter<"project_products"> | Decimal | DecimalJsLike | number | string
@@ -33776,9 +33900,9 @@ export namespace Prisma {
     AND?: project_productsScalarWhereWithAggregatesInput | project_productsScalarWhereWithAggregatesInput[]
     OR?: project_productsScalarWhereWithAggregatesInput[]
     NOT?: project_productsScalarWhereWithAggregatesInput | project_productsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"project_products"> | string
-    projectId?: StringWithAggregatesFilter<"project_products"> | string
-    productId?: StringWithAggregatesFilter<"project_products"> | string
+    id?: UuidWithAggregatesFilter<"project_products"> | string
+    projectId?: UuidWithAggregatesFilter<"project_products"> | string
+    productId?: UuidWithAggregatesFilter<"project_products"> | string
     area?: DecimalWithAggregatesFilter<"project_products"> | Decimal | DecimalJsLike | number | string
     unit?: StringWithAggregatesFilter<"project_products"> | string
     rate?: DecimalWithAggregatesFilter<"project_products"> | Decimal | DecimalJsLike | number | string
@@ -33790,10 +33914,10 @@ export namespace Prisma {
     AND?: project_material_logsWhereInput | project_material_logsWhereInput[]
     OR?: project_material_logsWhereInput[]
     NOT?: project_material_logsWhereInput | project_material_logsWhereInput[]
-    id?: StringFilter<"project_material_logs"> | string
+    id?: UuidFilter<"project_material_logs"> | string
     date?: DateTimeFilter<"project_material_logs"> | Date | string
-    projectId?: StringFilter<"project_material_logs"> | string
-    productId?: StringFilter<"project_material_logs"> | string
+    projectId?: UuidFilter<"project_material_logs"> | string
+    productId?: UuidFilter<"project_material_logs"> | string
     quantity?: DecimalFilter<"project_material_logs"> | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFilter<"project_material_logs"> | Date | string
     project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
@@ -33817,8 +33941,8 @@ export namespace Prisma {
     OR?: project_material_logsWhereInput[]
     NOT?: project_material_logsWhereInput | project_material_logsWhereInput[]
     date?: DateTimeFilter<"project_material_logs"> | Date | string
-    projectId?: StringFilter<"project_material_logs"> | string
-    productId?: StringFilter<"project_material_logs"> | string
+    projectId?: UuidFilter<"project_material_logs"> | string
+    productId?: UuidFilter<"project_material_logs"> | string
     quantity?: DecimalFilter<"project_material_logs"> | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFilter<"project_material_logs"> | Date | string
     project?: XOR<ProjectsScalarRelationFilter, projectsWhereInput>
@@ -33843,10 +33967,10 @@ export namespace Prisma {
     AND?: project_material_logsScalarWhereWithAggregatesInput | project_material_logsScalarWhereWithAggregatesInput[]
     OR?: project_material_logsScalarWhereWithAggregatesInput[]
     NOT?: project_material_logsScalarWhereWithAggregatesInput | project_material_logsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"project_material_logs"> | string
+    id?: UuidWithAggregatesFilter<"project_material_logs"> | string
     date?: DateTimeWithAggregatesFilter<"project_material_logs"> | Date | string
-    projectId?: StringWithAggregatesFilter<"project_material_logs"> | string
-    productId?: StringWithAggregatesFilter<"project_material_logs"> | string
+    projectId?: UuidWithAggregatesFilter<"project_material_logs"> | string
+    productId?: UuidWithAggregatesFilter<"project_material_logs"> | string
     quantity?: DecimalWithAggregatesFilter<"project_material_logs"> | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeWithAggregatesFilter<"project_material_logs"> | Date | string
   }
@@ -33855,8 +33979,8 @@ export namespace Prisma {
     AND?: project_paymentsWhereInput | project_paymentsWhereInput[]
     OR?: project_paymentsWhereInput[]
     NOT?: project_paymentsWhereInput | project_paymentsWhereInput[]
-    id?: StringFilter<"project_payments"> | string
-    projectId?: StringFilter<"project_payments"> | string
+    id?: UuidFilter<"project_payments"> | string
+    projectId?: UuidFilter<"project_payments"> | string
     amount?: DecimalFilter<"project_payments"> | Decimal | DecimalJsLike | number | string
     type?: StringFilter<"project_payments"> | string
     paymentMode?: StringNullableFilter<"project_payments"> | string | null
@@ -33883,7 +34007,7 @@ export namespace Prisma {
     AND?: project_paymentsWhereInput | project_paymentsWhereInput[]
     OR?: project_paymentsWhereInput[]
     NOT?: project_paymentsWhereInput | project_paymentsWhereInput[]
-    projectId?: StringFilter<"project_payments"> | string
+    projectId?: UuidFilter<"project_payments"> | string
     amount?: DecimalFilter<"project_payments"> | Decimal | DecimalJsLike | number | string
     type?: StringFilter<"project_payments"> | string
     paymentMode?: StringNullableFilter<"project_payments"> | string | null
@@ -33913,8 +34037,8 @@ export namespace Prisma {
     AND?: project_paymentsScalarWhereWithAggregatesInput | project_paymentsScalarWhereWithAggregatesInput[]
     OR?: project_paymentsScalarWhereWithAggregatesInput[]
     NOT?: project_paymentsScalarWhereWithAggregatesInput | project_paymentsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"project_payments"> | string
-    projectId?: StringWithAggregatesFilter<"project_payments"> | string
+    id?: UuidWithAggregatesFilter<"project_payments"> | string
+    projectId?: UuidWithAggregatesFilter<"project_payments"> | string
     amount?: DecimalWithAggregatesFilter<"project_payments"> | Decimal | DecimalJsLike | number | string
     type?: StringWithAggregatesFilter<"project_payments"> | string
     paymentMode?: StringNullableWithAggregatesFilter<"project_payments"> | string | null
@@ -33927,7 +34051,7 @@ export namespace Prisma {
     AND?: contractorsWhereInput | contractorsWhereInput[]
     OR?: contractorsWhereInput[]
     NOT?: contractorsWhereInput | contractorsWhereInput[]
-    id?: StringFilter<"contractors"> | string
+    id?: UuidFilter<"contractors"> | string
     name?: StringFilter<"contractors"> | string
     phonenumber?: StringNullableFilter<"contractors"> | string | null
     email?: StringNullableFilter<"contractors"> | string | null
@@ -33982,7 +34106,7 @@ export namespace Prisma {
     AND?: contractorsScalarWhereWithAggregatesInput | contractorsScalarWhereWithAggregatesInput[]
     OR?: contractorsScalarWhereWithAggregatesInput[]
     NOT?: contractorsScalarWhereWithAggregatesInput | contractorsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"contractors"> | string
+    id?: UuidWithAggregatesFilter<"contractors"> | string
     name?: StringWithAggregatesFilter<"contractors"> | string
     phonenumber?: StringNullableWithAggregatesFilter<"contractors"> | string | null
     email?: StringNullableWithAggregatesFilter<"contractors"> | string | null
@@ -33995,9 +34119,9 @@ export namespace Prisma {
     AND?: contractor_paymentsWhereInput | contractor_paymentsWhereInput[]
     OR?: contractor_paymentsWhereInput[]
     NOT?: contractor_paymentsWhereInput | contractor_paymentsWhereInput[]
-    id?: StringFilter<"contractor_payments"> | string
-    contractorId?: StringFilter<"contractor_payments"> | string
-    projectId?: StringNullableFilter<"contractor_payments"> | string | null
+    id?: UuidFilter<"contractor_payments"> | string
+    contractorId?: UuidFilter<"contractor_payments"> | string
+    projectId?: UuidNullableFilter<"contractor_payments"> | string | null
     amount?: DecimalFilter<"contractor_payments"> | Decimal | DecimalJsLike | number | string
     type?: StringFilter<"contractor_payments"> | string
     paymentMode?: StringNullableFilter<"contractor_payments"> | string | null
@@ -34027,8 +34151,8 @@ export namespace Prisma {
     AND?: contractor_paymentsWhereInput | contractor_paymentsWhereInput[]
     OR?: contractor_paymentsWhereInput[]
     NOT?: contractor_paymentsWhereInput | contractor_paymentsWhereInput[]
-    contractorId?: StringFilter<"contractor_payments"> | string
-    projectId?: StringNullableFilter<"contractor_payments"> | string | null
+    contractorId?: UuidFilter<"contractor_payments"> | string
+    projectId?: UuidNullableFilter<"contractor_payments"> | string | null
     amount?: DecimalFilter<"contractor_payments"> | Decimal | DecimalJsLike | number | string
     type?: StringFilter<"contractor_payments"> | string
     paymentMode?: StringNullableFilter<"contractor_payments"> | string | null
@@ -34060,9 +34184,9 @@ export namespace Prisma {
     AND?: contractor_paymentsScalarWhereWithAggregatesInput | contractor_paymentsScalarWhereWithAggregatesInput[]
     OR?: contractor_paymentsScalarWhereWithAggregatesInput[]
     NOT?: contractor_paymentsScalarWhereWithAggregatesInput | contractor_paymentsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"contractor_payments"> | string
-    contractorId?: StringWithAggregatesFilter<"contractor_payments"> | string
-    projectId?: StringNullableWithAggregatesFilter<"contractor_payments"> | string | null
+    id?: UuidWithAggregatesFilter<"contractor_payments"> | string
+    contractorId?: UuidWithAggregatesFilter<"contractor_payments"> | string
+    projectId?: UuidNullableWithAggregatesFilter<"contractor_payments"> | string | null
     amount?: DecimalWithAggregatesFilter<"contractor_payments"> | Decimal | DecimalJsLike | number | string
     type?: StringWithAggregatesFilter<"contractor_payments"> | string
     paymentMode?: StringNullableWithAggregatesFilter<"contractor_payments"> | string | null
@@ -34075,10 +34199,10 @@ export namespace Prisma {
     AND?: contractor_work_logsWhereInput | contractor_work_logsWhereInput[]
     OR?: contractor_work_logsWhereInput[]
     NOT?: contractor_work_logsWhereInput | contractor_work_logsWhereInput[]
-    id?: StringFilter<"contractor_work_logs"> | string
+    id?: UuidFilter<"contractor_work_logs"> | string
     date?: DateTimeFilter<"contractor_work_logs"> | Date | string
-    projectId?: StringFilter<"contractor_work_logs"> | string
-    contractorId?: StringFilter<"contractor_work_logs"> | string
+    projectId?: UuidFilter<"contractor_work_logs"> | string
+    contractorId?: UuidFilter<"contractor_work_logs"> | string
     sqFt?: DecimalFilter<"contractor_work_logs"> | Decimal | DecimalJsLike | number | string
     pricePerSqFt?: DecimalNullableFilter<"contractor_work_logs"> | Decimal | DecimalJsLike | number | string | null
     material?: StringNullableFilter<"contractor_work_logs"> | string | null
@@ -34108,8 +34232,8 @@ export namespace Prisma {
     OR?: contractor_work_logsWhereInput[]
     NOT?: contractor_work_logsWhereInput | contractor_work_logsWhereInput[]
     date?: DateTimeFilter<"contractor_work_logs"> | Date | string
-    projectId?: StringFilter<"contractor_work_logs"> | string
-    contractorId?: StringFilter<"contractor_work_logs"> | string
+    projectId?: UuidFilter<"contractor_work_logs"> | string
+    contractorId?: UuidFilter<"contractor_work_logs"> | string
     sqFt?: DecimalFilter<"contractor_work_logs"> | Decimal | DecimalJsLike | number | string
     pricePerSqFt?: DecimalNullableFilter<"contractor_work_logs"> | Decimal | DecimalJsLike | number | string | null
     material?: StringNullableFilter<"contractor_work_logs"> | string | null
@@ -34140,10 +34264,10 @@ export namespace Prisma {
     AND?: contractor_work_logsScalarWhereWithAggregatesInput | contractor_work_logsScalarWhereWithAggregatesInput[]
     OR?: contractor_work_logsScalarWhereWithAggregatesInput[]
     NOT?: contractor_work_logsScalarWhereWithAggregatesInput | contractor_work_logsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"contractor_work_logs"> | string
+    id?: UuidWithAggregatesFilter<"contractor_work_logs"> | string
     date?: DateTimeWithAggregatesFilter<"contractor_work_logs"> | Date | string
-    projectId?: StringWithAggregatesFilter<"contractor_work_logs"> | string
-    contractorId?: StringWithAggregatesFilter<"contractor_work_logs"> | string
+    projectId?: UuidWithAggregatesFilter<"contractor_work_logs"> | string
+    contractorId?: UuidWithAggregatesFilter<"contractor_work_logs"> | string
     sqFt?: DecimalWithAggregatesFilter<"contractor_work_logs"> | Decimal | DecimalJsLike | number | string
     pricePerSqFt?: DecimalNullableWithAggregatesFilter<"contractor_work_logs"> | Decimal | DecimalJsLike | number | string | null
     material?: StringNullableWithAggregatesFilter<"contractor_work_logs"> | string | null
@@ -34155,8 +34279,8 @@ export namespace Prisma {
     AND?: low_materialsWhereInput | low_materialsWhereInput[]
     OR?: low_materialsWhereInput[]
     NOT?: low_materialsWhereInput | low_materialsWhereInput[]
-    id?: StringFilter<"low_materials"> | string
-    projectId?: StringFilter<"low_materials"> | string
+    id?: UuidFilter<"low_materials"> | string
+    projectId?: UuidFilter<"low_materials"> | string
     material?: StringFilter<"low_materials"> | string
     quantity?: StringFilter<"low_materials"> | string
     approved?: BoolFilter<"low_materials"> | boolean
@@ -34183,7 +34307,7 @@ export namespace Prisma {
     AND?: low_materialsWhereInput | low_materialsWhereInput[]
     OR?: low_materialsWhereInput[]
     NOT?: low_materialsWhereInput | low_materialsWhereInput[]
-    projectId?: StringFilter<"low_materials"> | string
+    projectId?: UuidFilter<"low_materials"> | string
     material?: StringFilter<"low_materials"> | string
     quantity?: StringFilter<"low_materials"> | string
     approved?: BoolFilter<"low_materials"> | boolean
@@ -34211,8 +34335,8 @@ export namespace Prisma {
     AND?: low_materialsScalarWhereWithAggregatesInput | low_materialsScalarWhereWithAggregatesInput[]
     OR?: low_materialsScalarWhereWithAggregatesInput[]
     NOT?: low_materialsScalarWhereWithAggregatesInput | low_materialsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"low_materials"> | string
-    projectId?: StringWithAggregatesFilter<"low_materials"> | string
+    id?: UuidWithAggregatesFilter<"low_materials"> | string
+    projectId?: UuidWithAggregatesFilter<"low_materials"> | string
     material?: StringWithAggregatesFilter<"low_materials"> | string
     quantity?: StringWithAggregatesFilter<"low_materials"> | string
     approved?: BoolWithAggregatesFilter<"low_materials"> | boolean
@@ -34225,8 +34349,8 @@ export namespace Prisma {
     AND?: activity_logsWhereInput | activity_logsWhereInput[]
     OR?: activity_logsWhereInput[]
     NOT?: activity_logsWhereInput | activity_logsWhereInput[]
-    id?: StringFilter<"activity_logs"> | string
-    userId?: StringNullableFilter<"activity_logs"> | string | null
+    id?: UuidFilter<"activity_logs"> | string
+    userId?: UuidNullableFilter<"activity_logs"> | string | null
     userName?: StringNullableFilter<"activity_logs"> | string | null
     userRole?: StringNullableFilter<"activity_logs"> | string | null
     action?: StringFilter<"activity_logs"> | string
@@ -34255,7 +34379,7 @@ export namespace Prisma {
     AND?: activity_logsWhereInput | activity_logsWhereInput[]
     OR?: activity_logsWhereInput[]
     NOT?: activity_logsWhereInput | activity_logsWhereInput[]
-    userId?: StringNullableFilter<"activity_logs"> | string | null
+    userId?: UuidNullableFilter<"activity_logs"> | string | null
     userName?: StringNullableFilter<"activity_logs"> | string | null
     userRole?: StringNullableFilter<"activity_logs"> | string | null
     action?: StringFilter<"activity_logs"> | string
@@ -34285,8 +34409,8 @@ export namespace Prisma {
     AND?: activity_logsScalarWhereWithAggregatesInput | activity_logsScalarWhereWithAggregatesInput[]
     OR?: activity_logsScalarWhereWithAggregatesInput[]
     NOT?: activity_logsScalarWhereWithAggregatesInput | activity_logsScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"activity_logs"> | string
-    userId?: StringNullableWithAggregatesFilter<"activity_logs"> | string | null
+    id?: UuidWithAggregatesFilter<"activity_logs"> | string
+    userId?: UuidNullableWithAggregatesFilter<"activity_logs"> | string | null
     userName?: StringNullableWithAggregatesFilter<"activity_logs"> | string | null
     userRole?: StringNullableWithAggregatesFilter<"activity_logs"> | string | null
     action?: StringWithAggregatesFilter<"activity_logs"> | string
@@ -36197,10 +36321,22 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type UuidFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedUuidFilter<$PrismaModel> | string
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[]
-    notIn?: string[]
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -36208,20 +36344,21 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
   export type EnumRoleFilter<$PrismaModel = never> = {
     equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
-    in?: $Enums.Role[]
-    notIn?: $Enums.Role[]
+    in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
     not?: NestedEnumRoleFilter<$PrismaModel> | $Enums.Role
   }
 
   export type StringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -36229,13 +36366,14 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type DateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
@@ -36334,10 +36472,25 @@ export namespace Prisma {
     createdAt?: SortOrder
   }
 
+  export type UuidWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedUuidWithAggregatesFilter<$PrismaModel> | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedStringFilter<$PrismaModel>
+    _max?: NestedStringFilter<$PrismaModel>
+  }
+
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[]
-    notIn?: string[]
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -36345,6 +36498,7 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
     not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
@@ -36353,8 +36507,8 @@ export namespace Prisma {
 
   export type EnumRoleWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
-    in?: $Enums.Role[]
-    notIn?: $Enums.Role[]
+    in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
     not?: NestedEnumRoleWithAggregatesFilter<$PrismaModel> | $Enums.Role
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumRoleFilter<$PrismaModel>
@@ -36363,8 +36517,8 @@ export namespace Prisma {
 
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -36372,6 +36526,7 @@ export namespace Prisma {
     contains?: string | StringFieldRefInput<$PrismaModel>
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
     not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
@@ -36380,8 +36535,8 @@ export namespace Prisma {
 
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
@@ -36523,8 +36678,8 @@ export namespace Prisma {
 
   export type DecimalFilter<$PrismaModel = never> = {
     equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    in?: Decimal[] | DecimalJsLike[] | number[] | string[]
-    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[]
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
     lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
@@ -36534,8 +36689,8 @@ export namespace Prisma {
 
   export type DecimalNullableFilter<$PrismaModel = never> = {
     equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel> | null
-    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | null
-    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | null
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel> | null
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel> | null
     lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
@@ -36621,8 +36776,8 @@ export namespace Prisma {
 
   export type DecimalWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    in?: Decimal[] | DecimalJsLike[] | number[] | string[]
-    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[]
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
     lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
@@ -36637,8 +36792,8 @@ export namespace Prisma {
 
   export type DecimalNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel> | null
-    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | null
-    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | null
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel> | null
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel> | null
     lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
@@ -36692,17 +36847,29 @@ export namespace Prisma {
     commissionFeePercentage?: SortOrder
   }
 
+  export type UuidNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedUuidNullableFilter<$PrismaModel> | string | null
+  }
+
   export type EnumProjectStatusFilter<$PrismaModel = never> = {
     equals?: $Enums.ProjectStatus | EnumProjectStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.ProjectStatus[]
-    notIn?: $Enums.ProjectStatus[]
+    in?: $Enums.ProjectStatus[] | ListEnumProjectStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.ProjectStatus[] | ListEnumProjectStatusFieldRefInput<$PrismaModel>
     not?: NestedEnumProjectStatusFilter<$PrismaModel> | $Enums.ProjectStatus
   }
 
   export type DateTimeNullableFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | null
-    notIn?: Date[] | string[] | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
@@ -36865,10 +37032,25 @@ export namespace Prisma {
     agreedPrice?: SortOrder
   }
 
+  export type UuidNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedUuidNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
   export type EnumProjectStatusWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.ProjectStatus | EnumProjectStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.ProjectStatus[]
-    notIn?: $Enums.ProjectStatus[]
+    in?: $Enums.ProjectStatus[] | ListEnumProjectStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.ProjectStatus[] | ListEnumProjectStatusFieldRefInput<$PrismaModel>
     not?: NestedEnumProjectStatusWithAggregatesFilter<$PrismaModel> | $Enums.ProjectStatus
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumProjectStatusFilter<$PrismaModel>
@@ -36877,8 +37059,8 @@ export namespace Prisma {
 
   export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | null
-    notIn?: Date[] | string[] | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
@@ -36986,15 +37168,15 @@ export namespace Prisma {
 
   export type EnumPriorityFilter<$PrismaModel = never> = {
     equals?: $Enums.Priority | EnumPriorityFieldRefInput<$PrismaModel>
-    in?: $Enums.Priority[]
-    notIn?: $Enums.Priority[]
+    in?: $Enums.Priority[] | ListEnumPriorityFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Priority[] | ListEnumPriorityFieldRefInput<$PrismaModel>
     not?: NestedEnumPriorityFilter<$PrismaModel> | $Enums.Priority
   }
 
   export type EnumStatusFilter<$PrismaModel = never> = {
     equals?: $Enums.Status | EnumStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.Status[]
-    notIn?: $Enums.Status[]
+    in?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
     not?: NestedEnumStatusFilter<$PrismaModel> | $Enums.Status
   }
 
@@ -37038,8 +37220,8 @@ export namespace Prisma {
 
   export type EnumPriorityWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.Priority | EnumPriorityFieldRefInput<$PrismaModel>
-    in?: $Enums.Priority[]
-    notIn?: $Enums.Priority[]
+    in?: $Enums.Priority[] | ListEnumPriorityFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Priority[] | ListEnumPriorityFieldRefInput<$PrismaModel>
     not?: NestedEnumPriorityWithAggregatesFilter<$PrismaModel> | $Enums.Priority
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumPriorityFilter<$PrismaModel>
@@ -37048,8 +37230,8 @@ export namespace Prisma {
 
   export type EnumStatusWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.Status | EnumStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.Status[]
-    notIn?: $Enums.Status[]
+    in?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
     not?: NestedEnumStatusWithAggregatesFilter<$PrismaModel> | $Enums.Status
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumStatusFilter<$PrismaModel>
@@ -37093,8 +37275,8 @@ export namespace Prisma {
 
   export type IntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -37139,8 +37321,8 @@ export namespace Prisma {
 
   export type IntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -39200,10 +39382,21 @@ export namespace Prisma {
     update?: XOR<XOR<usersUpdateToOneWithWhereWithoutActivityLogsInput, usersUpdateWithoutActivityLogsInput>, usersUncheckedUpdateWithoutActivityLogsInput>
   }
 
+  export type NestedUuidFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedUuidFilter<$PrismaModel> | string
+  }
+
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[]
-    notIn?: string[]
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -39216,15 +39409,15 @@ export namespace Prisma {
 
   export type NestedEnumRoleFilter<$PrismaModel = never> = {
     equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
-    in?: $Enums.Role[]
-    notIn?: $Enums.Role[]
+    in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
     not?: NestedEnumRoleFilter<$PrismaModel> | $Enums.Role
   }
 
   export type NestedStringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -39237,8 +39430,8 @@ export namespace Prisma {
 
   export type NestedDateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
@@ -39246,10 +39439,35 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
+  export type NestedUuidWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedUuidWithAggregatesFilter<$PrismaModel> | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedStringFilter<$PrismaModel>
+    _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type NestedIntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[]
-    notIn?: string[]
+    in?: string[] | ListStringFieldRefInput<$PrismaModel>
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel>
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -39263,21 +39481,10 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type NestedIntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
-  }
-
   export type NestedEnumRoleWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
-    in?: $Enums.Role[]
-    notIn?: $Enums.Role[]
+    in?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Role[] | ListEnumRoleFieldRefInput<$PrismaModel>
     not?: NestedEnumRoleWithAggregatesFilter<$PrismaModel> | $Enums.Role
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumRoleFilter<$PrismaModel>
@@ -39286,8 +39493,8 @@ export namespace Prisma {
 
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
     lt?: string | StringFieldRefInput<$PrismaModel>
     lte?: string | StringFieldRefInput<$PrismaModel>
     gt?: string | StringFieldRefInput<$PrismaModel>
@@ -39303,8 +39510,8 @@ export namespace Prisma {
 
   export type NestedIntNullableFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | null
-    notIn?: number[] | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -39314,8 +39521,8 @@ export namespace Prisma {
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
@@ -39341,8 +39548,8 @@ export namespace Prisma {
 
   export type NestedDecimalFilter<$PrismaModel = never> = {
     equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    in?: Decimal[] | DecimalJsLike[] | number[] | string[]
-    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[]
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
     lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
@@ -39352,8 +39559,8 @@ export namespace Prisma {
 
   export type NestedDecimalNullableFilter<$PrismaModel = never> = {
     equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel> | null
-    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | null
-    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | null
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel> | null
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel> | null
     lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
@@ -39363,8 +39570,8 @@ export namespace Prisma {
 
   export type NestedDecimalWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    in?: Decimal[] | DecimalJsLike[] | number[] | string[]
-    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[]
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
     lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
@@ -39379,8 +39586,8 @@ export namespace Prisma {
 
   export type NestedDecimalNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel> | null
-    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | null
-    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | null
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel> | null
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel> | null
     lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
     gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
@@ -39393,17 +39600,28 @@ export namespace Prisma {
     _max?: NestedDecimalNullableFilter<$PrismaModel>
   }
 
+  export type NestedUuidNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedUuidNullableFilter<$PrismaModel> | string | null
+  }
+
   export type NestedEnumProjectStatusFilter<$PrismaModel = never> = {
     equals?: $Enums.ProjectStatus | EnumProjectStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.ProjectStatus[]
-    notIn?: $Enums.ProjectStatus[]
+    in?: $Enums.ProjectStatus[] | ListEnumProjectStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.ProjectStatus[] | ListEnumProjectStatusFieldRefInput<$PrismaModel>
     not?: NestedEnumProjectStatusFilter<$PrismaModel> | $Enums.ProjectStatus
   }
 
   export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | null
-    notIn?: Date[] | string[] | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
@@ -39411,10 +39629,24 @@ export namespace Prisma {
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
+  export type NestedUuidNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedUuidNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
   export type NestedEnumProjectStatusWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.ProjectStatus | EnumProjectStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.ProjectStatus[]
-    notIn?: $Enums.ProjectStatus[]
+    in?: $Enums.ProjectStatus[] | ListEnumProjectStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.ProjectStatus[] | ListEnumProjectStatusFieldRefInput<$PrismaModel>
     not?: NestedEnumProjectStatusWithAggregatesFilter<$PrismaModel> | $Enums.ProjectStatus
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumProjectStatusFilter<$PrismaModel>
@@ -39423,8 +39655,8 @@ export namespace Prisma {
 
   export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | null
-    notIn?: Date[] | string[] | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
     lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
@@ -39437,22 +39669,22 @@ export namespace Prisma {
 
   export type NestedEnumPriorityFilter<$PrismaModel = never> = {
     equals?: $Enums.Priority | EnumPriorityFieldRefInput<$PrismaModel>
-    in?: $Enums.Priority[]
-    notIn?: $Enums.Priority[]
+    in?: $Enums.Priority[] | ListEnumPriorityFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Priority[] | ListEnumPriorityFieldRefInput<$PrismaModel>
     not?: NestedEnumPriorityFilter<$PrismaModel> | $Enums.Priority
   }
 
   export type NestedEnumStatusFilter<$PrismaModel = never> = {
     equals?: $Enums.Status | EnumStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.Status[]
-    notIn?: $Enums.Status[]
+    in?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
     not?: NestedEnumStatusFilter<$PrismaModel> | $Enums.Status
   }
 
   export type NestedEnumPriorityWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.Priority | EnumPriorityFieldRefInput<$PrismaModel>
-    in?: $Enums.Priority[]
-    notIn?: $Enums.Priority[]
+    in?: $Enums.Priority[] | ListEnumPriorityFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Priority[] | ListEnumPriorityFieldRefInput<$PrismaModel>
     not?: NestedEnumPriorityWithAggregatesFilter<$PrismaModel> | $Enums.Priority
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumPriorityFilter<$PrismaModel>
@@ -39461,8 +39693,8 @@ export namespace Prisma {
 
   export type NestedEnumStatusWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.Status | EnumStatusFieldRefInput<$PrismaModel>
-    in?: $Enums.Status[]
-    notIn?: $Enums.Status[]
+    in?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
+    notIn?: $Enums.Status[] | ListEnumStatusFieldRefInput<$PrismaModel>
     not?: NestedEnumStatusWithAggregatesFilter<$PrismaModel> | $Enums.Status
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumStatusFilter<$PrismaModel>
@@ -39471,8 +39703,8 @@ export namespace Prisma {
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
@@ -39487,8 +39719,8 @@ export namespace Prisma {
 
   export type NestedFloatFilter<$PrismaModel = never> = {
     equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
     lt?: number | FloatFieldRefInput<$PrismaModel>
     lte?: number | FloatFieldRefInput<$PrismaModel>
     gt?: number | FloatFieldRefInput<$PrismaModel>
@@ -39513,6 +39745,7 @@ export namespace Prisma {
 
   export type authorizationsCreateManyUserInputEnvelope = {
     data: authorizationsCreateManyUserInput | authorizationsCreateManyUserInput[]
+    skipDuplicates?: boolean
   }
 
   export type projectsCreateWithoutCreatorInput = {
@@ -39576,6 +39809,7 @@ export namespace Prisma {
 
   export type projectsCreateManyCreatorInputEnvelope = {
     data: projectsCreateManyCreatorInput | projectsCreateManyCreatorInput[]
+    skipDuplicates?: boolean
   }
 
   export type projectsCreateWithoutSupervisorInput = {
@@ -39639,6 +39873,7 @@ export namespace Prisma {
 
   export type projectsCreateManySupervisorInputEnvelope = {
     data: projectsCreateManySupervisorInput | projectsCreateManySupervisorInput[]
+    skipDuplicates?: boolean
   }
 
   export type refreshTokensCreateWithoutUserInput = {
@@ -39664,6 +39899,7 @@ export namespace Prisma {
 
   export type refreshTokensCreateManyUserInputEnvelope = {
     data: refreshTokensCreateManyUserInput | refreshTokensCreateManyUserInput[]
+    skipDuplicates?: boolean
   }
 
   export type labour_attendanceCreateWithoutMarkedByInput = {
@@ -39693,6 +39929,7 @@ export namespace Prisma {
 
   export type labour_attendanceCreateManyMarkedByInputEnvelope = {
     data: labour_attendanceCreateManyMarkedByInput | labour_attendanceCreateManyMarkedByInput[]
+    skipDuplicates?: boolean
   }
 
   export type activity_logsCreateWithoutUserInput = {
@@ -39724,6 +39961,7 @@ export namespace Prisma {
 
   export type activity_logsCreateManyUserInputEnvelope = {
     data: activity_logsCreateManyUserInput | activity_logsCreateManyUserInput[]
+    skipDuplicates?: boolean
   }
 
   export type authorizationsUpsertWithWhereUniqueWithoutUserInput = {
@@ -39746,8 +39984,8 @@ export namespace Prisma {
     AND?: authorizationsScalarWhereInput | authorizationsScalarWhereInput[]
     OR?: authorizationsScalarWhereInput[]
     NOT?: authorizationsScalarWhereInput | authorizationsScalarWhereInput[]
-    id?: StringFilter<"authorizations"> | string
-    userId?: StringFilter<"authorizations"> | string
+    id?: UuidFilter<"authorizations"> | string
+    userId?: UuidFilter<"authorizations"> | string
     access?: StringFilter<"authorizations"> | string
   }
 
@@ -39771,11 +40009,11 @@ export namespace Prisma {
     AND?: projectsScalarWhereInput | projectsScalarWhereInput[]
     OR?: projectsScalarWhereInput[]
     NOT?: projectsScalarWhereInput | projectsScalarWhereInput[]
-    id?: StringFilter<"projects"> | string
+    id?: UuidFilter<"projects"> | string
     name?: StringFilter<"projects"> | string
-    customerId?: StringNullableFilter<"projects"> | string | null
-    creatorId?: StringFilter<"projects"> | string
-    interiorId?: StringNullableFilter<"projects"> | string | null
+    customerId?: UuidNullableFilter<"projects"> | string | null
+    creatorId?: UuidFilter<"projects"> | string
+    interiorId?: UuidNullableFilter<"projects"> | string | null
     status?: EnumProjectStatusFilter<"projects"> | $Enums.ProjectStatus
     totalAmount?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     paid?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
@@ -39785,7 +40023,7 @@ export namespace Prisma {
     agreedPrice?: DecimalNullableFilter<"projects"> | Decimal | DecimalJsLike | number | string | null
     projectDate?: DateTimeNullableFilter<"projects"> | Date | string | null
     createdAt?: DateTimeFilter<"projects"> | Date | string
-    supervisorId?: StringNullableFilter<"projects"> | string | null
+    supervisorId?: UuidNullableFilter<"projects"> | string | null
   }
 
   export type projectsUpsertWithWhereUniqueWithoutSupervisorInput = {
@@ -39824,9 +40062,9 @@ export namespace Prisma {
     AND?: refreshTokensScalarWhereInput | refreshTokensScalarWhereInput[]
     OR?: refreshTokensScalarWhereInput[]
     NOT?: refreshTokensScalarWhereInput | refreshTokensScalarWhereInput[]
-    id?: StringFilter<"refreshTokens"> | string
-    familyId?: StringFilter<"refreshTokens"> | string
-    userId?: StringFilter<"refreshTokens"> | string
+    id?: UuidFilter<"refreshTokens"> | string
+    familyId?: UuidFilter<"refreshTokens"> | string
+    userId?: UuidFilter<"refreshTokens"> | string
     role?: EnumRoleFilter<"refreshTokens"> | $Enums.Role
     isUsed?: BoolFilter<"refreshTokens"> | boolean
     createdAt?: DateTimeFilter<"refreshTokens"> | Date | string
@@ -39852,13 +40090,13 @@ export namespace Prisma {
     AND?: labour_attendanceScalarWhereInput | labour_attendanceScalarWhereInput[]
     OR?: labour_attendanceScalarWhereInput[]
     NOT?: labour_attendanceScalarWhereInput | labour_attendanceScalarWhereInput[]
-    id?: StringFilter<"labour_attendance"> | string
+    id?: UuidFilter<"labour_attendance"> | string
     date?: DateTimeFilter<"labour_attendance"> | Date | string
-    projectId?: StringFilter<"labour_attendance"> | string
-    labourId?: StringFilter<"labour_attendance"> | string
+    projectId?: UuidFilter<"labour_attendance"> | string
+    labourId?: UuidFilter<"labour_attendance"> | string
     workDayType?: StringFilter<"labour_attendance"> | string
     workDayValue?: DecimalFilter<"labour_attendance"> | Decimal | DecimalJsLike | number | string
-    markedById?: StringNullableFilter<"labour_attendance"> | string | null
+    markedById?: UuidNullableFilter<"labour_attendance"> | string | null
     createdAt?: DateTimeFilter<"labour_attendance"> | Date | string
   }
 
@@ -39882,8 +40120,8 @@ export namespace Prisma {
     AND?: activity_logsScalarWhereInput | activity_logsScalarWhereInput[]
     OR?: activity_logsScalarWhereInput[]
     NOT?: activity_logsScalarWhereInput | activity_logsScalarWhereInput[]
-    id?: StringFilter<"activity_logs"> | string
-    userId?: StringNullableFilter<"activity_logs"> | string | null
+    id?: UuidFilter<"activity_logs"> | string
+    userId?: UuidNullableFilter<"activity_logs"> | string | null
     userName?: StringNullableFilter<"activity_logs"> | string | null
     userRole?: StringNullableFilter<"activity_logs"> | string | null
     action?: StringFilter<"activity_logs"> | string
@@ -40122,6 +40360,7 @@ export namespace Prisma {
 
   export type projectsCreateManyCustomerInputEnvelope = {
     data: projectsCreateManyCustomerInput | projectsCreateManyCustomerInput[]
+    skipDuplicates?: boolean
   }
 
   export type projectsUpsertWithWhereUniqueWithoutCustomerInput = {
@@ -40175,6 +40414,7 @@ export namespace Prisma {
 
   export type productsCreateManyBrandInputEnvelope = {
     data: productsCreateManyBrandInput | productsCreateManyBrandInput[]
+    skipDuplicates?: boolean
   }
 
   export type productsUpsertWithWhereUniqueWithoutBrandInput = {
@@ -40197,9 +40437,9 @@ export namespace Prisma {
     AND?: productsScalarWhereInput | productsScalarWhereInput[]
     OR?: productsScalarWhereInput[]
     NOT?: productsScalarWhereInput | productsScalarWhereInput[]
-    id?: StringFilter<"products"> | string
+    id?: UuidFilter<"products"> | string
     name?: StringFilter<"products"> | string
-    brandId?: StringFilter<"products"> | string
+    brandId?: UuidFilter<"products"> | string
     category?: StringFilter<"products"> | string
     price?: DecimalFilter<"products"> | Decimal | DecimalJsLike | number | string
     coverageSqFt?: DecimalNullableFilter<"products"> | Decimal | DecimalJsLike | number | string | null
@@ -40255,6 +40495,7 @@ export namespace Prisma {
 
   export type project_productsCreateManyProductInputEnvelope = {
     data: project_productsCreateManyProductInput | project_productsCreateManyProductInput[]
+    skipDuplicates?: boolean
   }
 
   export type project_material_logsCreateWithoutProductInput = {
@@ -40280,6 +40521,7 @@ export namespace Prisma {
 
   export type project_material_logsCreateManyProductInputEnvelope = {
     data: project_material_logsCreateManyProductInput | project_material_logsCreateManyProductInput[]
+    skipDuplicates?: boolean
   }
 
   export type brandsUpsertWithoutProductsInput = {
@@ -40327,9 +40569,9 @@ export namespace Prisma {
     AND?: project_productsScalarWhereInput | project_productsScalarWhereInput[]
     OR?: project_productsScalarWhereInput[]
     NOT?: project_productsScalarWhereInput | project_productsScalarWhereInput[]
-    id?: StringFilter<"project_products"> | string
-    projectId?: StringFilter<"project_products"> | string
-    productId?: StringFilter<"project_products"> | string
+    id?: UuidFilter<"project_products"> | string
+    projectId?: UuidFilter<"project_products"> | string
+    productId?: UuidFilter<"project_products"> | string
     area?: DecimalFilter<"project_products"> | Decimal | DecimalJsLike | number | string
     unit?: StringFilter<"project_products"> | string
     rate?: DecimalFilter<"project_products"> | Decimal | DecimalJsLike | number | string
@@ -40357,10 +40599,10 @@ export namespace Prisma {
     AND?: project_material_logsScalarWhereInput | project_material_logsScalarWhereInput[]
     OR?: project_material_logsScalarWhereInput[]
     NOT?: project_material_logsScalarWhereInput | project_material_logsScalarWhereInput[]
-    id?: StringFilter<"project_material_logs"> | string
+    id?: UuidFilter<"project_material_logs"> | string
     date?: DateTimeFilter<"project_material_logs"> | Date | string
-    projectId?: StringFilter<"project_material_logs"> | string
-    productId?: StringFilter<"project_material_logs"> | string
+    projectId?: UuidFilter<"project_material_logs"> | string
+    productId?: UuidFilter<"project_material_logs"> | string
     quantity?: DecimalFilter<"project_material_logs"> | Decimal | DecimalJsLike | number | string
     createdAt?: DateTimeFilter<"project_material_logs"> | Date | string
   }
@@ -40426,6 +40668,7 @@ export namespace Prisma {
 
   export type projectsCreateManyInteriorInputEnvelope = {
     data: projectsCreateManyInteriorInput | projectsCreateManyInteriorInput[]
+    skipDuplicates?: boolean
   }
 
   export type projectsUpsertWithWhereUniqueWithoutInteriorInput = {
@@ -40601,6 +40844,7 @@ export namespace Prisma {
 
   export type tasksCreateManyProjectInputEnvelope = {
     data: tasksCreateManyProjectInput | tasksCreateManyProjectInput[]
+    skipDuplicates?: boolean
   }
 
   export type project_area_colorsCreateWithoutProjectInput = {
@@ -40628,6 +40872,7 @@ export namespace Prisma {
 
   export type project_area_colorsCreateManyProjectInputEnvelope = {
     data: project_area_colorsCreateManyProjectInput | project_area_colorsCreateManyProjectInput[]
+    skipDuplicates?: boolean
   }
 
   export type labour_attendanceCreateWithoutProjectInput = {
@@ -40657,6 +40902,7 @@ export namespace Prisma {
 
   export type labour_attendanceCreateManyProjectInputEnvelope = {
     data: labour_attendanceCreateManyProjectInput | labour_attendanceCreateManyProjectInput[]
+    skipDuplicates?: boolean
   }
 
   export type labour_paymentsCreateWithoutProjectInput = {
@@ -40688,6 +40934,7 @@ export namespace Prisma {
 
   export type labour_paymentsCreateManyProjectInputEnvelope = {
     data: labour_paymentsCreateManyProjectInput | labour_paymentsCreateManyProjectInput[]
+    skipDuplicates?: boolean
   }
 
   export type project_productsCreateWithoutProjectInput = {
@@ -40717,6 +40964,7 @@ export namespace Prisma {
 
   export type project_productsCreateManyProjectInputEnvelope = {
     data: project_productsCreateManyProjectInput | project_productsCreateManyProjectInput[]
+    skipDuplicates?: boolean
   }
 
   export type project_material_logsCreateWithoutProjectInput = {
@@ -40742,6 +40990,7 @@ export namespace Prisma {
 
   export type project_material_logsCreateManyProjectInputEnvelope = {
     data: project_material_logsCreateManyProjectInput | project_material_logsCreateManyProjectInput[]
+    skipDuplicates?: boolean
   }
 
   export type project_paymentsCreateWithoutProjectInput = {
@@ -40771,6 +41020,7 @@ export namespace Prisma {
 
   export type project_paymentsCreateManyProjectInputEnvelope = {
     data: project_paymentsCreateManyProjectInput | project_paymentsCreateManyProjectInput[]
+    skipDuplicates?: boolean
   }
 
   export type contractor_paymentsCreateWithoutProjectInput = {
@@ -40802,6 +41052,7 @@ export namespace Prisma {
 
   export type contractor_paymentsCreateManyProjectInputEnvelope = {
     data: contractor_paymentsCreateManyProjectInput | contractor_paymentsCreateManyProjectInput[]
+    skipDuplicates?: boolean
   }
 
   export type contractor_work_logsCreateWithoutProjectInput = {
@@ -40833,6 +41084,7 @@ export namespace Prisma {
 
   export type contractor_work_logsCreateManyProjectInputEnvelope = {
     data: contractor_work_logsCreateManyProjectInput | contractor_work_logsCreateManyProjectInput[]
+    skipDuplicates?: boolean
   }
 
   export type low_materialsCreateWithoutProjectInput = {
@@ -40862,6 +41114,7 @@ export namespace Prisma {
 
   export type low_materialsCreateManyProjectInputEnvelope = {
     data: low_materialsCreateManyProjectInput | low_materialsCreateManyProjectInput[]
+    skipDuplicates?: boolean
   }
 
   export type usersUpsertWithoutProjectsInput = {
@@ -41038,11 +41291,11 @@ export namespace Prisma {
     AND?: tasksScalarWhereInput | tasksScalarWhereInput[]
     OR?: tasksScalarWhereInput[]
     NOT?: tasksScalarWhereInput | tasksScalarWhereInput[]
-    id?: StringFilter<"tasks"> | string
+    id?: UuidFilter<"tasks"> | string
     title?: StringFilter<"tasks"> | string
     description?: StringNullableFilter<"tasks"> | string | null
     taskDate?: DateTimeFilter<"tasks"> | Date | string
-    projectId?: StringFilter<"tasks"> | string
+    projectId?: UuidFilter<"tasks"> | string
     priority?: EnumPriorityFilter<"tasks"> | $Enums.Priority
     status?: EnumStatusFilter<"tasks"> | $Enums.Status
     createdAt?: DateTimeFilter<"tasks"> | Date | string
@@ -41068,10 +41321,10 @@ export namespace Prisma {
     AND?: project_area_colorsScalarWhereInput | project_area_colorsScalarWhereInput[]
     OR?: project_area_colorsScalarWhereInput[]
     NOT?: project_area_colorsScalarWhereInput | project_area_colorsScalarWhereInput[]
-    id?: StringFilter<"project_area_colors"> | string
-    projectId?: StringFilter<"project_area_colors"> | string
-    areaId?: StringFilter<"project_area_colors"> | string
-    colorId?: StringFilter<"project_area_colors"> | string
+    id?: UuidFilter<"project_area_colors"> | string
+    projectId?: UuidFilter<"project_area_colors"> | string
+    areaId?: UuidFilter<"project_area_colors"> | string
+    colorId?: UuidFilter<"project_area_colors"> | string
     description?: StringNullableFilter<"project_area_colors"> | string | null
     stage?: StringFilter<"project_area_colors"> | string
     createdAt?: DateTimeFilter<"project_area_colors"> | Date | string
@@ -41113,9 +41366,9 @@ export namespace Prisma {
     AND?: labour_paymentsScalarWhereInput | labour_paymentsScalarWhereInput[]
     OR?: labour_paymentsScalarWhereInput[]
     NOT?: labour_paymentsScalarWhereInput | labour_paymentsScalarWhereInput[]
-    id?: StringFilter<"labour_payments"> | string
-    labourId?: StringFilter<"labour_payments"> | string
-    projectId?: StringNullableFilter<"labour_payments"> | string | null
+    id?: UuidFilter<"labour_payments"> | string
+    labourId?: UuidFilter<"labour_payments"> | string
+    projectId?: UuidNullableFilter<"labour_payments"> | string | null
     amount?: DecimalFilter<"labour_payments"> | Decimal | DecimalJsLike | number | string
     type?: StringFilter<"labour_payments"> | string
     paymentMode?: StringNullableFilter<"labour_payments"> | string | null
@@ -41176,8 +41429,8 @@ export namespace Prisma {
     AND?: project_paymentsScalarWhereInput | project_paymentsScalarWhereInput[]
     OR?: project_paymentsScalarWhereInput[]
     NOT?: project_paymentsScalarWhereInput | project_paymentsScalarWhereInput[]
-    id?: StringFilter<"project_payments"> | string
-    projectId?: StringFilter<"project_payments"> | string
+    id?: UuidFilter<"project_payments"> | string
+    projectId?: UuidFilter<"project_payments"> | string
     amount?: DecimalFilter<"project_payments"> | Decimal | DecimalJsLike | number | string
     type?: StringFilter<"project_payments"> | string
     paymentMode?: StringNullableFilter<"project_payments"> | string | null
@@ -41206,9 +41459,9 @@ export namespace Prisma {
     AND?: contractor_paymentsScalarWhereInput | contractor_paymentsScalarWhereInput[]
     OR?: contractor_paymentsScalarWhereInput[]
     NOT?: contractor_paymentsScalarWhereInput | contractor_paymentsScalarWhereInput[]
-    id?: StringFilter<"contractor_payments"> | string
-    contractorId?: StringFilter<"contractor_payments"> | string
-    projectId?: StringNullableFilter<"contractor_payments"> | string | null
+    id?: UuidFilter<"contractor_payments"> | string
+    contractorId?: UuidFilter<"contractor_payments"> | string
+    projectId?: UuidNullableFilter<"contractor_payments"> | string | null
     amount?: DecimalFilter<"contractor_payments"> | Decimal | DecimalJsLike | number | string
     type?: StringFilter<"contractor_payments"> | string
     paymentMode?: StringNullableFilter<"contractor_payments"> | string | null
@@ -41237,10 +41490,10 @@ export namespace Prisma {
     AND?: contractor_work_logsScalarWhereInput | contractor_work_logsScalarWhereInput[]
     OR?: contractor_work_logsScalarWhereInput[]
     NOT?: contractor_work_logsScalarWhereInput | contractor_work_logsScalarWhereInput[]
-    id?: StringFilter<"contractor_work_logs"> | string
+    id?: UuidFilter<"contractor_work_logs"> | string
     date?: DateTimeFilter<"contractor_work_logs"> | Date | string
-    projectId?: StringFilter<"contractor_work_logs"> | string
-    contractorId?: StringFilter<"contractor_work_logs"> | string
+    projectId?: UuidFilter<"contractor_work_logs"> | string
+    contractorId?: UuidFilter<"contractor_work_logs"> | string
     sqFt?: DecimalFilter<"contractor_work_logs"> | Decimal | DecimalJsLike | number | string
     pricePerSqFt?: DecimalNullableFilter<"contractor_work_logs"> | Decimal | DecimalJsLike | number | string | null
     material?: StringNullableFilter<"contractor_work_logs"> | string | null
@@ -41268,8 +41521,8 @@ export namespace Prisma {
     AND?: low_materialsScalarWhereInput | low_materialsScalarWhereInput[]
     OR?: low_materialsScalarWhereInput[]
     NOT?: low_materialsScalarWhereInput | low_materialsScalarWhereInput[]
-    id?: StringFilter<"low_materials"> | string
-    projectId?: StringFilter<"low_materials"> | string
+    id?: UuidFilter<"low_materials"> | string
+    projectId?: UuidFilter<"low_materials"> | string
     material?: StringFilter<"low_materials"> | string
     quantity?: StringFilter<"low_materials"> | string
     approved?: BoolFilter<"low_materials"> | boolean
@@ -41303,6 +41556,7 @@ export namespace Prisma {
 
   export type project_area_colorsCreateManyColorInputEnvelope = {
     data: project_area_colorsCreateManyColorInput | project_area_colorsCreateManyColorInput[]
+    skipDuplicates?: boolean
   }
 
   export type project_area_colorsUpsertWithWhereUniqueWithoutColorInput = {
@@ -41346,6 +41600,7 @@ export namespace Prisma {
 
   export type project_area_colorsCreateManyAreaInputEnvelope = {
     data: project_area_colorsCreateManyAreaInput | project_area_colorsCreateManyAreaInput[]
+    skipDuplicates?: boolean
   }
 
   export type project_area_colorsUpsertWithWhereUniqueWithoutAreaInput = {
@@ -41723,6 +41978,7 @@ export namespace Prisma {
 
   export type labour_attendanceCreateManyLabourInputEnvelope = {
     data: labour_attendanceCreateManyLabourInput | labour_attendanceCreateManyLabourInput[]
+    skipDuplicates?: boolean
   }
 
   export type labour_paymentsCreateWithoutLabourInput = {
@@ -41754,6 +42010,7 @@ export namespace Prisma {
 
   export type labour_paymentsCreateManyLabourInputEnvelope = {
     data: labour_paymentsCreateManyLabourInput | labour_paymentsCreateManyLabourInput[]
+    skipDuplicates?: boolean
   }
 
   export type labour_attendanceUpsertWithWhereUniqueWithoutLabourInput = {
@@ -42785,6 +43042,7 @@ export namespace Prisma {
 
   export type contractor_paymentsCreateManyContractorInputEnvelope = {
     data: contractor_paymentsCreateManyContractorInput | contractor_paymentsCreateManyContractorInput[]
+    skipDuplicates?: boolean
   }
 
   export type contractor_work_logsCreateWithoutContractorInput = {
@@ -42816,6 +43074,7 @@ export namespace Prisma {
 
   export type contractor_work_logsCreateManyContractorInputEnvelope = {
     data: contractor_work_logsCreateManyContractorInput | contractor_work_logsCreateManyContractorInput[]
+    skipDuplicates?: boolean
   }
 
   export type contractor_paymentsUpsertWithWhereUniqueWithoutContractorInput = {

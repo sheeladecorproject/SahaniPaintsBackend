@@ -5,7 +5,8 @@
   "main": "server.ts",
   "type": "module",
   "scripts": {
-    "dev": "wrangler dev --port 3001",
+    "dev": "nodemon --exec tsx server.ts",
+    "start": "tsx server.ts",
     "build": "npx prisma generate && tsc",
     "generate": "prisma generate",
     "seed": "npx tsx prisma/seed.ts"

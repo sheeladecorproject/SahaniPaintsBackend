@@ -14,6 +14,8 @@ class TaskRepository extends BaseRepository<Task, TaskData, any> {
             return await this.model.create({
                 data: {
                     ...data,
+                    priority: data.priority || "MODERATE",
+                    status: data.status || "TODO",
                     taskDate: new Date(data.taskDate)
                 }
             });
