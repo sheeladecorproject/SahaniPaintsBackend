@@ -1,6 +1,7 @@
 import express, { type Request, type Response } from "express";
 import { prisma } from "../db/prisma.js";
 import { errorHandler } from "../factory/error.factory.js";
+import { ApiResponse } from "../utils/api.utils.js";
 
 const router = express.Router();
 
@@ -84,10 +85,10 @@ router.get(
           item.shade.toLowerCase().includes(q) ||
           item.remarks.toLowerCase().includes(q)
       );
-      return res.status(200).json(filtered);
+      return ApiResponse.success(res, "Wastage records fetched successfully", filtered);
     }
 
-    return res.status(200).json(parsed);
+    return ApiResponse.success(res, "Wastage records fetched successfully", parsed);
   })
 );
 
@@ -98,13 +99,13 @@ router.post(
     const { projectId, material, color, shade, quantity, date, remarks } = req.body;
 
     if (!projectId) {
-      return res.status(400).json({ message: "Site / Project is required" });
+      return ApiResponse.error(res, "Site / Project is required", 400);
     }
     if (!material || !material.trim()) {
-      return res.status(400).json({ message: "Material name is required" });
+      return ApiResponse.error(res, "Material name is required", 400);
     }
     if (!quantity || !String(quantity).trim()) {
-      return res.status(400).json({ message: "Wastage quantity is required" });
+      return ApiResponse.error(res, "Wastage quantity is required", 400);
     }
 
     const cleanMaterial = material.trim();
@@ -135,19 +136,24 @@ router.post(
       },
     });
 
-    return res.status(201).json({
-      id: record.id,
-      projectId: record.projectId,
-      projectName: record.project?.name || "—",
-      project: record.project,
-      material: cleanMaterial,
-      color: cleanColor,
-      shade: cleanShade,
-      quantity: record.quantity,
-      remarks: cleanRemarks,
-      date: record.date,
-      createdAt: record.createdAt,
-    });
+    return ApiResponse.success(
+      res,
+      "Wastage record created successfully",
+      {
+        id: record.id,
+        projectId: record.projectId,
+        projectName: record.project?.name || "—",
+        project: record.project,
+        material: cleanMaterial,
+        color: cleanColor,
+        shade: cleanShade,
+        quantity: record.quantity,
+        remarks: cleanRemarks,
+        date: record.date,
+        createdAt: record.createdAt,
+      },
+      201
+    );
   })
 );
 
@@ -159,7 +165,7 @@ router.delete(
     await prisma.low_materials.delete({
       where: { id },
     });
-    return res.status(200).json({ message: "Wastage record deleted successfully" });
+    return ApiResponse.success(res, "Wastage record deleted successfully");
   })
 );
 

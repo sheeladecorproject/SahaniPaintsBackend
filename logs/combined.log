@@ -6299,3 +6299,87 @@
 {"ip":"127.0.0.1","level":"http","message":"PROJECT fetch request received","timestamp":"2026-10-04 11:38:14","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
 {"id":"4e8b0ffc-ffa2-4876-83a2-90ea27ebcf2a","level":"info","message":"PROJECT fetched","timestamp":"2026-10-04 11:38:15"}
 {"level":"info","message":"GET /v1/projects/4e8b0ffc-ffa2-4876-83a2-90ea27ebcf2a 1544.162 ms","timestamp":"2026-10-04 11:38:15"}
+{"ip":"127.0.0.1","level":"http","message":"Login request received","timestamp":"2026-10-06 16:18:07"}
+{"level":"info","message":"POST /v1/auth/ 2511.583 ms","timestamp":"2026-10-06 16:18:10"}
+{"ip":"127.0.0.1","level":"http","message":"CUSTOMER fetch all request received","timestamp":"2026-10-06 16:18:10","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-10-06 16:18:10","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"CONTRACTOR_PAYMENT fetch all request received","timestamp":"2026-10-06 16:18:10","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR fetch all request received","timestamp":"2026-10-06 16:18:10","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"CONTRACTOR fetch all request received","timestamp":"2026-10-06 16:18:10","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"PRODUCT fetch all request received","timestamp":"2026-10-06 16:18:10","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"info","message":"CUSTOMER records fetched","timestamp":"2026-10-06 16:18:10"}
+{"level":"info","message":"GET /v1/customers 192.126 ms","timestamp":"2026-10-06 16:18:10"}
+{"level":"info","message":"CONTRACTOR records fetched","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"GET /v1/contractors 772.582 ms","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"GET /v1/payments 5.362 ms","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"LABOUR records fetched","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"GET /v1/labours 804.335 ms","timestamp":"2026-10-06 16:18:11"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR_PAYMENTS fetch all request received","timestamp":"2026-10-06 16:18:11","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"LOW_MATERIALS fetch all request received","timestamp":"2026-10-06 16:18:11","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"info","message":"GET /v1/reports?startDate=2026-04-01&endDate=2027-03-31 800.693 ms","timestamp":"2026-10-06 16:18:11"}
+{"ip":"127.0.0.1","level":"http","message":"TASK fetch all request received","timestamp":"2026-10-06 16:18:11","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"info","message":"PRODUCT records fetched","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"GET /v1/products 929.291 ms","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"CONTRACTOR_PAYMENT records fetched","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"GET /v1/contractor-payments 969.291 ms","timestamp":"2026-10-06 16:18:11"}
+{"ip":"127.0.0.1","level":"http","message":"INQUIRY fetch all request received","timestamp":"2026-10-06 16:18:11","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"info","message":"INQUIRY records fetched","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"GET /v1/inquiries 203.953 ms","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"GET /v1/reports?startDate=2026-04-01&endDate=2027-03-31 198.459 ms","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"LABOUR_PAYMENTS records fetched","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"GET /v1/labour-payments 385.958 ms","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"LOW_MATERIALS records fetched","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"GET /v1/low-materials 397.864 ms","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"TASK records fetched","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"GET /v1/tasks 319.446 ms","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"GET /v1/projects 1645.673 ms","timestamp":"2026-10-06 16:18:11"}
+{"level":"info","message":"GET /v1/wastage-materials 1255.350 ms","timestamp":"2026-10-06 16:22:25"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch request received","timestamp":"2026-10-06 16:22:29","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"id":"e3b0091f-9146-470c-baa7-6834f72735a0","level":"info","message":"PROJECT fetched","timestamp":"2026-10-06 16:22:30"}
+{"level":"info","message":"GET /v1/projects/e3b0091f-9146-470c-baa7-6834f72735a0 1940.877 ms","timestamp":"2026-10-06 16:22:30"}
+{"level":"info","message":"POST /v1/wastage-materials 2395.139 ms","timestamp":"2026-10-06 16:23:04"}
+{"level":"info","message":"GET /v1/wastage-materials 1395.561 ms","timestamp":"2026-10-06 16:23:06"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-10-06 16:23:14"}
+{"level":"info","message":"GET /v1/auth/ 2373.050 ms","timestamp":"2026-10-06 16:23:16"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-10-06 16:23:16"}
+{"ip":"127.0.0.1","level":"http","message":"CUSTOMER fetch all request received","timestamp":"2026-10-06 16:23:16","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-10-06 16:23:16","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR fetch all request received","timestamp":"2026-10-06 16:23:16","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"CONTRACTOR fetch all request received","timestamp":"2026-10-06 16:23:16","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"PRODUCT fetch all request received","timestamp":"2026-10-06 16:23:16","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"info","message":"GET /v1/auth/ 984.014 ms","timestamp":"2026-10-06 16:23:17"}
+{"level":"info","message":"GET /v1/wastage-materials 2484.397 ms","timestamp":"2026-10-06 16:23:20"}
+{"level":"info","message":"CUSTOMER records fetched","timestamp":"2026-10-06 16:23:20"}
+{"level":"info","message":"GET /v1/customers 3989.653 ms","timestamp":"2026-10-06 16:23:20"}
+{"level":"info","message":"LABOUR records fetched","timestamp":"2026-10-06 16:23:20"}
+{"level":"info","message":"GET /v1/labours 3998.232 ms","timestamp":"2026-10-06 16:23:20"}
+{"level":"info","message":"CONTRACTOR records fetched","timestamp":"2026-10-06 16:23:20"}
+{"level":"info","message":"GET /v1/contractors 4214.069 ms","timestamp":"2026-10-06 16:23:20"}
+{"level":"info","message":"PRODUCT records fetched","timestamp":"2026-10-06 16:23:21"}
+{"level":"info","message":"GET /v1/products 4467.657 ms","timestamp":"2026-10-06 16:23:21"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-10-06 16:23:22"}
+{"level":"info","message":"GET /v1/projects 5415.187 ms","timestamp":"2026-10-06 16:23:22"}
+{"ip":"127.0.0.1","level":"warn","message":"User unauthorized","timestamp":"2026-10-06 16:47:29"}
+{"ip":"127.0.0.1","level":"error","message":"Forbidden!","status":403,"timestamp":"2026-10-06 16:47:29"}
+{"level":"info","message":"GET /v1/wastage-materials 14.288 ms","timestamp":"2026-10-06 16:47:29"}
+{"ip":"127.0.0.1","level":"http","message":"CUSTOMER fetch all request received","timestamp":"2026-10-06 16:49:53","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"PROJECT fetch all request received","timestamp":"2026-10-06 16:49:53","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"LABOUR fetch all request received","timestamp":"2026-10-06 16:49:53","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"CONTRACTOR fetch all request received","timestamp":"2026-10-06 16:49:53","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"ip":"127.0.0.1","level":"http","message":"PRODUCT fetch all request received","timestamp":"2026-10-06 16:49:53","userId":"bb8863bb-c8a2-4e3c-9f12-38a5b8fb9dbe"}
+{"level":"info","message":"CUSTOMER records fetched","timestamp":"2026-10-06 16:49:55"}
+{"level":"info","message":"GET /v1/customers 2188.959 ms","timestamp":"2026-10-06 16:49:55"}
+{"level":"info","message":"CONTRACTOR records fetched","timestamp":"2026-10-06 16:49:55"}
+{"level":"info","message":"GET /v1/contractors 1960.606 ms","timestamp":"2026-10-06 16:49:55"}
+{"level":"info","message":"LABOUR records fetched","timestamp":"2026-10-06 16:49:55"}
+{"level":"info","message":"GET /v1/labours 1972.992 ms","timestamp":"2026-10-06 16:49:55"}
+{"ip":"127.0.0.1","level":"http","message":"Fetch state request received","timestamp":"2026-10-06 16:49:55"}
+{"level":"info","message":"GET /v1/wastage-materials 2110.154 ms","timestamp":"2026-10-06 16:49:55"}
+{"level":"info","message":"PRODUCT records fetched","timestamp":"2026-10-06 16:49:55"}
+{"level":"info","message":"GET /v1/products 2139.322 ms","timestamp":"2026-10-06 16:49:55"}
+{"level":"info","message":"GET /v1/auth/ 422.632 ms","timestamp":"2026-10-06 16:49:56"}
+{"level":"info","message":"PROJECT records fetched","timestamp":"2026-10-06 16:49:56"}
+{"level":"info","message":"GET /v1/projects 2710.645 ms","timestamp":"2026-10-06 16:49:56"}
+{"level":"info","message":"DELETE /v1/wastage-materials/c099c84a-2fb6-4c6b-b4c8-fde3970bce8b 1063.006 ms","timestamp":"2026-10-06 16:53:14"}
+{"level":"info","message":"GET /v1/wastage-materials 1154.762 ms","timestamp":"2026-10-06 16:53:15"}
