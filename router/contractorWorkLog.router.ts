@@ -10,6 +10,7 @@ const controller = GeneralFactory.create(ContractorWorkLogRepository, Contractor
 
 router.get("/:id", errorHandler.wrapper(controller.fetch));
 router.get("/", errorHandler.wrapper(controller.fetchAll));
+router.post("/bulk", errorHandler.wrapper(controller.createMany));
 router.post("/", errorHandler.wrapper(controller.create));
 router.patch("/:id", errorHandler.wrapper(controller.update));
 router.delete("/:id", errorHandler.wrapper(controller.delete));

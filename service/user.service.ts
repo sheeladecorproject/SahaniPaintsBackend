@@ -42,6 +42,59 @@ class UserService extends BaseService<User, UserData, UserRepository> {
         return user;
     }
 
+    createMany = async (data: UserData[]) => {
+        return await prisma.$transaction(async (tx) => {
+            const results = [];
+            let rowNum = 0;
+            for (const item of data) {
+                rowNum++;
+                try {
+                    const hashedPassword = await authUtils.hashPassword(item.password || "User@123");
+                    const user = await tx.users.create({
+                        data: {
+                            ...item,
+                            password: hashedPassword,
+                            role: (item.role ? item.role : "USER") as any
+                        }
+                    });
+
+                    const defaultAccess = [
+                        "brands", "interiors", "sales-associate", "tasks", "settings", "dashboard", "customers"
+                    ];
+
+                    await tx.authorizations.createMany({
+                        data: defaultAccess.map(key => ({
+                            userId: user.id,
+                            access: key
+                        })),
+                        skipDuplicates: true
+                    });
+
+                    results.push({ ...user, password: "" });
+                } catch (itemError: any) {
+                    if (itemError?.code === 'P2002') {
+                        const target = Array.isArray(itemError.meta?.target)
+                            ? itemError.meta.target.join(', ')
+                            : (itemError.meta?.target || 'field');
+                        throw new ServerError({
+                            status: 409,
+                            message: `Row ${rowNum}: Duplicate user found (${target} already exists)`
+                        });
+                    }
+                    if (itemError instanceof ServerError) {
+                        throw itemError;
+                    }
+                    throw new ServerError({
+                        status: 400,
+                        message: `Row ${rowNum}: ${itemError.message || 'Failed to create user'}`
+                    });
+                }
+            }
+            logger.info("USER records bulk created", { count: results.length });
+            return results;
+        }, { maxWait: 15000, timeout: 20000 });
+    }
+
     fetch = async (id?: string, username?: string, email?: string) => {
         const user = await this.method.fetch(id, username, email);
 
