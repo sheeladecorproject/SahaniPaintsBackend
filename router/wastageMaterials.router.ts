@@ -53,7 +53,7 @@ router.get(
         contentWithoutRemarks = raw.replace(/\s*\(Remarks:\s*[^)]+\)$/i, "").trim();
       }
 
-      const match = contentWithoutRemarks.match(/^(.*?)(?:\s*\[(?:Color:\s*([^|\]]+?)\s*\|\s*)?Shade:\s*([^\]]+)\])?$/i);
+      const match = contentWithoutRemarks.match(/^(.*?)(?:\s*\[(?:(?:Color|Shade):\s*([^|\]]+?)\s*\|\s*)?(?:Shade|Size):\s*([^\]]+)\])?$/i);
       if (match && match[1]) {
         materialName = match[1].trim() || contentWithoutRemarks;
         color = (match[2] || "").trim() || "—";
@@ -113,7 +113,7 @@ router.post(
     const cleanShade = (shade || "").trim() || "—";
     const cleanRemarks = (remarks || "").trim();
 
-    const formattedMaterial = `[WASTAGE] ${cleanMaterial} [Color: ${cleanColor} | Shade: ${cleanShade}]${
+    const formattedMaterial = `[WASTAGE] ${cleanMaterial} [Shade: ${cleanColor} | Size: ${cleanShade}]${
       cleanRemarks ? ` (Remarks: ${cleanRemarks})` : ""
     }`;
 
