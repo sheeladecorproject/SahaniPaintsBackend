@@ -2,7 +2,7 @@ interface Products {
     id: string;
     name: string;
     brandId: string;
-    category: string;
+    category?: string | null;
     price: number | any;
     coverageSqFt?: number | any;
     coverageRnFt?: number | any;
@@ -15,7 +15,7 @@ interface Products {
 interface ProductsData {
     name: string;
     brandId: string;
-    category: string;
+    category?: string | null;
     price: number;
     coverageSqFt?: number | any;
     coverageRnFt?: number | any;

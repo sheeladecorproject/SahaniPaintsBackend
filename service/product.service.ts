@@ -44,6 +44,12 @@ class ProductService extends BaseService<Products, ProductsData, ProductsReposit
             data.hasToken = ["true", "yes", "1", true].includes(data.hasToken);
         }
 
+        if (data.category !== undefined && data.category !== null && typeof data.category === 'string' && data.category.trim() !== "") {
+            data.category = data.category.trim();
+        } else {
+            data.category = null;
+        }
+
         const record = await this.method.create(data);
         logger.info(`${this.modelName} created`, {
             id: record.id,
@@ -72,6 +78,12 @@ class ProductService extends BaseService<Products, ProductsData, ProductsReposit
             delete item.brandName;
             delete item._brandName;
 
+            if (item.category !== undefined && item.category !== null && typeof item.category === 'string' && item.category.trim() !== "") {
+                item.category = item.category.trim();
+            } else {
+                item.category = null;
+            }
+
             if (item.price !== undefined && item.price !== null) item.price = Number(item.price);
             if (item.coverageSqFt !== undefined && item.coverageSqFt !== null && item.coverageSqFt !== "") {
                 item.coverageSqFt = Number(item.coverageSqFt);
@@ -93,6 +105,32 @@ class ProductService extends BaseService<Products, ProductsData, ProductsReposit
             count: records.length,
         });
         return records;
+    };
+
+    update = async (data: any, id: string, userId?: string): Promise<Products> => {
+        if (data.category !== undefined) {
+            data.category = (data.category && typeof data.category === 'string' && data.category.trim() !== "")
+                ? data.category.trim()
+                : null;
+        }
+        if (data.price !== undefined && data.price !== null) data.price = Number(data.price);
+        if (data.coverageSqFt !== undefined && data.coverageSqFt !== null && data.coverageSqFt !== "") {
+            data.coverageSqFt = Number(data.coverageSqFt);
+        } else if (data.coverageSqFt === "") {
+            data.coverageSqFt = null;
+        }
+        if (data.coverageRnFt !== undefined && data.coverageRnFt !== null && data.coverageRnFt !== "") {
+            data.coverageRnFt = Number(data.coverageRnFt);
+        } else if (data.coverageRnFt === "") {
+            data.coverageRnFt = null;
+        }
+        if (data.hasToken !== undefined) {
+            data.hasToken = ["true", "yes", "1", true].includes(data.hasToken);
+        }
+
+        const record = await this.method.update(data, id);
+        logger.info(`${this.modelName} updated`, { id });
+        return record;
     };
 }
 

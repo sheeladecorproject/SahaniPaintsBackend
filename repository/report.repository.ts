@@ -383,7 +383,7 @@ class ReportRepository {
                 productStatsMap[key] = {
                     name: item.product.name,
                     type: "GENERAL",
-                    category: item.product.category ?? "CUSTOM",
+                    category: item.product.category || "Uncategorized",
                     count: 0,
                     totalQty: 0,
                     totalValue: 0,
@@ -402,7 +402,7 @@ class ReportRepository {
                 totalDeployedItems: topUsedProducts.length,
             },
             categoryBreakdown: categoryGroup.map((c) => ({
-                category: c.category ?? "UNKNOWN",
+                category: c.category || "Uncategorized",
                 count: c._count.id,
             })),
             topProducts,

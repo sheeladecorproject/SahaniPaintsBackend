@@ -59,7 +59,7 @@ CREATE TABLE "products" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "name" TEXT NOT NULL,
     "brand_id" TEXT NOT NULL,
-    "category" TEXT NOT NULL,
+    "category" TEXT,
     "price" DECIMAL NOT NULL,
     "coverage_sqft" DECIMAL,
     "coverage_rnft" DECIMAL,
