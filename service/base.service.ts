@@ -52,13 +52,17 @@ abstract class BaseService<T, TData, TMethods> {
         const records = await this.method.fetchAll(data, filters, searchFields);
         if (records.length === 0) {
             logger.warn(`No ${this.modelName} records found`);
-            throw new ServerError(errorMessage.NOTFOUND);
+            return {
+                records: [],
+                nextCursor: null
+            };
         }
+        const limit = Number(data.limit) || 10;
         const lastRecord = records[records.length - 1] as any;
         logger.info(`${this.modelName} records fetched`);
         return {
             records,
-            nextCursor: {
+            nextCursor: records.length < limit ? null : {
                 lastId: lastRecord.id,
                 lastCreatedAt: lastRecord.createdAt
             }
