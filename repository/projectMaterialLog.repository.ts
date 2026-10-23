@@ -8,6 +8,35 @@ class ProjectMaterialLogRepository extends BaseRepository<ProjectMaterialLog, Pr
         super(prisma.project_material_logs, "PROJECT_MATERIAL_LOG");
     }
 
+    create = async (data: any): Promise<any> => {
+        try {
+            return await prisma.project_material_logs.create({
+                data,
+                include: {
+                    project: {
+                        select: {
+                            name: true
+                        }
+                    },
+                    product: {
+                        select: {
+                            id: true,
+                            name: true,
+                            price: true,
+                            category: true,
+                            size: true,
+                            brand: true,
+                            coverageSqFt: true,
+                            coverageRnFt: true,
+                        }
+                    }
+                }
+            });
+        } catch (error) {
+            this.handlePrismaError(error);
+        }
+    };
+
     fetchAll = async (
         data: any,
         filters: any,
