@@ -77,7 +77,22 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
                 }
 
                 const projectProducts = data.projectProducts ?? [];
-                const productRows = projectProducts.map((item: any) => ({
+                const mergedCreateProductsMap = new Map<string, any>();
+                for (const item of projectProducts) {
+                    if (!item.productId) continue;
+                    const key = `${item.productId}_${item.unit || "sq.ft"}`;
+                    if (mergedCreateProductsMap.has(key)) {
+                        const existing = mergedCreateProductsMap.get(key);
+                        existing.area = Number(existing.area || 0) + Number(item.area || 0);
+                        if (item.litresUsed != null) {
+                            existing.litresUsed = Number(existing.litresUsed || 0) + Number(item.litresUsed);
+                        }
+                    } else {
+                        mergedCreateProductsMap.set(key, { ...item, area: Number(item.area || 0) });
+                    }
+                }
+
+                const productRows = Array.from(mergedCreateProductsMap.values()).map((item: any) => ({
                     projectId: project.id,
                     productId: item.productId,
                     area: Number(item.area),
@@ -141,7 +156,22 @@ class ProjectRepository extends BaseRepository<Project, ProjectData, any> {
                         where: { projectId: id }
                     });
 
-                    const productRows = data.projectProducts.map((item: any) => ({
+                    const mergedUpdateProductsMap = new Map<string, any>();
+                    for (const item of (data.projectProducts ?? [])) {
+                        if (!item.productId) continue;
+                        const key = `${item.productId}_${item.unit || "sq.ft"}`;
+                        if (mergedUpdateProductsMap.has(key)) {
+                            const existing = mergedUpdateProductsMap.get(key);
+                            existing.area = Number(existing.area || 0) + Number(item.area || 0);
+                            if (item.litresUsed != null) {
+                                existing.litresUsed = Number(existing.litresUsed || 0) + Number(item.litresUsed);
+                            }
+                        } else {
+                            mergedUpdateProductsMap.set(key, { ...item, area: Number(item.area || 0) });
+                        }
+                    }
+
+                    const productRows = Array.from(mergedUpdateProductsMap.values()).map((item: any) => ({
                         projectId: id,
                         productId: item.productId,
                         area: Number(item.area),
