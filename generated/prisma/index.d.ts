@@ -9147,7 +9147,6 @@ export namespace Prisma {
     id: string | null
     name: string | null
     brandId: string | null
-    category: string | null
     price: Decimal | null
     coverageSqFt: Decimal | null
     coverageRnFt: Decimal | null
@@ -9160,7 +9159,6 @@ export namespace Prisma {
     id: string | null
     name: string | null
     brandId: string | null
-    category: string | null
     price: Decimal | null
     coverageSqFt: Decimal | null
     coverageRnFt: Decimal | null
@@ -9173,7 +9171,6 @@ export namespace Prisma {
     id: number
     name: number
     brandId: number
-    category: number
     price: number
     coverageSqFt: number
     coverageRnFt: number
@@ -9200,7 +9197,6 @@ export namespace Prisma {
     id?: true
     name?: true
     brandId?: true
-    category?: true
     price?: true
     coverageSqFt?: true
     coverageRnFt?: true
@@ -9213,7 +9209,6 @@ export namespace Prisma {
     id?: true
     name?: true
     brandId?: true
-    category?: true
     price?: true
     coverageSqFt?: true
     coverageRnFt?: true
@@ -9226,7 +9221,6 @@ export namespace Prisma {
     id?: true
     name?: true
     brandId?: true
-    category?: true
     price?: true
     coverageSqFt?: true
     coverageRnFt?: true
@@ -9326,7 +9320,6 @@ export namespace Prisma {
     id: string
     name: string
     brandId: string
-    category: string | null
     price: Decimal
     coverageSqFt: Decimal | null
     coverageRnFt: Decimal | null
@@ -9358,7 +9351,6 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     brandId?: boolean
-    category?: boolean
     price?: boolean
     coverageSqFt?: boolean
     coverageRnFt?: boolean
@@ -9375,7 +9367,6 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     brandId?: boolean
-    category?: boolean
     price?: boolean
     coverageSqFt?: boolean
     coverageRnFt?: boolean
@@ -9389,7 +9380,6 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     brandId?: boolean
-    category?: boolean
     price?: boolean
     coverageSqFt?: boolean
     coverageRnFt?: boolean
@@ -9403,7 +9393,6 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     brandId?: boolean
-    category?: boolean
     price?: boolean
     coverageSqFt?: boolean
     coverageRnFt?: boolean
@@ -9412,7 +9401,7 @@ export namespace Prisma {
     createdAt?: boolean
   }
 
-  export type productsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "brandId" | "category" | "price" | "coverageSqFt" | "coverageRnFt" | "hasToken" | "size" | "createdAt", ExtArgs["result"]["products"]>
+  export type productsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "brandId" | "price" | "coverageSqFt" | "coverageRnFt" | "hasToken" | "size" | "createdAt", ExtArgs["result"]["products"]>
   export type productsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     brand?: boolean | brandsDefaultArgs<ExtArgs>
     projectProducts?: boolean | products$projectProductsArgs<ExtArgs>
@@ -9437,7 +9426,6 @@ export namespace Prisma {
       id: string
       name: string
       brandId: string
-      category: string | null
       price: Prisma.Decimal
       coverageSqFt: Prisma.Decimal | null
       coverageRnFt: Prisma.Decimal | null
@@ -9873,7 +9861,6 @@ export namespace Prisma {
     readonly id: FieldRef<"products", 'String'>
     readonly name: FieldRef<"products", 'String'>
     readonly brandId: FieldRef<"products", 'String'>
-    readonly category: FieldRef<"products", 'String'>
     readonly price: FieldRef<"products", 'Decimal'>
     readonly coverageSqFt: FieldRef<"products", 'Decimal'>
     readonly coverageRnFt: FieldRef<"products", 'Decimal'>
@@ -32191,7 +32178,6 @@ export namespace Prisma {
     id: 'id',
     name: 'name',
     brandId: 'brandId',
-    category: 'category',
     price: 'price',
     coverageSqFt: 'coverageSqFt',
     coverageRnFt: 'coverageRnFt',
@@ -32946,7 +32932,6 @@ export namespace Prisma {
     id?: UuidFilter<"products"> | string
     name?: StringFilter<"products"> | string
     brandId?: UuidFilter<"products"> | string
-    category?: StringNullableFilter<"products"> | string | null
     price?: DecimalFilter<"products"> | Decimal | DecimalJsLike | number | string
     coverageSqFt?: DecimalNullableFilter<"products"> | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: DecimalNullableFilter<"products"> | Decimal | DecimalJsLike | number | string | null
@@ -32962,7 +32947,6 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     brandId?: SortOrder
-    category?: SortOrderInput | SortOrder
     price?: SortOrder
     coverageSqFt?: SortOrderInput | SortOrder
     coverageRnFt?: SortOrderInput | SortOrder
@@ -32976,12 +32960,12 @@ export namespace Prisma {
 
   export type productsWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    name?: string
+    name_size?: productsNameSizeCompoundUniqueInput
     AND?: productsWhereInput | productsWhereInput[]
     OR?: productsWhereInput[]
     NOT?: productsWhereInput | productsWhereInput[]
+    name?: StringFilter<"products"> | string
     brandId?: UuidFilter<"products"> | string
-    category?: StringNullableFilter<"products"> | string | null
     price?: DecimalFilter<"products"> | Decimal | DecimalJsLike | number | string
     coverageSqFt?: DecimalNullableFilter<"products"> | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: DecimalNullableFilter<"products"> | Decimal | DecimalJsLike | number | string | null
@@ -32991,13 +32975,12 @@ export namespace Prisma {
     brand?: XOR<BrandsScalarRelationFilter, brandsWhereInput>
     projectProducts?: Project_productsListRelationFilter
     materialLogs?: Project_material_logsListRelationFilter
-  }, "id" | "name">
+  }, "id" | "name_size">
 
   export type productsOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
     brandId?: SortOrder
-    category?: SortOrderInput | SortOrder
     price?: SortOrder
     coverageSqFt?: SortOrderInput | SortOrder
     coverageRnFt?: SortOrderInput | SortOrder
@@ -33018,7 +33001,6 @@ export namespace Prisma {
     id?: UuidWithAggregatesFilter<"products"> | string
     name?: StringWithAggregatesFilter<"products"> | string
     brandId?: UuidWithAggregatesFilter<"products"> | string
-    category?: StringNullableWithAggregatesFilter<"products"> | string | null
     price?: DecimalWithAggregatesFilter<"products"> | Decimal | DecimalJsLike | number | string
     coverageSqFt?: DecimalNullableWithAggregatesFilter<"products"> | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: DecimalNullableWithAggregatesFilter<"products"> | Decimal | DecimalJsLike | number | string | null
@@ -34761,7 +34743,6 @@ export namespace Prisma {
   export type productsCreateInput = {
     id?: string
     name: string
-    category?: string | null
     price: Decimal | DecimalJsLike | number | string
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
@@ -34777,7 +34758,6 @@ export namespace Prisma {
     id?: string
     name: string
     brandId: string
-    category?: string | null
     price: Decimal | DecimalJsLike | number | string
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
@@ -34791,7 +34771,6 @@ export namespace Prisma {
   export type productsUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    category?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
@@ -34807,7 +34786,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     brandId?: StringFieldUpdateOperationsInput | string
-    category?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
@@ -34822,7 +34800,6 @@ export namespace Prisma {
     id?: string
     name: string
     brandId: string
-    category?: string | null
     price: Decimal | DecimalJsLike | number | string
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
@@ -34834,7 +34811,6 @@ export namespace Prisma {
   export type productsUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    category?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
@@ -34847,7 +34823,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     brandId?: StringFieldUpdateOperationsInput | string
-    category?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
@@ -36723,11 +36698,15 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
+  export type productsNameSizeCompoundUniqueInput = {
+    name: string
+    size: string
+  }
+
   export type productsCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     brandId?: SortOrder
-    category?: SortOrder
     price?: SortOrder
     coverageSqFt?: SortOrder
     coverageRnFt?: SortOrder
@@ -36746,7 +36725,6 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     brandId?: SortOrder
-    category?: SortOrder
     price?: SortOrder
     coverageSqFt?: SortOrder
     coverageRnFt?: SortOrder
@@ -36759,7 +36737,6 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     brandId?: SortOrder
-    category?: SortOrder
     price?: SortOrder
     coverageSqFt?: SortOrder
     coverageRnFt?: SortOrder
@@ -40382,7 +40359,6 @@ export namespace Prisma {
   export type productsCreateWithoutBrandInput = {
     id?: string
     name: string
-    category?: string | null
     price: Decimal | DecimalJsLike | number | string
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
@@ -40396,7 +40372,6 @@ export namespace Prisma {
   export type productsUncheckedCreateWithoutBrandInput = {
     id?: string
     name: string
-    category?: string | null
     price: Decimal | DecimalJsLike | number | string
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
@@ -40440,7 +40415,6 @@ export namespace Prisma {
     id?: UuidFilter<"products"> | string
     name?: StringFilter<"products"> | string
     brandId?: UuidFilter<"products"> | string
-    category?: StringNullableFilter<"products"> | string | null
     price?: DecimalFilter<"products"> | Decimal | DecimalJsLike | number | string
     coverageSqFt?: DecimalNullableFilter<"products"> | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: DecimalNullableFilter<"products"> | Decimal | DecimalJsLike | number | string | null
@@ -42559,7 +42533,6 @@ export namespace Prisma {
   export type productsCreateWithoutProjectProductsInput = {
     id?: string
     name: string
-    category?: string | null
     price: Decimal | DecimalJsLike | number | string
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
@@ -42574,7 +42547,6 @@ export namespace Prisma {
     id?: string
     name: string
     brandId: string
-    category?: string | null
     price: Decimal | DecimalJsLike | number | string
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
@@ -42668,7 +42640,6 @@ export namespace Prisma {
   export type productsUpdateWithoutProjectProductsInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    category?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
@@ -42683,7 +42654,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     brandId?: StringFieldUpdateOperationsInput | string
-    category?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
@@ -42755,7 +42725,6 @@ export namespace Prisma {
   export type productsCreateWithoutMaterialLogsInput = {
     id?: string
     name: string
-    category?: string | null
     price: Decimal | DecimalJsLike | number | string
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
@@ -42770,7 +42739,6 @@ export namespace Prisma {
     id?: string
     name: string
     brandId: string
-    category?: string | null
     price: Decimal | DecimalJsLike | number | string
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
@@ -42864,7 +42832,6 @@ export namespace Prisma {
   export type productsUpdateWithoutMaterialLogsInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    category?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
@@ -42879,7 +42846,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     brandId?: StringFieldUpdateOperationsInput | string
-    category?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
@@ -44088,7 +44054,6 @@ export namespace Prisma {
   export type productsCreateManyBrandInput = {
     id?: string
     name: string
-    category?: string | null
     price: Decimal | DecimalJsLike | number | string
     coverageSqFt?: Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: Decimal | DecimalJsLike | number | string | null
@@ -44100,7 +44065,6 @@ export namespace Prisma {
   export type productsUpdateWithoutBrandInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    category?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
@@ -44114,7 +44078,6 @@ export namespace Prisma {
   export type productsUncheckedUpdateWithoutBrandInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    category?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
@@ -44128,7 +44091,6 @@ export namespace Prisma {
   export type productsUncheckedUpdateManyWithoutBrandInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    category?: NullableStringFieldUpdateOperationsInput | string | null
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     coverageSqFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     coverageRnFt?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null

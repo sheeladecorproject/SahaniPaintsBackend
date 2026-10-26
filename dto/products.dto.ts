@@ -2,7 +2,7 @@ interface Products {
     id: string;
     name: string;
     brandId: string;
-    category?: string | null;
+    // category?: string | null; // Disabled - see Paints/SPEC_PRODUCT_CATEGORY.md
     price: number | any;
     coverageSqFt?: number | any;
     coverageRnFt?: number | any;
@@ -15,7 +15,7 @@ interface Products {
 interface ProductsData {
     name: string;
     brandId: string;
-    category?: string | null;
+    // category?: string | null; // Disabled - see Paints/SPEC_PRODUCT_CATEGORY.md
     price: number;
     coverageSqFt?: number | any;
     coverageRnFt?: number | any;

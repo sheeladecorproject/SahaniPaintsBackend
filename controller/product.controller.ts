@@ -23,7 +23,7 @@ class ProductController extends BaseController<ProductService> {
             {
                 id: req.query.id?.toString(),
                 brandId: req.query.brandId?.toString(),
-                category: req.query.category?.toString()
+                // category: req.query.category?.toString() // Category disabled - see SPEC_PRODUCT_CATEGORY.md
             },
             [
                 "name"

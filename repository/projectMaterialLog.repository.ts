@@ -23,7 +23,7 @@ class ProjectMaterialLogRepository extends BaseRepository<ProjectMaterialLog, Pr
                             id: true,
                             name: true,
                             price: true,
-                            category: true,
+                            // category: true, // Disabled - see SPEC_PRODUCT_CATEGORY.md
                             size: true,
                             brand: true,
                             coverageSqFt: true,

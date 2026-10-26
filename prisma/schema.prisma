@@ -74,9 +74,9 @@ model brands {
 
 model products {
   id              String            @id @default(uuid()) @db.Uuid
-  name            String            @unique
+  name            String
   brandId         String            @map("brand_id") @db.Uuid
-  category        String?
+  // category        String?           // Category disabled - see SPEC_PRODUCT_CATEGORY.md
   price           Decimal
   coverageSqFt    Decimal?          @map("coverage_sqft")
   coverageRnFt    Decimal?          @map("coverage_rnft")
@@ -87,6 +87,7 @@ model products {
   projectProducts project_products[]
   materialLogs    project_material_logs[]
 
+  @@unique([name, size])
   @@index([id, createdAt])
 }
 

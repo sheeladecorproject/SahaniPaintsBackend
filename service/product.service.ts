@@ -44,11 +44,13 @@ class ProductService extends BaseService<Products, ProductsData, ProductsReposit
             data.hasToken = ["true", "yes", "1", true].includes(data.hasToken);
         }
 
-        if (data.category !== undefined && data.category !== null && typeof data.category === 'string' && data.category.trim() !== "") {
-            data.category = data.category.trim();
-        } else {
-            data.category = null;
-        }
+        // Category functionality disabled - see SPEC_PRODUCT_CATEGORY.md
+        // if (data.category !== undefined && data.category !== null && typeof data.category === 'string' && data.category.trim() !== "") {
+        //     data.category = data.category.trim();
+        // } else {
+        //     data.category = null;
+        // }
+        delete data.category;
 
         const record = await this.method.create(data);
         logger.info(`${this.modelName} created`, {
@@ -78,11 +80,13 @@ class ProductService extends BaseService<Products, ProductsData, ProductsReposit
             delete item.brandName;
             delete item._brandName;
 
-            if (item.category !== undefined && item.category !== null && typeof item.category === 'string' && item.category.trim() !== "") {
-                item.category = item.category.trim();
-            } else {
-                item.category = null;
-            }
+            // Category functionality disabled - see SPEC_PRODUCT_CATEGORY.md
+            // if (item.category !== undefined && item.category !== null && typeof item.category === 'string' && item.category.trim() !== "") {
+            //     item.category = item.category.trim();
+            // } else {
+            //     item.category = null;
+            // }
+            delete item.category;
 
             if (item.price !== undefined && item.price !== null) item.price = Number(item.price);
             if (item.coverageSqFt !== undefined && item.coverageSqFt !== null && item.coverageSqFt !== "") {
@@ -108,11 +112,13 @@ class ProductService extends BaseService<Products, ProductsData, ProductsReposit
     };
 
     update = async (data: any, id: string, userId?: string): Promise<Products> => {
-        if (data.category !== undefined) {
-            data.category = (data.category && typeof data.category === 'string' && data.category.trim() !== "")
-                ? data.category.trim()
-                : null;
-        }
+        // Category functionality disabled - see SPEC_PRODUCT_CATEGORY.md
+        // if (data.category !== undefined) {
+        //     data.category = (data.category && typeof data.category === 'string' && data.category.trim() !== "")
+        //         ? data.category.trim()
+        //         : null;
+        // }
+        delete data.category;
         if (data.price !== undefined && data.price !== null) data.price = Number(data.price);
         if (data.coverageSqFt !== undefined && data.coverageSqFt !== null && data.coverageSqFt !== "") {
             data.coverageSqFt = Number(data.coverageSqFt);

@@ -43,11 +43,14 @@ class ReportRepository {
             const val = p.agreedPrice != null ? Number(p.agreedPrice) : Number(p.totalAmount ?? 0);
             return sum + val;
         }, 0);
+        const totalPayments = Number(payments._sum.amount ?? 0);
+        const totalDue = Math.max(0, totalRevenue - totalPayments);
 
         return [
             {
-                totalPayments: Number(payments._sum.amount ?? 0),
+                totalPayments,
                 totalRevenue,
+                totalDue,
                 totalProjects: projects
             }
         ];
@@ -172,14 +175,15 @@ class ReportRepository {
             topProjects: topProjects.map((p) => {
                 // Compute Product Cost
                 const productCost = p.projectProducts.reduce((sum: number, pp: any) => {
-                    const priceLitre = Number(pp.product?.price || 0);
+                    const packPrice = Number(pp.product?.price || 0);
+                    const packSizeL = this.getProductSizeInLitres(pp.product?.size);
+                    const priceLitre = packSizeL > 0 ? packPrice / packSizeL : packPrice;
 
                     // Find the logged litres used for this product in this project
                     const loggedProducts = p.materialLogs.filter((log: any) => log.productId === pp.productId);
                     const totalLoggedQuantity = loggedProducts.reduce((s: number, log: any) => s + Number(log.quantity || 0), 0);
 
                     if (totalLoggedQuantity > 0) {
-                        const packSizeL = this.getProductSizeInLitres(pp.product?.size);
                         return sum + (totalLoggedQuantity * packSizeL) * priceLitre;
                     }
 
@@ -358,12 +362,14 @@ class ReportRepository {
         const dateRange = this.buildDateRange(data);
         const projectProductsWhere = dateRange ? { project: { createdAt: dateRange } } : {};
 
-        const [totalCataloguedProducts, categoryGroup, topUsedProducts] = await Promise.all([
+        const [totalCataloguedProducts, topUsedProducts] = await Promise.all([
             prisma.products.count(),
+            /* Product category breakdown disabled - see SPEC_PRODUCT_CATEGORY.md
             prisma.products.groupBy({
                 by: ["category"],
                 _count: { id: true },
             }),
+            */
             prisma.project_products.findMany({
                 where: projectProductsWhere,
                 take: 100,
@@ -374,7 +380,7 @@ class ReportRepository {
         ]);
 
         // Aggregate top used products by product name
-        const productStatsMap: Record<string, { name: string; type: string; category: string; count: number; totalQty: number; totalValue: number }> = {};
+        const productStatsMap: Record<string, { name: string; type: string; /* category?: string; */ count: number; totalQty: number; totalValue: number }> = {};
 
         topUsedProducts.forEach((item) => {
             if (!item.product) return;
@@ -383,7 +389,7 @@ class ReportRepository {
                 productStatsMap[key] = {
                     name: item.product.name,
                     type: "GENERAL",
-                    category: item.product.category || "Uncategorized",
+                    // category: item.product.category || "Uncategorized", // Disabled - see SPEC_PRODUCT_CATEGORY.md
                     count: 0,
                     totalQty: 0,
                     totalValue: 0,
@@ -401,10 +407,13 @@ class ReportRepository {
                 totalCataloguedProducts,
                 totalDeployedItems: topUsedProducts.length,
             },
+            /* Product category breakdown disabled - see SPEC_PRODUCT_CATEGORY.md
             categoryBreakdown: categoryGroup.map((c) => ({
                 category: c.category || "Uncategorized",
                 count: c._count.id,
             })),
+            */
+            categoryBreakdown: [],
             topProducts,
         };
     }
