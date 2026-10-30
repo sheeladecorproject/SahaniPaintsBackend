@@ -8,6 +8,10 @@ class ReportService {
         return total;
     };
 
+    getCardDetails = async (data: any) => {
+        return await this.ReportMethods.getCardDetails(data);
+    };
+
     getProjectsReport = async (data: any) => {
         return await this.ReportMethods.getProjectsReport(data);
     };

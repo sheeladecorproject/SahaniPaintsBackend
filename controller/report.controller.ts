@@ -17,6 +17,21 @@ class ReportController {
         return ApiResponse.success(res, "Dashboard statistics fetched successfully", data);
     };
 
+    getCardDetails = async (req: Request, res: Response) => {
+        const allowedTypes = ["running-projects", "total-value", "revenue-received", "revenue-due"];
+        let cardType = req.query.cardType?.toString() || "running-projects";
+        if (!allowedTypes.includes(cardType)) {
+            cardType = "running-projects";
+        }
+
+        const data = await this.ReportService.getCardDetails({
+            cardType,
+            allTime: req.query.allTime === "true" || req.query.allTime === "1",
+            ...this.extractDateParams(req),
+        });
+        return ApiResponse.success(res, "Card details fetched successfully", data);
+    };
+
     getProjectsReport = async (req: Request, res: Response) => {
         const data = await this.ReportService.getProjectsReport(this.extractDateParams(req));
         return ApiResponse.success(res, "Projects report fetched successfully", data);

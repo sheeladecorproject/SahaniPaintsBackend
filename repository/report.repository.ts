@@ -1,10 +1,23 @@
 import { prisma } from "../db/prisma.js";
 
 class ReportRepository {
-    private buildDateRange(data: any) {
-        if (!data?.startDate && !data?.endDate) return undefined;
+    private parseDateRange(data: any) {
+        if (data?.allTime === true || data?.allTime === "true") {
+            return undefined;
+        }
+        if (!data?.startDate && !data?.endDate) {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const start = now.getMonth() >= 3 ? new Date(currentYear, 3, 1, 0, 0, 0) : new Date(currentYear - 1, 3, 1, 0, 0, 0);
+            const end = now.getMonth() >= 3 ? new Date(currentYear + 1, 2, 31, 23, 59, 59, 999) : new Date(currentYear, 2, 31, 23, 59, 59, 999);
+            return { gte: start, lte: end };
+        }
         const range: any = {};
-        if (data.startDate) range.gte = new Date(data.startDate);
+        if (data.startDate) {
+            const start = new Date(data.startDate);
+            start.setHours(0, 0, 0, 0);
+            range.gte = start;
+        }
         if (data.endDate) {
             const end = new Date(data.endDate);
             end.setHours(23, 59, 59, 999);
@@ -13,27 +26,26 @@ class ReportRepository {
         return range;
     }
 
+    private buildDateRange(data: any) {
+        return this.parseDateRange(data);
+    }
+
     fetchDashData = async (data: any) => {
-        const now = new Date();
-        const currentYear = now.getFullYear();
-
-        const start = data?.startDate ? new Date(data.startDate) : (now.getMonth() >= 3 ? new Date(currentYear, 3, 1) : new Date(currentYear - 1, 3, 1));
-        const end = data?.endDate ? new Date(data.endDate) : (now.getMonth() >= 3 ? new Date(currentYear + 1, 2, 31, 23, 59, 59) : new Date(currentYear, 2, 31, 23, 59, 59));
-
-        const dateRange = { gte: start, lte: end };
+        const dateRange = this.parseDateRange(data);
+        const whereDate = dateRange ? { createdAt: dateRange } : {};
 
         const [payments, projectsForRevenue, projects] = await Promise.all([
             prisma.project_payments.aggregate({
                 _sum: { amount: true },
-                where: { createdAt: dateRange }
+                where: whereDate
             }),
             prisma.projects.findMany({
-                where: { createdAt: dateRange },
+                where: whereDate,
                 select: { totalAmount: true, agreedPrice: true }
             }),
             prisma.projects.count({
                 where: {
-                    createdAt: dateRange,
+                    ...whereDate,
                     status: { not: "COMPLETED" }
                 }
             })
@@ -54,6 +66,320 @@ class ReportRepository {
                 totalProjects: projects
             }
         ];
+    }
+
+    getCardDetails = async (data: any) => {
+        const { cardType } = data;
+        const dateRange = this.parseDateRange(data);
+        const whereDate = dateRange ? { createdAt: dateRange } : {};
+        const STAGES = ["Putty", "Primer", "1st Coat", "2nd Coat"];
+
+        if (cardType === "running-projects") {
+            const projects = await prisma.projects.findMany({
+                where: {
+                    ...whereDate,
+                    status: { not: "COMPLETED" }
+                },
+                include: {
+                    customer: {
+                        select: { id: true, name: true, phonenumber: true, email: true, address: true }
+                    },
+                    supervisor: {
+                        select: { id: true, username: true, phonenumber: true }
+                    },
+                    creator: {
+                        select: { id: true, username: true }
+                    },
+                    projectAreaColors: {
+                        select: { stage: true }
+                    }
+                },
+                orderBy: { createdAt: "desc" }
+            });
+
+            const formatted = projects.map(p => {
+                const valuation = p.agreedPrice != null ? Number(p.agreedPrice) : Number(p.totalAmount ?? 0);
+                const paid = Number(p.paid ?? 0);
+                const due = Math.max(0, valuation - paid);
+
+                let progress = 0;
+                if (p.projectAreaColors && p.projectAreaColors.length > 0) {
+                    const sum = p.projectAreaColors.reduce((acc, m) => {
+                        const idx = m.stage ? STAGES.indexOf(m.stage) : -1;
+                        return acc + (idx >= 0 ? ((idx + 1) / STAGES.length) * 100 : 0);
+                    }, 0);
+                    progress = Math.round(sum / p.projectAreaColors.length);
+                }
+
+                return {
+                    id: p.id,
+                    name: p.name,
+                    status: p.status,
+                    customerName: p.customer?.name ?? "—",
+                    customerPhone: p.customer?.phonenumber ?? null,
+                    customerAddress: p.customer?.address ?? null,
+                    supervisorName: p.supervisor?.username ?? "—",
+                    creatorName: p.creator?.username ?? "—",
+                    valuation,
+                    totalAmount: Number(p.totalAmount ?? 0),
+                    agreedPrice: p.agreedPrice != null ? Number(p.agreedPrice) : null,
+                    paid,
+                    due,
+                    progress,
+                    projectDate: p.projectDate,
+                    createdAt: p.createdAt
+                };
+            });
+
+            const totalValuation = formatted.reduce((sum, p) => sum + p.valuation, 0);
+            const totalPaid = formatted.reduce((sum, p) => sum + p.paid, 0);
+            const totalDue = formatted.reduce((sum, p) => sum + p.due, 0);
+
+            const statusCounts: Record<string, number> = {};
+            formatted.forEach(p => {
+                statusCounts[p.status] = (statusCounts[p.status] || 0) + 1;
+            });
+
+            return {
+                cardType: "running-projects",
+                summary: {
+                    totalCount: formatted.length,
+                    totalValuation,
+                    totalPaid,
+                    totalDue,
+                    statusCounts
+                },
+                items: formatted
+            };
+        }
+
+        if (cardType === "total-value") {
+            const projects = await prisma.projects.findMany({
+                where: whereDate,
+                include: {
+                    customer: {
+                        select: { id: true, name: true, phonenumber: true, email: true, address: true }
+                    },
+                    supervisor: {
+                        select: { id: true, username: true, phonenumber: true }
+                    },
+                    creator: {
+                        select: { id: true, username: true }
+                    },
+                    projectAreaColors: {
+                        select: { stage: true }
+                    }
+                },
+                orderBy: { createdAt: "desc" }
+            });
+
+            const formatted = projects.map(p => {
+                const valuation = p.agreedPrice != null ? Number(p.agreedPrice) : Number(p.totalAmount ?? 0);
+                const paid = Number(p.paid ?? 0);
+                const due = Math.max(0, valuation - paid);
+
+                let progress = 0;
+                if (p.projectAreaColors && p.projectAreaColors.length > 0) {
+                    const sum = p.projectAreaColors.reduce((acc, m) => {
+                        const idx = m.stage ? STAGES.indexOf(m.stage) : -1;
+                        return acc + (idx >= 0 ? ((idx + 1) / STAGES.length) * 100 : 0);
+                    }, 0);
+                    progress = Math.round(sum / p.projectAreaColors.length);
+                }
+
+                return {
+                    id: p.id,
+                    name: p.name,
+                    status: p.status,
+                    customerName: p.customer?.name ?? "—",
+                    customerPhone: p.customer?.phonenumber ?? null,
+                    customerAddress: p.customer?.address ?? null,
+                    supervisorName: p.supervisor?.username ?? "—",
+                    creatorName: p.creator?.username ?? "—",
+                    valuation,
+                    totalAmount: Number(p.totalAmount ?? 0),
+                    agreedPrice: p.agreedPrice != null ? Number(p.agreedPrice) : null,
+                    paid,
+                    due,
+                    progress,
+                    projectDate: p.projectDate,
+                    createdAt: p.createdAt
+                };
+            });
+
+            // sort by valuation descending
+            formatted.sort((a, b) => b.valuation - a.valuation);
+
+            const totalValuation = formatted.reduce((sum, p) => sum + p.valuation, 0);
+            const totalPaid = formatted.reduce((sum, p) => sum + p.paid, 0);
+            const totalDue = formatted.reduce((sum, p) => sum + p.due, 0);
+            const avgValuation = formatted.length > 0 ? totalValuation / formatted.length : 0;
+            const highestValuation = formatted.length > 0 ? (formatted[0]?.valuation ?? 0) : 0;
+
+            const statusCounts: Record<string, number> = {};
+            formatted.forEach(p => {
+                statusCounts[p.status] = (statusCounts[p.status] || 0) + 1;
+            });
+
+            return {
+                cardType: "total-value",
+                summary: {
+                    totalCount: formatted.length,
+                    totalValuation,
+                    avgValuation,
+                    highestValuation,
+                    totalPaid,
+                    totalDue,
+                    statusCounts
+                },
+                items: formatted
+            };
+        }
+
+        if (cardType === "revenue-received") {
+            const payments = await prisma.project_payments.findMany({
+                where: whereDate,
+                include: {
+                    project: {
+                        select: {
+                            id: true,
+                            name: true,
+                            status: true,
+                            customer: {
+                                select: { id: true, name: true, phonenumber: true }
+                            }
+                        }
+                    }
+                },
+                orderBy: { createdAt: "desc" }
+            });
+
+            const formatted = payments.map(p => ({
+                id: p.id,
+                projectId: p.projectId,
+                projectName: p.project?.name ?? "—",
+                projectStatus: p.project?.status ?? "—",
+                customerName: p.project?.customer?.name ?? "—",
+                customerPhone: p.project?.customer?.phonenumber ?? null,
+                amount: Number(p.amount ?? 0),
+                paymentMode: (p.paymentMode || "CASH").toUpperCase(),
+                type: p.type || "INCOMING",
+                paymentDate: p.paymentDate || p.createdAt,
+                remarks: p.remarks ?? "—",
+                createdAt: p.createdAt
+            }));
+
+            const totalAmount = formatted.reduce((sum, p) => sum + p.amount, 0);
+            const avgAmount = formatted.length > 0 ? totalAmount / formatted.length : 0;
+
+            const modeMap: Record<string, { count: number; total: number }> = {};
+            formatted.forEach(p => {
+                const mode = p.paymentMode;
+                if (!modeMap[mode]) modeMap[mode] = { count: 0, total: 0 };
+                modeMap[mode].count += 1;
+                modeMap[mode].total += p.amount;
+            });
+
+            return {
+                cardType: "revenue-received",
+                summary: {
+                    totalCount: formatted.length,
+                    totalAmount,
+                    avgAmount,
+                    modes: Object.entries(modeMap).map(([mode, val]) => ({
+                        mode,
+                        count: val.count,
+                        total: val.total
+                    }))
+                },
+                items: formatted
+            };
+        }
+
+        if (cardType === "revenue-due") {
+            const projects = await prisma.projects.findMany({
+                where: whereDate,
+                include: {
+                    customer: {
+                        select: { id: true, name: true, phonenumber: true, email: true, address: true }
+                    },
+                    supervisor: {
+                        select: { id: true, username: true, phonenumber: true }
+                    },
+                    projectAreaColors: {
+                        select: { stage: true }
+                    }
+                },
+                orderBy: { createdAt: "desc" }
+            });
+
+            const formatted = projects.map(p => {
+                const valuation = p.agreedPrice != null ? Number(p.agreedPrice) : Number(p.totalAmount ?? 0);
+                const paid = Number(p.paid ?? 0);
+                const due = Math.max(0, valuation - paid);
+                const duePercent = valuation > 0 ? Math.round((due / valuation) * 100) : 0;
+
+                let progress = 0;
+                if (p.projectAreaColors && p.projectAreaColors.length > 0) {
+                    const sum = p.projectAreaColors.reduce((acc, m) => {
+                        const idx = m.stage ? STAGES.indexOf(m.stage) : -1;
+                        return acc + (idx >= 0 ? ((idx + 1) / STAGES.length) * 100 : 0);
+                    }, 0);
+                    progress = Math.round(sum / p.projectAreaColors.length);
+                }
+
+                return {
+                    id: p.id,
+                    name: p.name,
+                    status: p.status,
+                    customerName: p.customer?.name ?? "—",
+                    customerPhone: p.customer?.phonenumber ?? null,
+                    customerAddress: p.customer?.address ?? null,
+                    supervisorName: p.supervisor?.username ?? "—",
+                    valuation,
+                    totalAmount: Number(p.totalAmount ?? 0),
+                    agreedPrice: p.agreedPrice != null ? Number(p.agreedPrice) : null,
+                    paid,
+                    due,
+                    duePercent,
+                    progress,
+                    projectDate: p.projectDate,
+                    createdAt: p.createdAt
+                };
+            }).filter(p => p.due > 0);
+
+            // Sort by due descending
+            formatted.sort((a, b) => b.due - a.due);
+
+            const totalDue = formatted.reduce((sum, p) => sum + p.due, 0);
+            const totalValuation = formatted.reduce((sum, p) => sum + p.valuation, 0);
+            const totalPaid = formatted.reduce((sum, p) => sum + p.paid, 0);
+            const overallDuePercent = totalValuation > 0 ? Math.round((totalDue / totalValuation) * 100) : 0;
+
+            const statusCounts: Record<string, number> = {};
+            formatted.forEach(p => {
+                statusCounts[p.status] = (statusCounts[p.status] || 0) + 1;
+            });
+
+            return {
+                cardType: "revenue-due",
+                summary: {
+                    totalDueProjects: formatted.length,
+                    totalDue,
+                    totalValuation,
+                    totalPaid,
+                    overallDuePercent,
+                    statusCounts
+                },
+                items: formatted
+            };
+        }
+
+        return {
+            cardType: "running-projects",
+            summary: { totalCount: 0, totalValuation: 0, totalPaid: 0, totalDue: 0 },
+            items: []
+        };
     }
 
     private getProductSizeInLitres(sizeStr?: string): number {

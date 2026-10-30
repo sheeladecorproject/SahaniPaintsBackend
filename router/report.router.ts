@@ -9,6 +9,7 @@ const router = express.Router();
 const controller = GeneralFactory.create(ReportRepository, ReportService, ReportController);
 
 router.get("/", errorHandler.wrapper(controller.fetchDashData));
+router.get("/card-details", errorHandler.wrapper(controller.getCardDetails));
 router.get("/projects", errorHandler.wrapper(controller.getProjectsReport));
 router.get("/payments", errorHandler.wrapper(controller.getPaymentsReport));
 router.get("/interiors", errorHandler.wrapper(controller.getInteriorsReport));
